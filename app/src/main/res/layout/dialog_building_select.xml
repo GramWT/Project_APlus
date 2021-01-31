@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/color_dark_mode_15202B"
+    android:layout_height="400dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout21"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/color_green_2EC1AC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Choose Building"
+            android:textColor="@color/color_dark_mode_15202B"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout25"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout21">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintHorizontal_bias="0.483"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioGroup
+                    android:id="@+id/radio_group_building"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="20sp"
+                    android:paddingTop="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/radio_building_81"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/color_green_2EC1AC"
+                        android:paddingLeft="10dp"
+                        android:text="81"
+                        android:textColor="@color/color_dark_mode_FFFFFF"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_building_82"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/color_green_2EC1AC"
+                        android:paddingLeft="10dp"
+                        android:text="82"
+                        android:textColor="@color/color_dark_mode_FFFFFF"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_building_83"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/color_green_2EC1AC"
+                        android:paddingLeft="10dp"
+                        android:text="83"
+                        android:textColor="@color/color_dark_mode_FFFFFF"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_building_84"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/color_green_2EC1AC"
+                        android:paddingLeft="10dp"
+                        android:text="84"
+                        android:textColor="@color/color_dark_mode_FFFFFF"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_building_85"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/color_green_2EC1AC"
+                        android:paddingLeft="10dp"
+                        android:text="85"
+                        android:textColor="@color/color_dark_mode_FFFFFF"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_building_86"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/color_green_2EC1AC"
+                        android:paddingLeft="10dp"
+                        android:text="86"
+                        android:textColor="@color/color_dark_mode_FFFFFF"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_building_88"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/color_green_2EC1AC"
+                        android:paddingLeft="10dp"
+                        android:text="88"
+                        android:textColor="@color/color_dark_mode_FFFFFF"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_building_89"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/color_green_2EC1AC"
+                        android:paddingLeft="10dp"
+                        android:text="89"
+                        android:textColor="@color/color_dark_mode_FFFFFF"
+                        android:textSize="18sp" />
+                </RadioGroup>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
