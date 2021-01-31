@@ -18,6 +18,7 @@ import com.example.project.AlarmManager.Service.AlarmService
 import com.example.project.DataBase.model.Subject
 import com.example.project.DataBase.viewmodel.SubjectViewModel
 import com.example.project.R
+import kotlinx.android.synthetic.main.dialog_building_select.view.*
 import kotlinx.android.synthetic.main.fragment_subjects_manage_update.*
 import kotlinx.android.synthetic.main.fragment_subjects_manage_update.view.*
 import java.text.SimpleDateFormat
@@ -89,11 +90,11 @@ class SubjectsManageUpdate : Fragment() {
         }
 
         view.building_mid_manager_update.setOnClickListener {
-            setBuilding(view.building_mid_manager_update)
+            dialogBuilding(view.building_mid_manager_update)
         }
 
         view.building_final_manager_update.setOnClickListener {
-            setBuilding(view.building_final_manager_update)
+            dialogBuilding(view.building_final_manager_update)
         }
 
         view.room_mid_manager_update.setOnClickListener {
@@ -127,7 +128,7 @@ class SubjectsManageUpdate : Fragment() {
 
             tv.text = SimpleDateFormat("HH:mm").format(cal.time).toString()
         }
-        TimePickerDialog(requireContext(), AlertDialog.THEME_HOLO_LIGHT,timeSet,cal.get(Calendar.HOUR_OF_DAY),cal.get(Calendar.MINUTE),true).show()
+        TimePickerDialog(requireContext(), AlertDialog.THEME_HOLO_DARK,timeSet,cal.get(Calendar.HOUR_OF_DAY),cal.get(Calendar.MINUTE),true).show()
     }
 
     private fun getDate(tv: TextView){
@@ -144,7 +145,7 @@ class SubjectsManageUpdate : Fragment() {
 
         }
 
-        DatePickerDialog(requireContext(), AlertDialog.THEME_HOLO_LIGHT,dpd,cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH)).show()
+        DatePickerDialog(requireContext(), AlertDialog.THEME_DEVICE_DEFAULT_DARK,dpd,cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH)).show()
 
     }
 
@@ -202,6 +203,49 @@ class SubjectsManageUpdate : Fragment() {
         builder.setMessage("Are you sure you want to delete?")
         builder.show()
     }
+    private fun dialogBuilding(tv:TextView){
+        val selectBuilding = LayoutInflater.from(context).inflate(R.layout.dialog_building_select,null)
+        val mBuilder = AlertDialog.Builder(context)
+                .setView(selectBuilding)
+
+        val mAlert = mBuilder.show()
+
+        selectBuilding.radio_group_building.setOnCheckedChangeListener { group, checkedId ->
+            if (checkedId == R.id.radio_building_81){
+                tv.setText("81")
+            }
+            if (checkedId == R.id.radio_building_82){
+                tv.setText("82")
+            }
+            if (checkedId == R.id.radio_building_83){
+                tv.setText("83")
+            }
+            if (checkedId == R.id.radio_building_84){
+                tv.setText("84")
+            }
+            if (checkedId == R.id.radio_building_85){
+                tv.setText("85")
+            }
+            if (checkedId == R.id.radio_building_86){
+                tv.setText("86")
+            }
+            if (checkedId == R.id.radio_building_88){
+                tv.setText("88")
+            }
+            if (checkedId == R.id.radio_building_89){
+                tv.setText("89")
+            }
+            mAlert.dismiss()
+
+        }
+
+
+
+
+
+
+    }
+
 
 
 }

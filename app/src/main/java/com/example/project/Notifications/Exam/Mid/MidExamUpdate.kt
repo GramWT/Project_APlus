@@ -2,20 +2,12 @@ package com.example.project.Notifications.Exam.Mid
 
 import android.app.AlertDialog
 import android.app.DatePickerDialog
-import android.app.Dialog
 import android.app.TimePickerDialog
-import android.content.Context
 import android.os.Bundle
-import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
-import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.view.isInvisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
@@ -23,15 +15,13 @@ import com.example.project.AlarmManager.Service.AlarmService
 import com.example.project.DataBase.model.Subject
 import com.example.project.DataBase.viewmodel.SubjectViewModel
 import com.example.project.MainActivity
-import com.example.project.Notifications.Exam.ExamNotification
 import com.example.project.R
-import com.example.project.databinding.FragmentSubjectTabBinding
+import kotlinx.android.synthetic.main.dialog_building_select.view.*
 import kotlinx.android.synthetic.main.fragment_mid_exam_update.*
 import kotlinx.android.synthetic.main.fragment_mid_exam_update.view.*
 import kotlinx.android.synthetic.main.fragment_subject_tab.view.*
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.math.log
 
 
 class MidExamUpdate : Fragment() {
@@ -108,12 +98,16 @@ class MidExamUpdate : Fragment() {
         }
 
         view.building_update_view.setOnClickListener {
-            setBuilding(view.building_update_view)
+            dialogBuilding( view.building_update_view)
         }
 
         view.room_update_view.setOnClickListener {
             setRoom(view.building_update_view,view.room_update_view)
         }
+
+
+
+
 
 
         return view
@@ -134,7 +128,7 @@ class MidExamUpdate : Fragment() {
 
             tv.text = SimpleDateFormat("HH:mm").format(cal.time).toString()
         }
-        TimePickerDialog(requireContext(),AlertDialog.THEME_HOLO_LIGHT,timeSet,cal.get(Calendar.HOUR_OF_DAY),cal.get(Calendar.MINUTE),true).show()
+        TimePickerDialog(requireContext(),AlertDialog.THEME_HOLO_DARK,timeSet,cal.get(Calendar.HOUR_OF_DAY),cal.get(Calendar.MINUTE),true).show()
     }
 
     private fun getDate(tv:TextView){
@@ -151,7 +145,7 @@ class MidExamUpdate : Fragment() {
 
         }
 
-        DatePickerDialog(requireContext(),AlertDialog.THEME_HOLO_LIGHT,dpd,cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH)).show()
+        DatePickerDialog(requireContext(),AlertDialog.THEME_DEVICE_DEFAULT_DARK,dpd,cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH)).show()
 
     }
 
@@ -205,6 +199,49 @@ class MidExamUpdate : Fragment() {
         var millis:Long = date.time
 
         return millis
+    }
+
+    private fun dialogBuilding(tv:TextView){
+        val selectBuilding = LayoutInflater.from(context).inflate(R.layout.dialog_building_select,null)
+        val mBuilder = AlertDialog.Builder(context)
+                .setView(selectBuilding)
+
+        val mAlert = mBuilder.show()
+
+        selectBuilding.radio_group_building.setOnCheckedChangeListener { group, checkedId ->
+            if (checkedId == R.id.radio_building_81){
+                tv.setText("81")
+            }
+            if (checkedId == R.id.radio_building_82){
+                tv.setText("82")
+            }
+            if (checkedId == R.id.radio_building_83){
+                tv.setText("83")
+            }
+            if (checkedId == R.id.radio_building_84){
+                tv.setText("84")
+            }
+            if (checkedId == R.id.radio_building_85){
+                tv.setText("85")
+            }
+            if (checkedId == R.id.radio_building_86){
+                tv.setText("86")
+            }
+            if (checkedId == R.id.radio_building_88){
+                tv.setText("88")
+            }
+            if (checkedId == R.id.radio_building_89){
+                tv.setText("89")
+            }
+            mAlert.dismiss()
+
+        }
+
+
+
+
+
+
     }
 
 }

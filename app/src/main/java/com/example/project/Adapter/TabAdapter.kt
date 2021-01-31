@@ -34,4 +34,3 @@ class TabAdapter(fm:FragmentManager):FragmentStatePagerAdapter(fm) {
     }
 }
 
-

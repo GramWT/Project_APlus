@@ -6,6 +6,7 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.LinearLayout
 import android.widget.TableLayout
 import android.widget.TextView
@@ -53,6 +54,8 @@ class MidExamAdapter(context: Context):RecyclerView.Adapter<MidExamAdapter.MyVie
         holder.itemView.sr_text.text = currentItem.mid_room
         holder.itemView.time_textview.text = currentItem.mid_begin_time  + "-" + currentItem.mid_end_time
 
+        holder.itemView.midterm_row.animation = AnimationUtils.loadAnimation(holder.itemView.midterm_row.context,R.anim.item_animation_waterfall)
+
 
 
         holder.itemView.building_picture_button.setOnClickListener {
@@ -60,7 +63,7 @@ class MidExamAdapter(context: Context):RecyclerView.Adapter<MidExamAdapter.MyVie
             println(holder.itemView.sb_text.text.toString())
         }
 
-        holder.itemView.update_button.setOnClickListener {
+        holder.itemView.midterm_row.setOnClickListener {
             val action = MidExamNotificationDirections.actionMidExamNotificationToMidExamUpdate(currentItem)
             holder.itemView.findNavController().navigate(action)
 
