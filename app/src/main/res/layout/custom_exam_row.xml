@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/row_layout"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:padding="25dp"
+    android:background="@drawable/border">
+
+
+    <TextView
+        android:id="@+id/id_tv"
+        android:layout_width="70dp"
+        android:layout_height="25dp"
+        android:layout_weight="1"
+        android:gravity="left|center"
+        android:textColor="@color/color_dark_mode_FFFFFF"
+        android:text="ID"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name_textview"
+        android:layout_width="70dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:gravity="left|center"
+        android:textColor="@color/color_dark_mode_FFFFFF"
+        android:text="Name"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_tv" />
+
+    <TextView
+        android:id="@+id/sname_text"
+        android:layout_width="250dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="10dp"
+        android:gravity="left|center"
+        android:text="Subject"
+        android:textColor="@color/color_dark_mode_FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/name_textview"
+        app:layout_constraintTop_toBottomOf="@+id/sid_text" />
+
+    <TextView
+        android:id="@+id/sid_text"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:gravity="center|left"
+        android:text="111111111"
+        android:textColor="@color/color_dark_mode_FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/id_tv"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/mdate_textview"
+        android:layout_width="70dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="10dp"
+        android:gravity="left|center"
+        android:textColor="@color/color_dark_mode_FFFFFF"
+        android:text="Date"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_textview" />
+
+    <TextView
+        android:id="@+id/mtime_textview"
+        android:layout_width="70dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center|left"
+        android:textColor="@color/color_dark_mode_FFFFFF"
+        android:text="Time"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/date_textview"
+        app:layout_constraintTop_toBottomOf="@+id/sname_text" />
+
+    <TextView
+        android:id="@+id/mroom_textview"
+        android:layout_width="70dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/color_dark_mode_FFFFFF"
+        android:layout_marginTop="10dp"
+        android:gravity="left|center"
+        android:text="Room"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/sb_text"
+        app:layout_constraintTop_toBottomOf="@+id/mtime_textview" />
+
+    <TextView
+        android:id="@+id/sb_text"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="10dp"
+        android:gravity="left|center"
+        android:textColor="@color/color_dark_mode_FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/mbuilding_textview"
+        app:layout_constraintTop_toBottomOf="@+id/date_textview" />
+
+    <Button
+        android:id="@+id/building_picture_button"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/color_green_2EC1AC"
+        android:text="Picture"
+        android:textColor="@color/color_dark_mode_FFFFFF"
+        app:backgroundTint="@color/color_green_2EC1AC"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sb_text" />
+
+    <Button
+        android:id="@+id/update_button"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
+        android:background="@color/color_green_2EC1AC"
+        android:text="Update"
+        android:textColor="@color/color_dark_mode_FFFFFF"
+        app:backgroundTint="@color/color_green_2EC1AC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mroom_textview" />
+
+    <TextView
+        android:id="@+id/mbuilding_textview"
+        android:layout_width="70sp"
+        android:layout_height="25dp"
+        android:layout_marginTop="10dp"
+        android:text="ฺฺBuilding"
+        android:textColor="@color/color_dark_mode_FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mdate_textview" />
+
+    <TextView
+        android:id="@+id/sr_text"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="10dp"
+        android:gravity="left|center"
+        android:textColor="@color/color_dark_mode_FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/mroom_textview"
+        app:layout_constraintTop_toBottomOf="@+id/time_textview" />
+
+    <TextView
+        android:id="@+id/date_textview"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center|left"
+        android:textColor="@color/color_dark_mode_FFFFFF"
+        android:textSize="14sp"
+        android:text="DD/MM/YYYY"
+        app:layout_constraintStart_toEndOf="@+id/mdate_textview"
+        app:layout_constraintTop_toBottomOf="@+id/sname_text" />
+
+    <TextView
+        android:id="@+id/time_textview"
+        android:layout_width="120dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="10dp"
+        android:textSize="14sp"
+        android:textColor="@color/color_dark_mode_FFFFFF"
+        android:text="HH:MM - HH:MM"
+        android:gravity="center|left"
+        app:layout_constraintStart_toEndOf="@+id/mtime_textview"
+        app:layout_constraintTop_toBottomOf="@+id/sname_text" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

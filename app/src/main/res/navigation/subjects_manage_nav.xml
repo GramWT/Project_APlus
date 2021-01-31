@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/subjects_manage_nav"
+    app:startDestination="@id/subjectsManage_nav">
+
+    <fragment
+        android:id="@+id/subjectsManage_nav"
+        android:name="com.example.project.Setting.SubjectsManage.SubjectsManage"
+        android:label="fragment_subjects_manage"
+        tools:layout="@layout/fragment_subjects_manage" >
+        <action
+            android:id="@+id/action_subjectsManage_nav_to_subjectsManageUpdate"
+            app:destination="@id/subjectsManageUpdate" />
+        <action
+            android:id="@+id/action_subjectsManage_nav_to_navSetting"
+            app:destination="@id/navSetting" />
+        <action
+            android:id="@+id/action_subjectsManage_nav_to_subjectsManageAdd"
+            app:destination="@id/subjectsManageAdd" />
+    </fragment>
+    <fragment
+        android:id="@+id/subjectsManageUpdate"
+        android:name="com.example.project.Setting.SubjectsManage.SubjectsManageUpdate"
+        android:label="fragment_subjects_manage_update"
+        tools:layout="@layout/fragment_subjects_manage_update" >
+        <action
+            android:id="@+id/action_subjectsManageUpdate_to_subjectsManage_nav"
+            app:destination="@id/subjectsManage_nav" />
+        <argument
+            android:name="subject"
+            app:argType="com.example.project.DataBase.model.Subject" />
+    </fragment>
+    <fragment
+        android:id="@+id/navSetting"
+        android:name="com.example.project.Setting.NavSetting"
+        android:label="fragment_nav_setting"
+        tools:layout="@layout/fragment_nav_setting" />
+    <fragment
+        android:id="@+id/subjectsManageAdd"
+        android:name="com.example.project.Setting.SubjectsManage.SubjectsManageAdd"
+        android:label="fragment_subjects_manage_add"
+        tools:layout="@layout/fragment_subjects_manage_add" >
+        <action
+            android:id="@+id/action_subjectsManageAdd_to_subjectsManage_nav"
+            app:destination="@id/subjectsManage_nav" />
+    </fragment>
+</navigation>

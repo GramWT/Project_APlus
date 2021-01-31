@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/event_notification_nav"
+    app:startDestination="@id/eventNotification">
+
+    <fragment
+        android:id="@+id/eventNotification"
+        android:name="com.example.project.Notifications.Event.EventNotification"
+        android:label="fragment_event_notification"
+        tools:layout="@layout/fragment_event_notification" >
+        <action
+            android:id="@+id/action_eventNotification_to_eventNotificationAdd"
+            app:destination="@id/eventNotificationAdd" />
+        <action
+            android:id="@+id/action_eventNotification_to_eventNotificationView"
+            app:destination="@id/eventNotificationView" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventNotificationAdd"
+        android:name="com.example.project.Notifications.Event.EventNotificationAdd"
+        android:label="fragment_event_notification_add"
+        tools:layout="@layout/fragment_event_notification_add" >
+        <action
+            android:id="@+id/action_eventNotificationAdd_to_eventNotification"
+            app:destination="@id/eventNotification" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventNotificationView"
+        android:name="com.example.project.Notifications.Event.EventNotificationView"
+        android:label="EventNotificationView" >
+        <action
+            android:id="@+id/action_eventNotificationView_to_eventNotification"
+            app:destination="@id/eventNotification" />
+        <argument
+            android:name="event"
+            app:argType="com.example.project.DataBase.model.Event" />
+        <action
+            android:id="@+id/action_eventNotificationView_to_eventNotificationUpdate"
+            app:destination="@id/eventNotificationUpdate" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventNotificationUpdate"
+        android:name="com.example.project.Notifications.Event.EventNotificationUpdate"
+        android:label="fragment_event_notification_update"
+        tools:layout="@layout/fragment_event_notification_update" >
+        <action
+            android:id="@+id/action_eventNotificationUpdate_to_eventNotificationView"
+            app:destination="@id/eventNotificationView" />
+    </fragment>
+</navigation>

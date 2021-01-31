@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_dark_mode_15202B"
+    tools:context=".Setting.ProfileUser">
+
+    <TextView
+        android:id="@+id/profile_user_setting"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Profile"
+        android:textColor="@color/color_dark_mode_FFFFFF"
+        android:gravity="center"
+        android:textSize="52sp"/>
+
+</FrameLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="color_theme">#f77100</color>
+    <color name="colorKMUTNB2">#f88f01</color>
+    <color name="colorKMUTNB3">#f77100</color>
+    <color name="color_Green_007965">#007965</color>
+    <color name="color_Green_3F72AF">#3F72AF</color>
+    <color name="color_red">#FF0000</color>
+    <color name="color_green">#008000</color>
+    <color name="color_blue">#d3e0ea</color>
+    <color name="color_grey">#c0cdd6</color>
+    <color name="color_midnight_blue">#191970</color>
+    <color name="color_orange">#EB5E0B</color>
+    <color name="color_green_5EAAA8">#A3D2CA</color>
+    <color name="color_pink">#FFE3DE</color>
+    <color name="color_green_a3ddcb">#a3ddcb</color>
+    <color name="color_green_16697a">#16697a</color>
+    <color name="color_orange_db6400">#db6400</color>
+
+    <color name="color_green_2EC1AC">#2ec1ac</color>
+    <color name="color_green_3E978B">#3E978B</color>
+    <color name="color_green_D2E603">#D2E603</color>
+    <color name="color_green_EFF48E">#EFF48E</color>
+    <color name="color_F6F5F5">#F6F5F5</color>
+    <color name="color_black_2C2C2C">#2C2C2C</color>
+
+
+    #DarkMode Color
+    
+    <color name="color_dark_mode_15202B">#15202B</color>
+    <color name="color_dark_mode_192734">#192734</color>
+    <color name="color_dark_mode_22303C">#22303C</color>
+    <color name="color_dark_mode_FFFFFF">#FFFFFF</color>
+    <color name="color_dark_mode_8899A6">#8899A6</color>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/setting_nav"
+    app:startDestination="@id/setting">
+
+    <fragment
+        android:id="@+id/setting"
+        android:name="com.example.project.Setting.Setting"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_setting_to_profileUser"
+            app:destination="@id/profileUser" />
+        <action
+            android:id="@+id/action_setting_to_navSubjectsManage"
+            app:destination="@id/navSubjectsManage" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileUser"
+        android:name="com.example.project.Setting.ProfileUser"
+        android:label="fragment_profile_user"
+        tools:layout="@layout/fragment_profile_user" >
+        <action
+            android:id="@+id/action_profileUser_to_setting"
+            app:destination="@id/setting" />
+    </fragment>
+    <fragment
+        android:id="@+id/navSubjectsManage"
+        android:name="com.example.project.Setting.SubjectsManage.NavSubjectsManage"
+        android:label="fragment_nav_subjects_manage"
+        tools:layout="@layout/fragment_nav_subjects_manage" >
+        <action
+            android:id="@+id/action_navSubjectsManage_to_setting"
+            app:destination="@id/setting" />
+    </fragment>
+</navigation>

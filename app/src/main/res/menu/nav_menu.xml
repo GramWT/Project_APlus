@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_exam"
+        android:icon="@drawable/ic_book"
+        android:title="Exam"/>
+
+    <item
+        android:id="@+id/menu_lesson"
+        android:icon="@drawable/ic_notifications"
+        android:title="Lesson"/>
+
+    <item
+        android:id="@+id/menu_event"
+        android:icon="@drawable/ic_event"
+        android:title="Event"/>
+
+    <item
+        android:id="@+id/menu_setting"
+        android:icon="@drawable/ic_setting"
+        android:title="Settings"/>
+</menu>
