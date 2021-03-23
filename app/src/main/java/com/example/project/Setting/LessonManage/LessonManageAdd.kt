@@ -28,9 +28,15 @@ class LessonManageAdd : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_lesson_manage_add, container, false)
 
+        setLessonVisible(view)
+
         view.cancel_button_update.setOnClickListener {
             val action = LessonManageAddDirections.actionLessonManageAddToLessonManage()
             findNavController().navigate(action)
+        }
+
+        view.add_lesson_button.setOnClickListener {
+            addLesson(view)
         }
 
         view.admit_button_update.setOnClickListener {
@@ -42,6 +48,79 @@ class LessonManageAdd : Fragment() {
         mLessonViewModel = ViewModelProvider(this).get(LessonViewModel::class.java)
 
         return view
+    }
+
+    private fun addLesson(view: View){
+        if (view.lesson_name2.visibility == View.GONE){
+            view.lesson_name2.visibility = View.VISIBLE
+        }
+        else if (view.lesson_name3.visibility == View.GONE){
+            view.lesson_name3.visibility = View.VISIBLE
+        }
+        else if (view.lesson_name4.visibility == View.GONE){
+            view.lesson_name4.visibility = View.VISIBLE
+        }
+        else if (view.lesson_name5.visibility == View.GONE){
+            view.lesson_name5.visibility = View.VISIBLE
+        }
+        else if (view.lesson_name6.visibility == View.GONE){
+            view.lesson_name6.visibility = View.VISIBLE
+        }
+        else if (view.lesson_name7.visibility == View.GONE){
+            view.lesson_name7.visibility = View.VISIBLE
+        }
+        else if (view.lesson_name8.visibility == View.GONE){
+            view.lesson_name8.visibility = View.VISIBLE
+        }
+        else if (view.lesson_name9.visibility == View.GONE){
+            view.lesson_name9.visibility = View.VISIBLE
+        }
+        else if (view.lesson_name10.visibility == View.GONE){
+            view.lesson_name10.visibility = View.VISIBLE
+        }
+        else if (view.lesson_name11.visibility == View.GONE){
+            view.lesson_name11.visibility = View.VISIBLE
+        }
+        else if (view.lesson_name12.visibility == View.GONE){
+            view.lesson_name12.visibility = View.VISIBLE
+        }
+        else if (view.lesson_name13.visibility == View.GONE){
+            view.lesson_name13.visibility = View.VISIBLE
+        }
+        else if (view.lesson_name14.visibility == View.GONE){
+            view.lesson_name14.visibility = View.VISIBLE
+        }
+        else if (view.lesson_name15.visibility == View.GONE){
+            view.lesson_name15.visibility = View.VISIBLE
+        }
+        else if (view.lesson_name16.visibility == View.GONE){
+            view.lesson_name16.visibility = View.VISIBLE
+        }
+
+
+
+    }
+
+    private fun setLessonVisible(view: View){
+
+        view.lesson_name1.visibility = View.VISIBLE
+        view.lesson_name2.visibility = View.GONE
+        view.lesson_name3.visibility = View.GONE
+        view.lesson_name4.visibility = View.GONE
+        view.lesson_name5.visibility = View.GONE
+        view.lesson_name6.visibility = View.GONE
+        view.lesson_name7.visibility = View.GONE
+        view.lesson_name8.visibility = View.GONE
+        view.lesson_name9.visibility = View.GONE
+        view.lesson_name10.visibility = View.GONE
+        view.lesson_name11.visibility = View.GONE
+        view.lesson_name12.visibility = View.GONE
+        view.lesson_name13.visibility = View.GONE
+        view.lesson_name14.visibility = View.GONE
+        view.lesson_name15.visibility = View.GONE
+        view.lesson_name16.visibility = View.GONE
+
+
     }
 
 

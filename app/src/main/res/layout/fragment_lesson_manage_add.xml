@@ -44,18 +44,17 @@
 
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="134dp">
+            android:minHeight="1000dp">
 
             <EditText
                 android:id="@+id/lesson_subject_name"
@@ -277,6 +276,16 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lesson_name15" />
+
+            <Button
+                android:id="@+id/add_lesson_button"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="24dp"
+                android:text="Add"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name16" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
