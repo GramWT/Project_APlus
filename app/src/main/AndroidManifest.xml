@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:name=".InitialApplication"
         android:theme="@style/Theme.Project">
-        <activity android:name=".MainActivity" android:windowSoftInputMode="adjustPan">
+        <activity android:name=".MainActivity" android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

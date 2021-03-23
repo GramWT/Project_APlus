@@ -9,25 +9,5 @@
         android:id="@+id/midExamNotification"
         android:name="com.example.project.Notifications.Exam.Mid.MidExamNotification"
         android:label="fragment_mid_exam_notification"
-        tools:layout="@layout/fragment_mid_exam_notification" >
-        <action
-            android:id="@+id/action_midExamNotification_to_midExamUpdate"
-            app:destination="@id/midExamUpdate"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" />
-    </fragment>
-    <fragment
-        android:id="@+id/midExamUpdate"
-        android:name="com.example.project.Notifications.Exam.Mid.MidExamUpdate"
-        android:label="fragment_mid_exam_update"
-        tools:layout="@layout/fragment_mid_exam_update" >
-        <action
-            android:id="@+id/action_midExamUpdate_to_midExamNotification"
-            app:destination="@id/midExamNotification"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" />
-        <argument
-            android:name="subject"
-            app:argType="com.example.project.DataBase.model.Subject" />
-    </fragment>
+        tools:layout="@layout/fragment_mid_exam_notification" />
 </navigation>

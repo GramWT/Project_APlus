@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/direct_to_subject_management"
+    app:startDestination="@id/directToSubjectManagement2">
+
+    <fragment
+        android:id="@+id/directToSubjectManagement2"
+        android:name="com.example.project.Notifications.Exam.DirectToSubjectManagement"
+        android:label="fragment_direct_to_subject_management"
+        tools:layout="@layout/fragment_direct_to_subject_management" >
+        <action
+            android:id="@+id/action_directToSubjectManagement2_to_navSubjectsManage2"
+            app:destination="@id/navSubjectsManage2" />
+    </fragment>
+    <fragment
+        android:id="@+id/navSubjectsManage2"
+        android:name="com.example.project.Setting.SubjectsManage.NavSubjectsManage"
+        android:label="fragment_nav_subjects_manage"
+        tools:layout="@layout/fragment_nav_subjects_manage" />
+</navigation>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lesson_notification_nav"
+    app:startDestination="@id/lessonNotification">
+
+    <fragment
+        android:id="@+id/lessonNotification"
+        android:name="com.example.project.Notifications.Lesson.LessonNotification"
+        android:label="fragment_lesson_notification"
+        tools:layout="@layout/fragment_lesson_notification" />
+</navigation>

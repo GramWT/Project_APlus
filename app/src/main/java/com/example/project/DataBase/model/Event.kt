@@ -22,4 +22,5 @@ data class Event (
         val time_notification_3:String,
         val time_notification_4:String,
         val time_notification_5:String,
+        val location:String
         ):Parcelable

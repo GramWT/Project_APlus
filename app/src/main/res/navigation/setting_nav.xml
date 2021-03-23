@@ -16,6 +16,12 @@
         <action
             android:id="@+id/action_setting_to_navSubjectsManage"
             app:destination="@id/navSubjectsManage" />
+        <action
+            android:id="@+id/action_setting_to_creditDeveloper2"
+            app:destination="@id/creditDeveloper2" />
+        <action
+            android:id="@+id/action_setting_to_navLessonManage"
+            app:destination="@id/navLessonManage" />
     </fragment>
     <fragment
         android:id="@+id/profileUser"
@@ -33,6 +39,24 @@
         tools:layout="@layout/fragment_nav_subjects_manage" >
         <action
             android:id="@+id/action_navSubjectsManage_to_setting"
+            app:destination="@id/setting" />
+    </fragment>
+    <fragment
+        android:id="@+id/creditDeveloper2"
+        android:name="com.example.project.Setting.CreditDeveloper"
+        android:label="fragment_credit_developer"
+        tools:layout="@layout/fragment_credit_developer" >
+        <action
+            android:id="@+id/action_creditDeveloper2_to_setting"
+            app:destination="@id/setting" />
+    </fragment>
+    <fragment
+        android:id="@+id/navLessonManage"
+        android:name="com.example.project.Setting.LessonManage.NavLessonManage"
+        android:label="fragment_nav_lesson_manage"
+        tools:layout="@layout/fragment_nav_lesson_manage" >
+        <action
+            android:id="@+id/action_navLessonManage_to_setting"
             app:destination="@id/setting" />
     </fragment>
 </navigation>

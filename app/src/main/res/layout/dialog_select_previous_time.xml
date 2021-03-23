@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/color_dark_mode_15202B"
+    android:layout_height="500dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout21"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/color_green_2EC1AC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Previous Time"
+            android:textColor="@color/color_dark_mode_15202B"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout25"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout21">
+
+
+        <RadioGroup
+            android:id="@+id/radio_group_previous_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingLeft="20sp"
+            android:paddingTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/previous_time">
+
+            <RadioButton
+                android:id="@+id/radio_minutes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/color_green_2EC1AC"
+                android:paddingLeft="10dp"
+                android:text="Minutes"
+                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/radio_hours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/color_green_2EC1AC"
+                android:paddingLeft="10dp"
+                android:text="Hours"
+                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/radio_days"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/color_green_2EC1AC"
+                android:paddingLeft="10dp"
+                android:text="Days"
+                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/radio_weeks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/color_green_2EC1AC"
+                android:paddingLeft="10dp"
+                android:text="Weeks"
+                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textSize="18sp" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/previous_time"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            android:background="@color/color_dark_mode_192734"
+            android:ems="10"
+            android:inputType="number"
+            android:paddingStart="10dp"
+            android:text="10"
+            android:textColor="@color/color_dark_mode_FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/radio_group_previous_time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/done_button"
+            android:layout_width="90dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Done"
+            android:textColor="@color/color_dark_mode_15202B"
+            android:textSize="16sp"
+            app:background="@color/color_green_2EC1AC"
+            app:backgroundTint="@color/color_green_2EC1AC"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

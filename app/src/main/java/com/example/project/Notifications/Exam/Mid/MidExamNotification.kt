@@ -17,10 +17,6 @@ class MidExamNotification : Fragment() {
     private lateinit var binding:FragmentMidExamNotificationBinding
     private lateinit var mSubjectModel:SubjectViewModel
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -37,12 +33,6 @@ class MidExamNotification : Fragment() {
         mSubjectModel.readAllData.observe(viewLifecycleOwner,{subject ->
             adapter.setData(subject)
         })
-
-
-
-
-
-
 
         return binding.root
     }

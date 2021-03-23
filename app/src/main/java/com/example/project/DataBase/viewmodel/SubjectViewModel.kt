@@ -44,4 +44,10 @@ class SubjectViewModel(application: Application):AndroidViewModel(application) {
             repository.deleteAllSubjects()
         }
     }
+
+    fun deleteById(id:Int){
+        viewModelScope.launch(Dispatchers.IO){
+        repository.deleteById(id)
+        }
+    }
 }

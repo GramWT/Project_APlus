@@ -21,4 +21,7 @@ interface SubjectDao {
 
     @Query("SELECT * FROM subject_table ORDER BY id ASC")
     fun readAllData():LiveData<List<Subject>>
+
+    @Query("DELETE FROM subject_table WHERE id = :id")
+    suspend fun deleteById(id:Int)
 }

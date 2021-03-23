@@ -1,20 +1,53 @@
 package com.example.project.Notifications.Lesson
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.project.DataBase.data.LessonDao
+import com.example.project.DataBase.model.Lesson
+import com.example.project.DataBase.model.Subject
+import com.example.project.DataBase.viewmodel.LessonViewModel
+import com.example.project.DataBase.viewmodel.SubjectViewModel
+import com.example.project.MainActivity
+import com.example.project.Notifications.Exam.ExamNotificationDirections
+import com.example.project.Notifications.Exam.Mid.MidExamAdapter
 import com.example.project.R
+import com.example.project.databinding.FragmentLessonManageBinding
+import com.example.project.databinding.FragmentLessonNotificationBinding
 
 
 class LessonNotification : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    private lateinit var binding:FragmentLessonNotificationBinding
+    private lateinit var mLessonModel:LessonViewModel
+    private var gridLayoutManager: GridLayoutManager? = null
+
+    private lateinit var lessonList:List<Lesson>
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        mLessonModel = ViewModelProvider(this).get(LessonViewModel::class.java)
+        mLessonModel.readAllData.observe(viewLifecycleOwner,{lesson ->
+            lessonList = lesson
+
+
+            if (lessonList.isEmpty()){
+                val action = LessonNotificationDirections.actionLessonNotification3ToDirectToLessonManagement()
+                findNavController().navigate(action)
+                println(lessonList.size)
+            }
+            else{
+                println(lessonList.size)
+            }
+        })
 
     }
 
@@ -22,8 +55,24 @@ class LessonNotification : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lesson_notification, container, false)
+
+        binding = FragmentLessonNotificationBinding.inflate(layoutInflater)
+
+        mLessonModel = ViewModelProvider(this).get(LessonViewModel::class.java)
+
+
+        var adapter = LessonAdapter(mLessonModel)
+        binding.lessonRecyclerView.adapter = adapter
+
+
+        gridLayoutManager = GridLayoutManager(requireContext(),1, LinearLayoutManager.VERTICAL,false)
+        binding.lessonRecyclerView.layoutManager = gridLayoutManager
+
+        mLessonModel.readAllData.observe(viewLifecycleOwner,{lesson ->
+            adapter.setData(lesson)
+        })
+
+        return binding.root
     }
 
 }

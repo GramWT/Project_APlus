@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/direct_to_lesson_management"
+    app:startDestination="@id/directToLessonManagement3">
+    <fragment
+        android:id="@+id/directToLessonManagement3"
+        android:name="com.example.project.Notifications.Lesson.DirectToLessonManagement"
+        android:label="DirectToLessonManagement" >
+        <action
+            android:id="@+id/action_directToLessonManagement3_to_navLessonManage2"
+            app:destination="@id/navLessonManage2" />
+    </fragment>
+    <fragment
+        android:id="@+id/navLessonManage2"
+        android:name="com.example.project.Setting.LessonManage.NavLessonManage"
+        android:label="fragment_nav_lesson_manage"
+        tools:layout="@layout/fragment_nav_lesson_manage" />
+</navigation>

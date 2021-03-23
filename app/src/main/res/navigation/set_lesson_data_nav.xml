@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/set_lesson_data_nav"
+    app:startDestination="@id/lessonNotification3">
+    <fragment
+        android:id="@+id/directToLessonManagement"
+        android:name="com.example.project.Notifications.Lesson.DirectToLessonManagement"
+        android:label="fragment_direct_to_lesson_management"
+        tools:layout="@layout/fragment_direct_to_lesson_management" >
+        <action
+            android:id="@+id/action_directToLessonManagement_to_lessonNotification3"
+            app:destination="@id/lessonNotification3" />
+        <action
+            android:id="@+id/action_directToLessonManagement_to_navLessonManage3"
+            app:destination="@id/navLessonManage3" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonNotification3"
+        android:name="com.example.project.Notifications.Lesson.LessonNotification"
+        android:label="fragment_lesson_notification"
+        tools:layout="@layout/fragment_lesson_notification" >
+        <action
+            android:id="@+id/action_lessonNotification3_to_directToLessonManagement"
+            app:destination="@id/directToLessonManagement" />
+    </fragment>
+    <fragment
+        android:id="@+id/navLessonManage3"
+        android:name="com.example.project.Setting.LessonManage.NavLessonManage"
+        android:label="fragment_nav_lesson_manage"
+        tools:layout="@layout/fragment_nav_lesson_manage" >
+        <action
+            android:id="@+id/action_navLessonManage3_to_directToLessonManagement"
+            app:destination="@id/directToLessonManagement" />
+    </fragment>
+</navigation>

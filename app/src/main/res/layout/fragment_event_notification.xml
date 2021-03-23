@@ -5,31 +5,81 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_dark_mode_15202B"
-    tools:context=".Notifications.Event.EventNotification"
-    android:padding="8dp">
+    tools:context=".Notifications.Event.EventNotification">
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/event_recyclerView"
+    <LinearLayout
+        android:id="@+id/blur_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/event_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/glass_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/color_dark_mode_15202B"
+        android:alpha="0.95"
+        android:visibility="visible"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_event_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:background="@color/white"
         android:clickable="true"
         android:src="@drawable/ic_baseline_add_24"
         app:backgroundTint="@color/color_green_2EC1AC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/event_button"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/color_pink"
+        android:backgroundTint="@color/color_pink"
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_event_note_24"
+        android:tint="@color/color_pink"
+        android:visibility="invisible"
+        app:backgroundTint="@color/color_pink"
+        app:layout_constraintBottom_toTopOf="@+id/add_event_button"
+        app:layout_constraintEnd_toEndOf="@+id/add_event_button" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/reminder_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@color/color_orange"
+        android:backgroundTint="@color/color_orange"
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_assignment_24"
+        android:tint="@color/color_orange"
+        android:visibility="invisible"
+        app:backgroundTint="@color/color_orange"
+        app:layout_constraintBottom_toTopOf="@+id/event_button"
+        app:layout_constraintEnd_toEndOf="@+id/event_button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

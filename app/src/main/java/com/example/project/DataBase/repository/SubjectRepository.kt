@@ -23,4 +23,8 @@ class SubjectRepository(private val subjectDao: SubjectDao) {
     suspend fun deleteAllSubjects(){
         subjectDao.deleteAllSubjects()
     }
+
+    suspend fun deleteById(id:Int){
+        subjectDao.deleteById(id)
+    }
 }

@@ -48,5 +48,8 @@
         <action
             android:id="@+id/action_eventNotificationUpdate_to_eventNotificationView"
             app:destination="@id/eventNotificationView" />
+        <argument
+            android:name="event"
+            app:argType="com.example.project.DataBase.model.Event" />
     </fragment>
 </navigation>

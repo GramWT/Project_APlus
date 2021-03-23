@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/set_subject_data_nav"
+    app:startDestination="@id/examNotification">
+
+    <fragment
+        android:id="@+id/examNotification"
+        android:name="com.example.project.Notifications.Exam.ExamNotification"
+        android:label="fragment_exam_notification"
+        tools:layout="@layout/fragment_exam_notification" >
+        <action
+            android:id="@+id/action_examNotification_to_directToSubjectManagement"
+            app:destination="@id/directToSubjectManagement" />
+        <action
+            android:id="@+id/action_examNotification_to_create_User"
+            app:destination="@id/create_User" />
+    </fragment>
+    <fragment
+        android:id="@+id/directToSubjectManagement"
+        android:name="com.example.project.Notifications.Exam.DirectToSubjectManagement"
+        android:label="fragment_direct_to_subject_management"
+        tools:layout="@layout/fragment_direct_to_subject_management" >
+        <action
+            android:id="@+id/action_directToSubjectManagement_to_examNotification"
+            app:destination="@id/examNotification" />
+        <action
+            android:id="@+id/action_directToSubjectManagement_to_navSubjectsManage3"
+            app:destination="@id/navSubjectsManage3" />
+    </fragment>
+    <fragment
+        android:id="@+id/navSubjectsManage3"
+        android:name="com.example.project.Setting.SubjectsManage.NavSubjectsManage"
+        android:label="fragment_nav_subjects_manage"
+        tools:layout="@layout/fragment_nav_subjects_manage" >
+        <action
+            android:id="@+id/action_navSubjectsManage3_to_directToSubjectManagement"
+            app:destination="@id/directToSubjectManagement" />
+    </fragment>
+    <fragment
+        android:id="@+id/create_User"
+        android:name="com.example.project.Create_User"
+        android:label="fragment_create__user"
+        tools:layout="@layout/fragment_create__user" >
+        <action
+            android:id="@+id/action_create_User_to_examNotification"
+            app:destination="@id/examNotification" />
+    </fragment>
+</navigation>

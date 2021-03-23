@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lesson_manage_nav"
+    app:startDestination="@id/lessonManage">
+    <fragment
+        android:id="@+id/lessonManage"
+        android:name="com.example.project.Setting.LessonManage.LessonManage"
+        android:label="fragment_lesson_manage"
+        tools:layout="@layout/fragment_lesson_manage" >
+        <action
+            android:id="@+id/action_lessonManage_to_navSetting2"
+            app:destination="@id/navSetting2" />
+        <action
+            android:id="@+id/action_lessonManage_to_lessonManageUpdate"
+            app:destination="@id/lessonManageUpdate" />
+        <action
+            android:id="@+id/action_lessonManage_to_lessonManageAdd"
+            app:destination="@id/lessonManageAdd" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonManageAdd"
+        android:name="com.example.project.Setting.LessonManage.LessonManageAdd"
+        android:label="fragment_lesson_manage_add"
+        tools:layout="@layout/fragment_lesson_manage_add" >
+        <action
+            android:id="@+id/action_lessonManageAdd_to_lessonManage"
+            app:destination="@id/lessonManage" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonManageUpdate"
+        android:name="com.example.project.Setting.LessonManage.LessonManageUpdate"
+        android:label="fragment_lesson_manage_update"
+        tools:layout="@layout/fragment_lesson_manage_update" >
+        <action
+            android:id="@+id/action_lessonManageUpdate_to_lessonManage"
+            app:destination="@id/lessonManage" />
+    </fragment>
+    <fragment
+        android:id="@+id/navSetting2"
+        android:name="com.example.project.Setting.NavSetting"
+        android:label="fragment_nav_setting"
+        tools:layout="@layout/fragment_nav_setting" />
+</navigation>

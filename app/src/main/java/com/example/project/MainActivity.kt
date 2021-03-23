@@ -1,57 +1,49 @@
 package com.example.project
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Layout
-import android.view.LayoutInflater
-import android.view.View
-import android.widget.LinearLayout
 import androidx.core.view.isInvisible
 import androidx.fragment.app.Fragment
-import com.example.project.Notifications.Event.EventNotification
-import com.example.project.Notifications.Event.EventNotificationAdd
+import com.example.project.Calendar.EventCalendar
 import com.example.project.Notifications.Event.NavEventNotification
-import com.example.project.Notifications.Exam.ExamNotification
-import com.example.project.Notifications.Lesson.LessonNotification
+import com.example.project.Notifications.Exam.CheckExamData
+import com.example.project.Notifications.Lesson.CheckLessonData
 import com.example.project.Setting.NavSetting
-import com.example.project.Setting.Setting
 import com.example.project.databinding.ActivityMainBinding
-import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.util.*
-import java.util.zip.Inflater
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val MainBunding:ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
-    private var parentLinearLayout: LinearLayout? = null
-
+    private val MainBinding:ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(MainBunding.root)
-
-        val exam = ExamNotification()
-        val lesson = LessonNotification()
+        setContentView(MainBinding.root)
+        val exam = CheckExamData()
+        val lesson = CheckLessonData()
         val event = NavEventNotification()
+        val calendar = EventCalendar()
         val setting = NavSetting()
+
 
 
         makeCurrentFragment(exam)
 
-        MainBunding.bottomNavigation.setOnNavigationItemSelectedListener {
+        MainBinding.bottomNavigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.menu_exam -> makeCurrentFragment(exam)
                 R.id.menu_lesson -> makeCurrentFragment(lesson)
                 R.id.menu_event -> makeCurrentFragment(event)
+                R.id.menu_calendar -> makeCurrentFragment(calendar)
                 R.id.menu_setting -> makeCurrentFragment(setting)
             }
             true
         }
         
     }
+
+
 
     private fun makeCurrentFragment(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply {
@@ -60,14 +52,16 @@ class MainActivity : AppCompatActivity() {
             commit()
         }
 
-    public fun hideBottomNav(){
-        MainBunding.bottomNavigation.isInvisible = true
+
+
+    fun hideBottomNav(){
+        bottom_navigation.isInvisible = true
+
     }
 
-    public fun showBottomNav(){
-        MainBunding.bottomNavigation.isInvisible = false
+    fun showBottomNav(){
+        bottom_navigation.isInvisible = false
     }
-
 
 
 

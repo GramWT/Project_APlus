@@ -16,13 +16,14 @@ import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.example.project.AlarmManager.Service.AlarmService
+import com.example.project.DataBase.model.EventCalendar
 import com.example.project.DataBase.model.Subject
+import com.example.project.DataBase.viewmodel.EventCalendarViewModel
 import com.example.project.DataBase.viewmodel.SubjectViewModel
-import com.example.project.MainActivity
 import com.example.project.R
 import kotlinx.android.synthetic.main.dialog_building_select.view.*
-import kotlinx.android.synthetic.main.fragment_event_notification_add.view.*
-import kotlinx.android.synthetic.main.fragment_subjects_manage.view.*
+import kotlinx.android.synthetic.main.fragment_mid_exam_update.view.*
 import kotlinx.android.synthetic.main.fragment_subjects_manage_add.*
 import kotlinx.android.synthetic.main.fragment_subjects_manage_add.view.*
 import java.text.SimpleDateFormat
@@ -35,6 +36,8 @@ import java.util.*
 class SubjectsManageAdd : Fragment() {
 
     private lateinit var mSubjectViewModel: SubjectViewModel
+    private lateinit var mEventCalendar:EventCalendarViewModel
+    private lateinit var mAlarmService: AlarmService
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
@@ -45,7 +48,26 @@ class SubjectsManageAdd : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_subjects_manage_add, container, false)
 
+        mAlarmService = AlarmService(requireContext())
+
+
+        val dateM = LocalDateTime.now()
+        val dayM = dateM.dayOfMonth
+        val monthM = dateM.monthValue - 1
+        val yearM = dateM.year
+
+        val dateF = LocalDateTime.now().plusMonths(2)
+        val dayF = dateF.dayOfMonth
+        val monthF = dateF.monthValue - 1
+        val yearF = dateF.year
+
+        var eventDateMid:MutableList<Int> = arrayListOf(dayM,monthM,yearM)
+        var eventDateFinal:MutableList<Int> = arrayListOf(dayF,monthF,yearF)
+
+
         mSubjectViewModel = ViewModelProvider(this).get(SubjectViewModel::class.java)
+
+        mEventCalendar = ViewModelProvider(this).get(EventCalendarViewModel::class.java)
 
 
         view.cancel_button_update.setOnClickListener {
@@ -63,15 +85,19 @@ class SubjectsManageAdd : Fragment() {
         view.time_final_end_manager_update.setText(DateTimeFormatter.ofPattern("HH:mm").format(roundTime().plusHours(1)))
 
         view.admit_button_update.setOnClickListener {
-            insertDataToDatabase()
+            insertDataToDatabase(eventDateMid,eventDateFinal)
         }
 
         view.date_mid_manager_update.setOnClickListener {
-            getDate(view.date_mid_manager_update)
+            println(eventDateMid)
+            eventDateMid = arrayListOf()
+            getDate(view.date_mid_manager_update,eventDateMid)
         }
 
         view.date_final_manager_update.setOnClickListener {
-            getDate(view.date_final_manager_update)
+            println(eventDateFinal)
+            eventDateFinal = arrayListOf()
+            getDate(view.date_final_manager_update,eventDateFinal)
         }
 
         view.time_mid_begin_manager_update.setOnClickListener {
@@ -111,7 +137,7 @@ class SubjectsManageAdd : Fragment() {
         return view
     }
 
-    private fun insertDataToDatabase(){
+    private fun insertDataToDatabase(eventMid:MutableList<Int>,eventFinal:MutableList<Int>){
         val sid = code_manager_update.text.toString()
         val name = name_manager_update.text.toString()
         val midDate = date_mid_manager_update.text.toString()
@@ -124,12 +150,33 @@ class SubjectsManageAdd : Fragment() {
         val finalBuilding = building_final_manager_update.text.toString()
         val midRoom = room_mid_manager_update.text.toString()
         val finalRoom = room_final_manager_update.text.toString()
-        val id:Int = ("1".toString() + sid).toString().toInt()
+        val id:Int = sid.toInt()
+        val mid:Int = sid.toInt() + 1
+        val final:Int = sid.toInt() + 2
+
+        val setId:Int = sid.substring(0,3).toInt() + sid.substring(4,7).toInt()
+        val idMid:Int = "1${setId.toString()}".toInt()
+        val idFinal:Int = "2${setId.toString()}".toInt()
 
         if (inputCheck(sid,name,midDate,finalDate,midTimeBegin,midTimeEnd,finalTimeBegin,finalTimeEnd,midBuilding,finalBuilding,midRoom,finalRoom)){
-            val subject = Subject(id,sid,name,midBuilding,midRoom,midTimeBegin,midTimeEnd,midDate,finalBuilding,finalRoom,finalTimeBegin,finalTimeEnd,finalDate)
+            val subject = Subject(setId,sid,name,midBuilding,midRoom,midTimeBegin,midTimeEnd,midDate,finalBuilding,finalRoom,finalTimeBegin,finalTimeEnd,finalDate)
 
+
+
+            val eventMid = EventCalendar(mid,1,eventMid[0],eventMid[1],eventMid[2],name)
+
+            val eventFinal = EventCalendar(final,1,eventFinal[0],eventFinal[1],eventFinal[2],name)
+
+            val midData = "$midDate $midTimeBegin:00"
+            val finalData = "$finalDate $finalTimeBegin:00"
             mSubjectViewModel.addSubject(subject)
+
+            mEventCalendar.addEventCalendar(eventMid)
+            mEventCalendar.addEventCalendar(eventFinal)
+
+            setAlarm(midData,idMid,sid)
+            setAlarm(finalData,idFinal,sid)
+
 
             Toast.makeText(requireContext(),"Successfully add!",Toast.LENGTH_SHORT).show()
 
@@ -159,12 +206,17 @@ class SubjectsManageAdd : Fragment() {
         TimePickerDialog(requireContext(), AlertDialog.THEME_HOLO_DARK,timeSet,cal.get(Calendar.HOUR_OF_DAY),cal.get(Calendar.MINUTE),true).show()
     }
 
-    private fun getDate(tv: TextView){
+    private fun getDate(tv: TextView,date:MutableList<Int>){
+
         val cal = Calendar.getInstance()
         val dpd = DatePickerDialog.OnDateSetListener { datePicker, year, month, dayOfMonth ->
             cal.set(Calendar.DAY_OF_MONTH,dayOfMonth)
             cal.set(Calendar.MONTH,month)
             cal.set(Calendar.YEAR,year)
+
+            date.add(dayOfMonth)
+            date.add(month)
+            date.add(year)
 
 
 
@@ -177,23 +229,6 @@ class SubjectsManageAdd : Fragment() {
 
     }
 
-    private fun setBuilding(tv: TextView){
-
-        val ListBuilding = arrayOf("81","89","88","87")
-
-        val BBuilder = AlertDialog.Builder(requireContext())
-
-        BBuilder.setTitle("Choose Building")
-
-        BBuilder.setSingleChoiceItems(ListBuilding,-1){dialog,i->
-
-            tv.setText(ListBuilding[i])
-
-            dialog.dismiss()
-        }
-
-        BBuilder.show()
-    }
 
     private fun setRoom(tv1: TextView, tv2: TextView){
 
@@ -227,6 +262,18 @@ class SubjectsManageAdd : Fragment() {
         else if (date.minute >= 15 && date.minute <30){ return LocalDateTime.now().withMinute(30) }
         else if (date.minute >= 30 && date.minute < 45){ return LocalDateTime.now().withMinute(45) }
         else{ return date }
+    }
+
+    private fun setAlarm(date:String,rq:Int,SID:String){
+        mAlarmService.setExactAlarm(convertMillis(date),rq,SID)
+    }
+
+    private fun convertMillis(data: String):Long{
+        var sp = SimpleDateFormat("dd/MM/yyyy hh:mm:ss")
+        var date:Date = sp.parse(data)
+        var millis:Long = date.time
+
+        return millis
     }
 
     private fun dialogBuilding(tv:TextView){

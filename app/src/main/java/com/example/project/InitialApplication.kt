@@ -26,10 +26,21 @@ class InitialApplication :Application(){
             val channel1 = NotificationChannel(channelId1, channelName1, NotificationManager.IMPORTANCE_HIGH)
             channel1.group = groupId
 
-            val channelId2 = "event"
-            val channelName2 = "Event"
-            val channel2 = NotificationChannel(channelId2, channelName2, NotificationManager.IMPORTANCE_HIGH)
+            val channelId2 = "event_high"
+            val channelName2 = "Event High"
+            val channel2 = NotificationChannel(channelId2, channelName2, NotificationManager.IMPORTANCE_DEFAULT)
             channel2.group = groupId
+
+            val channelId3 = "event_default"
+            val channelName3 = "Event Default"
+            val channel3 = NotificationChannel(channelId3, channelName3, NotificationManager.IMPORTANCE_DEFAULT)
+            channel3.group = groupId
+
+            val channelId4 = "event_low"
+            val channelName4 = "Event Low"
+            val channel4 = NotificationChannel(channelId4, channelName4, NotificationManager.IMPORTANCE_DEFAULT)
+            channel4.group = groupId
+
 
 
 
@@ -37,6 +48,8 @@ class InitialApplication :Application(){
             manager.createNotificationChannelGroup(group)
             manager.createNotificationChannel(channel1)
             manager.createNotificationChannel(channel2)
+            manager.createNotificationChannel(channel3)
+            manager.createNotificationChannel(channel4)
         }
     }
 }

@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_dark_mode_15202B"
+    tools:context=".Setting.LessonManage.LessonManageAdd">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/color_dark_mode_192734"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/admit_button_update"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
+            android:text="Save"
+            android:textColor="@color/color_dark_mode_192734"
+            android:textSize="12sp"
+            app:background="@color/color_green_2EC1AC"
+            app:backgroundTint="@color/color_green_2EC1AC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/cancel_button_update"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/color_dark_mode_192734"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="134dp">
+
+            <EditText
+                android:id="@+id/lesson_subject_name"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center|left"
+                android:hint="SubjectName"
+                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/lesson_name1"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center|left"
+                android:hint="LessonName1"
+                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_subject_name" />
+
+            <EditText
+                android:id="@+id/lesson_name2"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center|left"
+                android:hint="LessonName2"
+                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name1" />
+
+            <EditText
+                android:id="@+id/lesson_name3"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center|left"
+                android:hint="LessonName3"
+                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name2" />
+
+            <EditText
+                android:id="@+id/lesson_name4"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center|left"
+                android:hint="LessonName4"
+                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name3" />
+
+            <EditText
+                android:id="@+id/lesson_name5"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center|left"
+                android:hint="LessonName5"
+                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name4" />
+
+            <EditText
+                android:id="@+id/lesson_name6"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center|left"
+                android:hint="LessonName6"
+                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name5" />
+
+            <EditText
+                android:id="@+id/lesson_name7"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center|left"
+                android:hint="LessonName7"
+                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name6" />
+
+            <EditText
+                android:id="@+id/lesson_name8"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center|left"
+                android:hint="LessonName8"
+                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name7" />
+
+            <EditText
+                android:id="@+id/lesson_name9"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center|left"
+                android:hint="LessonName9"
+                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name8" />
+
+            <EditText
+                android:id="@+id/lesson_name10"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center|left"
+                android:hint="LessonName10"
+                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name9" />
+
+            <EditText
+                android:id="@+id/lesson_name11"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center|left"
+                android:hint="LessonName11"
+                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name10" />
+
+            <EditText
+                android:id="@+id/lesson_name12"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center|left"
+                android:hint="LessonName12"
+                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name11" />
+
+            <EditText
+                android:id="@+id/lesson_name13"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center|left"
+                android:hint="LessonName13"
+                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name12" />
+
+            <EditText
+                android:id="@+id/lesson_name14"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center|left"
+                android:hint="LessonName14"
+                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name13" />
+
+            <EditText
+                android:id="@+id/lesson_name15"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center|left"
+                android:hint="LessonName15"
+                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name14" />
+
+            <EditText
+                android:id="@+id/lesson_name16"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center|left"
+                android:hint="LessonName16"
+                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name15" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

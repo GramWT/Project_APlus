@@ -22,4 +22,5 @@ interface EventDao {
 
     @Query("SELECT * FROM event_table ORDER BY id ASC")
     fun readAllData(): LiveData<List<Event>>
+
 }

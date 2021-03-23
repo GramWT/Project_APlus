@@ -31,18 +31,21 @@ class EventAdapter: RecyclerView.Adapter<EventAdapter.MyViewHolder>() {
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = eventList[position]
 
+
+
+
         holder.setIsRecyclable(false)
         holder.itemView.event_row.animation = AnimationUtils.loadAnimation(holder.itemView.event_row.context,R.anim.item_slide_right)
 
         holder.itemView.circle_state.animation = AnimationUtils.loadAnimation(holder.itemView.circle_state.context,R.anim.item_slide_left)
 
-//        holder.itemView.event_row.animation = AnimationUtils.loadAnimation(holder.itemView.event_row.context,R.anim.fade_scale_animation)
 
         holder.itemView.title_event.text = currentItem.title
         holder.itemView.date_begin_event.text = currentItem.date_begin
         holder.itemView.date_end_event.text = currentItem.date_end
         holder.itemView.time_begin_event.text = currentItem.time_begin
         holder.itemView.time_end_event.text = currentItem.time_end
+
 
         holder.itemView.event_row.setOnClickListener {
             val action = EventNotificationDirections.actionEventNotificationToEventNotificationView(currentItem)
@@ -66,12 +69,11 @@ class EventAdapter: RecyclerView.Adapter<EventAdapter.MyViewHolder>() {
     }
 
     private fun setState(state: String, im: ImageView){
-            when(state){
-                "Default" -> im.setImageResource(R.drawable.ic_default_color_circle)
-                "High" -> im.setImageResource(R.drawable.ic_high_color_circle)
-                "Normal" -> im.setImageResource(R.drawable.ic_normal_color_circle)
-                "Low" -> im.setImageResource(R.drawable.ic_low_color_circle)
-                else -> im.setImageResource(R.drawable.ic_default_color_circle)
-            }
+        when(state){
+            "Default" -> im.setImageResource(R.drawable.status_event_green)
+            "High" -> im.setImageResource(R.drawable.status_event_red)
+            "Normal" -> im.setImageResource(R.drawable.status_event_green)
+            "Low" -> im.setImageResource(R.drawable.status_event_blue)
+        }
     }
 }

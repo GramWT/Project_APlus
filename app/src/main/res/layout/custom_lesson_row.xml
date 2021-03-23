@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lesson_row"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="@color/color_dark_mode_15202B">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_dark_mode_192734"
+        android:layout_margin="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/lesson_subject_text"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/color_dark_mode_192734"
+                android:gravity="center"
+                android:text="Subject"
+                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/sub_lv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/vpsub"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:minHeight="60dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.504"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.47">
+
+                </androidx.viewpager2.widget.ViewPager2>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <me.relex.circleindicator.CircleIndicator3
+                android:id="@+id/indicate"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/color_dark_mode_192734" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
