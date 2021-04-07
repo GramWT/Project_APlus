@@ -47,7 +47,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
@@ -69,213 +68,487 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
+            <LinearLayout
                 android:id="@+id/lesson_name1"
-                android:layout_width="300dp"
+                android:layout_width="320dp"
                 android:layout_height="50dp"
-                android:gravity="center|left"
-                android:hint="LessonName1"
-                android:textColor="@color/color_dark_mode_FFFFFF"
-                android:textColorHint="@color/color_dark_mode_8899A6"
-                android:textSize="18sp"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_subject_name" />
+                app:layout_constraintTop_toBottomOf="@+id/lesson_subject_name">
 
-            <EditText
+
+                <EditText
+                    android:id="@+id/lesson_name1_text"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:gravity="center|left"
+                    android:hint="LessonName1"
+                    android:textColor="@color/color_dark_mode_FFFFFF"
+                    android:textColorHint="@color/color_dark_mode_8899A6"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/remove_view1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_clear_24" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/lesson_name2"
-                android:layout_width="300dp"
+                android:layout_width="320dp"
                 android:layout_height="50dp"
-                android:gravity="center|left"
-                android:hint="LessonName2"
-                android:textColor="@color/color_dark_mode_FFFFFF"
-                android:textColorHint="@color/color_dark_mode_8899A6"
-                android:textSize="18sp"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name1" />
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name1">
 
-            <EditText
+
+                <EditText
+                    android:id="@+id/lesson_name2_text"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:gravity="center|left"
+                    android:hint="LessonName2"
+                    android:textColor="@color/color_dark_mode_FFFFFF"
+                    android:textColorHint="@color/color_dark_mode_8899A6"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/remove_view2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_clear_24" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/lesson_name3"
-                android:layout_width="300dp"
+                android:layout_width="320dp"
                 android:layout_height="50dp"
-                android:gravity="center|left"
-                android:hint="LessonName3"
-                android:textColor="@color/color_dark_mode_FFFFFF"
-                android:textColorHint="@color/color_dark_mode_8899A6"
-                android:textSize="18sp"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name2" />
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name2">
 
-            <EditText
+
+                <EditText
+                    android:id="@+id/lesson_name3_text"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:gravity="center|left"
+                    android:hint="LessonName3"
+                    android:textColor="@color/color_dark_mode_FFFFFF"
+                    android:textColorHint="@color/color_dark_mode_8899A6"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/remove_view3"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_clear_24" />
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:id="@+id/lesson_name4"
-                android:layout_width="300dp"
+                android:layout_width="320dp"
                 android:layout_height="50dp"
-                android:gravity="center|left"
-                android:hint="LessonName4"
-                android:textColor="@color/color_dark_mode_FFFFFF"
-                android:textColorHint="@color/color_dark_mode_8899A6"
-                android:textSize="18sp"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name3" />
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name3">
 
-            <EditText
+
+                <EditText
+                    android:id="@+id/lesson_name4_text"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:gravity="center|left"
+                    android:hint="LessonName4"
+                    android:textColor="@color/color_dark_mode_FFFFFF"
+                    android:textColorHint="@color/color_dark_mode_8899A6"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/remove_view4"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_clear_24" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/lesson_name5"
-                android:layout_width="300dp"
+                android:layout_width="320dp"
                 android:layout_height="50dp"
-                android:gravity="center|left"
-                android:hint="LessonName5"
-                android:textColor="@color/color_dark_mode_FFFFFF"
-                android:textColorHint="@color/color_dark_mode_8899A6"
-                android:textSize="18sp"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name4" />
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name4">
 
-            <EditText
+
+                <EditText
+                    android:id="@+id/lesson_name5_text"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:gravity="center|left"
+                    android:hint="LessonName5"
+                    android:textColor="@color/color_dark_mode_FFFFFF"
+                    android:textColorHint="@color/color_dark_mode_8899A6"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/remove_view5"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_clear_24" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/lesson_name6"
-                android:layout_width="300dp"
+                android:layout_width="320dp"
                 android:layout_height="50dp"
-                android:gravity="center|left"
-                android:hint="LessonName6"
-                android:textColor="@color/color_dark_mode_FFFFFF"
-                android:textColorHint="@color/color_dark_mode_8899A6"
-                android:textSize="18sp"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name5" />
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name5">
 
-            <EditText
+
+                <EditText
+                    android:id="@+id/lesson_name6_text"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:gravity="center|left"
+                    android:hint="LessonName6"
+                    android:textColor="@color/color_dark_mode_FFFFFF"
+                    android:textColorHint="@color/color_dark_mode_8899A6"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/remove_view6"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_clear_24" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/lesson_name7"
-                android:layout_width="300dp"
+                android:layout_width="320dp"
                 android:layout_height="50dp"
-                android:gravity="center|left"
-                android:hint="LessonName7"
-                android:textColor="@color/color_dark_mode_FFFFFF"
-                android:textColorHint="@color/color_dark_mode_8899A6"
-                android:textSize="18sp"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name6" />
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name6">
 
-            <EditText
+
+                <EditText
+                    android:id="@+id/lesson_name7_text"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:gravity="center|left"
+                    android:hint="LessonName7"
+                    android:textColor="@color/color_dark_mode_FFFFFF"
+                    android:textColorHint="@color/color_dark_mode_8899A6"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/remove_view7"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_clear_24" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/lesson_name8"
-                android:layout_width="300dp"
+                android:layout_width="320dp"
                 android:layout_height="50dp"
-                android:gravity="center|left"
-                android:hint="LessonName8"
-                android:textColor="@color/color_dark_mode_FFFFFF"
-                android:textColorHint="@color/color_dark_mode_8899A6"
-                android:textSize="18sp"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name7" />
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name7">
 
-            <EditText
+
+                <EditText
+                    android:id="@+id/lesson_name8_text"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:gravity="center|left"
+                    android:hint="LessonName8"
+                    android:textColor="@color/color_dark_mode_FFFFFF"
+                    android:textColorHint="@color/color_dark_mode_8899A6"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/remove_view8"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_clear_24" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/lesson_name9"
-                android:layout_width="300dp"
+                android:layout_width="320dp"
                 android:layout_height="50dp"
-                android:gravity="center|left"
-                android:hint="LessonName9"
-                android:textColor="@color/color_dark_mode_FFFFFF"
-                android:textColorHint="@color/color_dark_mode_8899A6"
-                android:textSize="18sp"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name8" />
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name8">
 
-            <EditText
+
+                <EditText
+                    android:id="@+id/lesson_name9_text"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:gravity="center|left"
+                    android:hint="LessonName9"
+                    android:textColor="@color/color_dark_mode_FFFFFF"
+                    android:textColorHint="@color/color_dark_mode_8899A6"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/remove_view9"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_clear_24" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/lesson_name10"
-                android:layout_width="300dp"
+                android:layout_width="320dp"
                 android:layout_height="50dp"
-                android:gravity="center|left"
-                android:hint="LessonName10"
-                android:textColor="@color/color_dark_mode_FFFFFF"
-                android:textColorHint="@color/color_dark_mode_8899A6"
-                android:textSize="18sp"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name9" />
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name9">
 
-            <EditText
+
+                <EditText
+                    android:id="@+id/lesson_name10_text"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:gravity="center|left"
+                    android:hint="LessonName10"
+                    android:textColor="@color/color_dark_mode_FFFFFF"
+                    android:textColorHint="@color/color_dark_mode_8899A6"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/remove_view10"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_clear_24" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/lesson_name11"
-                android:layout_width="300dp"
+                android:layout_width="320dp"
                 android:layout_height="50dp"
-                android:gravity="center|left"
-                android:hint="LessonName11"
-                android:textColor="@color/color_dark_mode_FFFFFF"
-                android:textColorHint="@color/color_dark_mode_8899A6"
-                android:textSize="18sp"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name10" />
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name10">
 
-            <EditText
+
+                <EditText
+                    android:id="@+id/lesson_name11_text"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:gravity="center|left"
+                    android:hint="LessonName11"
+                    android:textColor="@color/color_dark_mode_FFFFFF"
+                    android:textColorHint="@color/color_dark_mode_8899A6"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/remove_view11"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_clear_24" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/lesson_name12"
-                android:layout_width="300dp"
+                android:layout_width="320dp"
                 android:layout_height="50dp"
-                android:gravity="center|left"
-                android:hint="LessonName12"
-                android:textColor="@color/color_dark_mode_FFFFFF"
-                android:textColorHint="@color/color_dark_mode_8899A6"
-                android:textSize="18sp"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name11" />
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name11">
 
-            <EditText
+
+                <EditText
+                    android:id="@+id/lesson_name12_text"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:gravity="center|left"
+                    android:hint="LessonName12"
+                    android:textColor="@color/color_dark_mode_FFFFFF"
+                    android:textColorHint="@color/color_dark_mode_8899A6"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/remove_view12"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_clear_24" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/lesson_name13"
-                android:layout_width="300dp"
+                android:layout_width="320dp"
                 android:layout_height="50dp"
-                android:gravity="center|left"
-                android:hint="LessonName13"
-                android:textColor="@color/color_dark_mode_FFFFFF"
-                android:textColorHint="@color/color_dark_mode_8899A6"
-                android:textSize="18sp"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name12" />
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name12">
 
-            <EditText
+
+                <EditText
+                    android:id="@+id/lesson_name13_text"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:gravity="center|left"
+                    android:hint="LessonName13"
+                    android:textColor="@color/color_dark_mode_FFFFFF"
+                    android:textColorHint="@color/color_dark_mode_8899A6"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/remove_view13"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_clear_24" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/lesson_name14"
-                android:layout_width="300dp"
+                android:layout_width="320dp"
                 android:layout_height="50dp"
-                android:gravity="center|left"
-                android:hint="LessonName14"
-                android:textColor="@color/color_dark_mode_FFFFFF"
-                android:textColorHint="@color/color_dark_mode_8899A6"
-                android:textSize="18sp"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name13" />
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name13">
 
-            <EditText
+
+                <EditText
+                    android:id="@+id/lesson_name14_text"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:gravity="center|left"
+                    android:hint="LessonName14"
+                    android:textColor="@color/color_dark_mode_FFFFFF"
+                    android:textColorHint="@color/color_dark_mode_8899A6"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/remove_view14"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_clear_24" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/lesson_name15"
-                android:layout_width="300dp"
+                android:layout_width="320dp"
                 android:layout_height="50dp"
-                android:gravity="center|left"
-                android:hint="LessonName15"
-                android:textColor="@color/color_dark_mode_FFFFFF"
-                android:textColorHint="@color/color_dark_mode_8899A6"
-                android:textSize="18sp"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name14" />
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name14">
 
-            <EditText
+
+                <EditText
+                    android:id="@+id/lesson_name15_text"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:gravity="center|left"
+                    android:hint="LessonName15"
+                    android:textColor="@color/color_dark_mode_FFFFFF"
+                    android:textColorHint="@color/color_dark_mode_8899A6"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/remove_view15"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_clear_24" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/lesson_name16"
-                android:layout_width="300dp"
+                android:layout_width="320dp"
                 android:layout_height="50dp"
-                android:gravity="center|left"
-                android:hint="LessonName16"
-                android:textColor="@color/color_dark_mode_FFFFFF"
-                android:textColorHint="@color/color_dark_mode_8899A6"
-                android:textSize="18sp"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name15" />
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name15">
+
+
+                <EditText
+                    android:id="@+id/lesson_name16_text"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:gravity="center|left"
+                    android:hint="LessonName16"
+                    android:textColor="@color/color_dark_mode_FFFFFF"
+                    android:textColorHint="@color/color_dark_mode_8899A6"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/remove_view16"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_clear_24" />
+            </LinearLayout>
+
 
             <Button
                 android:id="@+id/add_lesson_button"
@@ -283,9 +556,12 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="24dp"
                 android:text="Add"
+                android:textColor="@color/color_dark_mode_192734"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lesson_name16" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

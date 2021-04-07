@@ -60,8 +60,10 @@ class LessonNotification : Fragment() {
 
         mLessonModel = ViewModelProvider(this).get(LessonViewModel::class.java)
 
+        val at = activity as Context
 
-        var adapter = LessonAdapter(mLessonModel)
+
+        var adapter = LessonAdapter(mLessonModel,at)
         binding.lessonRecyclerView.adapter = adapter
 
 
