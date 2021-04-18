@@ -165,7 +165,7 @@ class SubjectsManageAdd : Fragment() {
 
             val eventMid = EventCalendar(mid,1,eventMid[0],eventMid[1],eventMid[2],name)
 
-            val eventFinal = EventCalendar(final,1,eventFinal[0],eventFinal[1],eventFinal[2],name)
+            val eventFinal = EventCalendar(final,2,eventFinal[0],eventFinal[1],eventFinal[2],name)
 
             val midData = "$midDate $midTimeBegin:00"
             val finalData = "$finalDate $finalTimeBegin:00"

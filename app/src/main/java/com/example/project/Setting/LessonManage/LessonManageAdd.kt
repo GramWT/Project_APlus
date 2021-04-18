@@ -226,9 +226,18 @@ class LessonManageAdd : Fragment() {
         val l08 = lesson_name8_text.text.toString()
         val l09 = lesson_name9_text.text.toString()
         val l10 = lesson_name10_text.text.toString()
+        val l11 = lesson_name11_text.text.toString()
+        val l12 = lesson_name12_text.text.toString()
+        val l13 = lesson_name13_text.text.toString()
+        val l14 = lesson_name14_text.text.toString()
+        val l15 = lesson_name15_text.text.toString()
+        val l16 = lesson_name16_text.text.toString()
 
         if (inputCheck(sid,l01)){
-            val lesson = Lesson(0,sid,l01,l02,l03,l04,l05,l06,l07,l08,l09,l10,0,0,0,0,0,0,0,0,0,0)
+            val lesson = Lesson(0,sid,l01,l02,l03,l04,l05,l06,l07,l08,l09,l10,l11,l12,l13,l14,l15,l16,0,0,0,0,0,0,0,0,0,
+            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
 
             mLessonViewModel.addLesson(lesson)
 

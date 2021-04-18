@@ -64,6 +64,7 @@ class LessonNotification : Fragment() {
 
 
         var adapter = LessonAdapter(mLessonModel,at)
+
         binding.lessonRecyclerView.adapter = adapter
 
 

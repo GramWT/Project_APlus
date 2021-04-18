@@ -26,7 +26,7 @@ class SubLessonAdapter():RecyclerView.Adapter<SubLessonAdapter.MyViewHolder>() {
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
 
-        holder.itemView.lesson_name.text = "hoihjodjosdpskjadopjaopdjoasijd"
+        holder.itemView.lesson_name.text = "set"
     }
 
     override fun getItemCount(): Int {

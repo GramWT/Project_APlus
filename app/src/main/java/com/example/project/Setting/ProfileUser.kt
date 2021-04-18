@@ -9,8 +9,10 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.project.DataBase.model.User
-import com.example.project.DataBase.viewmodel.UserViewModel
+import com.example.project.DataBase.viewmodel.*
+import com.example.project.MainActivity
 import com.example.project.R
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.dialog_change_avatar.view.*
 import kotlinx.android.synthetic.main.fragment_profile_user.view.*
 
@@ -18,6 +20,23 @@ import kotlinx.android.synthetic.main.fragment_profile_user.view.*
 class ProfileUser : Fragment() {
 
     private lateinit var mUserViewModel: UserViewModel
+    private lateinit var mCalendarViewModel: EventCalendarViewModel
+    private lateinit var mLessonViewModel: LessonViewModel
+    private lateinit var mEventViewModel: EventViewModel
+    private lateinit var mSubjectViewModel: SubjectViewModel
+
+
+    override fun onResume() {
+        super.onResume()
+        val a = activity as MainActivity
+        a.bottom_navigation.visibility = View.GONE
+    }
+
+    override fun onStop() {
+        super.onStop()
+        val a = activity as MainActivity
+        a.bottom_navigation.visibility = View.VISIBLE
+    }
 
 
 
@@ -30,8 +49,23 @@ class ProfileUser : Fragment() {
         layout.profileUser.setImageResource(R.drawable.ic_man)
 
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+        mLessonViewModel = ViewModelProvider(this).get(LessonViewModel::class.java)
+        mEventViewModel = ViewModelProvider(this).get(EventViewModel::class.java)
+        mSubjectViewModel = ViewModelProvider(this).get(SubjectViewModel::class.java)
+        mCalendarViewModel = ViewModelProvider(this).get(EventCalendarViewModel::class.java)
+
 
         checkAvatar(layout)
+
+        layout.delete_user.setOnClickListener {
+            mCalendarViewModel.deleteAllEventDatabase()
+            mLessonViewModel.deleteAllLesson()
+            mSubjectViewModel.deleteAllSubject()
+            mEventViewModel.deleteAllEvent()
+            mUserViewModel.deleteAllUser()
+            val a = activity as MainActivity
+            a.bottom_navigation.selectedItemId = R.id.menu_exam
+        }
 
         layout.update_profile.setOnClickListener {
 
