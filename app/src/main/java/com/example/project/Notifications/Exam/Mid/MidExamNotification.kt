@@ -20,6 +20,7 @@ class MidExamNotification : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+
         binding = FragmentMidExamNotificationBinding.inflate(layoutInflater)
 
         var at = activity as Context

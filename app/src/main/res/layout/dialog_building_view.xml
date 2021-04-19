@@ -40,7 +40,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/building_image"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:background="@color/color_dark_mode_FFFFFF"
@@ -63,5 +63,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+        app:layout_constraintTop_toBottomOf="@+id/building_image" />
 </androidx.constraintlayout.widget.ConstraintLayout>

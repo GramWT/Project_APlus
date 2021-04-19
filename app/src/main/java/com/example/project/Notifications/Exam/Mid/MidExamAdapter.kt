@@ -126,9 +126,29 @@ class MidExamAdapter(context: Context):RecyclerView.Adapter<MidExamAdapter.MyVie
 
         val mAlert = mBuilder.show()
 
+        if (Building == "81"){
+            ViewBuilding.building_image.setImageResource(R.drawable.b81)
+        }
+        else if (Building == "83"){
+            ViewBuilding.building_image.setImageResource(R.drawable.b83)
+        }
+        else if (Building == "84"){
+            ViewBuilding.building_image.setImageResource(R.drawable.b84)
+        }
+        else if (Building == "86"){
+            ViewBuilding.building_image.setImageResource(R.drawable.b86)
+        }
+        else if (Building == "88"){
+            ViewBuilding.building_image.setImageResource(R.drawable.b88)
+        }
+        else if (Building == "89"){
+            ViewBuilding.building_image.setImageResource(R.drawable.b89)
+        }
+
         ViewBuilding.navigate_button.setOnClickListener {
             findLocation(Building)
         }
+
 
         ViewBuilding.exit_button.setOnClickListener {
             mAlert.dismiss()
