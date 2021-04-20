@@ -153,6 +153,10 @@ class LessonAdapter(var mLessonViewModel:LessonViewModel, var mcontext:Context):
                 .setView(checkLesson)
 
 
+
+
+
+
         checkLesson.check_list_lesson.adapter = Adapter
         checkLesson.check_list_lesson.setItemViewCacheSize(100)
 
@@ -170,6 +174,10 @@ class LessonAdapter(var mLessonViewModel:LessonViewModel, var mcontext:Context):
 
 
         val mAlert = mBuilder.show()
+
+        val alertDialog = mBuilder.create()
+
+
 
         checkLesson.save_lesson_state.setOnClickListener {
             mAlert.dismiss()

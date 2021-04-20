@@ -49,6 +49,7 @@
             android:layout_height="50dp"
             android:clickable="false"
             android:text="Check"
+            android:textColor="@color/color_dark_mode_192734"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -58,6 +59,7 @@
             android:layout_height="50dp"
             android:clickable="false"
             android:text="Check"
+            android:textColor="@color/color_dark_mode_192734"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/checkBox1"
             app:layout_constraintTop_toBottomOf="@+id/checkBox1" />
@@ -68,6 +70,7 @@
             android:layout_height="50dp"
             android:clickable="false"
             android:text="Check"
+            android:textColor="@color/color_dark_mode_192734"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/checkBox2"
             app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
@@ -78,6 +81,7 @@
             android:layout_height="50dp"
             android:clickable="false"
             android:text="Check"
+            android:textColor="@color/color_dark_mode_192734"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/checkBox3"
@@ -90,6 +94,7 @@
             android:paddingStart="10dp"
             android:textSize="16sp"
             android:text="READ"
+            android:textColor="@color/color_dark_mode_192734"
             android:textStyle="bold"
             android:gravity="left|center"
             app:layout_constraintEnd_toStartOf="@+id/checkBox1"
@@ -102,6 +107,7 @@
             android:layout_height="50dp"
             android:paddingStart="10dp"
             android:text="KNOW"
+            android:textColor="@color/color_dark_mode_192734"
             android:textStyle="bold"
             android:textSize="16sp"
             android:gravity="left|center"
@@ -117,6 +123,7 @@
             android:text="LEARN"
             android:textStyle="bold"
             android:textSize="16sp"
+            android:textColor="@color/color_dark_mode_192734"
             android:gravity="left|center"
             app:layout_constraintEnd_toStartOf="@+id/checkBox3"
             app:layout_constraintStart_toStartOf="parent"
@@ -131,6 +138,7 @@
             android:textStyle="bold"
             android:textSize="16sp"
             android:gravity="left|center"
+            android:textColor="@color/color_dark_mode_192734"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/checkBox4"
             app:layout_constraintStart_toStartOf="parent"

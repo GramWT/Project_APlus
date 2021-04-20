@@ -31,6 +31,8 @@ class LessonNotification : Fragment() {
 
     private lateinit var lessonList:List<Lesson>
 
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

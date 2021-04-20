@@ -48,6 +48,7 @@ class LessonManageAdd : Fragment() {
         view.remove_view1.setOnClickListener {
             view.lesson_name1.visibility = View.GONE
             checkAddButton(view)
+
         }
         view.remove_view2.setOnClickListener {
             view.lesson_name2.visibility = View.GONE

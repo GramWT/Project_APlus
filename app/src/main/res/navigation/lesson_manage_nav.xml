@@ -36,6 +36,9 @@
         <action
             android:id="@+id/action_lessonManageUpdate_to_lessonManage"
             app:destination="@id/lessonManage" />
+        <argument
+            android:name="Lesson"
+            app:argType="com.example.project.DataBase.model.Lesson" />
     </fragment>
     <fragment
         android:id="@+id/navSetting2"
