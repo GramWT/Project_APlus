@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.project.AlarmManager.Service.AlarmService
+import com.example.project.DataBase.model.Subject
 import com.example.project.DataBase.model.User
 import com.example.project.DataBase.viewmodel.*
 import com.example.project.MainActivity
@@ -24,6 +26,8 @@ class ProfileUser : Fragment() {
     private lateinit var mLessonViewModel: LessonViewModel
     private lateinit var mEventViewModel: EventViewModel
     private lateinit var mSubjectViewModel: SubjectViewModel
+    private lateinit var mAlarmService: AlarmService
+    private lateinit var mSubject:List<Subject>
 
 
     override fun onResume() {
@@ -48,6 +52,7 @@ class ProfileUser : Fragment() {
         val layout = inflater.inflate(R.layout.fragment_profile_user, container, false)
         layout.profileUser.setImageResource(R.drawable.ic_man)
 
+        mAlarmService = AlarmService(requireContext())
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         mLessonViewModel = ViewModelProvider(this).get(LessonViewModel::class.java)
         mEventViewModel = ViewModelProvider(this).get(EventViewModel::class.java)
@@ -58,11 +63,29 @@ class ProfileUser : Fragment() {
         checkAvatar(layout)
 
         layout.delete_user.setOnClickListener {
+
+
+            mSubjectViewModel.readAllData.observe(viewLifecycleOwner , {subject ->
+                mSubject = subject
+                for (i in 0 .. mSubject.size - 1){
+
+                    val idMid:Int = "1${mSubject[i].id}".toInt()
+                    val idFinal:Int = "2${mSubject[i].id}".toInt()
+
+
+                    println("Delete ID :${mSubject[i].id}")
+                    mAlarmService.cancelAlarm(idMid)
+                    mAlarmService.cancelAlarm(idFinal)
+                }
+
+            })
+
             mCalendarViewModel.deleteAllEventDatabase()
             mLessonViewModel.deleteAllLesson()
             mSubjectViewModel.deleteAllSubject()
             mEventViewModel.deleteAllEvent()
             mUserViewModel.deleteAllUser()
+
             val a = activity as MainActivity
             a.bottom_navigation.selectedItemId = R.id.menu_exam
         }

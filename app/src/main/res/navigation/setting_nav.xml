@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_setting_to_navLessonManage"
             app:destination="@id/navLessonManage" />
+        <action
+            android:id="@+id/action_setting_to_preferenceView"
+            app:destination="@id/preferenceView" />
     </fragment>
     <fragment
         android:id="@+id/profileUser"
@@ -57,6 +60,15 @@
         tools:layout="@layout/fragment_nav_lesson_manage" >
         <action
             android:id="@+id/action_navLessonManage_to_setting"
+            app:destination="@id/setting" />
+    </fragment>
+    <fragment
+        android:id="@+id/preferenceView"
+        android:name="com.example.project.PreferenceView"
+        android:label="fragment_preference_view"
+        tools:layout="@layout/fragment_preference_view" >
+        <action
+            android:id="@+id/action_preferenceView_to_setting"
             app:destination="@id/setting" />
     </fragment>
 </navigation>

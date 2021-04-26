@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/color_dark_mode_15202B"
     tools:context=".Setting.LessonManage.LessonManageUpdate">
 
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/admit_button_update"
+            android:id="@+id/save_update_lesson"
             android:layout_width="70dp"
             android:layout_height="40dp"
             android:layout_marginTop="8dp"
@@ -43,7 +43,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,7 +89,7 @@
                     android:textSize="18sp" />
 
                 <ImageView
-                    android:id="@+id/remove_view1"
+                    android:id="@+id/remove_view_update_1"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginTop="10dp"
@@ -97,470 +97,529 @@
                     android:src="@drawable/ic_baseline_clear_24" />
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/lesson_name2"
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout2"
                 android:layout_width="320dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
-                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lesson_name1">
 
-
                 <EditText
-                    android:id="@+id/lesson_name2_text"
+                    android:id="@+id/lesson_text_2"
                     android:layout_width="280dp"
                     android:layout_height="50dp"
                     android:gravity="center|left"
                     android:hint="LessonName2"
                     android:textColor="@color/color_dark_mode_FFFFFF"
                     android:textColorHint="@color/color_dark_mode_8899A6"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/remove_view2"
+                    android:id="@+id/remove_update_2"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_clear_24" />
-            </LinearLayout>
+                    android:src="@drawable/ic_baseline_clear_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lesson_text_2"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-                android:id="@+id/lesson_name3"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout3"
                 android:layout_width="320dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
-                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name2">
-
+                app:layout_constraintTop_toBottomOf="@+id/layout2">
 
                 <EditText
-                    android:id="@+id/lesson_name3_text"
+                    android:id="@+id/lesson_text_3"
                     android:layout_width="280dp"
                     android:layout_height="50dp"
                     android:gravity="center|left"
                     android:hint="LessonName3"
                     android:textColor="@color/color_dark_mode_FFFFFF"
                     android:textColorHint="@color/color_dark_mode_8899A6"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/remove_view3"
+                    android:id="@+id/remove_update_3"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_clear_24" />
-            </LinearLayout>
+                    android:src="@drawable/ic_baseline_clear_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lesson_text_3"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-            <LinearLayout
-                android:id="@+id/lesson_name4"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout4"
                 android:layout_width="320dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
-                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name3">
-
+                app:layout_constraintTop_toBottomOf="@+id/layout3">
 
                 <EditText
-                    android:id="@+id/lesson_name4_text"
+                    android:id="@+id/lesson_text_4"
                     android:layout_width="280dp"
                     android:layout_height="50dp"
                     android:gravity="center|left"
                     android:hint="LessonName4"
                     android:textColor="@color/color_dark_mode_FFFFFF"
                     android:textColorHint="@color/color_dark_mode_8899A6"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/remove_view4"
+                    android:id="@+id/remove_update_4"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_clear_24" />
-            </LinearLayout>
+                    android:src="@drawable/ic_baseline_clear_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lesson_text_4"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-                android:id="@+id/lesson_name5"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout5"
                 android:layout_width="320dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
-                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name4">
-
+                app:layout_constraintTop_toBottomOf="@+id/layout4">
 
                 <EditText
-                    android:id="@+id/lesson_name5_text"
+                    android:id="@+id/lesson_text_5"
                     android:layout_width="280dp"
                     android:layout_height="50dp"
                     android:gravity="center|left"
                     android:hint="LessonName5"
                     android:textColor="@color/color_dark_mode_FFFFFF"
                     android:textColorHint="@color/color_dark_mode_8899A6"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/remove_view5"
+                    android:id="@+id/remove_update_5"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_clear_24" />
-            </LinearLayout>
+                    android:src="@drawable/ic_baseline_clear_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lesson_text_5"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-                android:id="@+id/lesson_name6"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout6"
                 android:layout_width="320dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
-                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name5">
-
+                app:layout_constraintTop_toBottomOf="@+id/layout5">
 
                 <EditText
-                    android:id="@+id/lesson_name6_text"
+                    android:id="@+id/lesson_text_6"
                     android:layout_width="280dp"
                     android:layout_height="50dp"
                     android:gravity="center|left"
                     android:hint="LessonName6"
                     android:textColor="@color/color_dark_mode_FFFFFF"
                     android:textColorHint="@color/color_dark_mode_8899A6"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/remove_view6"
+                    android:id="@+id/remove_update_6"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_clear_24" />
-            </LinearLayout>
+                    android:src="@drawable/ic_baseline_clear_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lesson_text_6"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-                android:id="@+id/lesson_name7"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout7"
                 android:layout_width="320dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
-                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name6">
-
+                app:layout_constraintTop_toBottomOf="@+id/layout6">
 
                 <EditText
-                    android:id="@+id/lesson_name7_text"
+                    android:id="@+id/lesson_text_7"
                     android:layout_width="280dp"
                     android:layout_height="50dp"
                     android:gravity="center|left"
                     android:hint="LessonName7"
                     android:textColor="@color/color_dark_mode_FFFFFF"
                     android:textColorHint="@color/color_dark_mode_8899A6"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/remove_view7"
+                    android:id="@+id/remove_update_7"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_clear_24" />
-            </LinearLayout>
+                    android:src="@drawable/ic_baseline_clear_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lesson_text_7"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-                android:id="@+id/lesson_name8"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout8"
                 android:layout_width="320dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
-                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name7">
-
+                app:layout_constraintTop_toBottomOf="@+id/layout7">
 
                 <EditText
-                    android:id="@+id/lesson_name8_text"
+                    android:id="@+id/lesson_text_8"
                     android:layout_width="280dp"
                     android:layout_height="50dp"
                     android:gravity="center|left"
                     android:hint="LessonName8"
                     android:textColor="@color/color_dark_mode_FFFFFF"
                     android:textColorHint="@color/color_dark_mode_8899A6"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/remove_view8"
+                    android:id="@+id/remove_update_8"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_clear_24" />
-            </LinearLayout>
+                    android:src="@drawable/ic_baseline_clear_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lesson_text_8"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-                android:id="@+id/lesson_name9"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout9"
                 android:layout_width="320dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
-                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name8">
-
+                app:layout_constraintTop_toBottomOf="@+id/layout8">
 
                 <EditText
-                    android:id="@+id/lesson_name9_text"
+                    android:id="@+id/lesson_text_9"
                     android:layout_width="280dp"
                     android:layout_height="50dp"
                     android:gravity="center|left"
                     android:hint="LessonName9"
                     android:textColor="@color/color_dark_mode_FFFFFF"
                     android:textColorHint="@color/color_dark_mode_8899A6"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/remove_view9"
+                    android:id="@+id/remove_update_9"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_clear_24" />
-            </LinearLayout>
+                    android:src="@drawable/ic_baseline_clear_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lesson_text_9"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-                android:id="@+id/lesson_name10"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout10"
                 android:layout_width="320dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
-                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name9">
-
+                app:layout_constraintTop_toBottomOf="@+id/layout9">
 
                 <EditText
-                    android:id="@+id/lesson_name10_text"
+                    android:id="@+id/lesson_text_10"
                     android:layout_width="280dp"
                     android:layout_height="50dp"
                     android:gravity="center|left"
                     android:hint="LessonName10"
                     android:textColor="@color/color_dark_mode_FFFFFF"
                     android:textColorHint="@color/color_dark_mode_8899A6"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/remove_view10"
+                    android:id="@+id/remove_update_10"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_clear_24" />
-            </LinearLayout>
+                    android:src="@drawable/ic_baseline_clear_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lesson_text_10"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-                android:id="@+id/lesson_name11"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout11"
                 android:layout_width="320dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
-                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name10">
-
+                app:layout_constraintTop_toBottomOf="@+id/layout10">
 
                 <EditText
-                    android:id="@+id/lesson_name11_text"
+                    android:id="@+id/lesson_text_11"
                     android:layout_width="280dp"
                     android:layout_height="50dp"
                     android:gravity="center|left"
                     android:hint="LessonName11"
                     android:textColor="@color/color_dark_mode_FFFFFF"
                     android:textColorHint="@color/color_dark_mode_8899A6"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/remove_view11"
+                    android:id="@+id/remove_update_11"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_clear_24" />
-            </LinearLayout>
+                    android:src="@drawable/ic_baseline_clear_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lesson_text_11"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-                android:id="@+id/lesson_name12"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout12"
                 android:layout_width="320dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
-                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name11">
-
+                app:layout_constraintTop_toBottomOf="@+id/layout11">
 
                 <EditText
-                    android:id="@+id/lesson_name12_text"
+                    android:id="@+id/lesson_text_12"
                     android:layout_width="280dp"
                     android:layout_height="50dp"
                     android:gravity="center|left"
                     android:hint="LessonName12"
                     android:textColor="@color/color_dark_mode_FFFFFF"
                     android:textColorHint="@color/color_dark_mode_8899A6"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/remove_view12"
+                    android:id="@+id/remove_update_12"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_clear_24" />
-            </LinearLayout>
+                    android:src="@drawable/ic_baseline_clear_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lesson_text_12"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-                android:id="@+id/lesson_name13"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout13"
                 android:layout_width="320dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
-                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name12">
-
+                app:layout_constraintTop_toBottomOf="@+id/layout12">
 
                 <EditText
-                    android:id="@+id/lesson_name13_text"
+                    android:id="@+id/lesson_text_13"
                     android:layout_width="280dp"
                     android:layout_height="50dp"
                     android:gravity="center|left"
                     android:hint="LessonName13"
                     android:textColor="@color/color_dark_mode_FFFFFF"
                     android:textColorHint="@color/color_dark_mode_8899A6"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/remove_view13"
+                    android:id="@+id/remove_update_13"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_clear_24" />
-            </LinearLayout>
+                    android:src="@drawable/ic_baseline_clear_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lesson_text_13"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-                android:id="@+id/lesson_name14"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout14"
                 android:layout_width="320dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
-                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name13">
-
+                app:layout_constraintTop_toBottomOf="@+id/layout13">
 
                 <EditText
-                    android:id="@+id/lesson_name14_text"
+                    android:id="@+id/lesson_text_14"
                     android:layout_width="280dp"
                     android:layout_height="50dp"
                     android:gravity="center|left"
                     android:hint="LessonName14"
                     android:textColor="@color/color_dark_mode_FFFFFF"
                     android:textColorHint="@color/color_dark_mode_8899A6"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/remove_view14"
+                    android:id="@+id/remove_update_14"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_clear_24" />
-            </LinearLayout>
+                    android:src="@drawable/ic_baseline_clear_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lesson_text_14"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-                android:id="@+id/lesson_name15"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout15"
                 android:layout_width="320dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
-                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name14">
-
+                app:layout_constraintTop_toBottomOf="@+id/layout14">
 
                 <EditText
-                    android:id="@+id/lesson_name15_text"
+                    android:id="@+id/lesson_text_15"
                     android:layout_width="280dp"
                     android:layout_height="50dp"
                     android:gravity="center|left"
                     android:hint="LessonName15"
                     android:textColor="@color/color_dark_mode_FFFFFF"
                     android:textColorHint="@color/color_dark_mode_8899A6"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/remove_view15"
+                    android:id="@+id/remove_update_15"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_clear_24" />
-            </LinearLayout>
+                    android:src="@drawable/ic_baseline_clear_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lesson_text_15"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-                android:id="@+id/lesson_name16"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout16"
                 android:layout_width="320dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
-                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name15">
-
+                app:layout_constraintTop_toBottomOf="@+id/layout15">
 
                 <EditText
-                    android:id="@+id/lesson_name16_text"
+                    android:id="@+id/lesson_text_16"
                     android:layout_width="280dp"
                     android:layout_height="50dp"
                     android:gravity="center|left"
                     android:hint="LessonName16"
                     android:textColor="@color/color_dark_mode_FFFFFF"
                     android:textColorHint="@color/color_dark_mode_8899A6"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/remove_view16"
+                    android:id="@+id/remove_update_16"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_clear_24" />
-            </LinearLayout>
-
+                    android:src="@drawable/ic_baseline_clear_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lesson_text_16"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <Button
-                android:id="@+id/add_lesson_button"
+                android:id="@+id/add_lesson_update_button"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="24dp"
                 android:text="Add"
                 android:textColor="@color/color_dark_mode_192734"
-                android:background="@color/color_green_2EC1AC"
-                android:backgroundTint="@color/color_green_2EC1AC"
+                app:background="@color/color_green_2EC1AC"
+                app:backgroundTint="@color/color_green_2EC1AC"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name16" />
+                app:layout_constraintTop_toBottomOf="@+id/layout16" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

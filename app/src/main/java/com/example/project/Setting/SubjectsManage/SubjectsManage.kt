@@ -82,10 +82,14 @@ class SubjectsManage : Fragment() {
 
             mSubjectModel.readAllData.observe(viewLifecycleOwner , {subject ->
                 mSubject = subject
-                for (i in 0 .. mSubject.size - 1){
+                for (i in mSubject.indices){
 
                     val idMid:Int = "1${mSubject[i].id}".toInt()
                     val idFinal:Int = "2${mSubject[i].id}".toInt()
+
+                    println("List Id : ${mSubject[i].id}")
+
+
 
                     mAlarmService.cancelAlarm(idMid)
                     mAlarmService.cancelAlarm(idFinal)

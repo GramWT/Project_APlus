@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.project.DataBase.model.Subject
@@ -67,6 +68,13 @@ class Setting : Fragment() {
         binding.lessonManageSetting.setOnClickListener {
             val action = SettingDirections.actionSettingToNavLessonManage()
             findNavController().navigate(action)
+        }
+
+        binding.preference.setOnClickListener {
+            val action = SettingDirections.actionSettingToPreferenceView()
+            findNavController().navigate(action)
+
+
         }
 
 

@@ -185,11 +185,6 @@ class LessonManageAdd : Fragment() {
 
         }
         checkAddButton(view)
-
-
-
-
-
     }
 
     private fun setLessonVisible(view: View){

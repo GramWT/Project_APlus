@@ -47,6 +47,8 @@ class LessonManage : Fragment() {
         })
 
         binding.lessonManageRecycleView.adapter = adapter
+
+        binding.lessonManageRecycleView.setHasFixedSize(true)
         gridLayoutManager = GridLayoutManager(requireContext(),1, LinearLayoutManager.VERTICAL,false)
 
         binding.lessonManageRecycleView.layoutManager = gridLayoutManager

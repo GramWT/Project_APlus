@@ -158,6 +158,8 @@ class SubjectsManageAdd : Fragment() {
         val idMid:Int = "1${setId.toString()}".toInt()
         val idFinal:Int = "2${setId.toString()}".toInt()
 
+        println("My ID : ${setId}")
+
         if (inputCheck(sid,name,midDate,finalDate,midTimeBegin,midTimeEnd,finalTimeBegin,finalTimeEnd,midBuilding,finalBuilding,midRoom,finalRoom)){
             val subject = Subject(setId,sid,name,midBuilding,midRoom,midTimeBegin,midTimeEnd,midDate,finalBuilding,finalRoom,finalTimeBegin,finalTimeEnd,finalDate)
 

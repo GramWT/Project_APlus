@@ -1,7 +1,10 @@
 package com.example.project
 
+import android.content.SharedPreferences
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.isInvisible
 import androidx.fragment.app.Fragment
 import com.example.project.Calendar.EventCalendar
@@ -26,7 +29,18 @@ class MainActivity : AppCompatActivity() {
         val calendar = EventCalendar()
         val setting = NavSetting()
 
+        val appSettingPrefs: SharedPreferences = getSharedPreferences("AppSettingPrefs", MODE_PRIVATE)
+        val isNightModeOn: Boolean = appSettingPrefs.getBoolean("NightMode",true)
 
+        if (isNightModeOn){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
+            println(11)
+        }else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+
+            println(22)
+        }
 
         makeCurrentFragment(exam)
 
@@ -54,6 +68,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
     fun hideBottomNav(){
         bottom_navigation.isInvisible = true
 
@@ -62,6 +77,7 @@ class MainActivity : AppCompatActivity() {
     fun showBottomNav(){
         bottom_navigation.isInvisible = false
     }
+
 
 
 
