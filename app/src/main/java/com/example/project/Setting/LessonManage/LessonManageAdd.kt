@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.project.DataBase.model.Lesson
 import com.example.project.DataBase.viewmodel.LessonViewModel
 import com.example.project.R
+import kotlinx.android.synthetic.main.custom_lesson_list_row.view.*
 import kotlinx.android.synthetic.main.fragment_lesson_manage_add.*
 import kotlinx.android.synthetic.main.fragment_lesson_manage_add.view.*
 
@@ -46,68 +47,83 @@ class LessonManageAdd : Fragment() {
         }
 
         view.remove_view1.setOnClickListener {
-            view.lesson_name1.visibility = View.GONE
+            sortText1(view)
+            sortLessonAdd(view)
             checkAddButton(view)
 
         }
         view.remove_view2.setOnClickListener {
-            view.lesson_name2.visibility = View.GONE
+            sortText2(view)
+            sortLessonAdd(view)
             checkAddButton(view)
         }
         view.remove_view3.setOnClickListener {
-            view.lesson_name3.visibility = View.GONE
+            sortText3(view)
+            sortLessonAdd(view)
             checkAddButton(view)
         }
         view.remove_view4.setOnClickListener {
-            view.lesson_name4.visibility = View.GONE
+            sortText4(view)
+            sortLessonAdd(view)
             checkAddButton(view)
         }
         view.remove_view5.setOnClickListener {
-            view.lesson_name5.visibility = View.GONE
+            sortText5(view)
+            sortLessonAdd(view)
             checkAddButton(view)
         }
         view.remove_view6.setOnClickListener {
-            view.lesson_name6.visibility = View.GONE
+            sortText6(view)
+            sortLessonAdd(view)
             checkAddButton(view)
         }
         view.remove_view7.setOnClickListener {
-            view.lesson_name7.visibility = View.GONE
+            sortText7(view)
+            sortLessonAdd(view)
             checkAddButton(view)
         }
         view.remove_view8.setOnClickListener {
-            view.lesson_name8.visibility = View.GONE
+            sortText8(view)
+            sortLessonAdd(view)
             checkAddButton(view)
         }
         view.remove_view9.setOnClickListener {
-            view.lesson_name9.visibility = View.GONE
+            sortText9(view)
+            sortLessonAdd(view)
             checkAddButton(view)
         }
         view.remove_view10.setOnClickListener {
-            view.lesson_name10.visibility = View.GONE
+            sortText10(view)
+            sortLessonAdd(view)
             checkAddButton(view)
         }
         view.remove_view11.setOnClickListener {
-            view.lesson_name11.visibility = View.GONE
+            sortText11(view)
+            sortLessonAdd(view)
             checkAddButton(view)
         }
         view.remove_view12.setOnClickListener {
-            view.lesson_name12.visibility = View.GONE
+            sortText12(view)
+            sortLessonAdd(view)
             checkAddButton(view)
         }
         view.remove_view13.setOnClickListener {
-            view.lesson_name13.visibility = View.GONE
+            sortText13(view)
+            sortLessonAdd(view)
             checkAddButton(view)
         }
         view.remove_view14.setOnClickListener {
-            view.lesson_name14.visibility = View.GONE
+            sortText14(view)
+            sortLessonAdd(view)
             checkAddButton(view)
         }
         view.remove_view15.setOnClickListener {
-            view.lesson_name15.visibility = View.GONE
+            sortText15(view)
+            sortLessonAdd(view)
             checkAddButton(view)
         }
         view.remove_view16.setOnClickListener {
-            view.lesson_name16.visibility = View.GONE
+            sortLessonAdd(view)
             checkAddButton(view)
         }
 
@@ -115,6 +131,1027 @@ class LessonManageAdd : Fragment() {
         mLessonViewModel = ViewModelProvider(this).get(LessonViewModel::class.java)
 
         return view
+    }
+
+    private fun sortText1(view: View){
+        if (view.lesson_name16.visibility == View.VISIBLE){
+            view.lesson_name1_text.setText(view.lesson_name2_text.text.toString())
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+            view.lesson_name15_text.setText(view.lesson_name16_text.text.toString())
+        }
+        else if (view.lesson_name15.visibility == View.VISIBLE){
+            view.lesson_name1_text.setText(view.lesson_name2_text.text.toString())
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+        }
+        else if (view.lesson_name14.visibility == View.VISIBLE){
+            view.lesson_name1_text.setText(view.lesson_name2_text.text.toString())
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+        }
+        else if (view.lesson_name13.visibility == View.VISIBLE){
+            view.lesson_name1_text.setText(view.lesson_name2_text.text.toString())
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+        }
+        else if (view.lesson_name12.visibility == View.VISIBLE){
+            view.lesson_name1_text.setText(view.lesson_name2_text.text.toString())
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+        }
+        else if (view.lesson_name11.visibility == View.VISIBLE){
+            view.lesson_name1_text.setText(view.lesson_name2_text.text.toString())
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+        }
+        else if (view.lesson_name10.visibility == View.VISIBLE){
+            view.lesson_name1_text.setText(view.lesson_name2_text.text.toString())
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+        }
+        else if (view.lesson_name9.visibility == View.VISIBLE){
+            view.lesson_name1_text.setText(view.lesson_name2_text.text.toString())
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+        }
+        else if (view.lesson_name8.visibility == View.VISIBLE){
+            view.lesson_name1_text.setText(view.lesson_name2_text.text.toString())
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+        }
+        else if (view.lesson_name7.visibility == View.VISIBLE){
+            view.lesson_name1_text.setText(view.lesson_name2_text.text.toString())
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+        }
+        else if (view.lesson_name6.visibility == View.VISIBLE){
+            view.lesson_name1_text.setText(view.lesson_name2_text.text.toString())
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+        }
+        else if (view.lesson_name5.visibility == View.VISIBLE){
+            view.lesson_name1_text.setText(view.lesson_name2_text.text.toString())
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+        }
+        else if (view.lesson_name4.visibility == View.VISIBLE){
+            view.lesson_name1_text.setText(view.lesson_name2_text.text.toString())
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+        }
+        else if (view.lesson_name3.visibility == View.VISIBLE){
+            view.lesson_name1_text.setText(view.lesson_name2_text.text.toString())
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+        }
+        else if (view.lesson_name2.visibility == View.VISIBLE){
+            view.lesson_name1_text.setText(view.lesson_name2_text.text.toString())
+        }
+    }
+    private fun sortText2(view: View){
+        if (view.lesson_name16.visibility == View.VISIBLE){
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+            view.lesson_name15_text.setText(view.lesson_name16_text.text.toString())
+        }
+        else if (view.lesson_name15.visibility == View.VISIBLE){
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+        }
+        else if (view.lesson_name14.visibility == View.VISIBLE){
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+        }
+        else if (view.lesson_name13.visibility == View.VISIBLE){
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+        }
+        else if (view.lesson_name12.visibility == View.VISIBLE){
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+        }
+        else if (view.lesson_name11.visibility == View.VISIBLE){
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+        }
+        else if (view.lesson_name10.visibility == View.VISIBLE){
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+        }
+        else if (view.lesson_name9.visibility == View.VISIBLE){
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+        }
+        else if (view.lesson_name8.visibility == View.VISIBLE){
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+        }
+        else if (view.lesson_name7.visibility == View.VISIBLE){
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+        }
+        else if (view.lesson_name6.visibility == View.VISIBLE){
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+        }
+        else if (view.lesson_name5.visibility == View.VISIBLE){
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+        }
+        else if (view.lesson_name4.visibility == View.VISIBLE){
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+        }
+        else if (view.lesson_name3.visibility == View.VISIBLE){
+            view.lesson_name2_text.setText(view.lesson_name3_text.text.toString())
+        }
+    }
+    private fun sortText3(view: View){
+        if (view.lesson_name16.visibility == View.VISIBLE){
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+            view.lesson_name15_text.setText(view.lesson_name16_text.text.toString())
+        }
+        else if (view.lesson_name15.visibility == View.VISIBLE){
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+        }
+        else if (view.lesson_name14.visibility == View.VISIBLE){
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+        }
+        else if (view.lesson_name13.visibility == View.VISIBLE){
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+        }
+        else if (view.lesson_name12.visibility == View.VISIBLE){
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+        }
+        else if (view.lesson_name11.visibility == View.VISIBLE){
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+        }
+        else if (view.lesson_name10.visibility == View.VISIBLE){
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+        }
+        else if (view.lesson_name9.visibility == View.VISIBLE){
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+        }
+        else if (view.lesson_name8.visibility == View.VISIBLE){
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+        }
+        else if (view.lesson_name7.visibility == View.VISIBLE){
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+        }
+        else if (view.lesson_name6.visibility == View.VISIBLE){
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+        }
+        else if (view.lesson_name5.visibility == View.VISIBLE){
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+        }
+        else if (view.lesson_name4.visibility == View.VISIBLE){
+            view.lesson_name3_text.setText(view.lesson_name4_text.text.toString())
+        }
+    }
+    private fun sortText4(view: View){
+        if (view.lesson_name16.visibility == View.VISIBLE){
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+            view.lesson_name15_text.setText(view.lesson_name16_text.text.toString())
+        }
+        else if (view.lesson_name15.visibility == View.VISIBLE){
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+        }
+        else if (view.lesson_name14.visibility == View.VISIBLE){
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+        }
+        else if (view.lesson_name13.visibility == View.VISIBLE){
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+        }
+        else if (view.lesson_name12.visibility == View.VISIBLE){
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+        }
+        else if (view.lesson_name11.visibility == View.VISIBLE){
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+        }
+        else if (view.lesson_name10.visibility == View.VISIBLE){
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+        }
+        else if (view.lesson_name9.visibility == View.VISIBLE){
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+        }
+        else if (view.lesson_name8.visibility == View.VISIBLE){
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+        }
+        else if (view.lesson_name7.visibility == View.VISIBLE){
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+        }
+        else if (view.lesson_name6.visibility == View.VISIBLE){
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+        }
+        else if (view.lesson_name5.visibility == View.VISIBLE){
+            view.lesson_name4_text.setText(view.lesson_name5_text.text.toString())
+        }
+    }
+    private fun sortText5(view: View){
+        if (view.lesson_name16.visibility == View.VISIBLE){
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+            view.lesson_name15_text.setText(view.lesson_name16_text.text.toString())
+        }
+        else if (view.lesson_name15.visibility == View.VISIBLE){
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+        }
+        else if (view.lesson_name14.visibility == View.VISIBLE){
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+        }
+        else if (view.lesson_name13.visibility == View.VISIBLE){
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+        }
+        else if (view.lesson_name12.visibility == View.VISIBLE){
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+        }
+        else if (view.lesson_name11.visibility == View.VISIBLE){
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+        }
+        else if (view.lesson_name10.visibility == View.VISIBLE){
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+        }
+        else if (view.lesson_name9.visibility == View.VISIBLE){
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+        }
+        else if (view.lesson_name8.visibility == View.VISIBLE){
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+        }
+        else if (view.lesson_name7.visibility == View.VISIBLE){
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+        }
+        else if (view.lesson_name6.visibility == View.VISIBLE){
+            view.lesson_name5_text.setText(view.lesson_name6_text.text.toString())
+        }
+    }
+    private fun sortText6(view: View){
+        if (view.lesson_name16.visibility == View.VISIBLE){
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+            view.lesson_name15_text.setText(view.lesson_name16_text.text.toString())
+        }
+        else if (view.lesson_name15.visibility == View.VISIBLE){
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+        }
+        else if (view.lesson_name14.visibility == View.VISIBLE){
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+        }
+        else if (view.lesson_name13.visibility == View.VISIBLE){
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+        }
+        else if (view.lesson_name12.visibility == View.VISIBLE){
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+        }
+        else if (view.lesson_name11.visibility == View.VISIBLE){
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+        }
+        else if (view.lesson_name10.visibility == View.VISIBLE){
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+        }
+        else if (view.lesson_name9.visibility == View.VISIBLE){
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+        }
+        else if (view.lesson_name8.visibility == View.VISIBLE){
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+        }
+        else if (view.lesson_name7.visibility == View.VISIBLE){
+            view.lesson_name6_text.setText(view.lesson_name7_text.text.toString())
+        }
+    }
+    private fun sortText7(view: View){
+        if (view.lesson_name16.visibility == View.VISIBLE){
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+            view.lesson_name15_text.setText(view.lesson_name16_text.text.toString())
+        }
+        else if (view.lesson_name15.visibility == View.VISIBLE){
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+        }
+        else if (view.lesson_name14.visibility == View.VISIBLE){
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+        }
+        else if (view.lesson_name13.visibility == View.VISIBLE){
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+        }
+        else if (view.lesson_name12.visibility == View.VISIBLE){
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+        }
+        else if (view.lesson_name11.visibility == View.VISIBLE){
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+        }
+        else if (view.lesson_name10.visibility == View.VISIBLE){
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+        }
+        else if (view.lesson_name9.visibility == View.VISIBLE){
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+        }
+        else if (view.lesson_name8.visibility == View.VISIBLE){
+            view.lesson_name7_text.setText(view.lesson_name8_text.text.toString())
+        }
+    }
+    private fun sortText8(view: View){
+        if (view.lesson_name16.visibility == View.VISIBLE){
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+            view.lesson_name15_text.setText(view.lesson_name16_text.text.toString())
+        }
+        else if (view.lesson_name15.visibility == View.VISIBLE){
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+        }
+        else if (view.lesson_name14.visibility == View.VISIBLE){
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+        }
+        else if (view.lesson_name13.visibility == View.VISIBLE){
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+        }
+        else if (view.lesson_name12.visibility == View.VISIBLE){
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+        }
+        else if (view.lesson_name11.visibility == View.VISIBLE){
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+        }
+        else if (view.lesson_name10.visibility == View.VISIBLE){
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+        }
+        else if (view.lesson_name9.visibility == View.VISIBLE){
+            view.lesson_name8_text.setText(view.lesson_name9_text.text.toString())
+        }
+    }
+    private fun sortText9(view: View){
+        if (view.lesson_name16.visibility == View.VISIBLE){
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+            view.lesson_name15_text.setText(view.lesson_name16_text.text.toString())
+        }
+        else if (view.lesson_name15.visibility == View.VISIBLE){
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+        }
+        else if (view.lesson_name14.visibility == View.VISIBLE){
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+        }
+        else if (view.lesson_name13.visibility == View.VISIBLE){
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+        }
+        else if (view.lesson_name12.visibility == View.VISIBLE){
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+        }
+        else if (view.lesson_name11.visibility == View.VISIBLE){
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+        }
+        else if (view.lesson_name10.visibility == View.VISIBLE){
+            view.lesson_name9_text.setText(view.lesson_name10_text.text.toString())
+        }
+    }
+    private fun sortText10(view: View){
+        if (view.lesson_name16.visibility == View.VISIBLE){
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+            view.lesson_name15_text.setText(view.lesson_name16_text.text.toString())
+        }
+        else if (view.lesson_name15.visibility == View.VISIBLE){
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+        }
+        else if (view.lesson_name14.visibility == View.VISIBLE){
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+        }
+        else if (view.lesson_name13.visibility == View.VISIBLE){
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+        }
+        else if (view.lesson_name12.visibility == View.VISIBLE){
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+        }
+        else if (view.lesson_name11.visibility == View.VISIBLE){
+            view.lesson_name10_text.setText(view.lesson_name11_text.text.toString())
+        }
+    }
+    private fun sortText11(view: View){
+        if (view.lesson_name16.visibility == View.VISIBLE){
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+            view.lesson_name15_text.setText(view.lesson_name16_text.text.toString())
+        }
+        else if (view.lesson_name15.visibility == View.VISIBLE){
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+        }
+        else if (view.lesson_name14.visibility == View.VISIBLE){
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+        }
+        else if (view.lesson_name13.visibility == View.VISIBLE){
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+        }
+        else if (view.lesson_name12.visibility == View.VISIBLE){
+            view.lesson_name11_text.setText(view.lesson_name12_text.text.toString())
+        }
+    }
+    private fun sortText12(view: View){
+        if (view.lesson_name16.visibility == View.VISIBLE){
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+            view.lesson_name15_text.setText(view.lesson_name16_text.text.toString())
+        }
+        else if (view.lesson_name15.visibility == View.VISIBLE){
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+        }
+        else if (view.lesson_name14.visibility == View.VISIBLE){
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+        }
+        else if (view.lesson_name13.visibility == View.VISIBLE){
+            view.lesson_name12_text.setText(view.lesson_name13_text.text.toString())
+        }
+    }
+    private fun sortText13(view: View){
+        if (view.lesson_name16.visibility == View.VISIBLE){
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+            view.lesson_name15_text.setText(view.lesson_name16_text.text.toString())
+        }
+        else if (view.lesson_name15.visibility == View.VISIBLE){
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+        }
+        else if (view.lesson_name14.visibility == View.VISIBLE){
+            view.lesson_name13_text.setText(view.lesson_name14_text.text.toString())
+        }
+    }
+    private fun sortText14(view: View){
+        if (view.lesson_name16.visibility == View.VISIBLE){
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+            view.lesson_name15_text.setText(view.lesson_name16_text.text.toString())
+        }
+        else if (view.lesson_name15.visibility == View.VISIBLE){
+            view.lesson_name14_text.setText(view.lesson_name15_text.text.toString())
+        }
+    }
+    private fun sortText15(view: View){
+        if (view.lesson_name16.visibility == View.VISIBLE){
+            view.lesson_name15_text.setText(view.lesson_name16_text.text.toString())
+        }
+    }
+
+
+
+    private fun sortLessonAdd(view: View){
+        if (view.lesson_name16.visibility == View.VISIBLE){
+            view.lesson_name16.visibility = View.GONE
+            view.lesson_name16_text.setText("")
+        }
+        else if (view.lesson_name15.visibility == View.VISIBLE){
+            view.lesson_name15.visibility = View.GONE
+            view.lesson_name15_text.setText("")
+        }
+        else if (view.lesson_name14.visibility == View.VISIBLE){
+            view.lesson_name14.visibility = View.GONE
+            view.lesson_name14_text.setText("")
+        }
+        else if (view.lesson_name13.visibility == View.VISIBLE){
+            view.lesson_name13.visibility = View.GONE
+            view.lesson_name13_text.setText("")
+        }
+        else if (view.lesson_name12.visibility == View.VISIBLE){
+            view.lesson_name12.visibility = View.GONE
+            view.lesson_name12_text.setText("")
+        }
+        else if (view.lesson_name11.visibility == View.VISIBLE){
+            view.lesson_name11.visibility = View.GONE
+            view.lesson_name11_text.setText("")
+        }
+        else if (view.lesson_name10.visibility == View.VISIBLE){
+            view.lesson_name10.visibility = View.GONE
+            view.lesson_name10_text.setText("")
+        }
+        else if (view.lesson_name9.visibility == View.VISIBLE){
+            view.lesson_name9.visibility = View.GONE
+            view.lesson_name9_text.setText("")
+        }
+        else if (view.lesson_name8.visibility == View.VISIBLE){
+            view.lesson_name8.visibility = View.GONE
+            view.lesson_name8_text.setText("")
+        }
+        else if (view.lesson_name7.visibility == View.VISIBLE){
+            view.lesson_name7.visibility = View.GONE
+            view.lesson_name7_text.setText("")
+        }
+        else if (view.lesson_name6.visibility == View.VISIBLE){
+            view.lesson_name6.visibility = View.GONE
+            view.lesson_name6_text.setText("")
+        }
+        else if (view.lesson_name5.visibility == View.VISIBLE){
+            view.lesson_name5.visibility = View.GONE
+            view.lesson_name5_text.setText("")
+        }
+        else if (view.lesson_name4.visibility == View.VISIBLE){
+            view.lesson_name4.visibility = View.GONE
+            view.lesson_name4_text.setText("")
+        }
+        else if (view.lesson_name3.visibility == View.VISIBLE){
+            view.lesson_name3.visibility = View.GONE
+            view.lesson_name3_text.setText("")
+        }
+        else if (view.lesson_name2.visibility == View.VISIBLE){
+            view.lesson_name2.visibility = View.GONE
+            view.lesson_name2_text.setText("")
+        }
+        else if (view.lesson_name1.visibility == View.VISIBLE){
+            view.lesson_name1.visibility = View.GONE
+            view.lesson_name1_text.setText("")
+
+        }
     }
 
     private fun checkAddButton(view: View){

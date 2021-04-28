@@ -14,6 +14,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.project.AlarmManager.Service.AlarmService
+import com.example.project.DataBase.viewmodel.EventCalendarViewModel
 import com.example.project.DataBase.viewmodel.EventViewModel
 import com.example.project.DataBase.viewmodel.SubjectViewModel
 import com.example.project.MainActivity
@@ -27,6 +28,7 @@ import kotlinx.android.synthetic.main.fragment_event_notification_view.view.*
 class EventNotificationView : Fragment() {
     private val args by navArgs<EventNotificationViewArgs>()
     private lateinit var mEventViewModel: EventViewModel
+    private lateinit var mEventCalendar: EventCalendarViewModel
 
 
     override fun onResume() {
@@ -45,6 +47,7 @@ class EventNotificationView : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_event_notification_view, container, false)
         mEventViewModel = ViewModelProvider(this).get(EventViewModel::class.java)
+        mEventCalendar = ViewModelProvider(this).get(EventCalendarViewModel::class.java)
 
         val currentItem = args.event
 
@@ -117,10 +120,14 @@ class EventNotificationView : Fragment() {
     private fun deleteEvent(){
         val builder = AlertDialog.Builder(requireContext())
         builder.setPositiveButton("yes"){ _, _ ->
+            println(args.event.id)
             mEventViewModel.deleteEvent(args.event)
+            mEventCalendar.deleteById(args.event.id)
             Toast.makeText(requireContext(),"Successfully deleted ", Toast.LENGTH_SHORT).show()
             val action = EventNotificationViewDirections.actionEventNotificationViewToEventNotification()
             findNavController().navigate(action)
+            val a = activity as MainActivity
+            a.bottom_navigation.visibility = View.VISIBLE
 
         }
         builder.setNegativeButton("No"){ _ ,_ ->}
@@ -128,6 +135,5 @@ class EventNotificationView : Fragment() {
         builder.setMessage("Are you sure you want to delete?")
         builder.show()
     }
-
 
 }

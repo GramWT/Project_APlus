@@ -23,12 +23,9 @@ import com.example.project.DataBase.viewmodel.EventViewModel
 import com.example.project.MainActivity
 import com.example.project.R
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.dialog_building_select.view.*
-import kotlinx.android.synthetic.main.dialog_select_previous_time.*
 import kotlinx.android.synthetic.main.dialog_select_previous_time.view.*
 import kotlinx.android.synthetic.main.fragment_event_notification_add.*
 import kotlinx.android.synthetic.main.fragment_event_notification_add.view.*
-import org.w3c.dom.Text
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.time.ZoneId
@@ -139,6 +136,7 @@ class EventNotificationAdd : Fragment() {
         view.state_event_add.setOnClickListener {
              setState(view.state_event_add,view.state_image)
         }
+
         return view
     }
 
@@ -165,16 +163,24 @@ class EventNotificationAdd : Fragment() {
         val t4 = notification_time_4
         val t5 = notification_time_5
 
+
         val timeNotification = organizeListTime(t1,t2,t3,t4,t5)
 
         println(timeNotification)
 
 
         if (inputCheck(title,dateBegin,dateEnd,timeBegin,timeEnd,state,description)){
-            val event = Event(0,title,dateBegin,dateEnd,timeBegin,timeEnd,state,description, timeNotification[0].toString(),timeNotification[1].toString(),
+            val event = Event(0 ,title,dateBegin,dateEnd,timeBegin,timeEnd,state,description, timeNotification[0].toString(),timeNotification[1].toString(),
                     timeNotification[2].toString(),timeNotification[3].toString(),timeNotification[4].toString(),location)
 
+            val eventCalendar = EventCalendar(0,2,dateBegin.substring(0,2).toInt(),dateBegin.substring(3,5).toInt() - 1,dateBegin.substring(6,10).toInt(),title)
+
+            println(dateBegin.substring(0,2).toInt())
+            println(dateBegin.substring(3,5).toInt())
+            println(dateBegin.substring(6,10).toInt())
+
             mEventViewModel.addEvent(event)
+            mEventCalendar.addEventCalendar(eventCalendar)
 
             Toast.makeText(requireContext(),"Successfully add!", Toast.LENGTH_SHORT).show()
 
@@ -593,6 +599,11 @@ class EventNotificationAdd : Fragment() {
         view.notification_time_4.text = ""
         view.notification_time_5.text = ""
     }
+
+
+
+
+
 
 
 

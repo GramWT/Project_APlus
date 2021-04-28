@@ -27,8 +27,6 @@ import kotlinx.android.synthetic.main.fragment_subjects_manage_update.*
 import kotlinx.android.synthetic.main.fragment_subjects_manage_update.view.*
 import java.text.SimpleDateFormat
 import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 import java.util.*
 

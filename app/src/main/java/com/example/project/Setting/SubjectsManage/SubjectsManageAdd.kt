@@ -23,7 +23,6 @@ import com.example.project.DataBase.viewmodel.EventCalendarViewModel
 import com.example.project.DataBase.viewmodel.SubjectViewModel
 import com.example.project.R
 import kotlinx.android.synthetic.main.dialog_building_select.view.*
-import kotlinx.android.synthetic.main.fragment_mid_exam_update.view.*
 import kotlinx.android.synthetic.main.fragment_subjects_manage_add.*
 import kotlinx.android.synthetic.main.fragment_subjects_manage_add.view.*
 import java.text.SimpleDateFormat
@@ -167,7 +166,7 @@ class SubjectsManageAdd : Fragment() {
 
             val eventMid = EventCalendar(mid,1,eventMid[0],eventMid[1],eventMid[2],name)
 
-            val eventFinal = EventCalendar(final,2,eventFinal[0],eventFinal[1],eventFinal[2],name)
+            val eventFinal = EventCalendar(final,1,eventFinal[0],eventFinal[1],eventFinal[2],name)
 
             val midData = "$midDate $midTimeBegin:00"
             val finalData = "$finalDate $finalTimeBegin:00"

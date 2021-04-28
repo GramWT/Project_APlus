@@ -194,7 +194,7 @@
                     android:layout_width="200dp"
                     android:layout_height="64dp"
                     android:gravity="center|left"
-                    android:text="Preference"
+                    android:text="Theme"
                     android:padding="10dp"
                     android:textColor="@color/color_dark_mode_FFFFFF"
                     android:textStyle="bold" />

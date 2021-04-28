@@ -17,7 +17,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.project.DataBase.model.Event
+import com.example.project.DataBase.model.EventCalendar
 import com.example.project.DataBase.model.Subject
+import com.example.project.DataBase.viewmodel.EventCalendarViewModel
 import com.example.project.DataBase.viewmodel.EventViewModel
 import com.example.project.MainActivity
 import com.example.project.R
@@ -33,6 +35,7 @@ class EventNotificationUpdate : Fragment() {
 
     private val args by navArgs<EventNotificationUpdateArgs>()
     private lateinit var mEventViewModel: EventViewModel
+    private lateinit var mEventCalendarViewModel: EventCalendarViewModel
 
 
 
@@ -44,6 +47,7 @@ class EventNotificationUpdate : Fragment() {
         val view = inflater.inflate(R.layout.fragment_event_notification_update, container, false)
 
         mEventViewModel = ViewModelProvider(this).get(EventViewModel::class.java)
+        mEventCalendarViewModel = ViewModelProvider(this).get(EventCalendarViewModel::class.java)
 
         val currentItem = args.event
 
@@ -112,7 +116,11 @@ class EventNotificationUpdate : Fragment() {
         val event = Event(args.event.id,title_event_update.text.toString(),date_begin_event_update.text.toString(),date_end_event_update.text.toString(),time_begin_event_update.text.toString(),
         time_end_event_update.text.toString(),state_event_update.text.toString(),description_event_update.text.toString(),time_1.text.toString(),
         "0","0","0","0",location_event_update.text.toString())
+
+        val eventMid = EventCalendar(args.event.id,2,date_begin_event_update.text.substring(0,2).toInt(),date_begin_event_update.text.substring(3,5).toInt() - 1,
+                date_begin_event_update.text.substring(6,10).toInt(),title_event_update.text.toString())
         mEventViewModel.updateEvent(event)
+        mEventCalendarViewModel.updateEventCalendar(eventMid)
     }
 
     private fun setState(state: String, im: ImageView){
