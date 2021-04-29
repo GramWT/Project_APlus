@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.text.InputFilter
 import android.text.Spanned
 import android.text.TextUtils
+import android.text.format.DateFormat
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -19,7 +20,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.project.AlarmManager.Service.AlarmService
 import com.example.project.DataBase.model.Event
 import com.example.project.DataBase.model.EventCalendar
-import com.example.project.DataBase.model.Subject
 import com.example.project.DataBase.viewmodel.EventCalendarViewModel
 import com.example.project.DataBase.viewmodel.EventViewModel
 import com.example.project.MainActivity
@@ -33,6 +33,7 @@ import java.time.LocalDateTime
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 import java.util.*
+import java.util.concurrent.TimeUnit
 
 
 class EventNotificationAdd : Fragment() {
@@ -163,11 +164,11 @@ class EventNotificationAdd : Fragment() {
         val state = state_event_add.text.toString()
         val description = description_event_add.text.toString()
         val location = location_event_add.text.toString()
-        val t1 = notification_time_1
-        val t2 = notification_time_2
-        val t3 = notification_time_3
-        val t4 = notification_time_4
-        val t5 = notification_time_5
+        val t1 = notification_date_1
+        val t2 = notification_date_2
+        val t3 = notification_date_3
+        val t4 = notification_date_4
+        val t5 = notification_date_5
 
 
         val timeNotification = organizeListTime(t1,t2,t3,t4,t5)
@@ -231,7 +232,7 @@ class EventNotificationAdd : Fragment() {
             while (checked == false){
                 if (randomId in list){
                     randomId = "1${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}".toInt()
-                    println(checked)
+                    println("Check is ${checked}")
                     println(randomId)
                 }
                 else{
@@ -317,7 +318,7 @@ class EventNotificationAdd : Fragment() {
         if (view.notification_device_5.visibility == View.VISIBLE){
 
             view.notification_device_5.visibility = View.GONE
-            view.notification_time_5.text = ""
+            view.notification_date_5.text = ""
         }
     }
 
@@ -327,13 +328,13 @@ class EventNotificationAdd : Fragment() {
             view.notification_device_4.visibility = View.VISIBLE
             view.notification_device_5.visibility = View.GONE
 
-            view.notification_time_4.text = view.notification_time_5.text
-            view.notification_time_5.text = ""
+            view.notification_date_4.text = view.notification_date_5.text
+            view.notification_date_5.text = ""
         }
         else if (view.notification_device_5.visibility == View.GONE){
 
             view.notification_device_4.visibility = View.GONE
-            view.notification_time_4.text = ""
+            view.notification_date_4.text = ""
         }
     }
 
@@ -345,9 +346,9 @@ class EventNotificationAdd : Fragment() {
             view.notification_device_4.visibility = View.VISIBLE
             view.notification_device_5.visibility = View.GONE
 
-            view.notification_time_3.text = view.notification_time_4.text
-            view.notification_time_4.text = view.notification_time_5.text
-            view.notification_time_5.text = ""
+            view.notification_date_3.text = view.notification_date_4.text
+            view.notification_date_4.text = view.notification_date_5.text
+            view.notification_date_5.text = ""
         }
         else if (view.notification_device_5.visibility == View.GONE &&
                 view.notification_device_4.visibility == View.VISIBLE){
@@ -355,13 +356,13 @@ class EventNotificationAdd : Fragment() {
             view.notification_device_3.visibility = View.VISIBLE
             view.notification_device_4.visibility = View.GONE
 
-            view.notification_time_3.text = view.notification_time_4.text
-            view.notification_time_4.text = ""
+            view.notification_date_3.text = view.notification_date_4.text
+            view.notification_date_4.text = ""
         }
         else if (view.notification_device_5.visibility == View.GONE &&
                 view.notification_device_4.visibility == View.GONE){
             view.notification_device_3.visibility = View.GONE
-            view.notification_time_3.text = ""
+            view.notification_date_3.text = ""
         }
     }
 
@@ -375,10 +376,10 @@ class EventNotificationAdd : Fragment() {
             view.notification_device_4.visibility = View.VISIBLE
             view.notification_device_5.visibility = View.GONE
 
-            view.notification_time_2.text = view.notification_time_3.text
-            view.notification_time_3.text = view.notification_time_4.text
-            view.notification_time_4.text = view.notification_time_5.text
-            view.notification_time_5.text = ""
+            view.notification_date_2.text = view.notification_date_3.text
+            view.notification_date_3.text = view.notification_date_4.text
+            view.notification_date_4.text = view.notification_date_5.text
+            view.notification_date_5.text = ""
         }
         else if (view.notification_device_5.visibility == View.GONE &&
                 view.notification_device_4.visibility == View.VISIBLE &&
@@ -388,9 +389,9 @@ class EventNotificationAdd : Fragment() {
             view.notification_device_3.visibility = View.VISIBLE
             view.notification_device_4.visibility = View.GONE
 
-            view.notification_time_2.text = view.notification_time_3.text
-            view.notification_time_3.text = view.notification_time_4.text
-            view.notification_time_4.text = ""
+            view.notification_date_2.text = view.notification_date_3.text
+            view.notification_date_3.text = view.notification_date_4.text
+            view.notification_date_4.text = ""
         }
         else if (view.notification_device_5.visibility == View.GONE &&
                 view.notification_device_4.visibility == View.GONE &&
@@ -399,15 +400,15 @@ class EventNotificationAdd : Fragment() {
             view.notification_device_2.visibility = View.VISIBLE
             view.notification_device_3.visibility = View.GONE
 
-            view.notification_time_2.text = view.notification_time_3.text
-            view.notification_time_3.text = ""
+            view.notification_date_2.text = view.notification_date_3.text
+            view.notification_date_3.text = ""
         }
         else if (view.notification_device_5.visibility == View.GONE &&
                 view.notification_device_4.visibility == View.GONE &&
                 view.notification_device_3.visibility == View.GONE){
 
             view.notification_device_2.visibility = View.GONE
-            view.notification_time_2.text = ""
+            view.notification_date_2.text = ""
         }
     }
 
@@ -423,11 +424,11 @@ class EventNotificationAdd : Fragment() {
             view.notification_device_4.visibility = View.VISIBLE
             view.notification_device_5.visibility = View.GONE
 
-            view.notification_time_1.text = view.notification_time_2.text
-            view.notification_time_2.text = view.notification_time_3.text
-            view.notification_time_3.text = view.notification_time_4.text
-            view.notification_time_4.text = view.notification_time_5.text
-            view.notification_time_5.text = ""
+            view.notification_date_1.text = view.notification_date_2.text
+            view.notification_date_2.text = view.notification_date_3.text
+            view.notification_date_3.text = view.notification_date_4.text
+            view.notification_date_4.text = view.notification_date_5.text
+            view.notification_date_5.text = ""
         }
         else if (view.notification_device_5.visibility == View.GONE &&
                 view.notification_device_4.visibility == View.VISIBLE &&
@@ -439,10 +440,10 @@ class EventNotificationAdd : Fragment() {
             view.notification_device_3.visibility = View.VISIBLE
             view.notification_device_4.visibility = View.GONE
 
-            view.notification_time_1.text = view.notification_time_2.text
-            view.notification_time_2.text = view.notification_time_3.text
-            view.notification_time_3.text = view.notification_time_4.text
-            view.notification_time_4.text = ""
+            view.notification_date_1.text = view.notification_date_2.text
+            view.notification_date_2.text = view.notification_date_3.text
+            view.notification_date_3.text = view.notification_date_4.text
+            view.notification_date_4.text = ""
         }
         else if (view.notification_device_5.visibility == View.GONE &&
                 view.notification_device_4.visibility == View.GONE &&
@@ -453,9 +454,9 @@ class EventNotificationAdd : Fragment() {
             view.notification_device_2.visibility = View.VISIBLE
             view.notification_device_3.visibility = View.GONE
 
-            view.notification_time_1.text = view.notification_time_2.text
-            view.notification_time_2.text = view.notification_time_3.text
-            view.notification_time_3.text = ""
+            view.notification_date_1.text = view.notification_date_2.text
+            view.notification_date_2.text = view.notification_date_3.text
+            view.notification_date_3.text = ""
         }
         else if (view.notification_device_5.visibility == View.GONE &&
                 view.notification_device_4.visibility == View.GONE &&
@@ -465,8 +466,8 @@ class EventNotificationAdd : Fragment() {
             view.notification_device_1.visibility = View.VISIBLE
             view.notification_device_2.visibility = View.GONE
 
-            view.notification_time_1.text = view.notification_time_2.text
-            view.notification_time_2.text = ""
+            view.notification_date_1.text = view.notification_date_2.text
+            view.notification_date_2.text = ""
         }
         else if (view.notification_device_5.visibility == View.GONE &&
                 view.notification_device_4.visibility == View.GONE &&
@@ -475,7 +476,193 @@ class EventNotificationAdd : Fragment() {
 
             view.notification_device_1.visibility = View.GONE
 
-            view.notification_time_1.text = ""
+            view.notification_date_1.text = ""
+        }
+    }
+
+    private fun sortTime(view: View){
+
+        var d1 = ""
+        var d2 = ""
+        var t1 = ""
+        var t2 = ""
+
+        if (view.notification_device_5.visibility == View.VISIBLE){
+            var datetime1 = "${view.notification_date_1.text} ${view.notification_time_1.text}:00"
+            var datetime2 = "${view.notification_date_2.text} ${view.notification_time_2.text}:00"
+            var datetime3 = "${view.notification_date_3.text} ${view.notification_time_3.text}:00"
+            var datetime4 = "${view.notification_date_4.text} ${view.notification_time_4.text}:00"
+            var datetime5 = "${view.notification_date_5.text} ${view.notification_time_5.text}:00"
+
+            if (convertMillis(datetime5) < convertMillis(datetime4)){
+                d1 = view.notification_date_5.text.toString()
+                t1 = view.notification_time_5.text.toString()
+                d2 = view.notification_date_4.text.toString()
+                t2 = view.notification_time_4.text.toString()
+
+                view.notification_date_5.text = d2
+                view.notification_time_5.text = t2
+                view.notification_date_4.text = d1
+                view.notification_time_4.text = t1
+
+            }
+
+
+            datetime3 = "${view.notification_date_3.text} ${view.notification_time_3.text}:00"
+            datetime4 = "${view.notification_date_4.text} ${view.notification_time_4.text}:00"
+
+
+            if (convertMillis(datetime4) < convertMillis(datetime3)){
+                d1 = view.notification_date_4.text.toString()
+                t1 = view.notification_time_4.text.toString()
+                d2 = view.notification_date_3.text.toString()
+                t2 = view.notification_time_3.text.toString()
+
+                view.notification_date_4.text = d2
+                view.notification_time_4.text = t2
+                view.notification_date_3.text = d1
+                view.notification_time_3.text = t1
+
+            }
+
+            datetime2 = "${view.notification_date_2.text} ${view.notification_time_2.text}:00"
+            datetime3 = "${view.notification_date_3.text} ${view.notification_time_3.text}:00"
+
+            if (convertMillis(datetime3) < convertMillis(datetime2)){
+                d1 = view.notification_date_3.text.toString()
+                t1 = view.notification_time_3.text.toString()
+                d2 = view.notification_date_2.text.toString()
+                t2 = view.notification_time_2.text.toString()
+
+                view.notification_date_3.text = d2
+                view.notification_time_3.text = t2
+                view.notification_date_2.text = d1
+                view.notification_time_2.text = t1
+
+            }
+
+            datetime1 = "${view.notification_date_1.text} ${view.notification_time_1.text}:00"
+            datetime2 = "${view.notification_date_2.text} ${view.notification_time_2.text}:00"
+
+            if (convertMillis(datetime2) < convertMillis(datetime1)){
+                d1 = view.notification_date_2.text.toString()
+                t1 = view.notification_time_2.text.toString()
+                d2 = view.notification_date_1.text.toString()
+                t2 = view.notification_time_1.text.toString()
+
+                view.notification_date_2.text = d2
+                view.notification_time_2.text = t2
+                view.notification_date_1.text = d1
+                view.notification_time_1.text = t1
+
+            }
+        }
+
+        else if (view.notification_device_4.visibility == View.VISIBLE) {
+            var datetime1 = "${view.notification_date_1.text} ${view.notification_time_1.text}:00"
+            var datetime2 = "${view.notification_date_2.text} ${view.notification_time_2.text}:00"
+            var datetime3 = "${view.notification_date_3.text} ${view.notification_time_3.text}:00"
+            var datetime4 = "${view.notification_date_4.text} ${view.notification_time_4.text}:00"
+
+            if (convertMillis(datetime4) < convertMillis(datetime3)) {
+                d1 = view.notification_date_4.text.toString()
+                t1 = view.notification_time_4.text.toString()
+                d2 = view.notification_date_3.text.toString()
+                t2 = view.notification_time_3.text.toString()
+
+                view.notification_date_4.text = d2
+                view.notification_time_4.text = t2
+                view.notification_date_3.text = d1
+                view.notification_time_3.text = t1
+
+            }
+
+            datetime2 = "${view.notification_date_2.text} ${view.notification_time_2.text}:00"
+            datetime3 = "${view.notification_date_3.text} ${view.notification_time_3.text}:00"
+
+            if (convertMillis(datetime3) < convertMillis(datetime2)){
+                d1 = view.notification_date_3.text.toString()
+                t1 = view.notification_time_3.text.toString()
+                d2 = view.notification_date_2.text.toString()
+                t2 = view.notification_time_2.text.toString()
+
+                view.notification_date_3.text = d2
+                view.notification_time_3.text = t2
+                view.notification_date_2.text = d1
+                view.notification_time_2.text = t1
+
+            }
+
+            datetime1 = "${view.notification_date_1.text} ${view.notification_time_1.text}:00"
+            datetime2 = "${view.notification_date_2.text} ${view.notification_time_2.text}:00"
+
+            if (convertMillis(datetime2) < convertMillis(datetime1)){
+                d1 = view.notification_date_2.text.toString()
+                t1 = view.notification_time_2.text.toString()
+                d2 = view.notification_date_1.text.toString()
+                t2 = view.notification_time_1.text.toString()
+
+                view.notification_date_2.text = d2
+                view.notification_time_2.text = t2
+                view.notification_date_1.text = d1
+                view.notification_time_1.text = t1
+
+            }
+
+        }
+
+        else if (view.notification_device_3.visibility == View.VISIBLE) {
+            var datetime1 = "${view.notification_date_1.text} ${view.notification_time_1.text}:00"
+            var datetime2 = "${view.notification_date_2.text} ${view.notification_time_2.text}:00"
+            var datetime3 = "${view.notification_date_3.text} ${view.notification_time_3.text}:00"
+
+            if (convertMillis(datetime3) < convertMillis(datetime2)){
+                d1 = view.notification_date_3.text.toString()
+                t1 = view.notification_time_3.text.toString()
+                d2 = view.notification_date_2.text.toString()
+                t2 = view.notification_time_2.text.toString()
+
+                view.notification_date_3.text = d2
+                view.notification_time_3.text = t2
+                view.notification_date_2.text = d1
+                view.notification_time_2.text = t1
+
+            }
+
+            datetime1 = "${view.notification_date_1.text} ${view.notification_time_1.text}:00"
+            datetime2 = "${view.notification_date_2.text} ${view.notification_time_2.text}:00"
+
+
+            if (convertMillis(datetime2) < convertMillis(datetime1)){
+                d1 = view.notification_date_2.text.toString()
+                t1 = view.notification_time_2.text.toString()
+                d2 = view.notification_date_1.text.toString()
+                t2 = view.notification_time_1.text.toString()
+
+                view.notification_date_2.text = d2
+                view.notification_time_2.text = t2
+                view.notification_date_1.text = d1
+                view.notification_time_1.text = t1
+
+            }
+        }
+
+        else if (view.notification_device_2.visibility == View.VISIBLE) {
+            val datetime1 = "${view.notification_date_1.text} ${view.notification_time_1.text}:00"
+            val datetime2 = "${view.notification_date_2.text} ${view.notification_time_2.text}:00"
+
+            if (convertMillis(datetime2) < convertMillis(datetime1)){
+                d1 = view.notification_date_2.text.toString()
+                t1 = view.notification_time_2.text.toString()
+                d2 = view.notification_date_1.text.toString()
+                t2 = view.notification_time_1.text.toString()
+
+                view.notification_date_2.text = d2
+                view.notification_time_2.text = t2
+                view.notification_date_1.text = d1
+                view.notification_time_1.text = t1
+
+            }
         }
     }
 
@@ -497,9 +684,6 @@ class EventNotificationAdd : Fragment() {
         return finalListTime
     }
 
-
-
-
     @RequiresApi(Build.VERSION_CODES.O)
     private fun roundTime(): LocalDateTime {
 
@@ -512,17 +696,18 @@ class EventNotificationAdd : Fragment() {
         else{ return date }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun dialogPreviousTime(view:View){
         val selectPreviousTime = LayoutInflater.from(context).inflate(R.layout.dialog_select_previous_time, null)
         val mBuilder = AlertDialog.Builder(context)
                 .setView(selectPreviousTime)
 
         var timeValue: String = ""
-        var UT:String = ""
+        var TS:String = ""
 
         selectPreviousTime.radio_group_previous_time.check(R.id.radio_minutes)
         selectPreviousTime.radio_minutes.text = "Minutes before"
-        UT = "Minutes before"
+        TS = "M"
 
         selectPreviousTime.previous_time.filters = arrayOf<InputFilter>(MinMaxFilter("1","600"))
 
@@ -542,7 +727,7 @@ class EventNotificationAdd : Fragment() {
                 selectPreviousTime.radio_hours.text = "Hours"
                 selectPreviousTime.radio_days.text = "Days"
                 selectPreviousTime.radio_weeks.text = "Weeks"
-                UT = selectPreviousTime.radio_minutes.text.toString() }
+                TS = "M"}
             if (checkedId == R.id.radio_hours) {
                 if (selectPreviousTime.previous_time.text.toString() == ""){
                     selectPreviousTime.previous_time.setText("1")
@@ -555,7 +740,7 @@ class EventNotificationAdd : Fragment() {
                 selectPreviousTime.radio_hours.text = "Hours before"
                 selectPreviousTime.radio_days.text = "Days"
                 selectPreviousTime.radio_weeks.text = "Weeks"
-                UT = selectPreviousTime.radio_hours.text.toString() }
+                TS = "H"}
             if (checkedId == R.id.radio_days) {
                 if (selectPreviousTime.previous_time.text.toString() == ""){
                     selectPreviousTime.previous_time.setText("1")
@@ -568,7 +753,7 @@ class EventNotificationAdd : Fragment() {
                 selectPreviousTime.radio_hours.text = "Hours"
                 selectPreviousTime.radio_days.text = "Days before"
                 selectPreviousTime.radio_weeks.text = "Weeks"
-                UT = selectPreviousTime.radio_days.text.toString() }
+                TS = "D"}
             if (checkedId == R.id.radio_weeks) {
                 if (selectPreviousTime.previous_time.text.toString() == ""){
                     selectPreviousTime.previous_time.setText("1")
@@ -581,13 +766,16 @@ class EventNotificationAdd : Fragment() {
                 selectPreviousTime.radio_hours.text = "Hours"
                 selectPreviousTime.radio_days.text = "Days"
                 selectPreviousTime.radio_weeks.text = "Weeks before"
-                UT = selectPreviousTime.radio_weeks.text.toString() }
+                TS = "W"}
         }
 
         selectPreviousTime.done_button.setOnClickListener {
             mAlert.dismiss()
             timeValue = selectPreviousTime.previous_time.text.toString()
-            addNotifications(view,timeValue,UT)
+
+            println("Timevalue ${timeValue}")
+            println("TS : ${TS}")
+            addNotifications(view,timeValue,TS)
         }
     }
 
@@ -617,34 +805,87 @@ class EventNotificationAdd : Fragment() {
 
     }
 
+    private fun convertDateTime(timeInMillis: Long): String =
+            DateFormat.format("dd/MM/yyyy HH:mm",timeInMillis).toString()
 
-    private fun addNotifications(view: View,s: String,ut: String){
+    private fun convertDate(timeInMillis: Long): String =
+            DateFormat.format("dd/MM/yyyy",timeInMillis).toString()
 
-        if ("$s $ut" != view.notification_time_1.text && "$s $ut" != view.notification_time_2.text &&
-                "$s $ut" != view.notification_time_3.text && "$s $ut" != view.notification_time_4.text &&
-                "$s $ut" != view.notification_time_5.text) {
+    private fun convertTime(timeInMillis: Long): String =
+            DateFormat.format("HH:mm",timeInMillis).toString()
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun addNotifications(view: View, s: String, ts:String){
+        val date = view.date_begin_event_add.text.toString()
+        val time = view.time_begin_event_add.text.toString()
+
+        val datetime = "$date $time:00"
+        var Date = convertMillis(datetime)
+
+
+        if (ts == "M"){
+            Date = convertMillis(datetime) - TimeUnit.MINUTES.toMillis(s.toLong())
+
+        }
+        else if (ts == "H"){
+            Date = convertMillis(datetime) - TimeUnit.HOURS.toMillis(s.toLong())
+
+        }
+        else if (ts == "D"){
+            Date = convertMillis(datetime) - TimeUnit.DAYS.toMillis(s.toLong())
+        }
+        else if (ts == "W"){
+
+            val rs = s.toInt() * 7
+
+            Date = convertMillis(datetime) - TimeUnit.DAYS.toMillis(rs.toLong())
+        }
+
+        val checkDatetime = convertDateTime(Date)
+        val notificationDate = convertDate(Date)
+        val notificationTime = convertTime(Date)
+
+
+        if (checkDatetime != "${view.notification_date_1.text} ${view.notification_time_1.text}" &&
+                checkDatetime != "${view.notification_date_2.text} ${view.notification_time_2.text}" &&
+                checkDatetime != "${view.notification_date_3.text} ${view.notification_time_3.text}" &&
+                checkDatetime != "${view.notification_date_4.text} ${view.notification_time_4}" &&
+                checkDatetime != "${view.notification_date_5.text} ${view.notification_time_5.text}"){
+
+            println(checkDatetime)
+            println("${view.notification_date_1.text} ${view.notification_time_1.text}")
 
             if (view.notification_device_1.visibility == View.GONE) {
                 view.notification_device_1.visibility = View.VISIBLE
-                view.notification_time_1.text = "$s $ut"
+                view.notification_date_1.text = notificationDate
+                view.notification_time_1.text = notificationTime
             } else if (view.notification_device_2.visibility == View.GONE) {
                 view.notification_device_2.visibility = View.VISIBLE
-                view.notification_time_2.text = "$s $ut"
+                view.notification_date_2.text = notificationDate
+                view.notification_time_2.text = notificationTime
             } else if (view.notification_device_3.visibility == View.GONE) {
                 view.notification_device_3.visibility = View.VISIBLE
-                view.notification_time_3.text = "$s $ut"
+                view.notification_date_3.text = notificationDate
+                view.notification_time_3.text = notificationTime
             } else if (view.notification_device_4.visibility == View.GONE) {
                 view.notification_device_4.visibility = View.VISIBLE
-                view.notification_time_4.text = "$s $ut"
+                view.notification_date_4.text = notificationDate
+                view.notification_time_4.text = notificationTime
             } else if (view.notification_device_5.visibility == View.GONE) {
                 view.notification_device_5.visibility = View.VISIBLE
-                view.notification_time_5.text = "$s $ut"
+                view.notification_date_5.text = notificationDate
+                view.notification_time_5.text = notificationTime
             }
             if (view.notification_device_5.visibility == View.VISIBLE && view.notification_device_4.visibility == View.VISIBLE
                     && view.notification_device_3.visibility == View.VISIBLE && view.notification_device_2.visibility == View.VISIBLE
                     && view.notification_device_1.visibility == View.VISIBLE) {
                 view.add_notification_device.visibility = View.GONE
             }
+
+            sortTime(view)
+
+
+
         }
 
     }
@@ -655,11 +896,11 @@ class EventNotificationAdd : Fragment() {
         view.notification_device_3.visibility = View.GONE
         view.notification_device_2.visibility = View.GONE
         view.notification_device_1.visibility = View.GONE
-        view.notification_time_1.text = ""
-        view.notification_time_2.text = ""
-        view.notification_time_3.text = ""
-        view.notification_time_4.text = ""
-        view.notification_time_5.text = ""
+        view.notification_date_1.text = ""
+        view.notification_date_2.text = ""
+        view.notification_date_3.text = ""
+        view.notification_date_4.text = ""
+        view.notification_date_5.text = ""
     }
 
 
