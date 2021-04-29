@@ -53,6 +53,12 @@ class EventCalendarViewModel(application: Application):AndroidViewModel(applicat
         }
     }
 
+    fun deleteByType(type:Int){
+        viewModelScope.launch(Dispatchers.IO){
+            repository.deleteByType(type)
+        }
+    }
+
     fun readDataById(id: Int):LiveData<List<EventCalendar>>{
         return repository.readDataById(id)
     }

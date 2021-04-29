@@ -16,8 +16,10 @@ import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.project.AlarmManager.Service.AlarmService
 import com.example.project.DataBase.model.Event
 import com.example.project.DataBase.model.EventCalendar
+import com.example.project.DataBase.model.Subject
 import com.example.project.DataBase.viewmodel.EventCalendarViewModel
 import com.example.project.DataBase.viewmodel.EventViewModel
 import com.example.project.MainActivity
@@ -37,6 +39,8 @@ class EventNotificationAdd : Fragment() {
 
     private lateinit var mEventViewModel:EventViewModel
     private lateinit var mEventCalendar: EventCalendarViewModel
+    private lateinit var mAlarmService: AlarmService
+    private lateinit var mCalendar:List<EventCalendar>
 
 
     override fun onResume() {
@@ -63,6 +67,8 @@ class EventNotificationAdd : Fragment() {
         mEventViewModel = ViewModelProvider(this).get(EventViewModel::class.java)
 
         mEventCalendar = ViewModelProvider(this).get(EventCalendarViewModel::class.java)
+
+        mAlarmService = AlarmService(requireContext())
 
 
         view.date_begin_event_add.setText(DateTimeFormatter.ofPattern("dd/MM/yyyy").format(roundTime()))
@@ -168,19 +174,35 @@ class EventNotificationAdd : Fragment() {
 
         println(timeNotification)
 
+        val rid = randomId()
+
 
         if (inputCheck(title,dateBegin,dateEnd,timeBegin,timeEnd,state,description)){
             val event = Event(0 ,title,dateBegin,dateEnd,timeBegin,timeEnd,state,description, timeNotification[0].toString(),timeNotification[1].toString(),
                     timeNotification[2].toString(),timeNotification[3].toString(),timeNotification[4].toString(),location)
 
-            val eventCalendar = EventCalendar(0,2,dateBegin.substring(0,2).toInt(),dateBegin.substring(3,5).toInt() - 1,dateBegin.substring(6,10).toInt(),title)
+            val eventCalendar = EventCalendar(rid,2,dateBegin.substring(0,2).toInt(),dateBegin.substring(3,5).toInt() - 1,dateBegin.substring(6,10).toInt(),title)
 
             println(dateBegin.substring(0,2).toInt())
             println(dateBegin.substring(3,5).toInt())
             println(dateBegin.substring(6,10).toInt())
+            println(timeNotification[0].toString())
+            println(timeNotification[1].toString())
+            println(timeNotification[2].toString())
+            println(timeNotification[3].toString())
+            println(timeNotification[4].toString())
+
+            val timeData = "$dateBegin $timeBegin:00"
+
+            println(timeData)
 
             mEventViewModel.addEvent(event)
             mEventCalendar.addEventCalendar(eventCalendar)
+
+            setAlarm(timeData ,rid,rid.toString())
+            println("RID ${rid}")
+
+
 
             Toast.makeText(requireContext(),"Successfully add!", Toast.LENGTH_SHORT).show()
 
@@ -191,6 +213,46 @@ class EventNotificationAdd : Fragment() {
 
 
         }
+    }
+
+    private fun randomId():Int{
+        var randomId = "1${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}".toInt()
+        val list = arrayListOf<Int>()
+        var checked = false
+
+        mEventCalendar.readAllData.observe(viewLifecycleOwner,{ event ->
+            mCalendar = event
+
+            for (i in 0 .. mCalendar.size -1){
+
+                list.add(mCalendar[i].id)
+            }
+
+            while (checked == false){
+                if (randomId in list){
+                    randomId = "1${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}".toInt()
+                    println(checked)
+                    println(randomId)
+                }
+                else{
+                    checked = true
+                    println("Check is ${checked}")
+                }
+            }
+        })
+        return randomId
+    }
+
+    private fun setAlarm(date:String,rq:Int,SID:String){
+        mAlarmService.setOnceAlarm(convertMillis(date),rq,SID)
+    }
+
+    private fun convertMillis(data: String):Long{
+        var sp = SimpleDateFormat("dd/MM/yyyy hh:mm:ss")
+        var date:Date = sp.parse(data)
+        var millis:Long = date.time
+
+        return millis
     }
 
     private fun inputCheck(title:String, dateBegin:String, dateEnd:String, timeBegin:String, timeEnd:String, state:String, description:String):Boolean{

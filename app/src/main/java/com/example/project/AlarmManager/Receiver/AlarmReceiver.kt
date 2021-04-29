@@ -61,6 +61,8 @@ class AlarmReceiver:BroadcastReceiver() {
 
 
 
+
+
         when(action){
             "ACTION_SET_EXTRA" -> {
                 AlarmNotification(context,id_subject,text2,RequestId.toString(), SID.toString())

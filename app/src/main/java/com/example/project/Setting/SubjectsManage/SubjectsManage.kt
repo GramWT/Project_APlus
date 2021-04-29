@@ -78,7 +78,7 @@ class SubjectsManage : Fragment() {
 
         binding.deleteAllButtonSjm.setOnClickListener {
             deleteAllSubjects()
-            mEventCalendar.deleteAllEventDatabase()
+            mEventCalendar.deleteByType(1)
 
             mSubjectModel.readAllData.observe(viewLifecycleOwner , {subject ->
                 mSubject = subject
@@ -88,8 +88,6 @@ class SubjectsManage : Fragment() {
                     val idFinal:Int = "2${mSubject[i].id}".toInt()
 
                     println("List Id : ${mSubject[i].id}")
-
-
 
                     mAlarmService.cancelAlarm(idMid)
                     mAlarmService.cancelAlarm(idFinal)
@@ -133,6 +131,4 @@ class SubjectsManage : Fragment() {
         builder.create().show()
 
     }
-
-
 }

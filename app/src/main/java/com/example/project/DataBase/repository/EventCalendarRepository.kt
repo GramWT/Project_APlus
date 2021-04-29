@@ -29,6 +29,10 @@ class EventCalendarRepository(private val eventCalendarDao: EventCalendarDao) {
         eventCalendarDao.deleteById(id)
     }
 
+    suspend fun deleteByType(type:Int){
+        eventCalendarDao.deleteByType(type)
+    }
+
     fun readDataById(id: Int):LiveData<List<EventCalendar>>{
         return eventCalendarDao.readDataById(id)
     }

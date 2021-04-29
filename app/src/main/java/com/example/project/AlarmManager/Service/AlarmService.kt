@@ -14,6 +14,23 @@ class AlarmService(private val context: Context) {
     private val alarmManager: AlarmManager? =
             context.getSystemService(Context.ALARM_SERVICE) as AlarmManager?
 
+    fun setOnceAlarm(TimeInMillis: Long, RequestCode:Int , SID:String){
+
+        val rq1 = '1'+ RequestCode.toString()
+        val intent1 = Intent(context,AlarmReceiver::class.java)
+
+        intent1.apply {
+            putExtra("rq",rq1)
+            putExtra("action",Constants.ACTION_SET_EXACT_ALARM)
+            putExtra("sid",SID)
+            putExtra(Constants.EXTRA_EXACT_ALARM_TIME,TimeInMillis)
+        }
+
+        var pendingIntent1 = PendingIntent.getBroadcast(context,rq1.toInt(),intent1,PendingIntent.FLAG_UPDATE_CURRENT)
+
+        alarmManager?.setExact(AlarmManager.RTC_WAKEUP,TimeInMillis,pendingIntent1)
+    }
+
     fun setExactAlarm(TimeInMillis: Long, RequestCode:Int , SID:String){
 
         val rq1 = '1'+ RequestCode.toString()
@@ -71,24 +88,24 @@ class AlarmService(private val context: Context) {
         var pendingIntent5 = PendingIntent.getBroadcast(context,rq5.toInt(),intent5,PendingIntent.FLAG_UPDATE_CURRENT)
 
 
-        if ((TimeInMillis - TimeUnit.MINUTES.toMillis(10)) > System.currentTimeMillis()){
-            alarmManager?.setExact(AlarmManager.RTC_WAKEUP,TimeInMillis - TimeUnit.MINUTES.toMillis(10),pendingIntent1)
+        if ((TimeInMillis - TimeUnit.MINUTES.toMillis(25)) > System.currentTimeMillis()){
+            alarmManager?.setExact(AlarmManager.RTC_WAKEUP,TimeInMillis - TimeUnit.MINUTES.toMillis(25),pendingIntent1)
         }
 
-        if ((TimeInMillis - TimeUnit.MINUTES.toMillis(7)) > System.currentTimeMillis()){
-            alarmManager?.setExact(AlarmManager.RTC_WAKEUP,TimeInMillis - TimeUnit.MINUTES.toMillis(7),pendingIntent2)
+        if ((TimeInMillis - TimeUnit.MINUTES.toMillis(20)) > System.currentTimeMillis()){
+            alarmManager?.setExact(AlarmManager.RTC_WAKEUP,TimeInMillis - TimeUnit.MINUTES.toMillis(20),pendingIntent2)
+        }
+
+        if ((TimeInMillis - TimeUnit.MINUTES.toMillis(15)) > System.currentTimeMillis()){
+            alarmManager?.setExact(AlarmManager.RTC_WAKEUP,TimeInMillis - TimeUnit.MINUTES.toMillis(15),pendingIntent3)
+        }
+
+        if ((TimeInMillis - TimeUnit.MINUTES.toMillis(10)) > System.currentTimeMillis()){
+            alarmManager?.setExact(AlarmManager.RTC_WAKEUP,TimeInMillis - TimeUnit.MINUTES.toMillis(10),pendingIntent4)
         }
 
         if ((TimeInMillis - TimeUnit.MINUTES.toMillis(5)) > System.currentTimeMillis()){
-            alarmManager?.setExact(AlarmManager.RTC_WAKEUP,TimeInMillis - TimeUnit.MINUTES.toMillis(5),pendingIntent3)
-        }
-
-        if ((TimeInMillis - TimeUnit.MINUTES.toMillis(3)) > System.currentTimeMillis()){
-            alarmManager?.setExact(AlarmManager.RTC_WAKEUP,TimeInMillis - TimeUnit.MINUTES.toMillis(3),pendingIntent4)
-        }
-
-        if ((TimeInMillis - TimeUnit.MINUTES.toMillis(1)) > System.currentTimeMillis()){
-            alarmManager?.setExact(AlarmManager.RTC_WAKEUP,TimeInMillis - TimeUnit.MINUTES.toMillis(1) ,pendingIntent5)
+            alarmManager?.setExact(AlarmManager.RTC_WAKEUP,TimeInMillis - TimeUnit.MINUTES.toMillis(5) ,pendingIntent5)
         }
 
     }

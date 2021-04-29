@@ -26,6 +26,9 @@ interface EventCalendarDao {
     @Query("DELETE FROM event_calendar_table WHERE id = :id")
     suspend fun deleteById(id:Int)
 
+    @Query("DELETE FROM event_calendar_table WHERE type = :type")
+    suspend fun deleteByType(type:Int)
+
     @Query("SELECT * FROM event_calendar_table Where type = :id")
     fun readDataById(id: Int): LiveData<List<EventCalendar>>
 

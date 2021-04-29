@@ -138,7 +138,7 @@
         app:layout_constraintStart_toEndOf="@+id/textView11"
         app:layout_constraintTop_toBottomOf="@+id/time_final_begin_manager_update" />
 
-    <TextView
+    <EditText
         android:id="@+id/room_final_manager_update"
         android:layout_width="80dp"
         android:layout_height="40dp"
@@ -164,7 +164,7 @@
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/time_mid_begin_manager_update" />
 
-    <TextView
+    <EditText
         android:id="@+id/room_mid_manager_update"
         android:layout_width="80dp"
         android:layout_height="40dp"

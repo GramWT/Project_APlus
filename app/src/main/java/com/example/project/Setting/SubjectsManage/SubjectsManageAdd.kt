@@ -123,15 +123,6 @@ class SubjectsManageAdd : Fragment() {
             dialogBuilding(view.building_final_manager_update)
         }
 
-        view.room_mid_manager_update.setOnClickListener {
-            setRoom(view.building_mid_manager_update,view.room_mid_manager_update)
-        }
-
-        view.room_final_manager_update.setOnClickListener {
-            setRoom(view.building_final_manager_update,view.room_final_manager_update)
-        }
-
-
 
         return view
     }
@@ -231,27 +222,6 @@ class SubjectsManageAdd : Fragment() {
     }
 
 
-    private fun setRoom(tv1: TextView, tv2: TextView){
-
-        var ListRoom = arrayOf("0")
-
-        when(tv1.text){
-            "81" -> ListRoom = arrayOf("506A","506B")
-            "89" -> ListRoom = arrayOf("405","404")
-        }
-
-        val RBuilder = AlertDialog.Builder(requireContext())
-
-        RBuilder.setTitle("Choose Room")
-
-        RBuilder.setSingleChoiceItems(ListRoom,-1){dialog,i ->
-
-            tv2.setText(ListRoom[i])
-            dialog.dismiss()
-
-        }
-        RBuilder.show()
-    }
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun roundTime(): LocalDateTime {
