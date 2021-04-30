@@ -31,6 +31,16 @@ class AlarmService(private val context: Context) {
         alarmManager?.setExact(AlarmManager.RTC_WAKEUP,TimeInMillis,pendingIntent1)
     }
 
+    fun cancelOnceAlarm(RequestCode:Int ){
+
+        val rq1 = '1'+ RequestCode.toString()
+        val intent1 = Intent(context,AlarmReceiver::class.java)
+
+        var pendingIntent1 = PendingIntent.getBroadcast(context,rq1.toInt(),intent1,PendingIntent.FLAG_UPDATE_CURRENT)
+
+        alarmManager?.cancel(pendingIntent1)
+    }
+
     fun setExactAlarm(TimeInMillis: Long, RequestCode:Int , SID:String){
 
         val rq1 = '1'+ RequestCode.toString()

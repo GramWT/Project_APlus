@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.project.AlarmManager.Service.AlarmService
@@ -63,31 +64,7 @@ class ProfileUser : Fragment() {
         checkAvatar(layout)
 
         layout.delete_user.setOnClickListener {
-
-
-            mSubjectViewModel.readAllData.observe(viewLifecycleOwner , {subject ->
-                mSubject = subject
-                for (i in 0 .. mSubject.size - 1){
-
-                    val idMid:Int = "1${mSubject[i].id}".toInt()
-                    val idFinal:Int = "2${mSubject[i].id}".toInt()
-
-
-                    println("Delete ID :${mSubject[i].id}")
-                    mAlarmService.cancelAlarm(idMid)
-                    mAlarmService.cancelAlarm(idFinal)
-                }
-
-            })
-
-            mCalendarViewModel.deleteAllEventDatabase()
-            mLessonViewModel.deleteAllLesson()
-            mSubjectViewModel.deleteAllSubject()
-            mEventViewModel.deleteAllEvent()
-            mUserViewModel.deleteAllUser()
-
-            val a = activity as MainActivity
-            a.bottom_navigation.selectedItemId = R.id.menu_exam
+            deleteUser()
         }
 
         layout.update_profile.setOnClickListener {
@@ -152,6 +129,46 @@ class ProfileUser : Fragment() {
             }
 
         })
+    }
+
+    private fun deleteUser(){
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("yes"){ _, _ ->
+            mSubjectViewModel.readAllData.observe(viewLifecycleOwner , {subject ->
+                mSubject = subject
+                for (i in 0 .. mSubject.size - 1){
+
+                    val idMid:Int = "1${mSubject[i].id}".toInt()
+                    val idFinal:Int = "2${mSubject[i].id}".toInt()
+
+
+                    println("Delete ID :${mSubject[i].id}")
+                    mAlarmService.cancelAlarm(idMid)
+                    mAlarmService.cancelAlarm(idFinal)
+                }
+
+            })
+
+            mCalendarViewModel.deleteAllEventDatabase()
+            mLessonViewModel.deleteAllLesson()
+            mSubjectViewModel.deleteAllSubject()
+            mEventViewModel.deleteAllEvent()
+            mUserViewModel.deleteAllUser()
+
+            val a = activity as MainActivity
+            a.bottom_navigation.selectedItemId = R.id.menu_exam
+
+            Toast.makeText(
+                    requireContext(),
+                    "Successfully Delete User",
+                    Toast.LENGTH_SHORT
+            ).show()
+        }
+        builder.setNegativeButton("No"){ _, _ ->}
+        builder.setTitle("Delete User ?")
+        builder.setMessage("Are you sure you want to delete User?")
+        builder.create().show()
+
     }
 
 }

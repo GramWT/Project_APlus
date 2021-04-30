@@ -110,7 +110,7 @@ class EventNotificationAdd : Fragment() {
             checkNotification()
         }
 
-        view.add_notification.setOnClickListener {
+        view.add_notification_button.setOnClickListener {
             dialogPreviousTime(view)
         }
 
@@ -164,46 +164,62 @@ class EventNotificationAdd : Fragment() {
         val state = state_event_add.text.toString()
         val description = description_event_add.text.toString()
         val location = location_event_add.text.toString()
-        val t1 = notification_date_1
-        val t2 = notification_date_2
-        val t3 = notification_date_3
-        val t4 = notification_date_4
-        val t5 = notification_date_5
+        val d1 = notification_date_1.text.toString()
+        val d2 = notification_date_2.text.toString()
+        val d3 = notification_date_3.text.toString()
+        val d4 = notification_date_4.text.toString()
+        val d5 = notification_date_5.text.toString()
+        val t1 = notification_time_1.text.toString()
+        val t2 = notification_time_2.text.toString()
+        val t3 = notification_time_3.text.toString()
+        val t4 = notification_time_4.text.toString()
+        val t5 = notification_time_5.text.toString()
 
 
-        val timeNotification = organizeListTime(t1,t2,t3,t4,t5)
 
-        println(timeNotification)
 
         val rid = randomId()
 
 
         if (inputCheck(title,dateBegin,dateEnd,timeBegin,timeEnd,state,description)){
-            val event = Event(0 ,title,dateBegin,dateEnd,timeBegin,timeEnd,state,description, timeNotification[0].toString(),timeNotification[1].toString(),
-                    timeNotification[2].toString(),timeNotification[3].toString(),timeNotification[4].toString(),location)
+            val event = Event(rid ,title,dateBegin,dateEnd,timeBegin,timeEnd,state,description, d1,
+                   d2,d3,d4,d5,t1,t2,t3,t4,t5,location)
 
             val eventCalendar = EventCalendar(rid,2,dateBegin.substring(0,2).toInt(),dateBegin.substring(3,5).toInt() - 1,dateBegin.substring(6,10).toInt(),title)
-
-            println(dateBegin.substring(0,2).toInt())
-            println(dateBegin.substring(3,5).toInt())
-            println(dateBegin.substring(6,10).toInt())
-            println(timeNotification[0].toString())
-            println(timeNotification[1].toString())
-            println(timeNotification[2].toString())
-            println(timeNotification[3].toString())
-            println(timeNotification[4].toString())
-
-            val timeData = "$dateBegin $timeBegin:00"
-
-            println(timeData)
 
             mEventViewModel.addEvent(event)
             mEventCalendar.addEventCalendar(eventCalendar)
 
-            setAlarm(timeData ,rid,rid.toString())
-            println("RID ${rid}")
-
-
+            if (d1 != "" && t1 != ""){
+                val dt1 = "${d1} ${t1}:00"
+                val rId1 = "1${rid}".toInt()
+                println(rId1)
+                setAlarm(dt1 ,rId1,rid.toString())
+            }
+            if (d2 != "" && t2 != ""){
+                val dt2 = "${d2} ${t2}:00"
+                val rId2 = "2${rid}".toInt()
+                println(rId2)
+                setAlarm(dt2 ,rId2,rid.toString())
+            }
+            if (d3 != "" && t3 != ""){
+                val dt3 = "${d3} ${t3}:00"
+                val rId3 = "3${rid}".toInt()
+                println(rId3)
+                setAlarm(dt3 ,rId3,rid.toString())
+            }
+            if (d4 != "" && t4 != ""){
+                val dt4 = "${d4} ${t4}:00"
+                val rId4 = "4${rid}".toInt()
+                println(rId4)
+                setAlarm(dt4 ,rId4,rid.toString())
+            }
+            if (d5 != "" && t5 != ""){
+                val dt5 = "${d5} ${t5}:00"
+                val rId5 = "5${rid}".toInt()
+                println(rId5)
+                setAlarm(dt5 ,rId5,rid.toString())
+            }
 
             Toast.makeText(requireContext(),"Successfully add!", Toast.LENGTH_SHORT).show()
 
@@ -217,7 +233,7 @@ class EventNotificationAdd : Fragment() {
     }
 
     private fun randomId():Int{
-        var randomId = "1${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}".toInt()
+        var randomId = "1${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}".toInt()
         val list = arrayListOf<Int>()
         var checked = false
 
@@ -232,12 +248,10 @@ class EventNotificationAdd : Fragment() {
             while (checked == false){
                 if (randomId in list){
                     randomId = "1${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}".toInt()
-                    println("Check is ${checked}")
                     println(randomId)
                 }
                 else{
                     checked = true
-                    println("Check is ${checked}")
                 }
             }
         })
@@ -249,7 +263,7 @@ class EventNotificationAdd : Fragment() {
     }
 
     private fun convertMillis(data: String):Long{
-        var sp = SimpleDateFormat("dd/MM/yyyy hh:mm:ss")
+        var sp = SimpleDateFormat("dd/MM/yyyy HH:mm:ss")
         var date:Date = sp.parse(data)
         var millis:Long = date.time
 
@@ -319,6 +333,7 @@ class EventNotificationAdd : Fragment() {
 
             view.notification_device_5.visibility = View.GONE
             view.notification_date_5.text = ""
+            view.notification_time_5.text = ""
         }
     }
 
@@ -329,12 +344,15 @@ class EventNotificationAdd : Fragment() {
             view.notification_device_5.visibility = View.GONE
 
             view.notification_date_4.text = view.notification_date_5.text
+            view.notification_time_4.text = view.notification_time_5.text
             view.notification_date_5.text = ""
+            view.notification_time_5.text = ""
         }
         else if (view.notification_device_5.visibility == View.GONE){
 
             view.notification_device_4.visibility = View.GONE
             view.notification_date_4.text = ""
+            view.notification_time_4.text = ""
         }
     }
 
@@ -347,8 +365,11 @@ class EventNotificationAdd : Fragment() {
             view.notification_device_5.visibility = View.GONE
 
             view.notification_date_3.text = view.notification_date_4.text
+            view.notification_time_3.text = view.notification_time_4.text
             view.notification_date_4.text = view.notification_date_5.text
+            view.notification_time_4.text = view.notification_time_5.text
             view.notification_date_5.text = ""
+            view.notification_time_5.text = ""
         }
         else if (view.notification_device_5.visibility == View.GONE &&
                 view.notification_device_4.visibility == View.VISIBLE){
@@ -357,12 +378,15 @@ class EventNotificationAdd : Fragment() {
             view.notification_device_4.visibility = View.GONE
 
             view.notification_date_3.text = view.notification_date_4.text
+            view.notification_time_3.text = view.notification_time_4.text
             view.notification_date_4.text = ""
+            view.notification_time_4.text = ""
         }
         else if (view.notification_device_5.visibility == View.GONE &&
                 view.notification_device_4.visibility == View.GONE){
             view.notification_device_3.visibility = View.GONE
             view.notification_date_3.text = ""
+            view.notification_time_3.text = ""
         }
     }
 
@@ -377,9 +401,13 @@ class EventNotificationAdd : Fragment() {
             view.notification_device_5.visibility = View.GONE
 
             view.notification_date_2.text = view.notification_date_3.text
+            view.notification_time_2.text = view.notification_time_3.text
             view.notification_date_3.text = view.notification_date_4.text
+            view.notification_time_3.text = view.notification_time_4.text
             view.notification_date_4.text = view.notification_date_5.text
+            view.notification_time_4.text = view.notification_time_5.text
             view.notification_date_5.text = ""
+            view.notification_time_5.text = ""
         }
         else if (view.notification_device_5.visibility == View.GONE &&
                 view.notification_device_4.visibility == View.VISIBLE &&
@@ -390,8 +418,11 @@ class EventNotificationAdd : Fragment() {
             view.notification_device_4.visibility = View.GONE
 
             view.notification_date_2.text = view.notification_date_3.text
+            view.notification_time_2.text = view.notification_time_3.text
             view.notification_date_3.text = view.notification_date_4.text
+            view.notification_time_3.text = view.notification_time_4.text
             view.notification_date_4.text = ""
+            view.notification_time_4.text = ""
         }
         else if (view.notification_device_5.visibility == View.GONE &&
                 view.notification_device_4.visibility == View.GONE &&
@@ -401,7 +432,9 @@ class EventNotificationAdd : Fragment() {
             view.notification_device_3.visibility = View.GONE
 
             view.notification_date_2.text = view.notification_date_3.text
+            view.notification_time_2.text = view.notification_time_3.text
             view.notification_date_3.text = ""
+            view.notification_time_3.text = ""
         }
         else if (view.notification_device_5.visibility == View.GONE &&
                 view.notification_device_4.visibility == View.GONE &&
@@ -409,6 +442,7 @@ class EventNotificationAdd : Fragment() {
 
             view.notification_device_2.visibility = View.GONE
             view.notification_date_2.text = ""
+            view.notification_time_2.text = ""
         }
     }
 
@@ -425,10 +459,15 @@ class EventNotificationAdd : Fragment() {
             view.notification_device_5.visibility = View.GONE
 
             view.notification_date_1.text = view.notification_date_2.text
+            view.notification_time_1.text = view.notification_time_2.text
             view.notification_date_2.text = view.notification_date_3.text
+            view.notification_time_2.text = view.notification_time_3.text
             view.notification_date_3.text = view.notification_date_4.text
+            view.notification_time_3.text = view.notification_time_4.text
             view.notification_date_4.text = view.notification_date_5.text
+            view.notification_time_4.text = view.notification_time_5.text
             view.notification_date_5.text = ""
+            view.notification_time_5.text = ""
         }
         else if (view.notification_device_5.visibility == View.GONE &&
                 view.notification_device_4.visibility == View.VISIBLE &&
@@ -441,9 +480,13 @@ class EventNotificationAdd : Fragment() {
             view.notification_device_4.visibility = View.GONE
 
             view.notification_date_1.text = view.notification_date_2.text
+            view.notification_time_1.text = view.notification_time_2.text
             view.notification_date_2.text = view.notification_date_3.text
+            view.notification_time_2.text = view.notification_time_3.text
             view.notification_date_3.text = view.notification_date_4.text
+            view.notification_time_3.text = view.notification_time_4.text
             view.notification_date_4.text = ""
+            view.notification_time_4.text = ""
         }
         else if (view.notification_device_5.visibility == View.GONE &&
                 view.notification_device_4.visibility == View.GONE &&
@@ -455,8 +498,11 @@ class EventNotificationAdd : Fragment() {
             view.notification_device_3.visibility = View.GONE
 
             view.notification_date_1.text = view.notification_date_2.text
+            view.notification_time_1.text = view.notification_time_2.text
             view.notification_date_2.text = view.notification_date_3.text
+            view.notification_time_2.text = view.notification_time_3.text
             view.notification_date_3.text = ""
+            view.notification_time_3.text = ""
         }
         else if (view.notification_device_5.visibility == View.GONE &&
                 view.notification_device_4.visibility == View.GONE &&
@@ -467,7 +513,9 @@ class EventNotificationAdd : Fragment() {
             view.notification_device_2.visibility = View.GONE
 
             view.notification_date_1.text = view.notification_date_2.text
+            view.notification_time_1.text = view.notification_time_2.text
             view.notification_date_2.text = ""
+            view.notification_time_2.text = ""
         }
         else if (view.notification_device_5.visibility == View.GONE &&
                 view.notification_device_4.visibility == View.GONE &&
@@ -477,6 +525,7 @@ class EventNotificationAdd : Fragment() {
             view.notification_device_1.visibility = View.GONE
 
             view.notification_date_1.text = ""
+            view.notification_time_1.text = ""
         }
     }
 
@@ -666,23 +715,6 @@ class EventNotificationAdd : Fragment() {
         }
     }
 
-    private fun organizeListTime(t1:TextView,t2:TextView,t3:TextView,t4:TextView,t5:TextView) :MutableList<Any>{
-        val listTime:List<Any> = arrayListOf(t1.text,t2.text,t3.text,t4.text,t5.text)
-        println(listTime)
-        var finalListTime:MutableList<Any> = arrayListOf()
-
-        for (item in listTime){
-            if (item != ""){
-                finalListTime.add(item)
-            }
-        }
-
-        while (finalListTime.size < 5){
-            finalListTime.add("null")
-        }
-
-        return finalListTime
-    }
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun roundTime(): LocalDateTime {
@@ -773,8 +805,6 @@ class EventNotificationAdd : Fragment() {
             mAlert.dismiss()
             timeValue = selectPreviousTime.previous_time.text.toString()
 
-            println("Timevalue ${timeValue}")
-            println("TS : ${TS}")
             addNotifications(view,timeValue,TS)
         }
     }
@@ -851,9 +881,6 @@ class EventNotificationAdd : Fragment() {
                 checkDatetime != "${view.notification_date_3.text} ${view.notification_time_3.text}" &&
                 checkDatetime != "${view.notification_date_4.text} ${view.notification_time_4}" &&
                 checkDatetime != "${view.notification_date_5.text} ${view.notification_time_5.text}"){
-
-            println(checkDatetime)
-            println("${view.notification_date_1.text} ${view.notification_time_1.text}")
 
             if (view.notification_device_1.visibility == View.GONE) {
                 view.notification_device_1.visibility = View.VISIBLE

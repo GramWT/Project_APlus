@@ -333,7 +333,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="left|center"
                         android:minHeight="50dp"
-                        android:text="1"
+                        android:hint="1"
                         android:textColor="@color/color_dark_mode_FFFFFF"
                         android:textColorHint="@color/color_dark_mode_8899A6"
                         android:textSize="18sp" />
@@ -343,7 +343,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="left|center"
                         android:minHeight="50dp"
-                        android:text="1"
+                        android:hint="1"
                         android:textColor="@color/color_dark_mode_FFFFFF"
                         android:textColorHint="@color/color_dark_mode_8899A6"
                         android:textSize="18sp" />
@@ -368,7 +368,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="left|center"
                         android:minHeight="50dp"
-                        android:text="2"
+                        android:hint="2"
                         android:textColor="@color/color_dark_mode_FFFFFF"
                         android:textColorHint="@color/color_dark_mode_8899A6"
                         android:textSize="18sp" />
@@ -378,7 +378,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="left|center"
                         android:minHeight="50dp"
-                        android:text="2"
+                        android:hint="2"
                         android:textColor="@color/color_dark_mode_FFFFFF"
                         android:textColorHint="@color/color_dark_mode_8899A6"
                         android:textSize="18sp" />
@@ -404,7 +404,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="left|center"
                         android:minHeight="50dp"
-                        android:text="3"
+                        android:hint="3"
                         android:textColor="@color/color_dark_mode_FFFFFF"
                         android:textColorHint="@color/color_dark_mode_8899A6"
                         android:textSize="18sp" />
@@ -414,7 +414,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="left|center"
                         android:minHeight="50dp"
-                        android:text="3"
+                        android:hint="3"
                         android:textColor="@color/color_dark_mode_FFFFFF"
                         android:textColorHint="@color/color_dark_mode_8899A6"
                         android:textSize="18sp" />
@@ -440,7 +440,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="left|center"
                         android:minHeight="50dp"
-                        android:text="4"
+                        android:hint="4"
                         android:textColor="@color/color_dark_mode_FFFFFF"
                         android:textColorHint="@color/color_dark_mode_8899A6"
                         android:textSize="18sp" />
@@ -450,7 +450,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="left|center"
                         android:minHeight="50dp"
-                        android:text="4"
+                        android:hint="4"
                         android:textColor="@color/color_dark_mode_FFFFFF"
                         android:textColorHint="@color/color_dark_mode_8899A6"
                         android:textSize="18sp" />
@@ -476,17 +476,18 @@
                         android:layout_height="wrap_content"
                         android:gravity="left|center"
                         android:minHeight="50dp"
-                        android:text="5"
+                        android:hint="5"
                         android:textColor="@color/color_dark_mode_FFFFFF"
                         android:textColorHint="@color/color_dark_mode_8899A6"
                         android:textSize="18sp" />
+
                     <TextView
                         android:id="@+id/notification_time_5"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:gravity="left|center"
                         android:minHeight="50dp"
-                        android:text="5"
+                        android:hint="5"
                         android:textColor="@color/color_dark_mode_FFFFFF"
                         android:textColorHint="@color/color_dark_mode_8899A6"
                         android:textSize="18sp" />
@@ -508,7 +509,7 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/add_notification"
+                        android:id="@+id/add_notification_button"
                         android:layout_width="70dp"
                         android:layout_height="40dp"
                         android:gravity="center"
