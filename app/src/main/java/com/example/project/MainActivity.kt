@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_Project)
         setContentView(MainBinding.root)
         val exam = CheckExamData()
         val lesson = CheckLessonData()
