@@ -18,6 +18,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.project.AlarmManager.Service.AlarmService
 import com.example.project.DataBase.model.EventCalendar
+import com.example.project.DataBase.model.Lesson
 import com.example.project.DataBase.model.Subject
 import com.example.project.DataBase.viewmodel.EventCalendarViewModel
 import com.example.project.DataBase.viewmodel.SubjectViewModel
@@ -37,6 +38,7 @@ class SubjectsManageAdd : Fragment() {
     private lateinit var mSubjectViewModel: SubjectViewModel
     private lateinit var mEventCalendar:EventCalendarViewModel
     private lateinit var mAlarmService: AlarmService
+    private lateinit var mSubject:List<Subject>
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
@@ -140,18 +142,21 @@ class SubjectsManageAdd : Fragment() {
         val finalBuilding = building_final_manager_update.text.toString()
         val midRoom = room_mid_manager_update.text.toString()
         val finalRoom = room_final_manager_update.text.toString()
+
+        val rid = randomId()
+
         val id:Int = sid.toInt()
-        val mid:Int = sid.toInt() + 1
-        val final:Int = sid.toInt() + 2
+        val mid:Int = "1${rid.toString()}".toInt()
+        val final:Int = "2${rid.toString()}".toInt()
 
         val setId:Int = sid.substring(0,3).toInt() + sid.substring(4,7).toInt()
-        val idMid:Int = "1${setId.toString()}".toInt()
-        val idFinal:Int = "2${setId.toString()}".toInt()
+        val idMid:Int = "1${rid.toString()}".toInt()
+        val idFinal:Int = "2${rid.toString()}".toInt()
 
         println("My ID : ${setId}")
 
         if (inputCheck(sid,name,midDate,finalDate,midTimeBegin,midTimeEnd,finalTimeBegin,finalTimeEnd,midBuilding,finalBuilding,midRoom,finalRoom)){
-            val subject = Subject(setId,sid,name,midBuilding,midRoom,midTimeBegin,midTimeEnd,midDate,finalBuilding,finalRoom,finalTimeBegin,finalTimeEnd,finalDate)
+            val subject = Subject(rid,sid,name,midBuilding,midRoom,midTimeBegin,midTimeEnd,midDate,finalBuilding,finalRoom,finalTimeBegin,finalTimeEnd,finalDate)
 
 
 
@@ -282,12 +287,32 @@ class SubjectsManageAdd : Fragment() {
             mAlert.dismiss()
 
         }
+    }
 
+    private fun randomId():Int{
+        var randomId = "3${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}".toInt()
+        val list = arrayListOf<Int>()
+        var checked = false
 
+        mSubjectViewModel.readAllData.observe(viewLifecycleOwner,{ subject ->
+            mSubject = subject
 
+            for (i in 0 .. mSubject.size -1){
 
+                list.add(mSubject[i].id)
+            }
 
-
+            while (checked == false){
+                if (randomId in list){
+                    randomId = "3${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}".toInt()
+                    println(randomId)
+                }
+                else{
+                    checked = true
+                }
+            }
+        })
+        return randomId
     }
 
 

@@ -25,6 +25,7 @@ import com.example.project.DataBase.viewmodel.EventViewModel
 import com.example.project.MainActivity
 import com.example.project.R
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.dialog_building_view.view.*
 import kotlinx.android.synthetic.main.dialog_select_previous_time.view.*
 import kotlinx.android.synthetic.main.fragment_event_notification_add.*
 import kotlinx.android.synthetic.main.fragment_event_notification_add.view.*
@@ -175,9 +176,6 @@ class EventNotificationAdd : Fragment() {
         val t4 = notification_time_4.text.toString()
         val t5 = notification_time_5.text.toString()
 
-
-
-
         val rid = randomId()
 
 
@@ -193,31 +191,26 @@ class EventNotificationAdd : Fragment() {
             if (d1 != "" && t1 != ""){
                 val dt1 = "${d1} ${t1}:00"
                 val rId1 = "1${rid}".toInt()
-                println(rId1)
                 setAlarm(dt1 ,rId1,rid.toString())
             }
             if (d2 != "" && t2 != ""){
                 val dt2 = "${d2} ${t2}:00"
                 val rId2 = "2${rid}".toInt()
-                println(rId2)
                 setAlarm(dt2 ,rId2,rid.toString())
             }
             if (d3 != "" && t3 != ""){
                 val dt3 = "${d3} ${t3}:00"
                 val rId3 = "3${rid}".toInt()
-                println(rId3)
                 setAlarm(dt3 ,rId3,rid.toString())
             }
             if (d4 != "" && t4 != ""){
                 val dt4 = "${d4} ${t4}:00"
                 val rId4 = "4${rid}".toInt()
-                println(rId4)
                 setAlarm(dt4 ,rId4,rid.toString())
             }
             if (d5 != "" && t5 != ""){
                 val dt5 = "${d5} ${t5}:00"
                 val rId5 = "5${rid}".toInt()
-                println(rId5)
                 setAlarm(dt5 ,rId5,rid.toString())
             }
 
@@ -247,7 +240,7 @@ class EventNotificationAdd : Fragment() {
 
             while (checked == false){
                 if (randomId in list){
-                    randomId = "1${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}".toInt()
+                    randomId = "1${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}".toInt()
                     println(randomId)
                 }
                 else{
@@ -276,6 +269,7 @@ class EventNotificationAdd : Fragment() {
                 ||description.equals(""))
 
     }
+
 
     private fun setState(tv: TextView,im: ImageView){
 
@@ -802,10 +796,14 @@ class EventNotificationAdd : Fragment() {
         }
 
         selectPreviousTime.done_button.setOnClickListener {
-            mAlert.dismiss()
-            timeValue = selectPreviousTime.previous_time.text.toString()
 
-            addNotifications(view,timeValue,TS)
+            if (selectPreviousTime.previous_time.text.toString() == ""){
+                Toast.makeText(context,"Please Fill Time",Toast.LENGTH_SHORT).show()
+            }else{
+                mAlert.dismiss()
+                timeValue = selectPreviousTime.previous_time.text.toString()
+                addNotifications(view,timeValue,TS)
+            }
         }
     }
 

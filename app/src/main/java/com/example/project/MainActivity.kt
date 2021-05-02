@@ -33,13 +33,9 @@ class MainActivity : AppCompatActivity() {
         val isNightModeOn: Boolean = appSettingPrefs.getBoolean("NightMode",true)
 
         if (isNightModeOn){
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-
-            println(11)
-        }else{
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-
-            println(22)
+        }else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
 
         makeCurrentFragment(exam)

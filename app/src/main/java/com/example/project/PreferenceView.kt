@@ -73,37 +73,33 @@ class PreferenceView : Fragment() {
         builder.setPositiveButton("yes"){ _, _ ->
 
             if (isNightModeOn){
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                 sharedPrefsEdit.putBoolean("NightMode",false)
                 sharedPrefsEdit.apply()
 
                 val a = activity as MainActivity
                 a.bottom_navigation.visibility = View.VISIBLE
                 a.bottom_navigation.selectedItemId = R.id.menu_exam
-
-                println(1)
-
             }else{
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                 sharedPrefsEdit.putBoolean("NightMode",true)
                 sharedPrefsEdit.apply()
 
                 val a = activity as MainActivity
                 a.bottom_navigation.visibility = View.VISIBLE
                 a.bottom_navigation.selectedItemId = R.id.menu_exam
-
-                println(2)
-
             }
             Toast.makeText(
                     requireContext(),
-                    "Successfully Removed All Subjects",
+                    "Successfully Changed Mode",
                     Toast.LENGTH_SHORT
             ).show()
         }
+
         builder.setNegativeButton("No"){ _, _ ->
             view.switch2.isChecked = isNightModeOn
         }
+
         builder.setTitle("Change Theme ?")
         builder.setMessage("Are you sure you want to change theme?")
         builder.create().show()

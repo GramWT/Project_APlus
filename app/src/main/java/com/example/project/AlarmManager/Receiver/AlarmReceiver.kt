@@ -103,6 +103,7 @@ class AlarmReceiver:BroadcastReceiver() {
             setAutoCancel(true)
 
 
+
         }.build()
 
         val manager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager

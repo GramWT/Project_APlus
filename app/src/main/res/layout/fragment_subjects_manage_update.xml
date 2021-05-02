@@ -25,8 +25,8 @@
             android:text="Save"
             android:textColor="@color/color_dark_mode_192734"
             android:textSize="12sp"
-            android:background="@color/color_green_2EC1AC"
-            android:backgroundTint="@color/color_green_2EC1AC"
+            app:background="@color/color_green_2EC1AC"
+            app:backgroundTint="@color/color_green_2EC1AC"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

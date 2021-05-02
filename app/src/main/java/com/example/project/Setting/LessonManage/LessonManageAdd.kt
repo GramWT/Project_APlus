@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.project.DataBase.model.EventCalendar
 import com.example.project.DataBase.model.Lesson
 import com.example.project.DataBase.viewmodel.LessonViewModel
 import com.example.project.R
@@ -20,6 +21,7 @@ import kotlinx.android.synthetic.main.fragment_lesson_manage_add.view.*
 class LessonManageAdd : Fragment() {
 
     private lateinit var mLessonViewModel: LessonViewModel
+    private lateinit var mLesson:List<Lesson>
 
 
     override fun onCreateView(
@@ -1266,8 +1268,10 @@ class LessonManageAdd : Fragment() {
         val l15 = lesson_name15_text.text.toString()
         val l16 = lesson_name16_text.text.toString()
 
+        val rid = randomId()
+
         if (inputCheck(sid,l01)){
-            val lesson = Lesson(0,sid,l01,l02,l03,l04,l05,l06,l07,l08,l09,l10,l11,l12,l13,l14,l15,l16,0,0,0,0,0,0,0,0,0,
+            val lesson = Lesson(rid,sid,l01,l02,l03,l04,l05,l06,l07,l08,l09,l10,l11,l12,l13,l14,l15,l16,0,0,0,0,0,0,0,0,0,
             0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
             0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
             0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
@@ -1289,6 +1293,32 @@ class LessonManageAdd : Fragment() {
 
         return  !(TextUtils.isEmpty(sid)|| TextUtils.isEmpty(titlename))
 
+    }
+
+    private fun randomId():Int{
+        var randomId = "2${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}".toInt()
+        val list = arrayListOf<Int>()
+        var checked = false
+
+        mLessonViewModel.readAllData.observe(viewLifecycleOwner,{ lesson ->
+            mLesson = lesson
+
+            for (i in 0 .. mLesson.size -1){
+
+                list.add(mLesson[i].id)
+            }
+
+            while (checked == false){
+                if (randomId in list){
+                    randomId = "2${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}".toInt()
+                    println(randomId)
+                }
+                else{
+                    checked = true
+                }
+            }
+        })
+        return randomId
     }
 
 }

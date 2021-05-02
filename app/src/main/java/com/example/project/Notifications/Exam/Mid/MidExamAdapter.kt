@@ -144,6 +144,9 @@ class MidExamAdapter(context: Context):RecyclerView.Adapter<MidExamAdapter.MyVie
         else if (Building == "89"){
             ViewBuilding.building_image.setImageResource(R.drawable.b89)
         }
+        else{
+            ViewBuilding.building_image.setImageResource(R.drawable.nopicture)
+        }
 
         ViewBuilding.navigate_button.setOnClickListener {
             findLocation(Building)

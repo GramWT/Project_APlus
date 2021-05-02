@@ -28,7 +28,7 @@ class InitialApplication :Application(){
 
             val channelId2 = "event_high"
             val channelName2 = "Event High"
-            val channel2 = NotificationChannel(channelId2, channelName2, NotificationManager.IMPORTANCE_DEFAULT)
+            val channel2 = NotificationChannel(channelId2, channelName2, NotificationManager.IMPORTANCE_HIGH)
             channel2.group = groupId
 
             val channelId3 = "event_default"
@@ -38,7 +38,7 @@ class InitialApplication :Application(){
 
             val channelId4 = "event_low"
             val channelName4 = "Event Low"
-            val channel4 = NotificationChannel(channelId4, channelName4, NotificationManager.IMPORTANCE_DEFAULT)
+            val channel4 = NotificationChannel(channelId4, channelName4, NotificationManager.IMPORTANCE_LOW)
             channel4.group = groupId
 
 

@@ -24,7 +24,9 @@
     <color name="color_green_16697a">#16697a</color>
     <color name="color_orange_db6400">#db6400</color>
 
-    <color name="color_green_2EC1AC">#2ec1ac</color>
+    <color name="color_green_2EC1AC">#FF5722</color>
+
+
     <color name="color_green_3E978B">#3E978B</color>
     <color name="color_green_D2E603">#D2E603</color>
     <color name="color_green_EFF48E">#EFF48E</color>
@@ -33,7 +35,7 @@
 
 
     #DarkMode Color
-    
+
     <color name="color_dark_mode_15202B">#15202B</color>
     <color name="color_dark_mode_192734">#192734</color>
     <color name="color_dark_mode_22303C">#22303C</color>

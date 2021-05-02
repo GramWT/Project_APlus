@@ -1,5 +1,6 @@
 package com.example.project.Setting.LessonManage
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.text.TextUtils
 import androidx.fragment.app.Fragment
@@ -13,6 +14,7 @@ import androidx.navigation.fragment.navArgs
 import com.example.project.DataBase.model.Lesson
 import com.example.project.DataBase.viewmodel.LessonViewModel
 import com.example.project.R
+import com.example.project.Setting.SubjectsManage.SubjectsManageUpdateDirections
 import kotlinx.android.synthetic.main.fragment_lesson_manage_add.*
 import kotlinx.android.synthetic.main.fragment_lesson_manage_add.lesson_name1_text
 import kotlinx.android.synthetic.main.fragment_lesson_manage_add.lesson_subject_name
@@ -52,6 +54,10 @@ class LessonManageUpdate : Fragment() {
 
         view.save_update_lesson.setOnClickListener {
             insertDataToDatabase(args.Lesson)
+        }
+
+        view.deleteLessonButton.setOnClickListener {
+            deleteLesson()
         }
 
         view.lesson_subject_name.setText(args.Lesson.name)
@@ -204,6 +210,24 @@ class LessonManageUpdate : Fragment() {
         }
 
         return view
+    }
+
+    private fun deleteLesson(){
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("yes"){ _, _ ->
+
+            val lesson =  args.Lesson
+            mLessonViewModel.deleteLesson(lesson)
+
+            Toast.makeText(requireContext(),"Successfully deleted ",Toast.LENGTH_SHORT).show()
+            val action = LessonManageUpdateDirections.actionLessonManageUpdateToLessonManage()
+            findNavController().navigate(action)
+
+        }
+        builder.setNegativeButton("No"){ _ ,_ ->}
+        builder.setTitle("Delete Subject ?")
+        builder.setMessage("Are you sure you want to Lesson ?")
+        builder.show()
     }
 
     private fun sortText1(view: View){

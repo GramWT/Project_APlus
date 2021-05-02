@@ -421,31 +421,26 @@ class EventNotificationUpdate : Fragment() {
         if (date_1.text.toString() != "" && time_1.text.toString() != ""){
             val dt1 = "${date_1.text} ${time_1.text}:00"
             val rId1 = "1${args.event.id}".toInt()
-            println(rId1)
             setAlarm(dt1 ,rId1,args.event.id.toString())
         }
         if (date_2.text.toString() != "" && time_2.text.toString() != ""){
             val dt2 = "${date_2.text} ${time_2.text}:00"
             val rId2 = "2${args.event.id}".toInt()
-            println(rId2)
             setAlarm(dt2 ,rId2,args.event.id.toString())
         }
         if (date_3.text.toString() != "" && time_3.text.toString() != ""){
             val dt3 = "${date_3.text} ${time_3.text}:00"
             val rId3 = "3${args.event.id}".toInt()
-            println(rId3)
             setAlarm(dt3 ,rId3,args.event.id.toString())
         }
         if (date_4.text.toString() != "" && time_4.text.toString() != ""){
             val dt4 = "${date_4.text} ${time_4.text}:00"
             val rId4 = "4${args.event.id}".toInt()
-            println(rId4)
             setAlarm(dt4 ,rId4,args.event.id.toString())
         }
         if (date_5.text.toString() != "" && time_5.text.toString() != ""){
             val dt5 = "${date_5.text} ${time_5.text}:00"
             val rId5 = "5${args.event.id}".toInt()
-            println(rId5)
             setAlarm(dt5 ,rId5,args.event.id.toString())
         }
 
@@ -465,7 +460,7 @@ class EventNotificationUpdate : Fragment() {
 
     private fun setStateView(tv: TextView, im: ImageView){
 
-        val ListState = arrayOf("High","Normal","Low","Default")
+        val ListState = arrayOf("High","Normal","Low")
 
         val BBuilder = AlertDialog.Builder(requireContext())
 
@@ -619,10 +614,15 @@ class EventNotificationUpdate : Fragment() {
         }
 
         selectPreviousTime.done_button.setOnClickListener {
-            mAlert.dismiss()
-            timeValue = selectPreviousTime.previous_time.text.toString()
 
-            addNotifications(view,timeValue,TS)
+            if (selectPreviousTime.previous_time.text.toString() == ""){
+                Toast.makeText(context,"Please Fill Time",Toast.LENGTH_SHORT).show()
+            }else{
+                mAlert.dismiss()
+                timeValue = selectPreviousTime.previous_time.text.toString()
+
+                addNotifications(view,timeValue,TS)
+            }
         }
     }
 

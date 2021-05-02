@@ -28,7 +28,13 @@ class AlarmService(private val context: Context) {
 
         var pendingIntent1 = PendingIntent.getBroadcast(context,rq1.toInt(),intent1,PendingIntent.FLAG_UPDATE_CURRENT)
 
-        alarmManager?.setExact(AlarmManager.RTC_WAKEUP,TimeInMillis,pendingIntent1)
+        if (TimeInMillis  > System.currentTimeMillis()){
+            alarmManager?.setExact(AlarmManager.RTC_WAKEUP,TimeInMillis,pendingIntent1)
+        }
+        else{
+            println(TimeInMillis)
+        }
+
     }
 
     fun cancelOnceAlarm(RequestCode:Int ){
