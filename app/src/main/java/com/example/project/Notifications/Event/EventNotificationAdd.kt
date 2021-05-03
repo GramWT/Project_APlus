@@ -181,7 +181,7 @@ class EventNotificationAdd : Fragment() {
 
         if (inputCheck(title,dateBegin,dateEnd,timeBegin,timeEnd,state,description)){
             val event = Event(rid ,title,dateBegin,dateEnd,timeBegin,timeEnd,state,description, d1,
-                   d2,d3,d4,d5,t1,t2,t3,t4,t5,location)
+                   d2,d3,d4,d5,t1,t2,t3,t4,t5,location,1)
 
             val eventCalendar = EventCalendar(rid,2,dateBegin.substring(0,2).toInt(),dateBegin.substring(3,5).toInt() - 1,dateBegin.substring(6,10).toInt(),title)
 

@@ -151,7 +151,7 @@ class EventNotificationUpdate : Fragment() {
                     time_3.text.toString(),
                     time_4.text.toString(),
                     time_5.text.toString(),
-                    location_event_update.text.toString())
+                    location_event_update.text.toString(), 1)
 
 
             val action = EventNotificationUpdateDirections.actionEventNotificationUpdateToEventNotificationView(event)
@@ -410,7 +410,7 @@ class EventNotificationUpdate : Fragment() {
                 time_3.text.toString(),
                 time_4.text.toString(),
                 time_5.text.toString(),
-                location_event_update.text.toString())
+                location_event_update.text.toString(),1)
 
         val eventMid = EventCalendar(args.event.id,2,date_begin_event_update.text.substring(0,2).toInt(),date_begin_event_update.text.substring(3,5).toInt() - 1,
                 date_begin_event_update.text.substring(6,10).toInt(),title_event_update.text.toString())

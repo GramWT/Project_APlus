@@ -32,8 +32,6 @@ class EventAdapter: RecyclerView.Adapter<EventAdapter.MyViewHolder>() {
         val currentItem = eventList[position]
 
 
-
-
         holder.setIsRecyclable(false)
         holder.itemView.event_row.animation = AnimationUtils.loadAnimation(holder.itemView.event_row.context,R.anim.item_slide_right)
 
@@ -47,9 +45,23 @@ class EventAdapter: RecyclerView.Adapter<EventAdapter.MyViewHolder>() {
         holder.itemView.time_end_event.text = currentItem.time_end
 
 
+        if (currentItem.type == 2){
+            holder.itemView.date_end_event.text = ""
+            holder.itemView.time_end_event.text = ""
+        }
+
+
+
         holder.itemView.event_row.setOnClickListener {
-            val action = EventNotificationDirections.actionEventNotificationToEventNotificationView(currentItem)
-            holder.itemView.findNavController().navigate(action)
+
+            if (currentItem.type == 1){
+                val action = EventNotificationDirections.actionEventNotificationToEventNotificationView(currentItem)
+                holder.itemView.findNavController().navigate(action)
+            }
+            else if (currentItem.type == 2){
+                val action = EventNotificationDirections.actionEventNotificationToReminderNotificationView(currentItem)
+                holder.itemView.findNavController().navigate(action)
+            }
         }
 
         setState(currentItem.state,holder.itemView.circle_state)
@@ -70,7 +82,6 @@ class EventAdapter: RecyclerView.Adapter<EventAdapter.MyViewHolder>() {
 
     private fun setState(state: String, im: ImageView){
         when(state){
-            "Default" -> im.setImageResource(R.drawable.status_event_green)
             "High" -> im.setImageResource(R.drawable.status_event_red)
             "Normal" -> im.setImageResource(R.drawable.status_event_green)
             "Low" -> im.setImageResource(R.drawable.status_event_blue)

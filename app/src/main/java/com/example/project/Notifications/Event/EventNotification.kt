@@ -80,6 +80,11 @@ class EventNotification : Fragment() {
             findNavController().navigate(action)
         }
 
+        binding.reminderButton.setOnClickListener{
+            val action = EventNotificationDirections.actionEventNotificationToReminderNotificationAdd()
+            findNavController().navigate(action)
+        }
+
 
         return binding.root
 

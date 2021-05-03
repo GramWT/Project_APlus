@@ -16,6 +16,12 @@
         <action
             android:id="@+id/action_eventNotification_to_eventNotificationView"
             app:destination="@id/eventNotificationView" />
+        <action
+            android:id="@+id/action_eventNotification_to_reminderNotificationAdd"
+            app:destination="@id/reminderNotificationAdd" />
+        <action
+            android:id="@+id/action_eventNotification_to_reminderNotificationView"
+            app:destination="@id/reminderNotificationView" />
     </fragment>
     <fragment
         android:id="@+id/eventNotificationAdd"
@@ -50,6 +56,42 @@
             app:destination="@id/eventNotificationView" />
         <argument
             android:name="event"
+            app:argType="com.example.project.DataBase.model.Event" />
+    </fragment>
+    <fragment
+        android:id="@+id/reminderNotificationAdd"
+        android:name="com.example.project.Notifications.Event.ReminderNotificationAdd"
+        android:label="fragment_reminder_notification_add"
+        tools:layout="@layout/fragment_reminder_notification_add" >
+        <action
+            android:id="@+id/action_reminderNotificationAdd_to_eventNotification"
+            app:destination="@id/eventNotification" />
+    </fragment>
+    <fragment
+        android:id="@+id/reminderNotificationView"
+        android:name="com.example.project.Notifications.Event.ReminderNotificationView"
+        android:label="fragment_reminder_notification_view"
+        tools:layout="@layout/fragment_reminder_notification_view" >
+        <action
+            android:id="@+id/action_reminderNotificationView_to_eventNotification"
+            app:destination="@id/eventNotification" />
+        <argument
+            android:name="Reminder"
+            app:argType="com.example.project.DataBase.model.Event" />
+        <action
+            android:id="@+id/action_reminderNotificationView_to_reminderNotificationUpdate"
+            app:destination="@id/reminderNotificationUpdate" />
+    </fragment>
+    <fragment
+        android:id="@+id/reminderNotificationUpdate"
+        android:name="com.example.project.Notifications.Event.ReminderNotificationUpdate"
+        android:label="fragment_reminder_notification_update"
+        tools:layout="@layout/fragment_reminder_notification_update" >
+        <action
+            android:id="@+id/action_reminderNotificationUpdate_to_reminderNotificationView"
+            app:destination="@id/reminderNotificationView" />
+        <argument
+            android:name="Reminder"
             app:argType="com.example.project.DataBase.model.Event" />
     </fragment>
 </navigation>
