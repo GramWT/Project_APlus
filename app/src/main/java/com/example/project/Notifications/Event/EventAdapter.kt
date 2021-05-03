@@ -45,7 +45,11 @@ class EventAdapter: RecyclerView.Adapter<EventAdapter.MyViewHolder>() {
         holder.itemView.time_end_event.text = currentItem.time_end
 
 
-        if (currentItem.type == 2){
+        if (currentItem.type == 1){
+            holder.itemView.type_event.text = "Event"
+        }
+        else if (currentItem.type == 2){
+            holder.itemView.type_event.text = "Reminder"
             holder.itemView.date_end_event.text = ""
             holder.itemView.time_end_event.text = ""
         }
