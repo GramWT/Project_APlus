@@ -69,9 +69,9 @@
         android:id="@+id/select_avatar"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:src="@drawable/ic_baseline_add_24"
         app:background="@color/button_on_top"
         app:backgroundTint="@color/button_on_top"
-        android:src="@drawable/ic_baseline_add_24"
         app:layout_constraintBottom_toBottomOf="@+id/profileUser"
         app:layout_constraintStart_toEndOf="@+id/profileUser" />
 
@@ -81,8 +81,8 @@
         android:layout_height="50dp"
         android:layout_marginBottom="50dp"
         android:text="Delete"
-        android:textStyle="bold"
         android:textColor="@color/text_same_background"
+        android:textStyle="bold"
         app:background="@color/button_on_top"
         app:backgroundTint="@color/button_on_top"
         app:layout_constraintBottom_toBottomOf="parent"

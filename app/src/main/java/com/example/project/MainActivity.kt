@@ -1,9 +1,8 @@
 package com.example.project
 
 import android.content.SharedPreferences
-import android.content.res.Configuration
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.isInvisible
 import androidx.fragment.app.Fragment
@@ -18,7 +17,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
 
-    private val MainBinding:ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+    private val MainBinding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,18 +30,18 @@ class MainActivity : AppCompatActivity() {
         val setting = NavSetting()
 
         val appSettingPrefs: SharedPreferences = getSharedPreferences("AppSettingPrefs", MODE_PRIVATE)
-        val isNightModeOn: Boolean = appSettingPrefs.getBoolean("NightMode",true)
+        val isNightModeOn: Boolean = appSettingPrefs.getBoolean("NightMode", true)
 
-        if (isNightModeOn){
+        if (isNightModeOn) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        }else{
+        } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
 
         makeCurrentFragment(exam)
 
         MainBinding.bottomNavigation.setOnNavigationItemSelectedListener {
-            when(it.itemId){
+            when (it.itemId) {
                 R.id.menu_exam -> makeCurrentFragment(exam)
                 R.id.menu_lesson -> makeCurrentFragment(lesson)
                 R.id.menu_event -> makeCurrentFragment(event)
@@ -51,37 +50,26 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-        
+
     }
 
 
-
     private fun makeCurrentFragment(fragment: Fragment) =
-        supportFragmentManager.beginTransaction().apply {
-            setCustomAnimations(R.anim.fragment_fade_enter,R.anim.fragment_fade_exit,R.anim.fragment_fade_enter,R.anim.fragment_fade_exit)
-            replace(R.id.fl_wrapper,fragment)
-            commit()
-        }
+            supportFragmentManager.beginTransaction().apply {
+                setCustomAnimations(R.anim.fragment_fade_enter, R.anim.fragment_fade_exit, R.anim.fragment_fade_enter, R.anim.fragment_fade_exit)
+                replace(R.id.fl_wrapper, fragment)
+                commit()
+            }
 
 
-
-
-    fun hideBottomNav(){
+    fun hideBottomNav() {
         bottom_navigation.isInvisible = true
 
     }
 
-    fun showBottomNav(){
+    fun showBottomNav() {
         bottom_navigation.isInvisible = false
     }
-
-
-
-
-
-
-
-
 
 
 }

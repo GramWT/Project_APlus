@@ -320,6 +320,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/guideline8"
                 app:layout_constraintStart_toStartOf="@+id/guideline3"
                 app:layout_constraintTop_toBottomOf="@+id/view4">
+
                 <LinearLayout
                     android:id="@+id/notification_device_1"
                     android:layout_width="250dp"
@@ -331,18 +332,19 @@
                         android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:gravity="left|center"
-                        android:minHeight="50dp"
                         android:hint="1"
+                        android:minHeight="50dp"
                         android:textColor="@color/text_on_background"
                         android:textColorHint="@color/text_hint"
                         android:textSize="18sp" />
+
                     <TextView
                         android:id="@+id/notification_time_1"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:gravity="left|center"
-                        android:minHeight="50dp"
                         android:hint="1"
+                        android:minHeight="50dp"
                         android:textColor="@color/text_on_background"
                         android:textColorHint="@color/text_hint"
                         android:textSize="18sp" />
@@ -351,10 +353,11 @@
                         android:id="@+id/cancel_notification_device_1"
                         android:layout_width="wrap_content"
                         android:layout_height="50dp"
-                        android:background="@color/background"
                         android:layout_weight="1"
+                        android:background="@color/background"
                         app:srcCompat="@drawable/ic_baseline_clear_24" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/notification_device_2"
                     android:layout_width="250dp"
@@ -366,18 +369,19 @@
                         android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:gravity="left|center"
-                        android:minHeight="50dp"
                         android:hint="2"
+                        android:minHeight="50dp"
                         android:textColor="@color/text_on_background"
                         android:textColorHint="@color/text_hint"
                         android:textSize="18sp" />
+
                     <TextView
                         android:id="@+id/notification_time_2"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:gravity="left|center"
-                        android:minHeight="50dp"
                         android:hint="2"
+                        android:minHeight="50dp"
                         android:textColor="@color/text_on_background"
                         android:textColorHint="@color/text_hint"
                         android:textSize="18sp" />
@@ -386,8 +390,8 @@
                         android:id="@+id/cancel_notification_device_2"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:background="@color/background"
                         android:layout_weight="1"
+                        android:background="@color/background"
                         app:srcCompat="@drawable/ic_baseline_clear_24" />
                 </LinearLayout>
 
@@ -402,18 +406,19 @@
                         android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:gravity="left|center"
-                        android:minHeight="50dp"
                         android:hint="3"
+                        android:minHeight="50dp"
                         android:textColor="@color/text_on_background"
                         android:textColorHint="@color/text_hint"
                         android:textSize="18sp" />
+
                     <TextView
                         android:id="@+id/notification_time_3"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:gravity="left|center"
-                        android:minHeight="50dp"
                         android:hint="3"
+                        android:minHeight="50dp"
                         android:textColor="@color/text_on_background"
                         android:textColorHint="@color/text_hint"
                         android:textSize="18sp" />
@@ -422,9 +427,9 @@
                         android:id="@+id/cancel_notification_device_3"
                         android:layout_width="wrap_content"
                         android:layout_height="50dp"
-                        android:background="@color/background"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/ic_baseline_clear_24"/>
+                        android:background="@color/background"
+                        app:srcCompat="@drawable/ic_baseline_clear_24" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -438,18 +443,19 @@
                         android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:gravity="left|center"
-                        android:minHeight="50dp"
                         android:hint="4"
+                        android:minHeight="50dp"
                         android:textColor="@color/text_on_background"
                         android:textColorHint="@color/text_hint"
                         android:textSize="18sp" />
+
                     <TextView
                         android:id="@+id/notification_time_4"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:gravity="left|center"
-                        android:minHeight="50dp"
                         android:hint="4"
+                        android:minHeight="50dp"
                         android:textColor="@color/text_on_background"
                         android:textColorHint="@color/text_hint"
                         android:textSize="18sp" />
@@ -458,8 +464,8 @@
                         android:id="@+id/cancel_notification_device_4"
                         android:layout_width="wrap_content"
                         android:layout_height="50dp"
-                        android:background="@color/background"
                         android:layout_weight="1"
+                        android:background="@color/background"
                         app:srcCompat="@drawable/ic_baseline_clear_24" />
                 </LinearLayout>
 
@@ -474,8 +480,8 @@
                         android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:gravity="left|center"
-                        android:minHeight="50dp"
                         android:hint="5"
+                        android:minHeight="50dp"
                         android:textColor="@color/text_on_background"
                         android:textColorHint="@color/text_hint"
                         android:textSize="18sp" />
@@ -485,8 +491,8 @@
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:gravity="left|center"
-                        android:minHeight="50dp"
                         android:hint="5"
+                        android:minHeight="50dp"
                         android:textColor="@color/text_on_background"
                         android:textColorHint="@color/text_hint"
                         android:textSize="18sp" />
@@ -495,17 +501,18 @@
                         android:id="@+id/cancel_notification_device_5"
                         android:layout_width="wrap_content"
                         android:layout_height="50dp"
-                        android:background="@color/background"
                         android:layout_weight="1"
+                        android:background="@color/background"
                         app:srcCompat="@drawable/ic_baseline_clear_24" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/add_notification_device"
-                    android:paddingStart="5dp"
-                    android:paddingTop="5dp"
                     android:layout_width="250dp"
                     android:layout_height="50dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingStart="5dp"
+                    android:paddingTop="5dp">
 
                     <Button
                         android:id="@+id/add_notification_button"
@@ -513,19 +520,16 @@
                         android:layout_height="40dp"
                         android:gravity="center"
                         android:text="Add"
-                        app:background="@color/button_on_top"
-                        app:backgroundTint="@color/button_on_top"
                         android:textColor="@color/background"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        app:background="@color/button_on_top"
+                        app:backgroundTint="@color/button_on_top" />
                 </LinearLayout>
 
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

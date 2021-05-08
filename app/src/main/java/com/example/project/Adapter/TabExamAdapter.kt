@@ -1,6 +1,5 @@
 package com.example.project.Adapter
 
-import android.os.Parcelable
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
@@ -9,18 +8,21 @@ import com.example.project.Notifications.Exam.Final.FinalExamNotification
 import com.example.project.Notifications.Exam.Mid.MidExamNotification
 import com.example.project.Notifications.Exam.Mid.NavMid
 
-class TabExamAdapter(fragmentManager: FragmentManager,lifecycle: Lifecycle):FragmentStateAdapter(fragmentManager,lifecycle) {
+class TabExamAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) : FragmentStateAdapter(fragmentManager, lifecycle) {
     override fun getItemCount(): Int {
         return 2
     }
 
     override fun createFragment(position: Int): Fragment {
-        when(position){
-            0 -> {return NavMid()
+        when (position) {
+            0 -> {
+                return NavMid()
             }
-            1 -> {return FinalExamNotification()
+            1 -> {
+                return FinalExamNotification()
             }
-            else -> {return MidExamNotification()
+            else -> {
+                return MidExamNotification()
             }
         }
     }

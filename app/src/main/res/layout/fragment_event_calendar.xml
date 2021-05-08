@@ -49,9 +49,9 @@
         android:id="@+id/constraintLayout6"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:background="@color/color_header_calendar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/color_header_calendar"
         app:layout_constraintTop_toBottomOf="@+id/calendarView">
 
         <TextView
@@ -59,9 +59,9 @@
             android:layout_width="200dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
+            android:gravity="center|left"
             android:text="DD MMMM YYYY"
             android:textColor="@color/text_row_color"
-            android:gravity="center|left"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"

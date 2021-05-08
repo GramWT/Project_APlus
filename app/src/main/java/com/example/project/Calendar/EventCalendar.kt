@@ -3,26 +3,22 @@ package com.example.project.Calendar
 import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.core.view.children
-import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.project.DataBase.model.EventCalendar
-import com.example.project.DataBase.model.User
 import com.example.project.DataBase.viewmodel.EventCalendarViewModel
-import com.example.project.DataBase.viewmodel.EventViewModel
 import com.example.project.R
 import com.example.project.databinding.CalendarDayLayoutBinding
 import com.example.project.databinding.CalendarHeaderBinding
 import com.example.project.databinding.FragmentEventCalendarBinding
-import com.example.project.databinding.FragmentEventNotificationBinding
 import com.kizitonwose.calendarview.model.CalendarDay
 import com.kizitonwose.calendarview.model.CalendarMonth
 import com.kizitonwose.calendarview.model.DayOwner
@@ -40,10 +36,10 @@ class EventCalendar : Fragment() {
 
     private lateinit var binding: FragmentEventCalendarBinding
     private lateinit var mEventCalendarModel: EventCalendarViewModel
-    private lateinit var eventList:List<EventCalendar>
+    private lateinit var eventList: List<EventCalendar>
     private var gridLayoutManager: GridLayoutManager? = null
     private var selectedDate: LocalDate? = null
-    private val week:Array<String> = arrayOf("S","M","T","W","T","F","S")
+    private val week: Array<String> = arrayOf("S", "M", "T", "W", "T", "F", "S")
 
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -70,7 +66,7 @@ class EventCalendar : Fragment() {
 
         binding.recycleEvent.adapter = adapter
 
-        gridLayoutManager = GridLayoutManager(requireContext(),1, LinearLayoutManager.VERTICAL,false)
+        gridLayoutManager = GridLayoutManager(requireContext(), 1, LinearLayoutManager.VERTICAL, false)
 
         binding.recycleEvent.layoutManager = gridLayoutManager
 
@@ -126,7 +122,7 @@ class EventCalendar : Fragment() {
                             textView.setTextColor(R.color.white)
                             textView.setBackgroundResource(R.drawable.today_bg_calendar)
                             dot.visibility = View.INVISIBLE
-                            mEventCalendarModel.readDataByDate(day.date.dayOfMonth,day.date.monthValue -1,day.date.year).observe(viewLifecycleOwner,{event ->
+                            mEventCalendarModel.readDataByDate(day.date.dayOfMonth, day.date.monthValue - 1, day.date.year).observe(viewLifecycleOwner, { event ->
                                 adapter.setData(event)
                             })
 
@@ -136,7 +132,7 @@ class EventCalendar : Fragment() {
                             textView.setTextColor(R.color.white)
                             textView.setBackgroundResource(R.drawable.select_bg_calendar)
                             dot.visibility = View.INVISIBLE
-                            mEventCalendarModel.readDataByDate(day.date.dayOfMonth,day.date.monthValue -1,day.date.year).observe(viewLifecycleOwner,{event ->
+                            mEventCalendarModel.readDataByDate(day.date.dayOfMonth, day.date.monthValue - 1, day.date.year).observe(viewLifecycleOwner, { event ->
                                 adapter.setData(event)
                             })
 
@@ -144,12 +140,11 @@ class EventCalendar : Fragment() {
                         else -> {
                             textView.setTextColor(R.color.white)
                             textView.background = null
-                            mEventCalendarModel.readDataByDate(day.date.dayOfMonth,day.date.monthValue -1,day.date.year).observe(viewLifecycleOwner,{event ->
+                            mEventCalendarModel.readDataByDate(day.date.dayOfMonth, day.date.monthValue - 1, day.date.year).observe(viewLifecycleOwner, { event ->
                                 eventList = event
-                                if (eventList.isEmpty()){
+                                if (eventList.isEmpty()) {
                                     dot.visibility = View.INVISIBLE
-                                }
-                                else if (eventList.isNotEmpty()){
+                                } else if (eventList.isNotEmpty()) {
                                     dot.visibility = View.VISIBLE
                                 }
                             })
@@ -158,13 +153,12 @@ class EventCalendar : Fragment() {
                     }
                 } else {
                     textView.setTextColor(R.color.color_grey)
-                    mEventCalendarModel.readDataByDate(day.date.dayOfMonth,day.date.monthValue -1,day.date.year).observe(viewLifecycleOwner,{event ->
+                    mEventCalendarModel.readDataByDate(day.date.dayOfMonth, day.date.monthValue - 1, day.date.year).observe(viewLifecycleOwner, { event ->
                         eventList = event
                         textView.background = null
-                        if (eventList.isEmpty()){
+                        if (eventList.isEmpty()) {
                             dot.visibility = View.INVISIBLE
-                        }
-                        else if (eventList.isNotEmpty()){
+                        } else if (eventList.isNotEmpty()) {
                             dot.visibility = View.VISIBLE
                         }
                     })

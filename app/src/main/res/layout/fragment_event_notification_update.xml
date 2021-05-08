@@ -42,507 +42,507 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-       <ScrollView
-           android:layout_width="0dp"
-           android:layout_height="0dp"
-           app:layout_constraintBottom_toBottomOf="parent"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/constraintLayout7">
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout7">
 
-              <androidx.constraintlayout.widget.ConstraintLayout
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-                     <EditText
-                         android:id="@+id/title_event_update"
-                         android:layout_width="250dp"
-                         android:layout_height="wrap_content"
-                         android:layout_marginTop="24dp"
-                         android:gravity="center|left"
-                         android:hint="Add title"
-                         android:inputType="textMultiLine"
-                         android:maxLines="5"
-                         android:minHeight="50dp"
-                         android:textColor="@color/text_on_background"
-                         android:textColorHint="@color/text_hint"
-                         android:textSize="20sp"
-                         app:layout_constraintEnd_toStartOf="@+id/guideline8"
-                         app:layout_constraintStart_toStartOf="@+id/guideline3"
-                         app:layout_constraintTop_toBottomOf="@+id/view9" />
-
-
-                     <androidx.constraintlayout.widget.Guideline
-                         android:id="@+id/guideline3"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:orientation="vertical"
-                         app:layout_constraintGuide_begin="80dp" />
-
-                     <androidx.constraintlayout.widget.Guideline
-                         android:id="@+id/guideline8"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:orientation="vertical"
-                         app:layout_constraintGuide_begin="330dp" />
-
-                     <TextView
-                         android:id="@+id/date_begin_event_update"
-                         android:layout_width="161dp"
-                         android:layout_height="50dp"
-                         android:layout_marginTop="8dp"
-                         android:gravity="left|center"
-                         android:text="DD/MM/YYYY"
-                         android:textColor="@color/text_on_background"
-                         android:textSize="18sp"
-                         app:layout_constraintEnd_toStartOf="@+id/guideline10"
-                         app:layout_constraintStart_toStartOf="@+id/guideline3"
-                         app:layout_constraintTop_toBottomOf="@+id/title_event_update" />
+            <EditText
+                android:id="@+id/title_event_update"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center|left"
+                android:hint="Add title"
+                android:inputType="textMultiLine"
+                android:maxLines="5"
+                android:minHeight="50dp"
+                android:textColor="@color/text_on_background"
+                android:textColorHint="@color/text_hint"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline8"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toBottomOf="@+id/view9" />
 
 
-                     <androidx.constraintlayout.widget.Guideline
-                         android:id="@+id/guideline10"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:orientation="vertical"
-                         app:layout_constraintGuide_end="119dp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="80dp" />
 
-                     <TextView
-                         android:id="@+id/time_begin_event_update"
-                         android:layout_width="89dp"
-                         android:layout_height="50dp"
-                         android:layout_marginTop="8dp"
-                         android:gravity="left|center"
-                         android:text="HH:mm"
-                         android:textColor="@color/text_on_background"
-                         android:textSize="18sp"
-                         app:layout_constraintEnd_toStartOf="@+id/guideline8"
-                         app:layout_constraintStart_toEndOf="@+id/date_begin_event_update"
-                         app:layout_constraintTop_toBottomOf="@+id/title_event_update" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="330dp" />
 
-                     <TextView
-                         android:id="@+id/date_end_event_update"
-                         android:layout_width="161dp"
-                         android:layout_height="50dp"
-                         android:gravity="left|center"
-                         android:text="DD/MM/YYYY"
-                         android:textColor="@color/text_on_background"
-                         android:textSize="18sp"
-                         app:layout_constraintEnd_toStartOf="@+id/time_end_event_update"
-                         app:layout_constraintStart_toStartOf="@+id/guideline3"
-                         app:layout_constraintTop_toBottomOf="@+id/date_begin_event_update" />
-
-                     <EditText
-                         android:id="@+id/location_event_update"
-                         android:layout_width="250dp"
-                         android:layout_height="wrap_content"
-                         android:gravity="left|center"
-                         android:hint="Location"
-                         android:inputType="textMultiLine"
-                         android:maxLines="5"
-                         android:minHeight="50dp"
-                         android:textColor="@color/text_on_background"
-                         android:textColorHint="@color/text_hint"
-                         android:textSize="18sp"
-                         app:layout_constraintStart_toStartOf="@+id/guideline3"
-                         app:layout_constraintTop_toBottomOf="@+id/time_end_event_update" />
-
-                     <TextView
-                         android:id="@+id/state_event_update"
-                         android:layout_width="250dp"
-                         android:layout_height="50dp"
-                         android:layout_marginEnd="30dp"
-                         android:gravity="left|center"
-                         android:minHeight="50dp"
-                         android:text="Normal"
-                         android:textColor="@color/text_on_background"
-                         android:textSize="18sp"
-                         app:layout_constraintBottom_toTopOf="@+id/description_event_update"
-                         app:layout_constraintEnd_toEndOf="parent"
-                         app:layout_constraintStart_toStartOf="@+id/guideline3"
-                         app:layout_constraintTop_toBottomOf="@+id/view5" />
-
-                     <View
-                         android:id="@+id/view5"
-                         android:layout_width="match_parent"
-                         android:layout_height="1dp"
-                         android:background="@color/line"
-                         app:layout_constraintEnd_toEndOf="parent"
-                         app:layout_constraintStart_toStartOf="parent"
-                         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
-
-                     <View
-                         android:id="@+id/view6"
-                         android:layout_width="match_parent"
-                         android:layout_height="1dp"
-                         android:background="@color/line"
-                         app:layout_constraintEnd_toEndOf="parent"
-                         app:layout_constraintStart_toStartOf="parent"
-                         app:layout_constraintTop_toBottomOf="@+id/state_event_update" />
-
-                     <View
-                         android:id="@+id/view4"
-                         android:layout_width="356dp"
-                         android:layout_height="0dp"
-                         android:background="@color/line"
-                         app:layout_constraintEnd_toEndOf="parent"
-                         app:layout_constraintStart_toStartOf="parent"
-                         app:layout_constraintTop_toBottomOf="@+id/location_event_update" />
-
-                     <View
-                         android:id="@+id/view2"
-                         android:layout_width="358dp"
-                         android:layout_height="1dp"
-                         android:background="@color/line"
-                         app:layout_constraintBottom_toTopOf="@+id/location_event_update"
-                         app:layout_constraintEnd_toEndOf="parent"
-                         app:layout_constraintStart_toStartOf="parent"
-                         app:layout_constraintTop_toBottomOf="@+id/date_end_event_update" />
-
-                     <View
-                         android:id="@+id/view"
-                         android:layout_width="match_parent"
-                         android:layout_height="1dp"
-                         android:background="@color/line"
-                         app:layout_constraintBottom_toTopOf="@+id/date_begin_event_update"
-                         app:layout_constraintEnd_toEndOf="parent"
-                         app:layout_constraintStart_toStartOf="parent"
-                         app:layout_constraintTop_toBottomOf="@+id/title_event_update" />
-
-                     <View
-                         android:id="@+id/view9"
-                         android:layout_width="match_parent"
-                         android:layout_height="1dp"
-                         android:background="@color/line"
-                         app:layout_constraintEnd_toEndOf="parent"
-                         app:layout_constraintStart_toStartOf="parent"
-                         app:layout_constraintTop_toTopOf="parent" />
-
-                     <EditText
-                         android:id="@+id/description_event_update"
-                         android:layout_width="0dp"
-                         android:layout_height="wrap_content"
-                         android:ems="10"
-                         android:gravity="left|center"
-                         android:hint="Description"
-                         android:inputType="textMultiLine"
-                         android:maxLines="30"
-                         android:minHeight="50dp"
-                         android:textColor="@color/text_on_background"
-                         android:textColorHint="@color/text_hint"
-                         android:textSize="18sp"
-                         app:layout_constraintEnd_toStartOf="@+id/guideline8"
-                         app:layout_constraintStart_toStartOf="@+id/guideline3"
-                         app:layout_constraintTop_toBottomOf="@+id/view6" />
-
-                     <TextView
-                         android:id="@+id/time_end_event_update"
-                         android:layout_width="89dp"
-                         android:layout_height="50dp"
-                         android:gravity="left|center"
-                         android:text="HH:mm"
-                         android:textColor="@color/text_on_background"
-                         android:textSize="18sp"
-                         app:layout_constraintEnd_toStartOf="@+id/guideline8"
-                         app:layout_constraintStart_toStartOf="@+id/guideline10"
-                         app:layout_constraintTop_toTopOf="@+id/date_end_event_update" />
-
-                     <ImageView
-                         android:id="@+id/imageButton"
-                         android:layout_width="30dp"
-                         android:layout_height="30dp"
-                         android:layout_marginTop="10dp"
-                         android:background="@color/background"
-                         android:src="@drawable/ic_baseline_alarm_24"
-                         app:layout_constraintEnd_toStartOf="@+id/guideline15"
-                         app:layout_constraintStart_toStartOf="@+id/guideline13"
-                         app:layout_constraintTop_toBottomOf="@+id/view" />
-
-                     <androidx.constraintlayout.widget.Guideline
-                         android:id="@+id/guideline13"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:orientation="vertical"
-                         app:layout_constraintGuide_begin="16dp" />
-
-                     <androidx.constraintlayout.widget.Guideline
-                         android:id="@+id/guideline15"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:orientation="vertical"
-                         app:layout_constraintGuide_begin="46dp" />
-
-                     <ImageView
-                         android:id="@+id/imageView"
-                         android:layout_width="30dp"
-                         android:layout_height="30dp"
-                         android:layout_marginTop="10dp"
-                         android:src="@drawable/ic_baseline_location_on_24_grey"
-                         app:layout_constraintEnd_toStartOf="@+id/guideline15"
-                         app:layout_constraintStart_toStartOf="@+id/guideline13"
-                         app:layout_constraintTop_toBottomOf="@+id/view2" />
-
-                     <ImageView
-                         android:id="@+id/imageView2"
-                         android:layout_width="30dp"
-                         android:layout_height="30dp"
-                         android:layout_marginTop="10dp"
-                         android:src="@drawable/ic_baseline_notifications_24"
-                         app:layout_constraintEnd_toStartOf="@+id/guideline15"
-                         app:layout_constraintStart_toStartOf="@+id/guideline13"
-                         app:layout_constraintTop_toBottomOf="@+id/view4" />
-
-                     <ImageView
-                         android:id="@+id/imageView3"
-                         android:layout_width="30dp"
-                         android:layout_height="30dp"
-                         android:layout_marginTop="10dp"
-                         android:src="@drawable/ic_baseline_description_24"
-                         app:layout_constraintEnd_toStartOf="@+id/guideline15"
-                         app:layout_constraintStart_toStartOf="@+id/guideline13"
-                         app:layout_constraintTop_toBottomOf="@+id/view6" />
-
-                     <ImageView
-                         android:id="@+id/state_image"
-                         android:layout_width="30dp"
-                         android:layout_height="30dp"
-                         android:layout_marginTop="10dp"
-                         app:layout_constraintEnd_toStartOf="@+id/guideline15"
-                         app:layout_constraintStart_toStartOf="@+id/guideline13"
-                         app:layout_constraintTop_toBottomOf="@+id/view5"
-                         tools:src="@drawable/status_event_green" />
+            <TextView
+                android:id="@+id/date_begin_event_update"
+                android:layout_width="161dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:gravity="left|center"
+                android:text="DD/MM/YYYY"
+                android:textColor="@color/text_on_background"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline10"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toBottomOf="@+id/title_event_update" />
 
 
-                     <LinearLayout
-                         android:id="@+id/linearLayout2"
-                         android:layout_width="0dp"
-                         android:layout_height="wrap_content"
-                         android:orientation="vertical"
-                         app:layout_constraintEnd_toStartOf="@+id/guideline8"
-                         app:layout_constraintStart_toStartOf="@+id/guideline3"
-                         app:layout_constraintTop_toBottomOf="@+id/view4">
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="119dp" />
 
-                            <LinearLayout
-                                android:id="@+id/notification_1"
-                                android:layout_width="250dp"
-                                android:layout_height="50dp"
-                                android:orientation="horizontal"
-                                tools:layout_editor_absoluteX="26dp"
-                                tools:layout_editor_absoluteY="360dp">
+            <TextView
+                android:id="@+id/time_begin_event_update"
+                android:layout_width="89dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:gravity="left|center"
+                android:text="HH:mm"
+                android:textColor="@color/text_on_background"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline8"
+                app:layout_constraintStart_toEndOf="@+id/date_begin_event_update"
+                app:layout_constraintTop_toBottomOf="@+id/title_event_update" />
 
-                                   <TextView
-                                       android:id="@+id/date_1"
-                                       android:layout_width="120dp"
-                                       android:layout_height="wrap_content"
-                                       android:gravity="left|center"
-                                       android:minHeight="50dp"
-                                       android:hint="1"
-                                       android:textColor="@color/text_on_background"
-                                       android:textColorHint="@color/text_hint"
-                                       android:textSize="18sp"  />
+            <TextView
+                android:id="@+id/date_end_event_update"
+                android:layout_width="161dp"
+                android:layout_height="50dp"
+                android:gravity="left|center"
+                android:text="DD/MM/YYYY"
+                android:textColor="@color/text_on_background"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/time_end_event_update"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toBottomOf="@+id/date_begin_event_update" />
 
-                                   <TextView
-                                       android:id="@+id/time_1"
-                                       android:layout_width="90dp"
-                                       android:layout_height="wrap_content"
-                                       android:gravity="left|center"
-                                       android:minHeight="50dp"
-                                       android:hint="1"
-                                       android:textColor="@color/text_on_background"
-                                       android:textColorHint="@color/text_hint"
-                                       android:textSize="18sp"  />
+            <EditText
+                android:id="@+id/location_event_update"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:gravity="left|center"
+                android:hint="Location"
+                android:inputType="textMultiLine"
+                android:maxLines="5"
+                android:minHeight="50dp"
+                android:textColor="@color/text_on_background"
+                android:textColorHint="@color/text_hint"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toBottomOf="@+id/time_end_event_update" />
 
-                                   <ImageButton
-                                       android:id="@+id/cancel_time_1"
-                                       android:layout_width="wrap_content"
-                                       android:layout_height="50dp"
-                                       android:background="@color/background"
-                                       android:layout_weight="1"
-                                       app:srcCompat="@drawable/ic_baseline_clear_24"  />
-                            </LinearLayout>
+            <TextView
+                android:id="@+id/state_event_update"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="30dp"
+                android:gravity="left|center"
+                android:minHeight="50dp"
+                android:text="Normal"
+                android:textColor="@color/text_on_background"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/description_event_update"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toBottomOf="@+id/view5" />
 
-                            <LinearLayout
-                                android:id="@+id/notification_2"
-                                android:layout_width="250dp"
-                                android:layout_height="50dp"
-                                android:orientation="horizontal"
-                                tools:layout_editor_absoluteX="26dp"
-                                tools:layout_editor_absoluteY="360dp">
+            <View
+                android:id="@+id/view5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
-                                   <TextView
-                                       android:id="@+id/date_2"
-                                       android:layout_width="120dp"
-                                       android:layout_height="wrap_content"
-                                       android:gravity="left|center"
-                                       android:minHeight="50dp"
-                                       android:hint="2"
-                                       android:textColor="@color/text_on_background"
-                                       android:textColorHint="@color/text_hint"
-                                       android:textSize="18sp"  />
+            <View
+                android:id="@+id/view6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/state_event_update" />
 
-                                   <TextView
-                                       android:id="@+id/time_2"
-                                       android:layout_width="90dp"
-                                       android:layout_height="wrap_content"
-                                       android:gravity="left|center"
-                                       android:minHeight="50dp"
-                                       android:hint="2"
-                                       android:textColor="@color/text_on_background"
-                                       android:textColorHint="@color/text_hint"
-                                       android:textSize="18sp"  />
+            <View
+                android:id="@+id/view4"
+                android:layout_width="356dp"
+                android:layout_height="0dp"
+                android:background="@color/line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/location_event_update" />
 
-                                   <ImageButton
-                                       android:id="@+id/cancel_time_2"
-                                       android:layout_width="wrap_content"
-                                       android:layout_height="50dp"
-                                       android:background="@color/background"
-                                       android:layout_weight="1"
-                                       app:srcCompat="@drawable/ic_baseline_clear_24"  />
-                            </LinearLayout>
+            <View
+                android:id="@+id/view2"
+                android:layout_width="358dp"
+                android:layout_height="1dp"
+                android:background="@color/line"
+                app:layout_constraintBottom_toTopOf="@+id/location_event_update"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/date_end_event_update" />
 
-                            <LinearLayout
-                                android:id="@+id/notification_3"
-                                android:layout_width="250dp"
-                                android:layout_height="50dp"
-                                android:orientation="horizontal"
-                                tools:layout_editor_absoluteX="26dp"
-                                tools:layout_editor_absoluteY="360dp">
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line"
+                app:layout_constraintBottom_toTopOf="@+id/date_begin_event_update"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_event_update" />
 
-                                   <TextView
-                                       android:id="@+id/date_3"
-                                       android:layout_width="120dp"
-                                       android:layout_height="wrap_content"
-                                       android:gravity="left|center"
-                                       android:minHeight="50dp"
-                                       android:hint="3"
-                                       android:textColor="@color/text_on_background"
-                                       android:textColorHint="@color/text_hint"
-                                       android:textSize="18sp"  />
+            <View
+                android:id="@+id/view9"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                                   <TextView
-                                       android:id="@+id/time_3"
-                                       android:layout_width="90dp"
-                                       android:layout_height="wrap_content"
-                                       android:gravity="left|center"
-                                       android:minHeight="50dp"
-                                       android:hint="3"
-                                       android:textColor="@color/text_on_background"
-                                       android:textColorHint="@color/text_hint"
-                                       android:textSize="18sp"  />
+            <EditText
+                android:id="@+id/description_event_update"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="left|center"
+                android:hint="Description"
+                android:inputType="textMultiLine"
+                android:maxLines="30"
+                android:minHeight="50dp"
+                android:textColor="@color/text_on_background"
+                android:textColorHint="@color/text_hint"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline8"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toBottomOf="@+id/view6" />
 
-                                   <ImageButton
-                                       android:id="@+id/cancel_time_3"
-                                       android:layout_width="wrap_content"
-                                       android:layout_height="50dp"
-                                       android:background="@color/background"
-                                       android:layout_weight="1"
-                                       app:srcCompat="@drawable/ic_baseline_clear_24" />
-                            </LinearLayout>
+            <TextView
+                android:id="@+id/time_end_event_update"
+                android:layout_width="89dp"
+                android:layout_height="50dp"
+                android:gravity="left|center"
+                android:text="HH:mm"
+                android:textColor="@color/text_on_background"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline8"
+                app:layout_constraintStart_toStartOf="@+id/guideline10"
+                app:layout_constraintTop_toTopOf="@+id/date_end_event_update" />
 
-                            <LinearLayout
-                                android:id="@+id/notification_4"
-                                android:layout_width="250dp"
-                                android:layout_height="50dp"
-                                android:orientation="horizontal"
-                                tools:layout_editor_absoluteX="26dp"
-                                tools:layout_editor_absoluteY="360dp">
+            <ImageView
+                android:id="@+id/imageButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/background"
+                android:src="@drawable/ic_baseline_alarm_24"
+                app:layout_constraintEnd_toStartOf="@+id/guideline15"
+                app:layout_constraintStart_toStartOf="@+id/guideline13"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
 
-                                   <TextView
-                                       android:id="@+id/date_4"
-                                       android:layout_width="120dp"
-                                       android:layout_height="wrap_content"
-                                       android:gravity="left|center"
-                                       android:minHeight="50dp"
-                                       android:hint="4"
-                                       android:textColor="@color/text_on_background"
-                                       android:textColorHint="@color/text_hint"
-                                       android:textSize="18sp"  />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp" />
 
-                                   <TextView
-                                       android:id="@+id/time_4"
-                                       android:layout_width="90dp"
-                                       android:layout_height="wrap_content"
-                                       android:gravity="left|center"
-                                       android:minHeight="50dp"
-                                       android:hint="4"
-                                       android:textColor="@color/text_on_background"
-                                       android:textColorHint="@color/text_hint"
-                                       android:textSize="18sp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="46dp" />
 
-                                   <ImageButton
-                                       android:id="@+id/cancel_time_4"
-                                       android:layout_width="wrap_content"
-                                       android:layout_height="50dp"
-                                       android:background="@color/background"
-                                       android:layout_weight="1"
-                                       app:srcCompat="@drawable/ic_baseline_clear_24" />
-                            </LinearLayout>
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_baseline_location_on_24_grey"
+                app:layout_constraintEnd_toStartOf="@+id/guideline15"
+                app:layout_constraintStart_toStartOf="@+id/guideline13"
+                app:layout_constraintTop_toBottomOf="@+id/view2" />
 
-                            <LinearLayout
-                                android:id="@+id/notification_5"
-                                android:layout_width="250dp"
-                                android:layout_height="50dp"
-                                android:orientation="horizontal"
-                                tools:layout_editor_absoluteX="26dp"
-                                tools:layout_editor_absoluteY="360dp">
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_baseline_notifications_24"
+                app:layout_constraintEnd_toStartOf="@+id/guideline15"
+                app:layout_constraintStart_toStartOf="@+id/guideline13"
+                app:layout_constraintTop_toBottomOf="@+id/view4" />
 
-                                   <TextView
-                                       android:id="@+id/date_5"
-                                       android:layout_width="120dp"
-                                       android:layout_height="wrap_content"
-                                       android:gravity="left|center"
-                                       android:minHeight="50dp"
-                                       android:hint="5"
-                                       android:textColor="@color/text_on_background"
-                                       android:textColorHint="@color/text_hint"
-                                       android:textSize="18sp"  />
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_baseline_description_24"
+                app:layout_constraintEnd_toStartOf="@+id/guideline15"
+                app:layout_constraintStart_toStartOf="@+id/guideline13"
+                app:layout_constraintTop_toBottomOf="@+id/view6" />
 
-                                   <TextView
-                                       android:id="@+id/time_5"
-                                       android:layout_width="90dp"
-                                       android:layout_height="wrap_content"
-                                       android:gravity="left|center"
-                                       android:minHeight="50dp"
-                                       android:hint="5"
-                                       android:textColor="@color/text_on_background"
-                                       android:textColorHint="@color/text_hint"
-                                       android:textSize="18sp"/>
+            <ImageView
+                android:id="@+id/state_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline15"
+                app:layout_constraintStart_toStartOf="@+id/guideline13"
+                app:layout_constraintTop_toBottomOf="@+id/view5"
+                tools:src="@drawable/status_event_green" />
 
-                                   <ImageButton
-                                       android:id="@+id/cancel_time_5"
-                                       android:layout_width="wrap_content"
-                                       android:layout_height="50dp"
-                                       android:background="@color/background"
-                                       android:layout_weight="1"
-                                       app:srcCompat="@drawable/ic_baseline_clear_24"  />
-                            </LinearLayout>
 
-                            <LinearLayout
-                                android:id="@+id/add_notification"
-                                android:layout_width="250dp"
-                                android:layout_height="50dp"
-                                android:paddingStart="5dp"
-                                android:paddingTop="5dp"
-                                android:orientation="horizontal"
-                                tools:layout_editor_absoluteX="26dp"
-                                tools:layout_editor_absoluteY="360dp">
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@+id/guideline8"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toBottomOf="@+id/view4">
 
-                                   <Button
-                                       android:id="@+id/add_button"
-                                       android:layout_width="70dp"
-                                       android:layout_height="40dp"
-                                       android:gravity="center"
-                                       android:text="Add"
-                                       app:background="@color/button_on_top"
-                                       app:backgroundTint="@color/button_on_top"
-                                       android:textColor="@color/text_same_background"
-                                       android:textSize="12sp" />
+                <LinearLayout
+                    android:id="@+id/notification_1"
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    tools:layout_editor_absoluteX="26dp"
+                    tools:layout_editor_absoluteY="360dp">
 
-                            </LinearLayout>
-                     </LinearLayout>
+                    <TextView
+                        android:id="@+id/date_1"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="left|center"
+                        android:hint="1"
+                        android:minHeight="50dp"
+                        android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_hint"
+                        android:textSize="18sp" />
 
-              </androidx.constraintlayout.widget.ConstraintLayout>
-       </ScrollView>
+                    <TextView
+                        android:id="@+id/time_1"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="left|center"
+                        android:hint="1"
+                        android:minHeight="50dp"
+                        android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_hint"
+                        android:textSize="18sp" />
+
+                    <ImageButton
+                        android:id="@+id/cancel_time_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@color/background"
+                        app:srcCompat="@drawable/ic_baseline_clear_24" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/notification_2"
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    tools:layout_editor_absoluteX="26dp"
+                    tools:layout_editor_absoluteY="360dp">
+
+                    <TextView
+                        android:id="@+id/date_2"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="left|center"
+                        android:hint="2"
+                        android:minHeight="50dp"
+                        android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_hint"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/time_2"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="left|center"
+                        android:hint="2"
+                        android:minHeight="50dp"
+                        android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_hint"
+                        android:textSize="18sp" />
+
+                    <ImageButton
+                        android:id="@+id/cancel_time_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@color/background"
+                        app:srcCompat="@drawable/ic_baseline_clear_24" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/notification_3"
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    tools:layout_editor_absoluteX="26dp"
+                    tools:layout_editor_absoluteY="360dp">
+
+                    <TextView
+                        android:id="@+id/date_3"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="left|center"
+                        android:hint="3"
+                        android:minHeight="50dp"
+                        android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_hint"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/time_3"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="left|center"
+                        android:hint="3"
+                        android:minHeight="50dp"
+                        android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_hint"
+                        android:textSize="18sp" />
+
+                    <ImageButton
+                        android:id="@+id/cancel_time_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@color/background"
+                        app:srcCompat="@drawable/ic_baseline_clear_24" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/notification_4"
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    tools:layout_editor_absoluteX="26dp"
+                    tools:layout_editor_absoluteY="360dp">
+
+                    <TextView
+                        android:id="@+id/date_4"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="left|center"
+                        android:hint="4"
+                        android:minHeight="50dp"
+                        android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_hint"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/time_4"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="left|center"
+                        android:hint="4"
+                        android:minHeight="50dp"
+                        android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_hint"
+                        android:textSize="18sp" />
+
+                    <ImageButton
+                        android:id="@+id/cancel_time_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@color/background"
+                        app:srcCompat="@drawable/ic_baseline_clear_24" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/notification_5"
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    tools:layout_editor_absoluteX="26dp"
+                    tools:layout_editor_absoluteY="360dp">
+
+                    <TextView
+                        android:id="@+id/date_5"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="left|center"
+                        android:hint="5"
+                        android:minHeight="50dp"
+                        android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_hint"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/time_5"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="left|center"
+                        android:hint="5"
+                        android:minHeight="50dp"
+                        android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_hint"
+                        android:textSize="18sp" />
+
+                    <ImageButton
+                        android:id="@+id/cancel_time_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@color/background"
+                        app:srcCompat="@drawable/ic_baseline_clear_24" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/add_notification"
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:paddingStart="5dp"
+                    android:paddingTop="5dp"
+                    tools:layout_editor_absoluteX="26dp"
+                    tools:layout_editor_absoluteY="360dp">
+
+                    <Button
+                        android:id="@+id/add_button"
+                        android:layout_width="70dp"
+                        android:layout_height="40dp"
+                        android:gravity="center"
+                        android:text="Add"
+                        android:textColor="@color/text_same_background"
+                        android:textSize="12sp"
+                        app:background="@color/button_on_top"
+                        app:backgroundTint="@color/button_on_top" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

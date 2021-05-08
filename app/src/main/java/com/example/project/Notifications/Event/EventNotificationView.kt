@@ -2,13 +2,12 @@ package com.example.project.Notifications.Event
 
 import android.app.AlertDialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
@@ -16,12 +15,9 @@ import androidx.navigation.fragment.navArgs
 import com.example.project.AlarmManager.Service.AlarmService
 import com.example.project.DataBase.viewmodel.EventCalendarViewModel
 import com.example.project.DataBase.viewmodel.EventViewModel
-import com.example.project.DataBase.viewmodel.SubjectViewModel
 import com.example.project.MainActivity
-
 import com.example.project.R
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.dialog_building_select.view.*
 import kotlinx.android.synthetic.main.fragment_event_notification_view.*
 import kotlinx.android.synthetic.main.fragment_event_notification_view.view.*
 
@@ -68,31 +64,31 @@ class EventNotificationView : Fragment() {
         view.date_4.setText(args.event.date_notification_4)
         view.date_5.setText(args.event.date_notification_5)
 
-        if (view.location_event_view.text == ""){
+        if (view.location_event_view.text == "") {
             view.location_event_view.visibility = View.GONE
             view.imageView4.visibility = View.GONE
         }
 
-        if (view.time_1.text == ""){
+        if (view.time_1.text == "") {
             view.time_view_1.visibility = View.GONE
         }
 
-        if (view.time_2.text == ""){
+        if (view.time_2.text == "") {
             view.time_view_2.visibility = View.GONE
         }
 
-        if (view.time_3.text == ""){
+        if (view.time_3.text == "") {
             view.time_view_3.visibility = View.GONE
         }
 
-        if (view.time_4.text == ""){
+        if (view.time_4.text == "") {
             view.time_view_4.visibility = View.GONE
         }
 
-        if (view.time_5.text == ""){
+        if (view.time_5.text == "") {
             view.time_view_5.visibility = View.GONE
         }
-        setState(args.event.state,view.state_event_view)
+        setState(args.event.state, view.state_event_view)
 
         view.back_event_view.setOnClickListener {
             val action = EventNotificationViewDirections.actionEventNotificationViewToEventNotification()
@@ -112,61 +108,60 @@ class EventNotificationView : Fragment() {
         return view
     }
 
-    private fun setState(state: String, im: ImageView){
-        when(state){
+    private fun setState(state: String, im: ImageView) {
+        when (state) {
             "High" -> im.setImageResource(R.drawable.status_event_red)
             "Normal" -> im.setImageResource(R.drawable.status_event_green)
             "Low" -> im.setImageResource(R.drawable.status_event_blue)
         }
     }
 
-    private fun deleteEvent(){
+    private fun deleteEvent() {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setPositiveButton("yes"){ _, _ ->
+        builder.setPositiveButton("yes") { _, _ ->
             println(args.event.id)
             mEventViewModel.deleteEvent(args.event)
             mEventCalendar.deleteById(args.event.id)
             cancelAlarm(args.event.id)
-            Toast.makeText(requireContext(),"Successfully deleted ", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Successfully deleted ", Toast.LENGTH_SHORT).show()
             val action = EventNotificationViewDirections.actionEventNotificationViewToEventNotification()
             findNavController().navigate(action)
             val a = activity as MainActivity
             a.bottom_navigation.visibility = View.VISIBLE
 
         }
-        builder.setNegativeButton("No"){ _ ,_ ->}
+        builder.setNegativeButton("No") { _, _ -> }
         builder.setTitle("Delete ?")
         builder.setMessage("Are you sure you want to delete?")
         builder.show()
     }
 
-    private fun cancelAlarm(rq: Int){
-        if (time_view_1.visibility == View.VISIBLE){
+    private fun cancelAlarm(rq: Int) {
+        if (time_view_1.visibility == View.VISIBLE) {
             val rId1 = "1${rq}".toInt()
             CancelAlarm(rId1)
         }
-        if (time_view_2.visibility == View.VISIBLE){
+        if (time_view_2.visibility == View.VISIBLE) {
             val rId2 = "2${rq}".toInt()
             CancelAlarm(rId2)
         }
-        if (time_view_3.visibility == View.VISIBLE){
+        if (time_view_3.visibility == View.VISIBLE) {
             val rId3 = "3${rq}".toInt()
             CancelAlarm(rId3)
         }
-        if (time_view_4.visibility == View.VISIBLE){
+        if (time_view_4.visibility == View.VISIBLE) {
             val rId4 = "4${rq}".toInt()
             CancelAlarm(rId4)
         }
-        if (time_view_5.visibility == View.VISIBLE){
+        if (time_view_5.visibility == View.VISIBLE) {
             val rId5 = "5${rq}".toInt()
             CancelAlarm(rId5)
         }
     }
 
-    private fun CancelAlarm(rq:Int){
+    private fun CancelAlarm(rq: Int) {
         mAlarmService.cancelOnceAlarm(rq)
     }
-
 
 
 }

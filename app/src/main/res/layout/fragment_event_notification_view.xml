@@ -247,30 +247,31 @@
                     android:layout_width="270dp"
                     android:layout_height="50dp"
                     android:orientation="horizontal">
+
                     <TextView
 
                         android:id="@+id/date_1"
-                        android:layout_marginStart="5dp"
                         android:layout_width="120dp"
                         android:layout_height="50dp"
+                        android:layout_marginStart="5dp"
                         android:gravity="center|left"
-                        android:minHeight="50dp"
                         android:hint="d1"
-                        android:textColorHint="@color/text_on_background"
+                        android:minHeight="50dp"
                         android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_on_background"
                         android:textSize="16sp" />
 
                     <TextView
 
                         android:id="@+id/time_1"
-                        android:layout_marginStart="5dp"
                         android:layout_width="120dp"
                         android:layout_height="50dp"
+                        android:layout_marginStart="5dp"
                         android:gravity="center|left"
-                        android:minHeight="50dp"
                         android:hint="t1"
-                        android:textColorHint="@color/text_on_background"
+                        android:minHeight="50dp"
                         android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_on_background"
                         android:textSize="16sp" />
 
                 </LinearLayout>
@@ -284,26 +285,26 @@
                     <TextView
 
                         android:id="@+id/date_2"
-                        android:layout_marginStart="5dp"
                         android:layout_width="120dp"
                         android:layout_height="50dp"
+                        android:layout_marginStart="5dp"
                         android:gravity="center|left"
-                        android:minHeight="50dp"
                         android:hint="d2"
-                        android:textColorHint="@color/text_on_background"
+                        android:minHeight="50dp"
                         android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_on_background"
                         android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/time_2"
-                        android:layout_marginStart="5dp"
                         android:layout_width="120dp"
                         android:layout_height="50dp"
+                        android:layout_marginStart="5dp"
                         android:gravity="center|left"
-                        android:minHeight="50dp"
                         android:hint="t2"
-                        android:textColorHint="@color/text_on_background"
+                        android:minHeight="50dp"
                         android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_on_background"
                         android:textSize="16sp" />
 
                 </LinearLayout>
@@ -317,26 +318,26 @@
                     <TextView
 
                         android:id="@+id/date_3"
-                        android:layout_marginStart="5dp"
                         android:layout_width="120dp"
                         android:layout_height="50dp"
+                        android:layout_marginStart="5dp"
                         android:gravity="center|left"
-                        android:minHeight="50dp"
                         android:hint="d3"
-                        android:textColorHint="@color/text_on_background"
+                        android:minHeight="50dp"
                         android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_on_background"
                         android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/time_3"
-                        android:layout_marginStart="5dp"
                         android:layout_width="120dp"
                         android:layout_height="50dp"
+                        android:layout_marginStart="5dp"
                         android:gravity="center|left"
-                        android:minHeight="50dp"
                         android:hint="t3"
-                        android:textColorHint="@color/text_on_background"
+                        android:minHeight="50dp"
                         android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_on_background"
                         android:textSize="16sp" />
 
                 </LinearLayout>
@@ -346,29 +347,30 @@
                     android:layout_width="270dp"
                     android:layout_height="50dp"
                     android:orientation="horizontal">
+
                     <TextView
 
                         android:id="@+id/date_4"
-                        android:layout_marginStart="5dp"
                         android:layout_width="120dp"
                         android:layout_height="50dp"
+                        android:layout_marginStart="5dp"
                         android:gravity="center|left"
-                        android:minHeight="50dp"
                         android:hint="d4"
-                        android:textColorHint="@color/text_on_background"
+                        android:minHeight="50dp"
                         android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_on_background"
                         android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/time_4"
-                        android:layout_marginStart="5dp"
                         android:layout_width="120dp"
                         android:layout_height="50dp"
+                        android:layout_marginStart="5dp"
                         android:gravity="center|left"
-                        android:minHeight="50dp"
                         android:hint="t4"
-                        android:textColorHint="@color/text_on_background"
+                        android:minHeight="50dp"
                         android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_on_background"
                         android:textSize="16sp" />
 
 
@@ -379,29 +381,30 @@
                     android:layout_width="270dp"
                     android:layout_height="50dp"
                     android:orientation="horizontal">
+
                     <TextView
 
                         android:id="@+id/date_5"
-                        android:layout_marginStart="5dp"
                         android:layout_width="120dp"
                         android:layout_height="50dp"
+                        android:layout_marginStart="5dp"
                         android:gravity="center|left"
-                        android:minHeight="50dp"
                         android:hint="d5"
-                        android:textColorHint="@color/text_on_background"
+                        android:minHeight="50dp"
                         android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_on_background"
                         android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/time_5"
-                        android:layout_marginStart="5dp"
                         android:layout_width="120dp"
                         android:layout_height="50dp"
+                        android:layout_marginStart="5dp"
                         android:gravity="center|left"
-                        android:minHeight="50dp"
                         android:hint="t5"
-                        android:textColorHint="@color/text_on_background"
+                        android:minHeight="50dp"
                         android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_on_background"
                         android:textSize="16sp" />
 
 

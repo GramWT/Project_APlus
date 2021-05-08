@@ -17,11 +17,11 @@ class DirectToLessonManagement : Fragment() {
 
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_direct_to_lesson_management, container, false)
+        val view = inflater.inflate(R.layout.fragment_direct_to_lesson_management, container, false)
 
         view.goto_lesson_management.setOnClickListener {
 
@@ -30,7 +30,7 @@ class DirectToLessonManagement : Fragment() {
 
         }
 
-        return  view
+        return view
     }
 
 }

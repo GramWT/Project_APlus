@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.text.InputFilter
 import android.text.Spanned
 import android.text.format.DateFormat
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +15,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -26,24 +26,8 @@ import com.example.project.DataBase.viewmodel.EventCalendarViewModel
 import com.example.project.DataBase.viewmodel.EventViewModel
 import com.example.project.R
 import kotlinx.android.synthetic.main.dialog_select_previous_time.view.*
-import kotlinx.android.synthetic.main.fragment_event_notification_add.*
-import kotlinx.android.synthetic.main.fragment_event_notification_add.view.*
 import kotlinx.android.synthetic.main.fragment_event_notification_update.*
-import kotlinx.android.synthetic.main.fragment_event_notification_update.state_image
 import kotlinx.android.synthetic.main.fragment_event_notification_update.view.*
-import kotlinx.android.synthetic.main.fragment_event_notification_update.view.date_1
-import kotlinx.android.synthetic.main.fragment_event_notification_update.view.date_2
-import kotlinx.android.synthetic.main.fragment_event_notification_update.view.date_3
-import kotlinx.android.synthetic.main.fragment_event_notification_update.view.date_4
-import kotlinx.android.synthetic.main.fragment_event_notification_update.view.date_5
-import kotlinx.android.synthetic.main.fragment_event_notification_update.view.state_image
-import kotlinx.android.synthetic.main.fragment_event_notification_update.view.time_1
-import kotlinx.android.synthetic.main.fragment_event_notification_update.view.time_2
-import kotlinx.android.synthetic.main.fragment_event_notification_update.view.time_3
-import kotlinx.android.synthetic.main.fragment_event_notification_update.view.time_4
-import kotlinx.android.synthetic.main.fragment_event_notification_update.view.time_5
-import kotlinx.android.synthetic.main.fragment_event_notification_view.view.*
-import kotlinx.android.synthetic.main.fragment_subjects_manage_update.*
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
@@ -90,7 +74,7 @@ class EventNotificationUpdate : Fragment() {
 
         view.description_event_update.setText(args.event.description)
         view.state_event_update.setText(args.event.state)
-        setState(args.event.state,view.state_image)
+        setState(args.event.state, view.state_image)
 
         setShowNotification(view)
 
@@ -134,7 +118,7 @@ class EventNotificationUpdate : Fragment() {
 
         view.save_button_event_update.setOnClickListener {
             updateItem()
-            val event = Event(args.event.id,title_event_update.text.toString(),
+            val event = Event(args.event.id, title_event_update.text.toString(),
                     date_begin_event_update.text.toString(),
                     date_end_event_update.text.toString(),
                     time_begin_event_update.text.toString(),
@@ -155,7 +139,7 @@ class EventNotificationUpdate : Fragment() {
 
 
             val action = EventNotificationUpdateDirections.actionEventNotificationUpdateToEventNotificationView(event)
-            Toast.makeText(requireContext(),"Update Successfully", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Update Successfully", Toast.LENGTH_SHORT).show()
             findNavController().navigate(action)
 
         }
@@ -177,7 +161,7 @@ class EventNotificationUpdate : Fragment() {
         }
 
         view.state_event_update.setOnClickListener {
-            setStateView(view.state_event_update,state_image)
+            setStateView(view.state_event_update, state_image)
         }
 
 
@@ -186,13 +170,13 @@ class EventNotificationUpdate : Fragment() {
 
     private fun checkNotification() {
         if (notification_5.visibility == View.GONE || notification_4.visibility == View.GONE || notification_3.visibility == View.GONE
-                || notification_2.visibility == View.GONE || notification_1.visibility == View.GONE){
+                || notification_2.visibility == View.GONE || notification_1.visibility == View.GONE) {
             add_notification.visibility = View.VISIBLE
         }
     }
 
-    private fun sortNotification5(view: View){
-        if (view.notification_5.visibility == View.VISIBLE){
+    private fun sortNotification5(view: View) {
+        if (view.notification_5.visibility == View.VISIBLE) {
 
             view.notification_5.visibility = View.GONE
             view.date_5.text = ""
@@ -200,8 +184,8 @@ class EventNotificationUpdate : Fragment() {
         }
     }
 
-    private fun sortNotification4(view: View){
-        if (view.notification_5.visibility == View.VISIBLE){
+    private fun sortNotification4(view: View) {
+        if (view.notification_5.visibility == View.VISIBLE) {
 
             view.notification_4.visibility = View.VISIBLE
             view.notification_5.visibility = View.GONE
@@ -210,8 +194,7 @@ class EventNotificationUpdate : Fragment() {
             view.time_4.text = view.time_5.text
             view.date_5.text = ""
             view.time_5.text = ""
-        }
-        else if (view.notification_5.visibility == View.GONE){
+        } else if (view.notification_5.visibility == View.GONE) {
 
             view.notification_4.visibility = View.GONE
             view.date_4.text = ""
@@ -219,9 +202,9 @@ class EventNotificationUpdate : Fragment() {
         }
     }
 
-    private fun sortNotification3(view: View){
+    private fun sortNotification3(view: View) {
         if (view.notification_5.visibility == View.VISIBLE &&
-                view.notification_4.visibility == View.VISIBLE){
+                view.notification_4.visibility == View.VISIBLE) {
 
             view.notification_3.visibility = View.VISIBLE
             view.notification_4.visibility = View.VISIBLE
@@ -233,9 +216,8 @@ class EventNotificationUpdate : Fragment() {
             view.time_4.text = view.time_5.text
             view.date_5.text = ""
             view.time_5.text = ""
-        }
-        else if (view.notification_5.visibility == View.GONE &&
-                view.notification_4.visibility == View.VISIBLE){
+        } else if (view.notification_5.visibility == View.GONE &&
+                view.notification_4.visibility == View.VISIBLE) {
 
             view.notification_3.visibility = View.VISIBLE
             view.notification_4.visibility = View.GONE
@@ -244,19 +226,18 @@ class EventNotificationUpdate : Fragment() {
             view.time_3.text = view.time_4.text
             view.date_4.text = ""
             view.time_4.text = ""
-        }
-        else if (view.notification_5.visibility == View.GONE &&
-                view.notification_4.visibility == View.GONE){
+        } else if (view.notification_5.visibility == View.GONE &&
+                view.notification_4.visibility == View.GONE) {
             view.notification_3.visibility = View.GONE
             view.date_3.text = ""
             view.time_3.text = ""
         }
     }
 
-    private fun sortNotification2(view: View){
+    private fun sortNotification2(view: View) {
         if (view.notification_5.visibility == View.VISIBLE &&
                 view.notification_4.visibility == View.VISIBLE &&
-                view.notification_3.visibility == View.VISIBLE){
+                view.notification_3.visibility == View.VISIBLE) {
 
             view.notification_2.visibility = View.VISIBLE
             view.notification_3.visibility = View.VISIBLE
@@ -271,10 +252,9 @@ class EventNotificationUpdate : Fragment() {
             view.time_4.text = view.time_5.text
             view.date_5.text = ""
             view.time_5.text = ""
-        }
-        else if (view.notification_5.visibility == View.GONE &&
+        } else if (view.notification_5.visibility == View.GONE &&
                 view.notification_4.visibility == View.VISIBLE &&
-                view.notification_3.visibility == View.VISIBLE){
+                view.notification_3.visibility == View.VISIBLE) {
 
             view.notification_2.visibility = View.VISIBLE
             view.notification_3.visibility = View.VISIBLE
@@ -286,10 +266,9 @@ class EventNotificationUpdate : Fragment() {
             view.time_3.text = view.time_4.text
             view.date_4.text = ""
             view.time_4.text = ""
-        }
-        else if (view.notification_5.visibility == View.GONE &&
+        } else if (view.notification_5.visibility == View.GONE &&
                 view.notification_4.visibility == View.GONE &&
-                view.notification_3.visibility == View.VISIBLE){
+                view.notification_3.visibility == View.VISIBLE) {
 
             view.notification_2.visibility = View.VISIBLE
             view.notification_3.visibility = View.GONE
@@ -298,10 +277,9 @@ class EventNotificationUpdate : Fragment() {
             view.time_2.text = view.time_3.text
             view.date_3.text = ""
             view.time_3.text = ""
-        }
-        else if (view.notification_5.visibility == View.GONE &&
+        } else if (view.notification_5.visibility == View.GONE &&
                 view.notification_4.visibility == View.GONE &&
-                view.notification_3.visibility == View.GONE){
+                view.notification_3.visibility == View.GONE) {
 
             view.notification_2.visibility = View.GONE
             view.date_2.text = ""
@@ -309,11 +287,11 @@ class EventNotificationUpdate : Fragment() {
         }
     }
 
-    private fun sortNotification1(view: View){
+    private fun sortNotification1(view: View) {
         if (view.notification_5.visibility == View.VISIBLE &&
                 view.notification_4.visibility == View.VISIBLE &&
                 view.notification_3.visibility == View.VISIBLE &&
-                view.notification_2.visibility == View.VISIBLE){
+                view.notification_2.visibility == View.VISIBLE) {
 
             view.notification_1.visibility = View.VISIBLE
             view.notification_2.visibility = View.VISIBLE
@@ -331,11 +309,10 @@ class EventNotificationUpdate : Fragment() {
             view.time_4.text = view.time_5.text
             view.date_5.text = ""
             view.time_5.text = ""
-        }
-        else if (view.notification_5.visibility == View.GONE &&
+        } else if (view.notification_5.visibility == View.GONE &&
                 view.notification_4.visibility == View.VISIBLE &&
                 view.notification_3.visibility == View.VISIBLE &&
-                view.notification_2.visibility == View.VISIBLE){
+                view.notification_2.visibility == View.VISIBLE) {
 
             view.notification_1.visibility = View.VISIBLE
             view.notification_2.visibility = View.VISIBLE
@@ -350,11 +327,10 @@ class EventNotificationUpdate : Fragment() {
             view.time_3.text = view.time_4.text
             view.date_4.text = ""
             view.time_4.text = ""
-        }
-        else if (view.notification_5.visibility == View.GONE &&
+        } else if (view.notification_5.visibility == View.GONE &&
                 view.notification_4.visibility == View.GONE &&
                 view.notification_3.visibility == View.VISIBLE &&
-                view.notification_2.visibility == View.VISIBLE){
+                view.notification_2.visibility == View.VISIBLE) {
 
             view.notification_1.visibility = View.VISIBLE
             view.notification_2.visibility = View.VISIBLE
@@ -366,11 +342,10 @@ class EventNotificationUpdate : Fragment() {
             view.time_2.text = view.time_3.text
             view.date_3.text = ""
             view.time_3.text = ""
-        }
-        else if (view.notification_5.visibility == View.GONE &&
+        } else if (view.notification_5.visibility == View.GONE &&
                 view.notification_4.visibility == View.GONE &&
                 view.notification_3.visibility == View.GONE &&
-                view.notification_2.visibility == View.VISIBLE){
+                view.notification_2.visibility == View.VISIBLE) {
 
             view.notification_1.visibility = View.VISIBLE
             view.notification_2.visibility = View.GONE
@@ -379,11 +354,10 @@ class EventNotificationUpdate : Fragment() {
             view.time_1.text = view.time_2.text
             view.date_2.text = ""
             view.time_2.text = ""
-        }
-        else if (view.notification_5.visibility == View.GONE &&
+        } else if (view.notification_5.visibility == View.GONE &&
                 view.notification_4.visibility == View.GONE &&
                 view.notification_3.visibility == View.GONE &&
-                view.notification_2.visibility == View.GONE){
+                view.notification_2.visibility == View.GONE) {
 
             view.notification_1.visibility = View.GONE
 
@@ -392,8 +366,8 @@ class EventNotificationUpdate : Fragment() {
         }
     }
 
-    private fun updateItem(){
-        val event = Event(args.event.id,title_event_update.text.toString(),
+    private fun updateItem() {
+        val event = Event(args.event.id, title_event_update.text.toString(),
                 date_begin_event_update.text.toString(),
                 date_end_event_update.text.toString(),
                 time_begin_event_update.text.toString(),
@@ -410,67 +384,67 @@ class EventNotificationUpdate : Fragment() {
                 time_3.text.toString(),
                 time_4.text.toString(),
                 time_5.text.toString(),
-                location_event_update.text.toString(),1)
+                location_event_update.text.toString(), 1)
 
-        val eventMid = EventCalendar(args.event.id,2,date_begin_event_update.text.substring(0,2).toInt(),date_begin_event_update.text.substring(3,5).toInt() - 1,
-                date_begin_event_update.text.substring(6,10).toInt(),title_event_update.text.toString())
+        val eventMid = EventCalendar(args.event.id, 2, date_begin_event_update.text.substring(0, 2).toInt(), date_begin_event_update.text.substring(3, 5).toInt() - 1,
+                date_begin_event_update.text.substring(6, 10).toInt(), title_event_update.text.toString())
 
         mEventViewModel.updateEvent(event)
         mEventCalendarViewModel.updateEventCalendar(eventMid)
 
-        if (date_1.text.toString() != "" && time_1.text.toString() != ""){
+        if (date_1.text.toString() != "" && time_1.text.toString() != "") {
             val dt1 = "${date_1.text} ${time_1.text}:00"
             val rId1 = "1${args.event.id}".toInt()
-            setAlarm(dt1 ,rId1,args.event.id.toString())
+            setAlarm(dt1, rId1, args.event.id.toString())
         }
-        if (date_2.text.toString() != "" && time_2.text.toString() != ""){
+        if (date_2.text.toString() != "" && time_2.text.toString() != "") {
             val dt2 = "${date_2.text} ${time_2.text}:00"
             val rId2 = "2${args.event.id}".toInt()
-            setAlarm(dt2 ,rId2,args.event.id.toString())
+            setAlarm(dt2, rId2, args.event.id.toString())
         }
-        if (date_3.text.toString() != "" && time_3.text.toString() != ""){
+        if (date_3.text.toString() != "" && time_3.text.toString() != "") {
             val dt3 = "${date_3.text} ${time_3.text}:00"
             val rId3 = "3${args.event.id}".toInt()
-            setAlarm(dt3 ,rId3,args.event.id.toString())
+            setAlarm(dt3, rId3, args.event.id.toString())
         }
-        if (date_4.text.toString() != "" && time_4.text.toString() != ""){
+        if (date_4.text.toString() != "" && time_4.text.toString() != "") {
             val dt4 = "${date_4.text} ${time_4.text}:00"
             val rId4 = "4${args.event.id}".toInt()
-            setAlarm(dt4 ,rId4,args.event.id.toString())
+            setAlarm(dt4, rId4, args.event.id.toString())
         }
-        if (date_5.text.toString() != "" && time_5.text.toString() != ""){
+        if (date_5.text.toString() != "" && time_5.text.toString() != "") {
             val dt5 = "${date_5.text} ${time_5.text}:00"
             val rId5 = "5${args.event.id}".toInt()
-            setAlarm(dt5 ,rId5,args.event.id.toString())
+            setAlarm(dt5, rId5, args.event.id.toString())
         }
 
     }
 
-    private fun setAlarm(date:String,rq:Int,SID:String){
-        mAlarmService.setOnceAlarm(convertMillis(date),rq,SID)
+    private fun setAlarm(date: String, rq: Int, SID: String) {
+        mAlarmService.setOnceAlarm(convertMillis(date), rq, SID)
     }
 
-    private fun setState(state: String, im: ImageView){
-        when(state){
+    private fun setState(state: String, im: ImageView) {
+        when (state) {
             "High" -> im.setImageResource(R.drawable.status_event_red)
             "Normal" -> im.setImageResource(R.drawable.status_event_green)
             "Low" -> im.setImageResource(R.drawable.status_event_blue)
         }
     }
 
-    private fun setStateView(tv: TextView, im: ImageView){
+    private fun setStateView(tv: TextView, im: ImageView) {
 
-        val ListState = arrayOf("High","Normal","Low")
+        val ListState = arrayOf("High", "Normal", "Low")
 
         val BBuilder = AlertDialog.Builder(requireContext())
 
         BBuilder.setTitle("Choose State")
 
-        BBuilder.setSingleChoiceItems(ListState,-1){dialog,i->
+        BBuilder.setSingleChoiceItems(ListState, -1) { dialog, i ->
 
             tv.setText(ListState[i])
             dialog.dismiss()
-            when(ListState[i]){
+            when (ListState[i]) {
                 "High" -> im.setImageResource(R.drawable.status_event_red)
                 "Normal" -> im.setImageResource(R.drawable.status_event_green)
                 "Low" -> im.setImageResource(R.drawable.status_event_blue)
@@ -480,23 +454,23 @@ class EventNotificationUpdate : Fragment() {
         BBuilder.show()
     }
 
-    private fun getTime(tv: TextView){
+    private fun getTime(tv: TextView) {
         val cal = Calendar.getInstance()
         val timeSet = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
-            cal.set(Calendar.HOUR_OF_DAY,hour)
-            cal.set(Calendar.MINUTE,minute)
+            cal.set(Calendar.HOUR_OF_DAY, hour)
+            cal.set(Calendar.MINUTE, minute)
 
             tv.text = SimpleDateFormat("HH:mm").format(cal.time).toString()
         }
-        TimePickerDialog(requireContext(), AlertDialog.THEME_HOLO_DARK,timeSet,cal.get(Calendar.HOUR_OF_DAY),cal.get(Calendar.MINUTE),true).show()
+        TimePickerDialog(requireContext(), AlertDialog.THEME_HOLO_DARK, timeSet, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
     }
 
-    private fun getDate(tv: TextView){
+    private fun getDate(tv: TextView) {
         val cal = Calendar.getInstance()
         val dpd = DatePickerDialog.OnDateSetListener { datePicker, year, month, dayOfMonth ->
-            cal.set(Calendar.DAY_OF_MONTH,dayOfMonth)
-            cal.set(Calendar.MONTH,month)
-            cal.set(Calendar.YEAR,year)
+            cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+            cal.set(Calendar.MONTH, month)
+            cal.set(Calendar.YEAR, year)
 
 
 
@@ -505,11 +479,11 @@ class EventNotificationUpdate : Fragment() {
 
         }
 
-        DatePickerDialog(requireContext(), AlertDialog.THEME_DEVICE_DEFAULT_DARK,dpd,cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH)).show()
+        DatePickerDialog(requireContext(), AlertDialog.THEME_DEVICE_DEFAULT_DARK, dpd, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH)).show()
 
     }
 
-    private fun setNotification(view: View){
+    private fun setNotification(view: View) {
         view.notification_1.visibility = View.GONE
         view.notification_2.visibility = View.GONE
         view.notification_3.visibility = View.GONE
@@ -517,20 +491,20 @@ class EventNotificationUpdate : Fragment() {
         view.notification_5.visibility = View.GONE
     }
 
-    private fun setShowNotification(view: View){
-        if (view.time_1.text != ""){
+    private fun setShowNotification(view: View) {
+        if (view.time_1.text != "") {
             view.notification_1.visibility = View.VISIBLE
         }
-        if (view.time_2.text != ""){
+        if (view.time_2.text != "") {
             view.notification_2.visibility = View.VISIBLE
         }
-        if (view.time_3.text != ""){
+        if (view.time_3.text != "") {
             view.notification_3.visibility = View.VISIBLE
         }
-        if (view.time_4.text != ""){
+        if (view.time_4.text != "") {
             view.notification_4.visibility = View.VISIBLE
         }
-        if (view.time_5.text != ""){
+        if (view.time_5.text != "") {
             view.notification_5.visibility = View.VISIBLE
         }
         if (view.notification_1.visibility == View.VISIBLE && view.notification_2.visibility == View.VISIBLE
@@ -541,19 +515,19 @@ class EventNotificationUpdate : Fragment() {
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    private fun dialogPreviousTime(view:View){
+    private fun dialogPreviousTime(view: View) {
         val selectPreviousTime = LayoutInflater.from(context).inflate(R.layout.dialog_select_previous_time, null)
         val mBuilder = AlertDialog.Builder(context)
                 .setView(selectPreviousTime)
 
         var timeValue: String = ""
-        var TS:String = ""
+        var TS: String = ""
 
         selectPreviousTime.radio_group_previous_time.check(R.id.radio_minutes)
         selectPreviousTime.radio_minutes.text = "Minutes before"
         TS = "M"
 
-        selectPreviousTime.previous_time.filters = arrayOf<InputFilter>(MinMaxFilter("1","600"))
+        selectPreviousTime.previous_time.filters = arrayOf<InputFilter>(MinMaxFilter("1", "600"))
 
         val mAlert = mBuilder.show()
 
@@ -563,89 +537,94 @@ class EventNotificationUpdate : Fragment() {
 
         selectPreviousTime.radio_group_previous_time.setOnCheckedChangeListener { group, checkedId ->
             if (checkedId == R.id.radio_minutes) {
-                if (selectPreviousTime.previous_time.text.toString() == ""){
+                if (selectPreviousTime.previous_time.text.toString() == "") {
                     selectPreviousTime.previous_time.setText("10")
                 }
-                selectPreviousTime.previous_time.filters = arrayOf<InputFilter>(MinMaxFilter("1","600"))
+                selectPreviousTime.previous_time.filters = arrayOf<InputFilter>(MinMaxFilter("1", "600"))
                 selectPreviousTime.radio_minutes.text = "Minutes before"
                 selectPreviousTime.radio_hours.text = "Hours"
                 selectPreviousTime.radio_days.text = "Days"
                 selectPreviousTime.radio_weeks.text = "Weeks"
-                TS = "M"}
+                TS = "M"
+            }
             if (checkedId == R.id.radio_hours) {
-                if (selectPreviousTime.previous_time.text.toString() == ""){
+                if (selectPreviousTime.previous_time.text.toString() == "") {
                     selectPreviousTime.previous_time.setText("1")
                 }
-                if (Integer.parseInt(selectPreviousTime.previous_time.text.toString()) > 120){
+                if (Integer.parseInt(selectPreviousTime.previous_time.text.toString()) > 120) {
                     selectPreviousTime.previous_time.setText("120")
                 }
-                selectPreviousTime.previous_time.filters = arrayOf<InputFilter>(MinMaxFilter("1","120"))
+                selectPreviousTime.previous_time.filters = arrayOf<InputFilter>(MinMaxFilter("1", "120"))
                 selectPreviousTime.radio_minutes.text = "Minutes"
                 selectPreviousTime.radio_hours.text = "Hours before"
                 selectPreviousTime.radio_days.text = "Days"
                 selectPreviousTime.radio_weeks.text = "Weeks"
-                TS = "H"}
+                TS = "H"
+            }
             if (checkedId == R.id.radio_days) {
-                if (selectPreviousTime.previous_time.text.toString() == ""){
+                if (selectPreviousTime.previous_time.text.toString() == "") {
                     selectPreviousTime.previous_time.setText("1")
                 }
-                if (Integer.parseInt(selectPreviousTime.previous_time.text.toString()) > 28){
+                if (Integer.parseInt(selectPreviousTime.previous_time.text.toString()) > 28) {
                     selectPreviousTime.previous_time.setText("28")
                 }
-                selectPreviousTime.previous_time.filters = arrayOf<InputFilter>(MinMaxFilter("1","28"))
+                selectPreviousTime.previous_time.filters = arrayOf<InputFilter>(MinMaxFilter("1", "28"))
                 selectPreviousTime.radio_minutes.text = "Minutes"
                 selectPreviousTime.radio_hours.text = "Hours"
                 selectPreviousTime.radio_days.text = "Days before"
                 selectPreviousTime.radio_weeks.text = "Weeks"
-                TS = "D"}
+                TS = "D"
+            }
             if (checkedId == R.id.radio_weeks) {
-                if (selectPreviousTime.previous_time.text.toString() == ""){
+                if (selectPreviousTime.previous_time.text.toString() == "") {
                     selectPreviousTime.previous_time.setText("1")
                 }
-                if (Integer.parseInt(selectPreviousTime.previous_time.text.toString()) > 4){
+                if (Integer.parseInt(selectPreviousTime.previous_time.text.toString()) > 4) {
                     selectPreviousTime.previous_time.setText("4")
                 }
-                selectPreviousTime.previous_time.filters = arrayOf<InputFilter>(MinMaxFilter("1","4"))
+                selectPreviousTime.previous_time.filters = arrayOf<InputFilter>(MinMaxFilter("1", "4"))
                 selectPreviousTime.radio_minutes.text = "Minutes"
                 selectPreviousTime.radio_hours.text = "Hours"
                 selectPreviousTime.radio_days.text = "Days"
                 selectPreviousTime.radio_weeks.text = "Weeks before"
-                TS = "W"}
+                TS = "W"
+            }
         }
 
         selectPreviousTime.done_button.setOnClickListener {
 
-            if (selectPreviousTime.previous_time.text.toString() == ""){
-                Toast.makeText(context,"Please Fill Time",Toast.LENGTH_SHORT).show()
-            }else{
+            if (selectPreviousTime.previous_time.text.toString() == "") {
+                Toast.makeText(context, "Please Fill Time", Toast.LENGTH_SHORT).show()
+            } else {
                 mAlert.dismiss()
                 timeValue = selectPreviousTime.previous_time.text.toString()
 
-                addNotifications(view,timeValue,TS)
+                addNotifications(view, timeValue, TS)
             }
         }
     }
 
     private fun convertDateTime(timeInMillis: Long): String =
-            DateFormat.format("dd/MM/yyyy HH:mm",timeInMillis).toString()
+            DateFormat.format("dd/MM/yyyy HH:mm", timeInMillis).toString()
 
     private fun convertDate(timeInMillis: Long): String =
-            DateFormat.format("dd/MM/yyyy",timeInMillis).toString()
+            DateFormat.format("dd/MM/yyyy", timeInMillis).toString()
 
     private fun convertTime(timeInMillis: Long): String =
-            DateFormat.format("HH:mm",timeInMillis).toString()
+            DateFormat.format("HH:mm", timeInMillis).toString()
 
-    private fun convertMillis(data: String):Long{
+    private fun convertMillis(data: String): Long {
         var sp = SimpleDateFormat("dd/MM/yyyy HH:mm:ss")
-        var date:Date = sp.parse(data)
-        var millis:Long = date.time
+        var date: Date = sp.parse(data)
+        var millis: Long = date.time
 
         return millis
     }
 
-    inner class MinMaxFilter(): InputFilter {
+    inner class MinMaxFilter() : InputFilter {
         private var intMin: Int = 0
         private var intMax: Int = 100
+
         constructor(minValue: String, maxValue: String) : this() {
             this.intMin = Integer.parseInt(minValue)
             this.intMax = Integer.parseInt(maxValue)
@@ -663,6 +642,7 @@ class EventNotificationUpdate : Fragment() {
             }
             return ""
         }
+
         private fun isInRange(a: Int, b: Int, c: Int): Boolean {
             return if (b > a) c in a..b else c in b..a
         }
@@ -670,7 +650,7 @@ class EventNotificationUpdate : Fragment() {
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    private fun addNotifications(view: View, s: String, ts:String) {
+    private fun addNotifications(view: View, s: String, ts: String) {
         val date = view.date_begin_event_update.text.toString()
         val time = view.time_begin_event_update.text.toString()
 
@@ -738,21 +718,21 @@ class EventNotificationUpdate : Fragment() {
 
     }
 
-    private fun sortTime(view: View){
+    private fun sortTime(view: View) {
 
         var d1 = ""
         var d2 = ""
         var t1 = ""
         var t2 = ""
 
-        if (view.notification_5.visibility == View.VISIBLE){
+        if (view.notification_5.visibility == View.VISIBLE) {
             var datetime1 = "${view.date_1.text} ${view.time_1.text}:00"
             var datetime2 = "${view.date_2.text} ${view.time_2.text}:00"
             var datetime3 = "${view.date_3.text} ${view.time_3.text}:00"
             var datetime4 = "${view.date_4.text} ${view.time_4.text}:00"
             var datetime5 = "${view.date_5.text} ${view.time_5.text}:00"
 
-            if (convertMillis(datetime5) < convertMillis(datetime4)){
+            if (convertMillis(datetime5) < convertMillis(datetime4)) {
                 d1 = view.date_5.text.toString()
                 t1 = view.time_5.text.toString()
                 d2 = view.date_4.text.toString()
@@ -770,7 +750,7 @@ class EventNotificationUpdate : Fragment() {
             datetime4 = "${view.date_4.text} ${view.time_4.text}:00"
 
 
-            if (convertMillis(datetime4) < convertMillis(datetime3)){
+            if (convertMillis(datetime4) < convertMillis(datetime3)) {
                 d1 = view.date_4.text.toString()
                 t1 = view.time_4.text.toString()
                 d2 = view.date_3.text.toString()
@@ -786,7 +766,7 @@ class EventNotificationUpdate : Fragment() {
             datetime2 = "${view.date_2.text} ${view.time_2.text}:00"
             datetime3 = "${view.date_3.text} ${view.time_3.text}:00"
 
-            if (convertMillis(datetime3) < convertMillis(datetime2)){
+            if (convertMillis(datetime3) < convertMillis(datetime2)) {
                 d1 = view.date_3.text.toString()
                 t1 = view.time_3.text.toString()
                 d2 = view.date_2.text.toString()
@@ -802,7 +782,7 @@ class EventNotificationUpdate : Fragment() {
             datetime1 = "${view.date_1.text} ${view.time_1.text}:00"
             datetime2 = "${view.date_2.text} ${view.time_2.text}:00"
 
-            if (convertMillis(datetime2) < convertMillis(datetime1)){
+            if (convertMillis(datetime2) < convertMillis(datetime1)) {
                 d1 = view.date_2.text.toString()
                 t1 = view.time_2.text.toString()
                 d2 = view.date_1.text.toString()
@@ -814,9 +794,7 @@ class EventNotificationUpdate : Fragment() {
                 view.time_1.text = t1
 
             }
-        }
-
-        else if (view.notification_4.visibility == View.VISIBLE) {
+        } else if (view.notification_4.visibility == View.VISIBLE) {
             var datetime1 = "${view.date_1.text} ${view.time_1.text}:00"
             var datetime2 = "${view.date_2.text} ${view.time_2.text}:00"
             var datetime3 = "${view.date_3.text} ${view.time_3.text}:00"
@@ -839,7 +817,7 @@ class EventNotificationUpdate : Fragment() {
             datetime2 = "${view.date_2.text} ${view.time_2.text}:00"
             datetime3 = "${view.date_3.text} ${view.time_3.text}:00"
 
-            if (convertMillis(datetime3) < convertMillis(datetime2)){
+            if (convertMillis(datetime3) < convertMillis(datetime2)) {
                 d1 = view.date_3.text.toString()
                 t1 = view.time_3.text.toString()
                 d2 = view.date_2.text.toString()
@@ -855,7 +833,7 @@ class EventNotificationUpdate : Fragment() {
             datetime1 = "${view.date_1.text} ${view.time_1.text}:00"
             datetime2 = "${view.date_2.text} ${view.time_2.text}:00"
 
-            if (convertMillis(datetime2) < convertMillis(datetime1)){
+            if (convertMillis(datetime2) < convertMillis(datetime1)) {
                 d1 = view.date_2.text.toString()
                 t1 = view.time_2.text.toString()
                 d2 = view.date_1.text.toString()
@@ -868,14 +846,12 @@ class EventNotificationUpdate : Fragment() {
 
             }
 
-        }
-
-        else if (view.notification_3.visibility == View.VISIBLE) {
+        } else if (view.notification_3.visibility == View.VISIBLE) {
             var datetime1 = "${view.date_1.text} ${view.time_1.text}:00"
             var datetime2 = "${view.date_2.text} ${view.time_2.text}:00"
             var datetime3 = "${view.date_3.text} ${view.time_3.text}:00"
 
-            if (convertMillis(datetime3) < convertMillis(datetime2)){
+            if (convertMillis(datetime3) < convertMillis(datetime2)) {
                 d1 = view.date_3.text.toString()
                 t1 = view.time_3.text.toString()
                 d2 = view.date_2.text.toString()
@@ -892,7 +868,7 @@ class EventNotificationUpdate : Fragment() {
             datetime2 = "${view.date_2.text} ${view.time_2.text}:00"
 
 
-            if (convertMillis(datetime2) < convertMillis(datetime1)){
+            if (convertMillis(datetime2) < convertMillis(datetime1)) {
                 d1 = view.date_2.text.toString()
                 t1 = view.time_2.text.toString()
                 d2 = view.date_1.text.toString()
@@ -904,13 +880,11 @@ class EventNotificationUpdate : Fragment() {
                 view.time_1.text = t1
 
             }
-        }
-
-        else if (view.notification_2.visibility == View.VISIBLE) {
+        } else if (view.notification_2.visibility == View.VISIBLE) {
             val datetime1 = "${view.date_1.text} ${view.time_1.text}:00"
             val datetime2 = "${view.date_2.text} ${view.time_2.text}:00"
 
-            if (convertMillis(datetime2) < convertMillis(datetime1)){
+            if (convertMillis(datetime2) < convertMillis(datetime1)) {
                 d1 = view.date_2.text.toString()
                 t1 = view.time_2.text.toString()
                 d2 = view.date_1.text.toString()

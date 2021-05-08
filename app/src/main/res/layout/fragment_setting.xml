@@ -16,194 +16,194 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingBottom="10dp"
-        android:background="@color/background">
-
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/profile_user"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="115dp"
-            android:layout_marginBottom="2dp"
-            android:clickable="true"
-            android:foreground="?attr/selectableItemBackground">
+            android:layout_height="match_parent"
+            android:background="@color/background"
+            android:orientation="vertical"
+            android:paddingBottom="10dp">
 
-            <LinearLayout
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profile_user"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/main_layout"
-                android:gravity="center|left"
-                android:paddingStart="20dp"
-                android:orientation="horizontal">
+                android:layout_height="115dp"
+                android:layout_marginBottom="2dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/avatar"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:src="@drawable/ic_man"/>
-
-                <TextView
-                    android:id="@+id/text_username"
-                    android:layout_width="200dp"
-                    android:layout_height="64dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/main_layout"
                     android:gravity="center|left"
-                    android:padding="10dp"
-                    android:textSize="18sp"
-                    android:text="Profile User"
-                    android:textColor="@color/text_row_color"
-                    android:textStyle="bold" />
+                    android:orientation="horizontal"
+                    android:paddingStart="20dp">
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/avatar"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/ic_man" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/subjects_manage_setting"
-            android:layout_width="match_parent"
-            android:layout_height="115dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginBottom="1dp"
-            android:clickable="true"
-            android:foreground="?attr/selectableItemBackground">
+                    <TextView
+                        android:id="@+id/text_username"
+                        android:layout_width="200dp"
+                        android:layout_height="64dp"
+                        android:gravity="center|left"
+                        android:padding="10dp"
+                        android:text="Profile User"
+                        android:textColor="@color/text_row_color"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-            <LinearLayout
-                android:background="@color/main_layout"
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/subjects_manage_setting"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center|left"
-                android:paddingStart="20dp"
-                android:orientation="horizontal">
+                android:layout_height="115dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="1dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground">
 
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_briefcase" />
-
-                <TextView
-                    android:layout_width="200dp"
-                    android:layout_height="64dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/main_layout"
                     android:gravity="center|left"
-                    android:padding="10dp"
-                    android:text="Subjects Manage"
-                    android:textColor="@color/text_row_color"
-                    android:textStyle="bold" />
+                    android:orientation="horizontal"
+                    android:paddingStart="20dp">
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_briefcase" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/lesson_manage_setting"
-            android:layout_width="match_parent"
-            android:layout_height="115dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginBottom="1dp"
-            android:clickable="true"
-            android:foreground="?attr/selectableItemBackground">
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="64dp"
+                        android:gravity="center|left"
+                        android:padding="10dp"
+                        android:text="Subjects Manage"
+                        android:textColor="@color/text_row_color"
+                        android:textStyle="bold" />
 
-            <LinearLayout
-                android:background="@color/main_layout"
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/lesson_manage_setting"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center|left"
-                android:paddingStart="20dp"
-                android:orientation="horizontal">
+                android:layout_height="115dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="1dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground">
 
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_lesson" />
-
-                <TextView
-                    android:layout_width="200dp"
-                    android:layout_height="64dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/main_layout"
                     android:gravity="center|left"
-                    android:padding="10dp"
-                    android:textColor="@color/text_row_color"
-                    android:text="Lessons Manage"
-                    android:textStyle="bold" />
+                    android:orientation="horizontal"
+                    android:paddingStart="20dp">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_lesson" />
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="64dp"
+                        android:gravity="center|left"
+                        android:padding="10dp"
+                        android:text="Lessons Manage"
+                        android:textColor="@color/text_row_color"
+                        android:textStyle="bold" />
 
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/credit"
-            android:layout_width="match_parent"
-            android:layout_height="115dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginBottom="1dp"
-            android:clickable="true"
-            android:foreground="?attr/selectableItemBackground">
-
-            <LinearLayout
-                android:background="@color/main_layout"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/credit"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center|left"
-                android:paddingStart="20dp"
-                android:orientation="horizontal">
+                android:layout_height="115dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="1dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground">
 
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_credit" />
-
-                <TextView
-                    android:layout_width="200dp"
-                    android:layout_height="64dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/main_layout"
                     android:gravity="center|left"
-                    android:padding="10dp"
-                    android:text="Credit"
-                    android:textColor="@color/text_row_color"
-                    android:textStyle="bold" />
+                    android:orientation="horizontal"
+                    android:paddingStart="20dp">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_credit" />
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="64dp"
+                        android:gravity="center|left"
+                        android:padding="10dp"
+                        android:text="Credit"
+                        android:textColor="@color/text_row_color"
+                        android:textStyle="bold" />
 
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/preference"
-            android:layout_width="match_parent"
-            android:layout_height="115dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginBottom="1dp"
-            android:clickable="true"
-            android:foreground="?attr/selectableItemBackground">
-
-            <LinearLayout
-                android:background="@color/main_layout"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/preference"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center|left"
-                android:paddingStart="20dp"
-                android:orientation="horizontal">
+                android:layout_height="115dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="1dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground">
 
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_settings_2" />
-
-                <TextView
-                    android:layout_width="200dp"
-                    android:layout_height="64dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/main_layout"
                     android:gravity="center|left"
-                    android:text="Theme"
-                    android:padding="10dp"
-                    android:textColor="@color/text_row_color"
-                    android:textStyle="bold" />
+                    android:orientation="horizontal"
+                    android:paddingStart="20dp">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_settings_2" />
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="64dp"
+                        android:gravity="center|left"
+                        android:padding="10dp"
+                        android:text="Theme"
+                        android:textColor="@color/text_row_color"
+                        android:textStyle="bold" />
 
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
+        </LinearLayout>
 
     </ScrollView>
 

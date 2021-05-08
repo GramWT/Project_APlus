@@ -9,12 +9,13 @@ import com.example.project.DataBase.model.Subject
 import com.example.project.databinding.CustomSubjectManageBinding
 import kotlinx.android.synthetic.main.custom_subject_manage.view.*
 
-class SubjectsManageAdapter: RecyclerView.Adapter<SubjectsManageAdapter.MyViewHolder>() {
+class SubjectsManageAdapter : RecyclerView.Adapter<SubjectsManageAdapter.MyViewHolder>() {
 
     private var subjectList = emptyList<Subject>()
 
-    private lateinit var binding:CustomSubjectManageBinding
-    class MyViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
+    private lateinit var binding: CustomSubjectManageBinding
+
+    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     }
 
@@ -41,7 +42,7 @@ class SubjectsManageAdapter: RecyclerView.Adapter<SubjectsManageAdapter.MyViewHo
         return subjectList.size
     }
 
-    fun setData(subject: List<Subject>){
+    fun setData(subject: List<Subject>) {
         this.subjectList = subject
         notifyDataSetChanged()
     }

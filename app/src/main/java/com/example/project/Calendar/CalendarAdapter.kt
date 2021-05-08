@@ -10,12 +10,12 @@ import com.example.project.R
 import com.example.project.databinding.CustomListEventCalendarBinding
 import kotlinx.android.synthetic.main.custom_list_event_calendar.view.*
 
-class CalendarAdapter:RecyclerView.Adapter<CalendarAdapter.MyViewHolder>() {
+class CalendarAdapter : RecyclerView.Adapter<CalendarAdapter.MyViewHolder>() {
 
     private var eventList = emptyList<EventCalendar>()
-    private lateinit var binding:CustomListEventCalendarBinding
+    private lateinit var binding: CustomListEventCalendarBinding
 
-    class MyViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
+    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     }
 
@@ -30,15 +30,13 @@ class CalendarAdapter:RecyclerView.Adapter<CalendarAdapter.MyViewHolder>() {
         val currentItem = eventList[position]
 
         holder.itemView.subject_title.text = currentItem.subject
-        if (currentItem.type == 1){
+        if (currentItem.type == 1) {
             holder.itemView.state_event.setBackgroundResource(R.color.color_pink)
             holder.itemView.state_title.text = "Exam"
-        }
-        else if (currentItem.type == 2){
+        } else if (currentItem.type == 2) {
             holder.itemView.state_event.setBackgroundResource(R.color.color_Green_3F72AF)
             holder.itemView.state_title.text = "Event"
-        }
-        else if (currentItem.type == 3){
+        } else if (currentItem.type == 3) {
             holder.itemView.state_event.setBackgroundResource(R.color.color_midnight_blue)
             holder.itemView.state_title.text = "Reminder"
         }
@@ -49,7 +47,7 @@ class CalendarAdapter:RecyclerView.Adapter<CalendarAdapter.MyViewHolder>() {
         return eventList.size
     }
 
-    fun setData(event:List<EventCalendar>){
+    fun setData(event: List<EventCalendar>) {
         this.eventList = event
         notifyDataSetChanged()
     }

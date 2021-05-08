@@ -6,18 +6,15 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.project.DataBase.model.Lesson
-import com.example.project.DataBase.model.Subject
-import com.example.project.Setting.SubjectsManage.SubjectsManageAdapter
 import com.example.project.databinding.CustomLessonManageBinding
-import com.example.project.databinding.CustomSubjectManageBinding
 import kotlinx.android.synthetic.main.custom_lesson_manage.view.*
 
-class LessonManageAdapter: RecyclerView.Adapter<LessonManageAdapter.MyViewHolder>() {
+class LessonManageAdapter : RecyclerView.Adapter<LessonManageAdapter.MyViewHolder>() {
 
     private var lessonList = emptyList<Lesson>()
-    private lateinit var binding:CustomLessonManageBinding
+    private lateinit var binding: CustomLessonManageBinding
 
-    class MyViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
+    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     }
 
@@ -43,7 +40,7 @@ class LessonManageAdapter: RecyclerView.Adapter<LessonManageAdapter.MyViewHolder
         return lessonList.size
     }
 
-    fun setData(lesson: List<Lesson>){
+    fun setData(lesson: List<Lesson>) {
         this.lessonList = lesson
         notifyDataSetChanged()
     }

@@ -7,7 +7,7 @@ import android.app.NotificationManager
 import android.content.Context
 import android.os.Build
 
-class InitialApplication :Application(){
+class InitialApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
@@ -16,7 +16,7 @@ class InitialApplication :Application(){
 
     fun initNotificationChannel(context: Context) {
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val groupId = "kmutnb"
             val groupName = "KMUTNB"
             val group = NotificationChannelGroup(groupId, groupName)
@@ -40,8 +40,6 @@ class InitialApplication :Application(){
             val channelName4 = "Event Low"
             val channel4 = NotificationChannel(channelId4, channelName4, NotificationManager.IMPORTANCE_LOW)
             channel4.group = groupId
-
-
 
 
             val manager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager

@@ -51,9 +51,9 @@
         android:layout_height="40dp"
         android:layout_marginTop="32dp"
         android:text="Save"
+        android:textColor="@color/text_same_background"
         app:background="@color/button_on_top"
         app:backgroundTint="@color/button_on_top"
-        android:textColor="@color/text_same_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_name" />

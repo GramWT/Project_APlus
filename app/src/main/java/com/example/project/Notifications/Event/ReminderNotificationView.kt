@@ -2,12 +2,12 @@ package com.example.project.Notifications.Event
 
 import android.app.AlertDialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
@@ -18,8 +18,6 @@ import com.example.project.DataBase.viewmodel.EventViewModel
 import com.example.project.MainActivity
 import com.example.project.R
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_event_notification_view.*
-import kotlinx.android.synthetic.main.fragment_event_notification_view.view.*
 import kotlinx.android.synthetic.main.fragment_reminder_notification_view.view.*
 
 class ReminderNotificationView : Fragment() {
@@ -40,7 +38,7 @@ class ReminderNotificationView : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_reminder_notification_view, container, false)
+        val view = inflater.inflate(R.layout.fragment_reminder_notification_view, container, false)
         mEventViewModel = ViewModelProvider(this).get(EventViewModel::class.java)
         mEventCalendar = ViewModelProvider(this).get(EventCalendarViewModel::class.java)
         mAlarmService = AlarmService(requireContext())
@@ -53,12 +51,12 @@ class ReminderNotificationView : Fragment() {
         view.description_reminder_view.text = args.Reminder.description
         view.location_reminder_view.text = args.Reminder.location
 
-        if (view.location_reminder_view.text == ""){
+        if (view.location_reminder_view.text == "") {
             view.location_reminder_view.visibility = View.GONE
             view.imageViewLocation.visibility = View.GONE
         }
 
-        setState(currentItem.state,view.state_reminder_view)
+        setState(currentItem.state, view.state_reminder_view)
 
         view.back_reminder_view.setOnClickListener {
             val action = ReminderNotificationViewDirections.actionReminderNotificationViewToEventNotification()
@@ -80,40 +78,40 @@ class ReminderNotificationView : Fragment() {
         return view
     }
 
-    private fun setState(state: String, im: ImageView){
-        when(state){
+    private fun setState(state: String, im: ImageView) {
+        when (state) {
             "High" -> im.setImageResource(R.drawable.status_event_red)
             "Normal" -> im.setImageResource(R.drawable.status_event_green)
             "Low" -> im.setImageResource(R.drawable.status_event_blue)
         }
     }
 
-    private fun deleteReminder(){
+    private fun deleteReminder() {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setPositiveButton("yes"){ _, _ ->
+        builder.setPositiveButton("yes") { _, _ ->
             println(args.Reminder.id)
             mEventViewModel.deleteEvent(args.Reminder)
             mEventCalendar.deleteById(args.Reminder.id)
             cancelAlarm(args.Reminder.id)
-            Toast.makeText(requireContext(),"Successfully deleted ", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Successfully deleted ", Toast.LENGTH_SHORT).show()
             val action = ReminderNotificationViewDirections.actionReminderNotificationViewToEventNotification()
             findNavController().navigate(action)
             val a = activity as MainActivity
             a.bottom_navigation.visibility = View.VISIBLE
 
         }
-        builder.setNegativeButton("No"){ _ ,_ ->}
+        builder.setNegativeButton("No") { _, _ -> }
         builder.setTitle("Delete ?")
         builder.setMessage("Are you sure you want to delete?")
         builder.show()
     }
 
-    private fun cancelAlarm(rq: Int){
-            val rId1 = "1${rq}".toInt()
-            CancelAlarm(rId1)
+    private fun cancelAlarm(rq: Int) {
+        val rId1 = "1${rq}".toInt()
+        CancelAlarm(rId1)
     }
 
-    private fun CancelAlarm(rq:Int){
+    private fun CancelAlarm(rq: Int) {
         mAlarmService.cancelOnceAlarm(rq)
     }
 

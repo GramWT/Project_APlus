@@ -1,34 +1,28 @@
 package com.example.project.Setting
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatDelegate
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.project.DataBase.model.Subject
-import com.example.project.DataBase.model.User
 import com.example.project.DataBase.viewmodel.SubjectViewModel
 import com.example.project.DataBase.viewmodel.UserViewModel
 import com.example.project.R
 import com.example.project.databinding.FragmentSettingBinding
-import com.example.project.databinding.FragmentSubjectTabBinding
 
 
 class Setting : Fragment() {
 
     private lateinit var binding: FragmentSettingBinding
-    private lateinit var mSubjectViewModel:SubjectViewModel
-    private lateinit var mUserViewModel:UserViewModel
-
+    private lateinit var mSubjectViewModel: SubjectViewModel
+    private lateinit var mUserViewModel: UserViewModel
 
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
 
         binding = FragmentSettingBinding.inflate(layoutInflater)
@@ -37,11 +31,10 @@ class Setting : Fragment() {
 
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
-        mUserViewModel.readAllData.observe(viewLifecycleOwner,{user ->
-            if (user[0].avatar == 0){
+        mUserViewModel.readAllData.observe(viewLifecycleOwner, { user ->
+            if (user[0].avatar == 0) {
                 binding.avatar.setImageResource(R.drawable.ic_man)
-            }
-            else if (user[0].avatar == 1){
+            } else if (user[0].avatar == 1) {
                 binding.avatar.setImageResource(R.drawable.ic_woman)
             }
 

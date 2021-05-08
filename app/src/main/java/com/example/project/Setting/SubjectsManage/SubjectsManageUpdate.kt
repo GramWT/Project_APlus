@@ -5,13 +5,13 @@ import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
@@ -41,11 +41,11 @@ class SubjectsManageUpdate : Fragment() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
 
-        val view =  inflater.inflate(R.layout.fragment_subjects_manage_update, container, false)
+        val view = inflater.inflate(R.layout.fragment_subjects_manage_update, container, false)
         mSubjectViewModel = ViewModelProvider(this).get(SubjectViewModel::class.java)
         mEventCalendarViewModel = ViewModelProvider(this).get(EventCalendarViewModel::class.java)
         mAlarmService = AlarmService(requireContext())
@@ -72,7 +72,7 @@ class SubjectsManageUpdate : Fragment() {
         view.admit_button_update.setOnClickListener {
             val action = SubjectsManageUpdateDirections.actionSubjectsManageUpdateToSubjectsManageNav()
             updateItem()
-            Toast.makeText(requireContext(),"Update Successfully", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Update Successfully", Toast.LENGTH_SHORT).show()
             view.findNavController().navigate(action)
         }
 
@@ -112,8 +112,8 @@ class SubjectsManageUpdate : Fragment() {
 
         view.deleteButton.setOnClickListener {
             deleteSubject()
-            val idMid:Int = "1${args.subject.id}".toInt()
-            val idFinal:Int = "2${args.subject.id}".toInt()
+            val idMid: Int = "1${args.subject.id}".toInt()
+            val idFinal: Int = "2${args.subject.id}".toInt()
             mAlarmService.cancelAlarm(idMid)
             mAlarmService.cancelAlarm(idFinal)
         }
@@ -122,77 +122,75 @@ class SubjectsManageUpdate : Fragment() {
     }
 
 
-
     @RequiresApi(Build.VERSION_CODES.O)
-    private fun updateItem(){
-        val subject = Subject(args.subject.id,code_manager_update.text.toString(),name_manager_update.text.toString(),building_mid_manager_update.text.toString(),
-                room_mid_manager_update.text.toString(),time_mid_begin_manager_update.text.toString(), time_mid_end_manager_update.text.toString(),date_mid_manager_update.text.toString()
-                ,building_final_manager_update.text.toString(),room_final_manager_update.text.toString(),time_final_begin_manager_update.text.toString(),time_final_end_manager_update.text.toString(),
+    private fun updateItem() {
+        val subject = Subject(args.subject.id, code_manager_update.text.toString(), name_manager_update.text.toString(), building_mid_manager_update.text.toString(),
+                room_mid_manager_update.text.toString(), time_mid_begin_manager_update.text.toString(), time_mid_end_manager_update.text.toString(), date_mid_manager_update.text.toString(), building_final_manager_update.text.toString(), room_final_manager_update.text.toString(), time_final_begin_manager_update.text.toString(), time_final_end_manager_update.text.toString(),
                 date_final_manager_update.text.toString())
         mSubjectViewModel.updateSubject(subject)
 
 
-        val mid:Int = args.subject.sid.toInt() + 1
-        val final:Int = args.subject.sid.toInt() + 2
+        val mid: Int = args.subject.sid.toInt() + 1
+        val final: Int = args.subject.sid.toInt() + 2
 
         val mC = convertDate(date_mid_manager_update.text.toString())
         val fC = convertDate(date_final_manager_update.text.toString())
 
-        val eventMid = EventCalendar(mid,1,mC.dayOfMonth,mC.monthValue - 1,mC.year,args.subject.Name)
-        val eventFinal = EventCalendar(final,1,fC.dayOfMonth,fC.monthValue - 1,fC.year,args.subject.Name)
+        val eventMid = EventCalendar(mid, 1, mC.dayOfMonth, mC.monthValue - 1, mC.year, args.subject.Name)
+        val eventFinal = EventCalendar(final, 1, fC.dayOfMonth, fC.monthValue - 1, fC.year, args.subject.Name)
 
         val sid = code_manager_update.text.toString()
 
-        val setId:Int = sid.substring(0,3).toInt() + sid.substring(4,7).toInt()
-        val idMid:Int = "1${setId.toString()}".toInt()
-        val idFinal:Int = "2${setId.toString()}".toInt()
+        val setId: Int = sid.substring(0, 3).toInt() + sid.substring(4, 7).toInt()
+        val idMid: Int = "1${setId.toString()}".toInt()
+        val idFinal: Int = "2${setId.toString()}".toInt()
 
-        val midData =  "${date_mid_manager_update.text} ${time_mid_begin_manager_update.text}:00"
-        val finalData =  "${date_final_manager_update.text} ${time_final_begin_manager_update.text}:00"
+        val midData = "${date_mid_manager_update.text} ${time_mid_begin_manager_update.text}:00"
+        val finalData = "${date_final_manager_update.text} ${time_final_begin_manager_update.text}:00"
 
-        setAlarm(midData,idMid,sid)
-        setAlarm(finalData,idFinal,sid)
+        setAlarm(midData, idMid, sid)
+        setAlarm(finalData, idFinal, sid)
 
         mEventCalendarViewModel.updateEventCalendar(eventMid)
         mEventCalendarViewModel.updateEventCalendar(eventFinal)
     }
 
-    private fun setAlarm(date:String,rq:Int,SID:String){
-        mAlarmService.setExactAlarm(convertMillis(date),rq,SID)
+    private fun setAlarm(date: String, rq: Int, SID: String) {
+        mAlarmService.setExactAlarm(convertMillis(date), rq, SID)
     }
 
-    private fun convertMillis(data: String):Long{
+    private fun convertMillis(data: String): Long {
         var sp = SimpleDateFormat("dd/MM/yyyy hh:mm:ss")
-        var date:Date = sp.parse(data)
-        var millis:Long = date.time
+        var date: Date = sp.parse(data)
+        var millis: Long = date.time
 
         return millis
     }
 
-    private fun getTime(tv: TextView){
+    private fun getTime(tv: TextView) {
         val cal = Calendar.getInstance()
         val timeSet = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
-            cal.set(Calendar.HOUR_OF_DAY,hour)
-            cal.set(Calendar.MINUTE,minute)
+            cal.set(Calendar.HOUR_OF_DAY, hour)
+            cal.set(Calendar.MINUTE, minute)
 
             tv.text = SimpleDateFormat("HH:mm").format(cal.time).toString()
         }
-        TimePickerDialog(requireContext(), AlertDialog.THEME_HOLO_DARK,timeSet,cal.get(Calendar.HOUR_OF_DAY),cal.get(Calendar.MINUTE),true).show()
+        TimePickerDialog(requireContext(), AlertDialog.THEME_HOLO_DARK, timeSet, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun convertDate(string: String):LocalDate{
+    fun convertDate(string: String): LocalDate {
         val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy", Locale.ENGLISH)
         val date = LocalDate.parse(string, formatter)
         return date
     }
 
-    private fun getDate(tv: TextView){
+    private fun getDate(tv: TextView) {
         val cal = Calendar.getInstance()
         val dpd = DatePickerDialog.OnDateSetListener { datePicker, year, month, dayOfMonth ->
-            cal.set(Calendar.DAY_OF_MONTH,dayOfMonth)
-            cal.set(Calendar.MONTH,month)
-            cal.set(Calendar.YEAR,year)
+            cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+            cal.set(Calendar.MONTH, month)
+            cal.set(Calendar.YEAR, year)
 
 
 
@@ -201,61 +199,61 @@ class SubjectsManageUpdate : Fragment() {
 
         }
 
-        DatePickerDialog(requireContext(), AlertDialog.THEME_DEVICE_DEFAULT_DARK,dpd,cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH)).show()
+        DatePickerDialog(requireContext(), AlertDialog.THEME_DEVICE_DEFAULT_DARK, dpd, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH)).show()
 
     }
 
 
-
-    private fun deleteSubject(){
+    private fun deleteSubject() {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setPositiveButton("yes"){ _, _ ->
+        builder.setPositiveButton("yes") { _, _ ->
 
-            val mid_id:Int =  args.subject.sid.toInt() + 1
-            val final_id:Int = args.subject.sid.toInt() + 2
+            val mid_id: Int = args.subject.sid.toInt() + 1
+            val final_id: Int = args.subject.sid.toInt() + 2
             mSubjectViewModel.deleteSubject(args.subject)
             mEventCalendarViewModel.deleteById(mid_id)
             mEventCalendarViewModel.deleteById(final_id)
-            Toast.makeText(requireContext(),"Successfully deleted ",Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Successfully deleted ", Toast.LENGTH_SHORT).show()
             val action = SubjectsManageUpdateDirections.actionSubjectsManageUpdateToSubjectsManageNav()
             findNavController().navigate(action)
 
         }
-        builder.setNegativeButton("No"){ _ ,_ ->}
+        builder.setNegativeButton("No") { _, _ -> }
         builder.setTitle("Delete ?")
         builder.setMessage("Are you sure you want to delete?")
         builder.show()
     }
-    private fun dialogBuilding(tv:TextView){
-        val selectBuilding = LayoutInflater.from(context).inflate(R.layout.dialog_building_select,null)
+
+    private fun dialogBuilding(tv: TextView) {
+        val selectBuilding = LayoutInflater.from(context).inflate(R.layout.dialog_building_select, null)
         val mBuilder = AlertDialog.Builder(context)
                 .setView(selectBuilding)
 
         val mAlert = mBuilder.show()
 
         selectBuilding.radio_group_building.setOnCheckedChangeListener { group, checkedId ->
-            if (checkedId == R.id.radio_building_81){
+            if (checkedId == R.id.radio_building_81) {
                 tv.setText("81")
             }
-            if (checkedId == R.id.radio_building_82){
+            if (checkedId == R.id.radio_building_82) {
                 tv.setText("82")
             }
-            if (checkedId == R.id.radio_building_83){
+            if (checkedId == R.id.radio_building_83) {
                 tv.setText("83")
             }
-            if (checkedId == R.id.radio_building_84){
+            if (checkedId == R.id.radio_building_84) {
                 tv.setText("84")
             }
-            if (checkedId == R.id.radio_building_85){
+            if (checkedId == R.id.radio_building_85) {
                 tv.setText("85")
             }
-            if (checkedId == R.id.radio_building_86){
+            if (checkedId == R.id.radio_building_86) {
                 tv.setText("86")
             }
-            if (checkedId == R.id.radio_building_88){
+            if (checkedId == R.id.radio_building_88) {
                 tv.setText("88")
             }
-            if (checkedId == R.id.radio_building_89){
+            if (checkedId == R.id.radio_building_89) {
                 tv.setText("89")
             }
             mAlert.dismiss()
@@ -263,12 +261,7 @@ class SubjectsManageUpdate : Fragment() {
         }
 
 
-
-
-
-
     }
-
 
 
 }

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="2dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="2dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/row_lesson"
@@ -30,8 +29,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -90,12 +87,12 @@
             android:id="@+id/textView29"
             android:layout_width="0dp"
             android:layout_height="50dp"
+            android:gravity="left|center"
             android:paddingStart="10dp"
-            android:textSize="16sp"
             android:text="READ"
             android:textColor="@color/text_lesson_list"
+            android:textSize="16sp"
             android:textStyle="bold"
-            android:gravity="left|center"
             app:layout_constraintEnd_toStartOf="@+id/checkBox1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -104,12 +101,12 @@
             android:id="@+id/textView30"
             android:layout_width="0dp"
             android:layout_height="50dp"
+            android:gravity="left|center"
             android:paddingStart="10dp"
             android:text="KNOW"
             android:textColor="@color/text_lesson_list"
-            android:textStyle="bold"
             android:textSize="16sp"
-            android:gravity="left|center"
+            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/checkBox2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView29" />
@@ -118,12 +115,12 @@
             android:id="@+id/textView31"
             android:layout_width="0dp"
             android:layout_height="50dp"
+            android:gravity="left|center"
             android:paddingStart="10dp"
             android:text="LEARN"
-            android:textStyle="bold"
-            android:textSize="16sp"
             android:textColor="@color/text_lesson_list"
-            android:gravity="left|center"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/checkBox3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView30" />
@@ -132,12 +129,12 @@
             android:id="@+id/textView32"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:gravity="left|center"
             android:paddingStart="10dp"
             android:text="UNDERSTAND"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:gravity="left|center"
             android:textColor="@color/text_lesson_list"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/checkBox4"
             app:layout_constraintStart_toStartOf="parent"
