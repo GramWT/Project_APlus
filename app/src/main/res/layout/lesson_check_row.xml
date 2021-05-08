@@ -15,7 +15,7 @@
         android:paddingStart="20dp"
         android:text="TextView"
         android:textColor="@color/text_check_dialog_lesson"
-        android:textSize="24sp"
+        android:textSize="@dimen/font_x"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,79 +24,89 @@
         android:id="@+id/check1"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/space_8"
+        android:layout_marginEnd="@dimen/space_16"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_check" />
 
     <TextView
         android:id="@+id/textView21"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_50"
+        android:layout_marginTop="@dimen/space_16"
         android:gravity="left|center"
         android:text="READ"
         android:textColor="@color/text_check_dialog_lesson"
+        android:textSize="@dimen/font_m"
         app:layout_constraintEnd_toStartOf="@+id/check1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_check" />
 
     <TextView
         android:id="@+id/textView25"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_50"
+        android:layout_marginTop="@dimen/space_24"
         android:gravity="left|center"
         android:text="KNOW"
         android:textColor="@color/text_check_dialog_lesson"
-        app:layout_constraintEnd_toEndOf="@+id/textView21"
-        app:layout_constraintStart_toStartOf="@+id/textView21"
+        android:textSize="@dimen/font_m"
+        app:layout_constraintEnd_toStartOf="@+id/check2"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
     <CheckBox
         android:id="@+id/check2"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginEnd="@dimen/space_16"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/check1"
         app:layout_constraintTop_toBottomOf="@+id/check1" />
 
     <TextView
         android:id="@+id/textView27"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_50"
+        android:layout_marginTop="@dimen/space_24"
         android:gravity="left|center"
         android:text="LEARN"
         android:textColor="@color/text_check_dialog_lesson"
-        app:layout_constraintEnd_toEndOf="@+id/textView25"
-        app:layout_constraintStart_toStartOf="@+id/textView25"
+        android:textSize="@dimen/font_m"
+        app:layout_constraintEnd_toStartOf="@+id/check3"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
     <CheckBox
         android:id="@+id/check3"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginEnd="@dimen/space_16"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/check2"
         app:layout_constraintTop_toBottomOf="@+id/check2" />
 
     <CheckBox
         android:id="@+id/check4"
         android:layout_width="50dp"
         android:layout_height="50dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="@dimen/space_16"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/check3"
         app:layout_constraintTop_toBottomOf="@+id/check3" />
 
     <TextView
         android:id="@+id/textView28"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_50"
+        android:layout_marginTop="@dimen/space_24"
         android:gravity="left|center"
         android:text="UNDERSTAND"
         android:textColor="@color/text_check_dialog_lesson"
-        app:layout_constraintEnd_toEndOf="@+id/textView27"
-        app:layout_constraintStart_toStartOf="@+id/textView27"
+        android:textSize="@dimen/font_m"
+        app:layout_constraintEnd_toStartOf="@+id/check4"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView27" />
 </androidx.constraintlayout.widget.ConstraintLayout>

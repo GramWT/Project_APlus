@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="font_ss">12sp</dimen>
+    <dimen name="font_s">16sp</dimen>
+    <dimen name="font_m">18sp</dimen>
+    <dimen name="font_l">20sp</dimen>
+    <dimen name="font_x">24sp</dimen>
+    <dimen name="space_8">8dp</dimen>
+    <dimen name="space_16">16dp</dimen>
+    <dimen name="space_24">24dp</dimen>
+    <dimen name="space_32">32dp</dimen>
+    <dimen name="space_50">50dp</dimen>
+    <dimen name="height_50">50dp</dimen>
+</resources>
