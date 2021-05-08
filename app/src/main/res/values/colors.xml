@@ -34,9 +34,7 @@
     <color name="color_black_2C2C2C">#2C2C2C</color>
 
 
-    //DarkMode Color
 
-    <color name="color_dark_mode_8899A6">#FFFFFF</color>
 
     //Calendar Color
 
@@ -45,7 +43,7 @@
     <color name="color_calendar_list_line">#22303C</color>
 
     //Button Color
-    <color name="button_on_top">#F1C40F</color>
+    <color name="button_on_top">#F8C471</color>
     <color name="button_bottom_navigate_selected">#FFFFFF</color>
     <color name="button_bottom_navigate_unselected">#FCF3CF</color>
     <color name="button_tint_dialog">#F8C471</color>
@@ -74,6 +72,8 @@
     <color name="line">#FFFFFF</color>
     <color name="splash_color">#F8C471</color>
     <color name="icon_theme">#FFFFFF</color>
+    <color name="main_theme">#273746</color>
+    <color name="primary_color">#F8C471</color>
 
     //Dialog Color
     <color name="main_dialog">#FCF3CF</color>

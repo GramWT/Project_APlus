@@ -20,7 +20,7 @@
             android:id="@+id/view3"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/color_dark_mode_8899A6"
+            android:background="@color/line"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
