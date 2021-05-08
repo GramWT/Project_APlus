@@ -18,6 +18,8 @@
 
     //Icon Color
     <color name="plus_icon">#15202B</color>
+    <color name="map_stroke">#15202B</color>
+    <color name="cancel_icon">#8899A6</color>
 
     //Lesson List Color
     <color name="background_lesson_list">#2ec1ac</color>
@@ -31,6 +33,7 @@
     <color name="text_hint">#8899A6</color>
     <color name="text_head_dialog">#2ec1ac</color>
     <color name="text_lesson_list">#192734</color>
+    <color name="text_row_color">#FFFFFF</color>
 
     //Theme Color
     <color name="main_layout">#192734</color>

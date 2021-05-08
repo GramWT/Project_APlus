@@ -54,7 +54,7 @@
                     android:padding="10dp"
                     android:textSize="18sp"
                     android:text="Profile User"
-                    android:textColor="@color/text_on_background"
+                    android:textColor="@color/text_row_color"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -89,7 +89,7 @@
                     android:gravity="center|left"
                     android:padding="10dp"
                     android:text="Subjects Manage"
-                    android:textColor="@color/text_on_background"
+                    android:textColor="@color/text_row_color"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -123,7 +123,7 @@
                     android:layout_height="64dp"
                     android:gravity="center|left"
                     android:padding="10dp"
-                    android:textColor="@color/text_on_background"
+                    android:textColor="@color/text_row_color"
                     android:text="Lessons Manage"
                     android:textStyle="bold" />
 
@@ -160,7 +160,7 @@
                     android:gravity="center|left"
                     android:padding="10dp"
                     android:text="Credit"
-                    android:textColor="@color/text_on_background"
+                    android:textColor="@color/text_row_color"
                     android:textStyle="bold" />
 
 
@@ -196,7 +196,7 @@
                     android:gravity="center|left"
                     android:text="Theme"
                     android:padding="10dp"
-                    android:textColor="@color/text_on_background"
+                    android:textColor="@color/text_row_color"
                     android:textStyle="bold" />
 
 

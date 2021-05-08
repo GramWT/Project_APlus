@@ -28,7 +28,7 @@
             android:layout_marginTop="16dp"
             android:gravity="center|left"
             android:text="111111111"
-            android:textColor="@color/text_on_background"
+            android:textColor="@color/text_row_color"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -41,7 +41,7 @@
             android:layout_marginBottom="16dp"
             android:gravity="center|left"
             android:text="Subject"
-            android:textColor="@color/text_on_background"
+            android:textColor="@color/text_row_color"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -50,6 +50,8 @@
 
     //Icon Color
     <color name="plus_icon">#FFFFFF</color>
+    <color name="map_stroke">#FCF3CF</color>
+    <color name="cancel_icon">#566573</color>
 
     //Lesson List Color
     <color name="background_lesson_list">#E59866</color>
@@ -63,6 +65,7 @@
     <color name="text_hint">#566573 </color>
     <color name="text_head_dialog">#FCF3CF</color>
     <color name="text_lesson_list">#000000</color>
+    <color name="text_row_color">#FCF3CF</color>
 
 
     //Theme Color
