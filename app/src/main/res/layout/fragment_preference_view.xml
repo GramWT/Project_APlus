@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/color_dark_mode_15202B"
+    android:background="@color/background"
     tools:context=".PreferenceView">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="@color/color_dark_mode_192734"
+        android:background="@color/main_layout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -23,7 +23,7 @@
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:background="@color/color_dark_mode_192734"
+            android:background="@color/main_layout"
             android:src="@drawable/ic_baseline_arrow_back_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -37,7 +37,7 @@
         android:layout_height="200dp"
         android:gravity="center"
         android:text="Theme"
-        android:textColor="@color/color_dark_mode_FFFFFF"
+        android:textColor="@color/text_on_background"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +51,7 @@
         android:layout_height="50dp"
         android:text="Switch"
         android:textSize="20sp"
-        android:textColor="@color/color_dark_mode_FFFFFF"
+        android:textColor="@color/text_on_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pre_text" />

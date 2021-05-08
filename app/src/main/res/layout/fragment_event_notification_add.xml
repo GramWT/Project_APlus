@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_dark_mode_15202B"
+    android:background="@color/background"
     tools:context=".Notifications.Event.EventNotificationAdd">
 
 
@@ -12,7 +12,7 @@
         android:id="@+id/constraintLayout7"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="@color/color_dark_mode_192734"
+        android:background="@color/main_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,10 +25,9 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="10dp"
             android:text="Save"
-            android:textColor="@color/color_dark_mode_192734"
             android:textSize="12sp"
-            app:background="@color/color_green_2EC1AC"
-            app:backgroundTint="@color/color_green_2EC1AC"
+            app:background="@color/button_on_top"
+            app:backgroundTint="@color/button_on_top"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,7 +36,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="8dp"
-            android:background="@color/color_dark_mode_192734"
+            android:background="@color/main_layout"
             android:src="@drawable/ic_baseline_clear_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -67,8 +66,8 @@
                 android:inputType="textMultiLine"
                 android:maxLines="5"
                 android:minHeight="50dp"
-                android:textColor="@color/color_dark_mode_FFFFFF"
-                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textColor="@color/text_on_background"
+                android:textColorHint="@color/text_hint"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline8"
                 app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -96,7 +95,7 @@
                 android:layout_marginTop="8dp"
                 android:gravity="left|center"
                 android:text="DD/MM/YYYY"
-                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColor="@color/text_on_background"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline10"
                 app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -117,7 +116,7 @@
                 android:layout_marginTop="8dp"
                 android:gravity="left|center"
                 android:text="HH:mm"
-                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColor="@color/text_on_background"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline8"
                 app:layout_constraintStart_toEndOf="@+id/date_begin_event_add"
@@ -129,7 +128,7 @@
                 android:layout_height="50dp"
                 android:gravity="left|center"
                 android:text="DD/MM/YYYY"
-                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColor="@color/text_on_background"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/time_end_event_add"
                 app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -144,8 +143,8 @@
                 android:inputType="textMultiLine"
                 android:maxLines="5"
                 android:minHeight="50dp"
-                android:textColor="@color/color_dark_mode_FFFFFF"
-                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textColor="@color/text_on_background"
+                android:textColorHint="@color/text_hint"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline8"
                 app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -159,7 +158,7 @@
                 android:gravity="left|center"
                 android:minHeight="50dp"
                 android:text="Normal"
-                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColor="@color/text_on_background"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/description_event_add"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -170,7 +169,7 @@
                 android:id="@+id/view5"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/color_dark_mode_22303C"
+                android:background="@color/line"
                 app:layout_constraintTop_toBottomOf="@+id/notification_setting_layout"
                 tools:layout_editor_absoluteX="-30dp" />
 
@@ -178,7 +177,7 @@
                 android:id="@+id/view6"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/color_dark_mode_22303C"
+                android:background="@color/line"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/state_event_add" />
@@ -187,7 +186,7 @@
                 android:id="@+id/view4"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/color_dark_mode_22303C"
+                android:background="@color/line"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/location_event_add" />
@@ -196,7 +195,7 @@
                 android:id="@+id/view2"
                 android:layout_width="358dp"
                 android:layout_height="1dp"
-                android:background="@color/color_dark_mode_22303C"
+                android:background="@color/line"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/date_end_event_add" />
 
@@ -204,7 +203,7 @@
                 android:id="@+id/view"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/color_dark_mode_22303C"
+                android:background="@color/line"
                 app:layout_constraintBottom_toTopOf="@+id/date_begin_event_add"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -214,7 +213,7 @@
                 android:id="@+id/view9"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/color_dark_mode_22303C"
+                android:background="@color/line"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -229,8 +228,8 @@
                 android:inputType="textMultiLine"
                 android:maxLines="30"
                 android:minHeight="50dp"
-                android:textColor="@color/color_dark_mode_FFFFFF"
-                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textColor="@color/text_on_background"
+                android:textColorHint="@color/text_hint"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline8"
                 app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -242,7 +241,7 @@
                 android:layout_height="50dp"
                 android:gravity="left|center"
                 android:text="HH:mm"
-                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColor="@color/text_on_background"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline8"
                 app:layout_constraintStart_toStartOf="@+id/guideline10"
@@ -253,7 +252,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/color_dark_mode_15202B"
+                android:background="@color/background"
                 android:src="@drawable/ic_baseline_alarm_24"
                 app:layout_constraintEnd_toStartOf="@+id/guideline15"
                 app:layout_constraintStart_toStartOf="@+id/guideline13"
@@ -264,7 +263,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_begin="16dp" />
+                app:layout_constraintGuide_end="395dp" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline15"
@@ -334,8 +333,8 @@
                         android:gravity="left|center"
                         android:minHeight="50dp"
                         android:hint="1"
-                        android:textColor="@color/color_dark_mode_FFFFFF"
-                        android:textColorHint="@color/color_dark_mode_8899A6"
+                        android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_hint"
                         android:textSize="18sp" />
                     <TextView
                         android:id="@+id/notification_time_1"
@@ -344,15 +343,15 @@
                         android:gravity="left|center"
                         android:minHeight="50dp"
                         android:hint="1"
-                        android:textColor="@color/color_dark_mode_FFFFFF"
-                        android:textColorHint="@color/color_dark_mode_8899A6"
+                        android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_hint"
                         android:textSize="18sp" />
 
                     <ImageButton
                         android:id="@+id/cancel_notification_device_1"
                         android:layout_width="wrap_content"
                         android:layout_height="50dp"
-                        android:background="@color/color_dark_mode_15202B"
+                        android:background="@color/background"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/ic_baseline_clear_24" />
                 </LinearLayout>
@@ -369,8 +368,8 @@
                         android:gravity="left|center"
                         android:minHeight="50dp"
                         android:hint="2"
-                        android:textColor="@color/color_dark_mode_FFFFFF"
-                        android:textColorHint="@color/color_dark_mode_8899A6"
+                        android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_hint"
                         android:textSize="18sp" />
                     <TextView
                         android:id="@+id/notification_time_2"
@@ -379,15 +378,15 @@
                         android:gravity="left|center"
                         android:minHeight="50dp"
                         android:hint="2"
-                        android:textColor="@color/color_dark_mode_FFFFFF"
-                        android:textColorHint="@color/color_dark_mode_8899A6"
+                        android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_hint"
                         android:textSize="18sp" />
 
                     <ImageButton
                         android:id="@+id/cancel_notification_device_2"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:background="@color/color_dark_mode_15202B"
+                        android:background="@color/background"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/ic_baseline_clear_24" />
                 </LinearLayout>
@@ -405,8 +404,8 @@
                         android:gravity="left|center"
                         android:minHeight="50dp"
                         android:hint="3"
-                        android:textColor="@color/color_dark_mode_FFFFFF"
-                        android:textColorHint="@color/color_dark_mode_8899A6"
+                        android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_hint"
                         android:textSize="18sp" />
                     <TextView
                         android:id="@+id/notification_time_3"
@@ -415,15 +414,15 @@
                         android:gravity="left|center"
                         android:minHeight="50dp"
                         android:hint="3"
-                        android:textColor="@color/color_dark_mode_FFFFFF"
-                        android:textColorHint="@color/color_dark_mode_8899A6"
+                        android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_hint"
                         android:textSize="18sp" />
 
                     <ImageButton
                         android:id="@+id/cancel_notification_device_3"
                         android:layout_width="wrap_content"
                         android:layout_height="50dp"
-                        android:background="@color/color_dark_mode_15202B"
+                        android:background="@color/background"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/ic_baseline_clear_24"/>
                 </LinearLayout>
@@ -441,8 +440,8 @@
                         android:gravity="left|center"
                         android:minHeight="50dp"
                         android:hint="4"
-                        android:textColor="@color/color_dark_mode_FFFFFF"
-                        android:textColorHint="@color/color_dark_mode_8899A6"
+                        android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_hint"
                         android:textSize="18sp" />
                     <TextView
                         android:id="@+id/notification_time_4"
@@ -451,15 +450,15 @@
                         android:gravity="left|center"
                         android:minHeight="50dp"
                         android:hint="4"
-                        android:textColor="@color/color_dark_mode_FFFFFF"
-                        android:textColorHint="@color/color_dark_mode_8899A6"
+                        android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_hint"
                         android:textSize="18sp" />
 
                     <ImageButton
                         android:id="@+id/cancel_notification_device_4"
                         android:layout_width="wrap_content"
                         android:layout_height="50dp"
-                        android:background="@color/color_dark_mode_15202B"
+                        android:background="@color/background"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/ic_baseline_clear_24" />
                 </LinearLayout>
@@ -477,8 +476,8 @@
                         android:gravity="left|center"
                         android:minHeight="50dp"
                         android:hint="5"
-                        android:textColor="@color/color_dark_mode_FFFFFF"
-                        android:textColorHint="@color/color_dark_mode_8899A6"
+                        android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_hint"
                         android:textSize="18sp" />
 
                     <TextView
@@ -488,15 +487,15 @@
                         android:gravity="left|center"
                         android:minHeight="50dp"
                         android:hint="5"
-                        android:textColor="@color/color_dark_mode_FFFFFF"
-                        android:textColorHint="@color/color_dark_mode_8899A6"
+                        android:textColor="@color/text_on_background"
+                        android:textColorHint="@color/text_hint"
                         android:textSize="18sp" />
 
                     <ImageButton
                         android:id="@+id/cancel_notification_device_5"
                         android:layout_width="wrap_content"
                         android:layout_height="50dp"
-                        android:background="@color/color_dark_mode_15202B"
+                        android:background="@color/background"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/ic_baseline_clear_24" />
                 </LinearLayout>
@@ -514,10 +513,9 @@
                         android:layout_height="40dp"
                         android:gravity="center"
                         android:text="Add"
-                        app:background="@color/color_green_2EC1AC"
-                        app:backgroundTint="@color/color_green_2EC1AC"
-                        android:textColor="@color/color_dark_mode_15202B"
-                        android:textColorHint="@color/color_dark_mode_8899A6"
+                        app:background="@color/button_on_top"
+                        app:backgroundTint="@color/button_on_top"
+                        android:textColor="@color/background"
                         android:textSize="12sp" />
                 </LinearLayout>
 

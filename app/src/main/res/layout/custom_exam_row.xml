@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="240dp"
-    android:backgroundTint="@color/color_dark_mode_192734"
+    android:backgroundTint="@color/main_layout"
     android:clickable="true"
     android:foreground="?attr/selectableItemBackground"
     app:cardCornerRadius="20dp"
@@ -27,7 +27,7 @@
             android:layout_marginTop="8dp"
             android:gravity="left|center"
             android:text="Subject"
-            android:textColor="@color/color_dark_mode_FFFFFF"
+            android:textColor="@color/text_on_background"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sid_text" />
@@ -39,7 +39,7 @@
             android:layout_marginTop="8dp"
             android:gravity="center|left"
             android:text="111111111"
-            android:textColor="@color/color_dark_mode_FFFFFF"
+            android:textColor="@color/text_on_background"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -50,7 +50,7 @@
             android:layout_height="25dp"
             android:gravity="left|center"
             android:text="Room"
-            android:textColor="@color/color_dark_mode_FFFFFF"
+            android:textColor="@color/text_on_background"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/sb_text"
             app:layout_constraintTop_toTopOf="@+id/sb_text" />
@@ -60,7 +60,7 @@
             android:layout_width="80dp"
             android:layout_height="25dp"
             android:gravity="left|center"
-            android:textColor="@color/color_dark_mode_FFFFFF"
+            android:textColor="@color/text_on_background"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/mbuilding_textview"
             app:layout_constraintTop_toTopOf="@+id/mbuilding_textview" />
@@ -80,7 +80,7 @@
             android:layout_height="25dp"
             android:layout_marginTop="8dp"
             android:text="ฺฺBuilding"
-            android:textColor="@color/color_dark_mode_FFFFFF"
+            android:textColor="@color/text_on_background"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@+id/textView24"
             app:layout_constraintTop_toBottomOf="@+id/textView24" />
@@ -92,7 +92,7 @@
             android:layout_marginStart="35dp"
             android:layout_marginEnd="40dp"
             android:gravity="left|center"
-            android:textColor="@color/color_dark_mode_FFFFFF"
+            android:textColor="@color/text_on_background"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/mroom_textview"
@@ -106,7 +106,7 @@
             android:layout_marginTop="16dp"
             android:gravity="center|left"
             android:text="DD/MM/YYYY"
-            android:textColor="@color/color_dark_mode_FFFFFF"
+            android:textColor="@color/text_on_background"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/textView22"
             app:layout_constraintTop_toBottomOf="@+id/sname_text" />
@@ -118,7 +118,7 @@
             android:layout_marginTop="8dp"
             android:gravity="center|left"
             android:text="HH:MM - HH:MM"
-            android:textColor="@color/color_dark_mode_FFFFFF"
+            android:textColor="@color/text_on_background"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/textView24"
             app:layout_constraintTop_toBottomOf="@+id/date_textview" />
@@ -129,7 +129,7 @@
             android:layout_height="25dp"
             android:layout_marginTop="16dp"
             android:text="ฺฺDate"
-            android:textColor="@color/color_dark_mode_FFFFFF"
+            android:textColor="@color/text_on_background"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@+id/sname_text"
             app:layout_constraintTop_toBottomOf="@+id/sname_text" />
@@ -140,7 +140,7 @@
             android:layout_height="25dp"
             android:layout_marginTop="8dp"
             android:text="ฺฺTime"
-            android:textColor="@color/color_dark_mode_FFFFFF"
+            android:textColor="@color/text_on_background"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@+id/textView22"
             app:layout_constraintTop_toBottomOf="@+id/textView22" />

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/color_dark_mode_15202B"
+    android:background="@color/background"
     tools:context=".Notifications.Event.ReminderNotificationAdd">
 
 
@@ -13,7 +13,7 @@
         android:id="@+id/constraintLayout7"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="@color/color_dark_mode_192734"
+        android:background="@color/main_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,10 +26,9 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="10dp"
             android:text="Save"
-            android:textColor="@color/color_dark_mode_192734"
             android:textSize="12sp"
-            app:background="@color/color_green_2EC1AC"
-            app:backgroundTint="@color/color_green_2EC1AC"
+            app:background="@color/button_on_top"
+            app:backgroundTint="@color/button_on_top"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,7 +37,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="8dp"
-            android:background="@color/color_dark_mode_192734"
+            android:background="@color/main_layout"
             android:src="@drawable/ic_baseline_clear_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -68,8 +67,8 @@
                 android:inputType="textMultiLine"
                 android:maxLines="5"
                 android:minHeight="50dp"
-                android:textColor="@color/color_dark_mode_FFFFFF"
-                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textColor="@color/text_on_background"
+                android:textColorHint="@color/text_hint"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline8"
                 app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -97,7 +96,7 @@
                 android:layout_marginTop="8dp"
                 android:gravity="left|center"
                 android:text="DD/MM/YYYY"
-                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColor="@color/text_on_background"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline10"
                 app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -118,7 +117,7 @@
                 android:layout_marginTop="8dp"
                 android:gravity="left|center"
                 android:text="HH:mm"
-                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColor="@color/text_on_background"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline8"
                 app:layout_constraintStart_toEndOf="@+id/date_begin_remind_add"
@@ -135,8 +134,8 @@
                 android:inputType="textMultiLine"
                 android:maxLines="5"
                 android:minHeight="50dp"
-                android:textColor="@color/color_dark_mode_FFFFFF"
-                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textColor="@color/text_on_background"
+                android:textColorHint="@color/text_hint"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline8"
                 app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -149,7 +148,7 @@
                 android:gravity="left|center"
                 android:minHeight="50dp"
                 android:text="Normal"
-                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColor="@color/text_on_background"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline8"
                 app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -159,7 +158,7 @@
                 android:id="@+id/view5"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/color_dark_mode_22303C"
+                android:background="@color/line"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/location_remind_add" />
@@ -168,21 +167,21 @@
                 android:id="@+id/view3"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/color_dark_mode_22303C"
+                android:background="@color/line"
                 app:layout_constraintTop_toBottomOf="@+id/state_remind_add" />
 
             <View
                 android:id="@+id/view8"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/color_dark_mode_22303C"
+                android:background="@color/line"
                 app:layout_constraintTop_toBottomOf="@+id/date_begin_remind_add" />
 
             <View
                 android:id="@+id/view6"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/color_dark_mode_22303C"
+                android:background="@color/line"
                 app:layout_constraintBottom_toTopOf="@+id/date_begin_remind_add"
                 app:layout_constraintTop_toBottomOf="@+id/title_remind_add" />
 
@@ -190,7 +189,7 @@
                 android:id="@+id/view2"
                 android:layout_width="358dp"
                 android:layout_height="1dp"
-                android:background="@color/color_dark_mode_22303C"
+                android:background="@color/line"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/date_end_event_add" />
 
@@ -198,7 +197,7 @@
                 android:id="@+id/view"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/color_dark_mode_22303C"
+                android:background="@color/line"
                 app:layout_constraintBottom_toTopOf="@+id/date_begin_event_add"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -208,7 +207,7 @@
                 android:id="@+id/view9"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/color_dark_mode_22303C"
+                android:background="@color/line"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -223,8 +222,8 @@
                 android:inputType="textMultiLine"
                 android:maxLines="30"
                 android:minHeight="50dp"
-                android:textColor="@color/color_dark_mode_FFFFFF"
-                android:textColorHint="@color/color_dark_mode_8899A6"
+                android:textColor="@color/text_on_background"
+                android:textColorHint="@color/text_hint"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@+id/guideline3"
                 app:layout_constraintTop_toBottomOf="@+id/state_remind_add" />
@@ -235,7 +234,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="20dp"
-                android:background="@color/color_dark_mode_15202B"
+                android:background="@color/background"
                 android:src="@drawable/ic_baseline_alarm_24"
                 app:layout_constraintEnd_toStartOf="@+id/guideline15"
                 app:layout_constraintStart_toStartOf="@+id/guideline13"

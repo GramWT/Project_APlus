@@ -18,7 +18,6 @@ import com.example.project.MainActivity
 import com.example.project.databinding.CustomExamRowBinding
 import kotlinx.android.synthetic.main.custom_exam_row.view.*
 import com.example.project.R
-import com.example.project.databinding.FragmentExamNotificationBinding
 import com.example.project.databinding.FragmentSubjectTabBinding
 import kotlinx.android.synthetic.main.dialog_building_view.view.*
 import kotlinx.android.synthetic.main.fragment_subject_tab.view.*

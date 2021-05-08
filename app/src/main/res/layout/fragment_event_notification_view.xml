@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_dark_mode_15202B">
+    android:background="@color/background">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout14"
         android:layout_width="match_parent"
         android:layout_height="55dp"
+        android:background="@color/main_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +31,7 @@
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:background="@color/color_dark_mode_15202B"
+            android:background="@color/main_layout"
             android:src="@drawable/ic_baseline_clear_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -41,7 +42,7 @@
             android:layout_height="40dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:background="@color/color_dark_mode_15202B"
+            android:background="@color/main_layout"
             android:src="@drawable/ic_baseline_settings_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -52,7 +53,7 @@
             android:layout_height="40dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
-            android:background="@color/color_dark_mode_15202B"
+            android:background="@color/main_layout"
             android:src="@drawable/ic_baseline_delete_24"
             app:layout_constraintEnd_toStartOf="@+id/setting_event_view"
             app:layout_constraintTop_toTopOf="parent" />
@@ -80,7 +81,7 @@
                 android:gravity="center|left"
                 android:minHeight="50dp"
                 android:text="Title"
-                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColor="@color/text_on_background"
                 android:textSize="28sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -107,7 +108,7 @@
                 android:gravity="center|left"
                 android:minHeight="40dp"
                 android:text="DD/MM/YYY"
-                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColor="@color/text_on_background"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/date_end_event_view"
                 app:layout_constraintEnd_toStartOf="@+id/guideline7"
@@ -121,7 +122,7 @@
                 android:gravity="center|left"
                 android:minHeight="40dp"
                 android:text="DD/MM/YYY"
-                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColor="@color/text_on_background"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline7"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -135,7 +136,7 @@
                 android:gravity="center|left"
                 android:minHeight="50dp"
                 android:text="Location"
-                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColor="@color/text_on_background"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -149,7 +150,7 @@
                 android:gravity="center|left"
                 android:minHeight="50dp"
                 android:text="Description"
-                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColor="@color/text_on_background"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -210,7 +211,7 @@
                 android:gravity="center|left"
                 android:minHeight="40dp"
                 android:text="HH:mm"
-                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColor="@color/text_on_background"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/date_begin_event_view"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
@@ -224,7 +225,7 @@
                 android:gravity="center|left"
                 android:minHeight="40dp"
                 android:text="HH:mm"
-                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColor="@color/text_on_background"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/date_end_event_view"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
@@ -255,8 +256,8 @@
                         android:gravity="center|left"
                         android:minHeight="50dp"
                         android:hint="d1"
-                        android:textColorHint="@color/color_dark_mode_FFFFFF"
-                        android:textColor="@color/color_dark_mode_FFFFFF"
+                        android:textColorHint="@color/text_on_background"
+                        android:textColor="@color/text_on_background"
                         android:textSize="16sp" />
 
                     <TextView
@@ -268,8 +269,8 @@
                         android:gravity="center|left"
                         android:minHeight="50dp"
                         android:hint="t1"
-                        android:textColorHint="@color/color_dark_mode_FFFFFF"
-                        android:textColor="@color/color_dark_mode_FFFFFF"
+                        android:textColorHint="@color/text_on_background"
+                        android:textColor="@color/text_on_background"
                         android:textSize="16sp" />
 
                 </LinearLayout>
@@ -289,8 +290,8 @@
                         android:gravity="center|left"
                         android:minHeight="50dp"
                         android:hint="d2"
-                        android:textColorHint="@color/color_dark_mode_FFFFFF"
-                        android:textColor="@color/color_dark_mode_FFFFFF"
+                        android:textColorHint="@color/text_on_background"
+                        android:textColor="@color/text_on_background"
                         android:textSize="16sp" />
 
                     <TextView
@@ -301,8 +302,8 @@
                         android:gravity="center|left"
                         android:minHeight="50dp"
                         android:hint="t2"
-                        android:textColorHint="@color/color_dark_mode_FFFFFF"
-                        android:textColor="@color/color_dark_mode_FFFFFF"
+                        android:textColorHint="@color/text_on_background"
+                        android:textColor="@color/text_on_background"
                         android:textSize="16sp" />
 
                 </LinearLayout>
@@ -322,8 +323,8 @@
                         android:gravity="center|left"
                         android:minHeight="50dp"
                         android:hint="d3"
-                        android:textColorHint="@color/color_dark_mode_FFFFFF"
-                        android:textColor="@color/color_dark_mode_FFFFFF"
+                        android:textColorHint="@color/text_on_background"
+                        android:textColor="@color/text_on_background"
                         android:textSize="16sp" />
 
                     <TextView
@@ -334,8 +335,8 @@
                         android:gravity="center|left"
                         android:minHeight="50dp"
                         android:hint="t3"
-                        android:textColorHint="@color/color_dark_mode_FFFFFF"
-                        android:textColor="@color/color_dark_mode_FFFFFF"
+                        android:textColorHint="@color/text_on_background"
+                        android:textColor="@color/text_on_background"
                         android:textSize="16sp" />
 
                 </LinearLayout>
@@ -354,8 +355,8 @@
                         android:gravity="center|left"
                         android:minHeight="50dp"
                         android:hint="d4"
-                        android:textColorHint="@color/color_dark_mode_FFFFFF"
-                        android:textColor="@color/color_dark_mode_FFFFFF"
+                        android:textColorHint="@color/text_on_background"
+                        android:textColor="@color/text_on_background"
                         android:textSize="16sp" />
 
                     <TextView
@@ -366,8 +367,8 @@
                         android:gravity="center|left"
                         android:minHeight="50dp"
                         android:hint="t4"
-                        android:textColorHint="@color/color_dark_mode_FFFFFF"
-                        android:textColor="@color/color_dark_mode_FFFFFF"
+                        android:textColorHint="@color/text_on_background"
+                        android:textColor="@color/text_on_background"
                         android:textSize="16sp" />
 
 
@@ -387,8 +388,8 @@
                         android:gravity="center|left"
                         android:minHeight="50dp"
                         android:hint="d5"
-                        android:textColorHint="@color/color_dark_mode_FFFFFF"
-                        android:textColor="@color/color_dark_mode_FFFFFF"
+                        android:textColorHint="@color/text_on_background"
+                        android:textColor="@color/text_on_background"
                         android:textSize="16sp" />
 
                     <TextView
@@ -399,8 +400,8 @@
                         android:gravity="center|left"
                         android:minHeight="50dp"
                         android:hint="t5"
-                        android:textColorHint="@color/color_dark_mode_FFFFFF"
-                        android:textColor="@color/color_dark_mode_FFFFFF"
+                        android:textColorHint="@color/text_on_background"
+                        android:textColor="@color/text_on_background"
                         android:textSize="16sp" />
 
 

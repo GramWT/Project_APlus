@@ -5,9 +5,54 @@
 
     #DarkMode Color
 
-    <color name="color_dark_mode_15202B">#15202B</color>
-    <color name="color_dark_mode_192734">#192734</color>
-    <color name="color_dark_mode_22303C">#22303C</color>
-    <color name="color_dark_mode_FFFFFF">#FFFFFF</color>
     <color name="color_dark_mode_8899A6">#8899A6</color>
+
+    //Calendar Color
+    <color name="color_white_calendar">#FFFFFF</color>
+    <color name="color_header_calendar">#192734</color>
+    <color name="color_calendar_list_line">#22303C</color>
+
+    //Button Color
+    <color name="button_on_top">#2ec1ac</color>
+    <color name="button_bottom_navigate_selected">#2ec1ac</color>
+    <color name="button_bottom_navigate_unselected">#8899A6</color>
+    <color name="button_tint_dialog">#2ec1ac</color>
+
+    //Icon Color
+    <color name="plus_icon">#15202B</color>
+
+    //Lesson List Color
+    <color name="background_lesson_list">#2ec1ac</color>
+
+    //Text Color
+    <color name="text_empty_data">#8899A6</color>
+    <color name="text_bottom_navigate">#2ec1ac</color>
+    <color name="text_on_background">#FFFFFF</color>
+    <color name="text_same_background">#15202B</color>
+    <color name="text_check_dialog_lesson">#2ec1ac</color>
+    <color name="text_hint">#8899A6</color>
+    <color name="text_head_dialog">#2ec1ac</color>
+    <color name="text_lesson_list">#192734</color>
+
+    //Theme Color
+    <color name="main_layout">#192734</color>
+    <color name="background">#15202B</color>
+    <color name="main_color_bar">#2ec1ac</color>
+    <color name="line">#22303C</color>
+    <color name="splash_color">#2ec1ac</color>
+    <color name="icon_theme">#8899A6</color>
+
+    //Dialog Color
+    <color name="main_dialog">#15202B</color>
+    <color name="background_dialog">#192734</color>
+    <color name="head_dialog">#2ec1ac</color>
+    <color name="background_image">#FFFFFF</color>
+
+    //Tab Color
+    <color name="tab_indicator">#2ec1ac</color>
+    <color name="tab_selected">#2ec1ac</color>
+    <color name="tab_unselected">#8899A6</color>
+
+
+
 </resources>

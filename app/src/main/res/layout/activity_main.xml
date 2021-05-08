@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/color_dark_mode_15202B"
+    android:background="@color/background"
     tools:context=".MainActivity">
 
     <FrameLayout
@@ -20,9 +20,9 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="0dp"
         android:background="?android:attr/windowBackground"
-        app:itemBackground="@color/color_dark_mode_192734"
+        app:itemBackground="@color/main_layout"
         app:itemIconTint="@drawable/bottom_navigation_selector"
-        app:itemTextColor="@color/color_green_2EC1AC"
+        app:itemTextColor="@color/text_bottom_navigate"
         app:menu="@menu/nav_menu" />
 
 

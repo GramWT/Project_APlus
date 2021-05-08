@@ -2,16 +2,15 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/color_dark_mode_15202B"
+    android:background="@color/background"
     android:layout_height="500dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout21"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/color_green_2EC1AC"
+        android:background="@color/head_dialog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="Previous Time"
-            android:textColor="@color/color_dark_mode_15202B"
+            android:textColor="@color/text_same_background"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -56,40 +55,40 @@
                 android:id="@+id/radio_minutes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/color_green_2EC1AC"
+                android:buttonTint="@color/button_tint_dialog"
                 android:paddingLeft="10dp"
                 android:text="Minutes"
-                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColor="@color/text_on_background"
                 android:textSize="18sp" />
 
             <RadioButton
                 android:id="@+id/radio_hours"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/color_green_2EC1AC"
+                android:buttonTint="@color/button_tint_dialog"
                 android:paddingLeft="10dp"
                 android:text="Hours"
-                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColor="@color/text_on_background"
                 android:textSize="18sp" />
 
             <RadioButton
                 android:id="@+id/radio_days"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/color_green_2EC1AC"
+                android:buttonTint="@color/button_tint_dialog"
                 android:paddingLeft="10dp"
                 android:text="Days"
-                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColor="@color/text_on_background"
                 android:textSize="18sp" />
 
             <RadioButton
                 android:id="@+id/radio_weeks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/color_green_2EC1AC"
+                android:buttonTint="@color/button_tint_dialog"
                 android:paddingLeft="10dp"
                 android:text="Weeks"
-                android:textColor="@color/color_dark_mode_FFFFFF"
+                android:textColor="@color/text_on_background"
                 android:textSize="18sp" />
         </RadioGroup>
 
@@ -100,12 +99,12 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
-            android:background="@color/color_dark_mode_192734"
+            android:background="@color/background_dialog"
             android:ems="10"
             android:inputType="number"
             android:paddingStart="10dp"
             android:text="10"
-            android:textColor="@color/color_dark_mode_FFFFFF"
+            android:textColor="@color/text_on_background"
             app:layout_constraintBottom_toTopOf="@+id/radio_group_previous_time"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -120,10 +119,10 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:text="Done"
-            android:textColor="@color/color_dark_mode_15202B"
+            android:textColor="@color/text_same_background"
             android:textSize="16sp"
-            app:background="@color/color_green_2EC1AC"
-            app:backgroundTint="@color/color_green_2EC1AC"
+            app:background="@color/button_on_top"
+            app:backgroundTint="@color/button_on_top"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

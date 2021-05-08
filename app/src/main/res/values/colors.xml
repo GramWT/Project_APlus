@@ -24,7 +24,7 @@
     <color name="color_green_16697a">#16697a</color>
     <color name="color_orange_db6400">#db6400</color>
 
-    <color name="color_green_2EC1AC">#FF5722</color>
+    <color name="color_green_2EC1AC">#2ec1ac</color>
 
 
     <color name="color_green_3E978B">#3E978B</color>
@@ -34,11 +34,61 @@
     <color name="color_black_2C2C2C">#2C2C2C</color>
 
 
-    #DarkMode Color
+    //DarkMode Color
 
-    <color name="color_dark_mode_15202B">#15202B</color>
-    <color name="color_dark_mode_192734">#192734</color>
-    <color name="color_dark_mode_22303C">#22303C</color>
-    <color name="color_dark_mode_FFFFFF">#FFFFFF</color>
-    <color name="color_dark_mode_8899A6">#8899A6</color>
+    <color name="color_dark_mode_8899A6">#FFFFFF</color>
+
+    //Calendar Color
+
+    <color name="color_white_calendar">#FFFFFF</color>
+    <color name="color_header_calendar">#F8C471</color>
+    <color name="color_calendar_list_line">#22303C</color>
+
+    //Button Color
+    <color name="button_on_top">#F1C40F</color>
+    <color name="button_bottom_navigate_selected">#FFFFFF</color>
+    <color name="button_bottom_navigate_unselected">#FCF3CF</color>
+    <color name="button_tint_dialog">#F8C471</color>
+
+    //Icon Color
+    <color name="plus_icon">#FFFFFF</color>
+
+    //Lesson List Color
+    <color name="background_lesson_list">#E59866</color>
+
+    //Text Color
+    <color name="text_empty_data">#000000</color>
+    <color name="text_bottom_navigate">#FFFFFF</color>
+    <color name="text_on_background">#000000</color>
+    <color name="text_same_background">#FCF3CF</color>
+    <color name="text_check_dialog_lesson">#000000</color>
+    <color name="text_hint">#566573 </color>
+    <color name="text_head_dialog">#FCF3CF</color>
+    <color name="text_lesson_list">#000000</color>
+
+
+    //Theme Color
+    <color name="main_layout">#F8C471</color>
+    <color name="background">#FCF3CF</color>
+    <color name="main_color_bar">#F8C471</color>
+    <color name="line">#FFFFFF</color>
+    <color name="splash_color">#F8C471</color>
+    <color name="icon_theme">#FFFFFF</color>
+
+    //Dialog Color
+    <color name="main_dialog">#FCF3CF</color>
+    <color name="background_dialog">#F8C471</color>
+    <color name="head_dialog">#F8C471</color>
+    <color name="background_image">#FFFFFF</color>
+
+    //Tab Color
+    <color name="tab_indicator">#FCF3CF</color>
+    <color name="tab_selected">#FFFFFF</color>
+    <color name="tab_unselected">#FCF3CF</color>
+
+
+
+
+
+
 </resources>

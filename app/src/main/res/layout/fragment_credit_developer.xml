@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_dark_mode_15202B"
+    android:background="@color/background"
     tools:context=".Setting.CreditDeveloper">
 
 
@@ -13,7 +13,7 @@
         android:id="@+id/constraintLayout26"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="@color/color_dark_mode_192734"
+        android:background="@color/main_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,10 +54,10 @@
             android:id="@+id/gram_name"
             android:layout_width="300dp"
             android:layout_height="40dp"
-            android:background="@color/color_green_2EC1AC"
+            android:background="@color/main_color_bar"
             android:gravity="center"
             android:text="Woratum Toroek (Gram)"
-            android:textColor="@color/color_dark_mode_192734"
+            android:textColor="@color/text_same_background"
             android:textSize="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -77,10 +77,10 @@
             android:id="@+id/aof_name"
             android:layout_width="300dp"
             android:layout_height="40dp"
-            android:background="@color/color_green_2EC1AC"
+            android:background="@color/main_color_bar"
             android:gravity="center"
             android:text="Anucha Wilailert (Aof)"
-            android:textColor="@color/color_dark_mode_192734"
+            android:textColor="@color/text_same_background"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

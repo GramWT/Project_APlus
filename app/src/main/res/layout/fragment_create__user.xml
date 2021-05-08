@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_dark_mode_15202B"
+    android:background="@color/background"
     tools:context=".Create_User">
 
 
@@ -27,8 +27,8 @@
         android:gravity="center"
         android:hint="Name"
         android:inputType="textPersonName"
-        android:textColor="@color/color_dark_mode_FFFFFF"
-        android:textColorHint="@color/color_dark_mode_FFFFFF"
+        android:textColor="@color/text_on_background"
+        android:textColorHint="@color/text_on_background"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,8 +39,8 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="8dp"
-        android:background="@color/color_green_2EC1AC"
-        android:backgroundTint="@color/color_green_2EC1AC"
+        android:background="@color/button_on_top"
+        android:backgroundTint="@color/button_on_top"
         android:src="@drawable/ic_baseline_add_24"
         app:layout_constraintBottom_toBottomOf="@+id/user_picture"
         app:layout_constraintStart_toEndOf="@+id/user_picture" />
@@ -51,9 +51,9 @@
         android:layout_height="40dp"
         android:layout_marginTop="32dp"
         android:text="Save"
-        app:background="@color/color_green_2EC1AC"
-        app:backgroundTint="@color/color_green_2EC1AC"
-        android:textColor="@color/color_dark_mode_15202B"
+        app:background="@color/button_on_top"
+        app:backgroundTint="@color/button_on_top"
+        android:textColor="@color/text_same_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_name" />

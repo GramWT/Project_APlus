@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_F6F5F5"
+    android:background="@color/background"
     tools:context=".Notifications.Lesson.LessonNotification">
 
 
@@ -17,7 +17,7 @@
         android:paddingEnd="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/color_dark_mode_15202B"
+        android:background="@color/background"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

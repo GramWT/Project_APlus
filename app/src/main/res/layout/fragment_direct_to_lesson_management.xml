@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_dark_mode_15202B"
+    android:background="@color/background"
     tools:context=".Notifications.Exam.DirectToSubjectManagement">
 
 
@@ -16,7 +16,7 @@
         android:layout_marginTop="250dp"
         android:gravity="center"
         android:text="No lesson in database"
-        android:textColor="@color/color_dark_mode_8899A6"
+        android:textColor="@color/text_empty_data"
         android:textSize="18sp"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="10dp" />
@@ -27,7 +27,7 @@
         android:layout_height="50dp"
         android:gravity="center"
         android:text="Please add at Lesson Management"
-        android:textColor="@color/color_dark_mode_8899A6"
+        android:textColor="@color/text_empty_data"
         android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@+id/textView26" />
 
@@ -37,9 +37,9 @@
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
         android:text="Press"
-        app:background="@color/color_green_2EC1AC"
-        app:backgroundTint="@color/color_green_2EC1AC"
-        android:textColor="@color/color_dark_mode_15202B"
+        app:background="@color/button_on_top"
+        app:backgroundTint="@color/button_on_top"
+        android:textColor="@color/text_same_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView20" />

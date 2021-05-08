@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_dark_mode_192734">
+    android:background="@color/main_dialog">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/check_list_lesson"
         android:layout_width="match_parent"
         android:layout_height="580dp"
-        android:background="@color/color_dark_mode_192734"
+        android:background="@color/main_dialog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,7 +18,7 @@
         android:id="@+id/constraintLayout8"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@color/color_dark_mode_15202B"
+        android:background="@color/background_dialog"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,11 +30,10 @@
             android:layout_height="0dp"
             android:layout_marginEnd="8dp"
             android:text="Save"
-            android:textColor="@color/color_dark_mode_192734"
             android:textSize="10dp"
             android:textStyle="bold"
-            app:background="@color/color_green_2EC1AC"
-            app:backgroundTint="@color/color_green_2EC1AC"
+            app:background="@color/button_on_top"
+            app:backgroundTint="@color/button_on_top"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -47,7 +45,7 @@
             android:gravity="center|left"
             android:paddingStart="10dp"
             android:text="TextView"
-            android:textColor="@color/color_green_2EC1AC"
+            android:textColor="@color/text_head_dialog"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/save_lesson_state"

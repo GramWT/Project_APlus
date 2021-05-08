@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_dark_mode_15202B"
+    android:background="@color/background"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingBottom="10dp"
-        android:background="@color/color_dark_mode_15202B">
+        android:background="@color/background">
 
 
         <androidx.cardview.widget.CardView
@@ -35,7 +35,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/color_dark_mode_192734"
+                android:background="@color/main_layout"
                 android:gravity="center|left"
                 android:paddingStart="20dp"
                 android:orientation="horizontal">
@@ -54,7 +54,7 @@
                     android:padding="10dp"
                     android:textSize="18sp"
                     android:text="Profile User"
-                    android:textColor="@color/color_dark_mode_FFFFFF"
+                    android:textColor="@color/text_on_background"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -70,7 +70,7 @@
             android:foreground="?attr/selectableItemBackground">
 
             <LinearLayout
-                android:background="@color/color_dark_mode_192734"
+                android:background="@color/main_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center|left"
@@ -89,7 +89,7 @@
                     android:gravity="center|left"
                     android:padding="10dp"
                     android:text="Subjects Manage"
-                    android:textColor="@color/color_dark_mode_FFFFFF"
+                    android:textColor="@color/text_on_background"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -105,7 +105,7 @@
             android:foreground="?attr/selectableItemBackground">
 
             <LinearLayout
-                android:background="@color/color_dark_mode_192734"
+                android:background="@color/main_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center|left"
@@ -123,7 +123,7 @@
                     android:layout_height="64dp"
                     android:gravity="center|left"
                     android:padding="10dp"
-                    android:textColor="@color/color_dark_mode_FFFFFF"
+                    android:textColor="@color/text_on_background"
                     android:text="Lessons Manage"
                     android:textStyle="bold" />
 
@@ -141,7 +141,7 @@
             android:foreground="?attr/selectableItemBackground">
 
             <LinearLayout
-                android:background="@color/color_dark_mode_192734"
+                android:background="@color/main_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center|left"
@@ -160,7 +160,7 @@
                     android:gravity="center|left"
                     android:padding="10dp"
                     android:text="Credit"
-                    android:textColor="@color/color_dark_mode_FFFFFF"
+                    android:textColor="@color/text_on_background"
                     android:textStyle="bold" />
 
 
@@ -177,7 +177,7 @@
             android:foreground="?attr/selectableItemBackground">
 
             <LinearLayout
-                android:background="@color/color_dark_mode_192734"
+                android:background="@color/main_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center|left"
@@ -196,7 +196,7 @@
                     android:gravity="center|left"
                     android:text="Theme"
                     android:padding="10dp"
-                    android:textColor="@color/color_dark_mode_FFFFFF"
+                    android:textColor="@color/text_on_background"
                     android:textStyle="bold" />
 
 
