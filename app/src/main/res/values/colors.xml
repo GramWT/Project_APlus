@@ -24,7 +24,7 @@
     <color name="color_green_16697a">#16697a</color>
     <color name="color_orange_db6400">#db6400</color>
 
-    <color name="color_green_2EC1AC">#2ec1ac</color>
+
 
 
     <color name="color_green_3E978B">#3E978B</color>
@@ -41,6 +41,7 @@
     <color name="color_white_calendar">#FFFFFF</color>
     <color name="color_header_calendar">#F8C471</color>
     <color name="color_calendar_list_line">#22303C</color>
+    <color name="calendar_list_color">#FCF3CF</color>
 
     //Button Color
     <color name="button_on_top">#F8C471</color>
@@ -64,9 +65,9 @@
     <color name="text_check_dialog_lesson">#000000</color>
     <color name="text_hint">#566573 </color>
     <color name="text_head_dialog">#FCF3CF</color>
-    <color name="text_lesson_list">#000000</color>
+    <color name="text_lesson_list">#FFFFFF</color>
     <color name="text_row_color">#FCF3CF</color>
-
+    <color name="text_lesson">#FFFFFF</color>
 
     //Theme Color
     <color name="main_layout">#F8C471</color>
@@ -77,6 +78,7 @@
     <color name="icon_theme">#FFFFFF</color>
     <color name="main_theme">#273746</color>
     <color name="primary_color">#F8C471</color>
+    <color name="on_secondary">#FFFFFF</color>
 
     //Dialog Color
     <color name="main_dialog">#FCF3CF</color>

@@ -140,8 +140,8 @@ class ProfileUser : Fragment() {
 
 
                     println("Delete ID :${mSubject[i].id}")
-                    mAlarmService.cancelAlarm(idMid)
-                    mAlarmService.cancelAlarm(idFinal)
+                    mAlarmService.cancelExamAlarm(idMid)
+                    mAlarmService.cancelExamAlarm(idFinal)
                 }
 
             })

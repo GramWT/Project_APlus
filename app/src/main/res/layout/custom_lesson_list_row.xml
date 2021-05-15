@@ -23,8 +23,9 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
+            android:textSize="24sp"
             android:text="Lesson"
-            android:textColor="@color/text_on_background"
+            android:textColor="@color/text_lesson"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,20 +42,18 @@
 
         <CheckBox
             android:id="@+id/checkBox1"
-            android:layout_width="80dp"
+            android:layout_width="0dp"
             android:layout_height="50dp"
             android:clickable="false"
-            android:text="Check"
             android:textColor="@color/text_lesson_list"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <CheckBox
             android:id="@+id/checkBox2"
-            android:layout_width="80dp"
+            android:layout_width="0dp"
             android:layout_height="50dp"
             android:clickable="false"
-            android:text="Check"
             android:textColor="@color/text_lesson_list"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/checkBox1"
@@ -62,10 +61,9 @@
 
         <CheckBox
             android:id="@+id/checkBox3"
-            android:layout_width="80dp"
+            android:layout_width="0dp"
             android:layout_height="50dp"
             android:clickable="false"
-            android:text="Check"
             android:textColor="@color/text_lesson_list"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/checkBox2"
@@ -73,10 +71,9 @@
 
         <CheckBox
             android:id="@+id/checkBox4"
-            android:layout_width="80dp"
+            android:layout_width="0dp"
             android:layout_height="50dp"
             android:clickable="false"
-            android:text="Check"
             android:textColor="@color/text_lesson_list"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

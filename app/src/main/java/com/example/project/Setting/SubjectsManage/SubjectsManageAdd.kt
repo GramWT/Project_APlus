@@ -144,7 +144,6 @@ class SubjectsManageAdd : Fragment() {
 
         val rid = randomId()
 
-        val id: Int = sid.toInt()
         val mid: Int = "1${rid.toString()}".toInt()
         val final: Int = "2${rid.toString()}".toInt()
 
@@ -245,7 +244,7 @@ class SubjectsManageAdd : Fragment() {
     }
 
     private fun setAlarm(date: String, rq: Int, SID: String) {
-        mAlarmService.setExactAlarm(convertMillis(date), rq, SID)
+        mAlarmService.setExamAlarm(convertMillis(date), rq, SID)
     }
 
     private fun convertMillis(data: String): Long {

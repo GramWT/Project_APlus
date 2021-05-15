@@ -114,8 +114,8 @@ class SubjectsManageUpdate : Fragment() {
             deleteSubject()
             val idMid: Int = "1${args.subject.id}".toInt()
             val idFinal: Int = "2${args.subject.id}".toInt()
-            mAlarmService.cancelAlarm(idMid)
-            mAlarmService.cancelAlarm(idFinal)
+            mAlarmService.cancelExamAlarm(idMid)
+            mAlarmService.cancelExamAlarm(idFinal)
         }
 
         return view
@@ -130,8 +130,9 @@ class SubjectsManageUpdate : Fragment() {
         mSubjectViewModel.updateSubject(subject)
 
 
-        val mid: Int = args.subject.sid.toInt() + 1
-        val final: Int = args.subject.sid.toInt() + 2
+
+        val mid: Int = "1${args.subject.id}".toInt()
+        val final: Int = "2${args.subject.id}".toInt()
 
         val mC = convertDate(date_mid_manager_update.text.toString())
         val fC = convertDate(date_final_manager_update.text.toString())
@@ -148,15 +149,15 @@ class SubjectsManageUpdate : Fragment() {
         val midData = "${date_mid_manager_update.text} ${time_mid_begin_manager_update.text}:00"
         val finalData = "${date_final_manager_update.text} ${time_final_begin_manager_update.text}:00"
 
-        setAlarm(midData, idMid, sid)
-        setAlarm(finalData, idFinal, sid)
+        setAlarm(midData, mid, sid)
+        setAlarm(finalData, final, sid)
 
         mEventCalendarViewModel.updateEventCalendar(eventMid)
         mEventCalendarViewModel.updateEventCalendar(eventFinal)
     }
 
     private fun setAlarm(date: String, rq: Int, SID: String) {
-        mAlarmService.setExactAlarm(convertMillis(date), rq, SID)
+        mAlarmService.setExamAlarm(convertMillis(date), rq, SID)
     }
 
     private fun convertMillis(data: String): Long {
@@ -208,11 +209,12 @@ class SubjectsManageUpdate : Fragment() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setPositiveButton("yes") { _, _ ->
 
-            val mid_id: Int = args.subject.sid.toInt() + 1
-            val final_id: Int = args.subject.sid.toInt() + 2
+            val mid: Int = "1${args.subject.id}".toInt()
+            val final: Int = "2${args.subject.id}".toInt()
+
             mSubjectViewModel.deleteSubject(args.subject)
-            mEventCalendarViewModel.deleteById(mid_id)
-            mEventCalendarViewModel.deleteById(final_id)
+            mEventCalendarViewModel.deleteById(mid)
+            mEventCalendarViewModel.deleteById(final)
             Toast.makeText(requireContext(), "Successfully deleted ", Toast.LENGTH_SHORT).show()
             val action = SubjectsManageUpdateDirections.actionSubjectsManageUpdateToSubjectsManageNav()
             findNavController().navigate(action)

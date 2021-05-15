@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="wrap_content"
         android:background="@color/main_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -31,10 +31,11 @@
 
         <ImageButton
             android:id="@+id/cancel_button_update"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space_8"
+            android:layout_marginStart="@dimen/space_8"
+            android:layout_marginTop="@dimen/space_8"
             android:background="@color/main_layout"
             android:src="@drawable/ic_baseline_arrow_back_24"
             app:layout_constraintStart_toStartOf="parent"
@@ -42,10 +43,11 @@
 
         <ImageButton
             android:id="@+id/deleteButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space_8"
+            android:layout_marginStart="@dimen/space_32"
+            android:layout_marginTop="@dimen/space_8"
             android:background="@color/main_layout"
             android:src="@drawable/ic_baseline_delete_24"
             app:layout_constraintStart_toEndOf="@+id/cancel_button_update"
@@ -412,7 +414,7 @@
                 android:id="@+id/textView18"
                 android:layout_width="90dp"
                 android:layout_height="50dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="@dimen/space_24"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="10dp"
                 android:gravity="left|center"

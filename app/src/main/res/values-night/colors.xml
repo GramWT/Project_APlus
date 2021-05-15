@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="color_green_2EC1AC">#2ec1ac</color>
+
 
 
 
@@ -9,6 +9,7 @@
     <color name="color_white_calendar">#FFFFFF</color>
     <color name="color_header_calendar">#192734</color>
     <color name="color_calendar_list_line">#22303C</color>
+    <color name="calendar_list_color">#2ec1ac</color>
 
     //Button Color
     <color name="button_on_top">#2ec1ac</color>
@@ -34,6 +35,7 @@
     <color name="text_head_dialog">#2ec1ac</color>
     <color name="text_lesson_list">#192734</color>
     <color name="text_row_color">#FFFFFF</color>
+    <color name="text_lesson">#FFFFFF</color>
 
     //Theme Color
     <color name="main_layout">#192734</color>
@@ -44,6 +46,7 @@
     <color name="icon_theme">#8899A6</color>
     <color name="main_theme">#2ec1ac</color>
     <color name="primary_color">#2ec1ac</color>
+    <color name="on_secondary">#15202B</color>
 
     //Dialog Color
     <color name="main_dialog">#15202B</color>

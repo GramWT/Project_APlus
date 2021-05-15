@@ -95,7 +95,7 @@ class ReminderNotificationAdd : Fragment() {
             if (dateBegin != "" && timeBegin != "") {
                 val dt1 = "${dateBegin} ${timeBegin}:00"
                 val rId1 = "1${rid}".toInt()
-                setAlarm(dt1, rId1, rid.toString())
+                setAlarm(dt1, rId1, rid.toString(),state)
             }
 
             Toast.makeText(requireContext(), "Successfully add!", Toast.LENGTH_SHORT).show()
@@ -110,8 +110,8 @@ class ReminderNotificationAdd : Fragment() {
         }
     }
 
-    private fun setAlarm(date: String, rq: Int, SID: String) {
-        mAlarmService.setOnceAlarm(convertMillis(date), rq, SID)
+    private fun setAlarm(date: String, rq: Int, SID: String,priority:String) {
+        mAlarmService.setEventAlarm(convertMillis(date), rq, SID,priority)
     }
 
     private fun convertMillis(data: String): Long {

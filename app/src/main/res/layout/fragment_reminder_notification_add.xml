@@ -92,12 +92,11 @@
                 android:id="@+id/date_begin_remind_add"
                 android:layout_width="161dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/space_8"
                 android:gravity="left|center"
                 android:text="DD/MM/YYYY"
                 android:textColor="@color/text_on_background"
                 android:textSize="18sp"
-                app:layout_constraintEnd_toStartOf="@+id/guideline10"
                 app:layout_constraintStart_toStartOf="@+id/guideline3"
                 app:layout_constraintTop_toBottomOf="@+id/title_remind_add" />
 
@@ -186,21 +185,22 @@
 
             <View
                 android:id="@+id/view2"
-                android:layout_width="358dp"
+                android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/line"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/date_end_event_add" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/view9" />
 
             <View
                 android:id="@+id/view"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/line"
-                app:layout_constraintBottom_toTopOf="@+id/date_begin_event_add"
+                app:layout_constraintBottom_toBottomOf="@+id/view2"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title_event_add" />
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <View
                 android:id="@+id/view9"

@@ -160,7 +160,7 @@ class EventNotificationView : Fragment() {
     }
 
     private fun CancelAlarm(rq: Int) {
-        mAlarmService.cancelOnceAlarm(rq)
+        mAlarmService.cancelEventAlarm(rq)
     }
 
 

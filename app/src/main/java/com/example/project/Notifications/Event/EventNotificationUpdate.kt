@@ -395,33 +395,33 @@ class EventNotificationUpdate : Fragment() {
         if (date_1.text.toString() != "" && time_1.text.toString() != "") {
             val dt1 = "${date_1.text} ${time_1.text}:00"
             val rId1 = "1${args.event.id}".toInt()
-            setAlarm(dt1, rId1, args.event.id.toString())
+            setAlarm(dt1, rId1, args.event.id.toString(),state_event_update.text.toString())
         }
         if (date_2.text.toString() != "" && time_2.text.toString() != "") {
             val dt2 = "${date_2.text} ${time_2.text}:00"
             val rId2 = "2${args.event.id}".toInt()
-            setAlarm(dt2, rId2, args.event.id.toString())
+            setAlarm(dt2, rId2, args.event.id.toString(),state_event_update.text.toString())
         }
         if (date_3.text.toString() != "" && time_3.text.toString() != "") {
             val dt3 = "${date_3.text} ${time_3.text}:00"
             val rId3 = "3${args.event.id}".toInt()
-            setAlarm(dt3, rId3, args.event.id.toString())
+            setAlarm(dt3, rId3, args.event.id.toString(),state_event_update.text.toString())
         }
         if (date_4.text.toString() != "" && time_4.text.toString() != "") {
             val dt4 = "${date_4.text} ${time_4.text}:00"
             val rId4 = "4${args.event.id}".toInt()
-            setAlarm(dt4, rId4, args.event.id.toString())
+            setAlarm(dt4, rId4, args.event.id.toString(),state_event_update.text.toString())
         }
         if (date_5.text.toString() != "" && time_5.text.toString() != "") {
             val dt5 = "${date_5.text} ${time_5.text}:00"
             val rId5 = "5${args.event.id}".toInt()
-            setAlarm(dt5, rId5, args.event.id.toString())
+            setAlarm(dt5, rId5, args.event.id.toString(),state_event_update.text.toString())
         }
 
     }
 
-    private fun setAlarm(date: String, rq: Int, SID: String) {
-        mAlarmService.setOnceAlarm(convertMillis(date), rq, SID)
+    private fun setAlarm(date: String, rq: Int, SID: String,priority:String) {
+        mAlarmService.setEventAlarm(convertMillis(date), rq, SID,priority)
     }
 
     private fun setState(state: String, im: ImageView) {

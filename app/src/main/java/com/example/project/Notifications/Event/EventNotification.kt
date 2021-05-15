@@ -92,9 +92,13 @@ class EventNotification : Fragment() {
         if (!clicked) {
             binding.eventButton.visibility = View.VISIBLE
             binding.reminderButton.visibility = View.VISIBLE
+            binding.eventText.visibility = View.VISIBLE
+            binding.reminderText.visibility = View.VISIBLE
         } else {
             binding.eventButton.visibility = View.INVISIBLE
             binding.reminderButton.visibility = View.INVISIBLE
+            binding.eventText.visibility = View.INVISIBLE
+            binding.reminderText.visibility = View.INVISIBLE
         }
     }
 
@@ -103,15 +107,21 @@ class EventNotification : Fragment() {
             binding.eventButton.startAnimation(fromBottom)
             binding.reminderButton.startAnimation(fromBottom)
             binding.addEventButton.startAnimation(rotateOpen)
+            binding.eventText.startAnimation(fromBottom)
+            binding.reminderText.startAnimation(fromBottom)
             Timer().schedule(200) {
                 binding.eventButton.startAnimation(shakeItem)
                 binding.reminderButton.startAnimation(shakeItem2)
+                binding.eventText.startAnimation(shakeItem)
+                binding.reminderText.startAnimation(shakeItem2)
             }
 
         } else {
             binding.eventButton.startAnimation(toBottom)
             binding.reminderButton.startAnimation(toBottom)
             binding.addEventButton.startAnimation(rotateClose)
+            binding.eventText.startAnimation(toBottom)
+            binding.reminderText.startAnimation(toBottom)
         }
     }
 

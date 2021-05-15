@@ -31,13 +31,10 @@ class CalendarAdapter : RecyclerView.Adapter<CalendarAdapter.MyViewHolder>() {
 
         holder.itemView.subject_title.text = currentItem.subject
         if (currentItem.type == 1) {
-            holder.itemView.state_event.setBackgroundResource(R.color.color_pink)
             holder.itemView.state_title.text = "Exam"
         } else if (currentItem.type == 2) {
-            holder.itemView.state_event.setBackgroundResource(R.color.color_Green_3F72AF)
             holder.itemView.state_title.text = "Event"
         } else if (currentItem.type == 3) {
-            holder.itemView.state_event.setBackgroundResource(R.color.color_midnight_blue)
             holder.itemView.state_title.text = "Reminder"
         }
 

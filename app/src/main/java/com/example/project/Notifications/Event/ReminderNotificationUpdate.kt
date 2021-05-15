@@ -133,12 +133,13 @@ class ReminderNotificationUpdate : Fragment() {
         if (date_begin_remind_update.text.toString() != "" && time_begin_remind_update.text.toString() != "") {
             val dt1 = "${date_begin_remind_update.text} ${time_begin_remind_update.text}:00"
             val rId1 = "1${args.Reminder.id}".toInt()
-            setAlarm(dt1, rId1, args.Reminder.id.toString())
+
+            setAlarm(dt1, rId1, args.Reminder.id.toString(),state_remind_update.text.toString())
         }
     }
 
-    private fun setAlarm(date: String, rq: Int, SID: String) {
-        mAlarmService.setOnceAlarm(convertMillis(date), rq, SID)
+    private fun setAlarm(date: String, rq: Int, SID: String, priority: String) {
+        mAlarmService.setEventAlarm(convertMillis(date), rq, SID,priority)
     }
 
     private fun convertMillis(data: String): Long {

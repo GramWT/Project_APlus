@@ -192,27 +192,27 @@ class EventNotificationAdd : Fragment() {
             if (d1 != "" && t1 != "") {
                 val dt1 = "${d1} ${t1}:00"
                 val rId1 = "1${rid}".toInt()
-                setAlarm(dt1, rId1, rid.toString())
+                setAlarm(dt1, rId1, rid.toString(),state)
             }
             if (d2 != "" && t2 != "") {
                 val dt2 = "${d2} ${t2}:00"
                 val rId2 = "2${rid}".toInt()
-                setAlarm(dt2, rId2, rid.toString())
+                setAlarm(dt2, rId2, rid.toString(),state)
             }
             if (d3 != "" && t3 != "") {
                 val dt3 = "${d3} ${t3}:00"
                 val rId3 = "3${rid}".toInt()
-                setAlarm(dt3, rId3, rid.toString())
+                setAlarm(dt3, rId3, rid.toString(),state)
             }
             if (d4 != "" && t4 != "") {
                 val dt4 = "${d4} ${t4}:00"
                 val rId4 = "4${rid}".toInt()
-                setAlarm(dt4, rId4, rid.toString())
+                setAlarm(dt4, rId4, rid.toString(),state)
             }
             if (d5 != "" && t5 != "") {
                 val dt5 = "${d5} ${t5}:00"
                 val rId5 = "5${rid}".toInt()
-                setAlarm(dt5, rId5, rid.toString())
+                setAlarm(dt5, rId5, rid.toString(),state)
             }
 
             Toast.makeText(requireContext(), "Successfully add!", Toast.LENGTH_SHORT).show()
@@ -251,8 +251,8 @@ class EventNotificationAdd : Fragment() {
         return randomId
     }
 
-    private fun setAlarm(date: String, rq: Int, SID: String) {
-        mAlarmService.setOnceAlarm(convertMillis(date), rq, SID)
+    private fun setAlarm(date: String, rq: Int, SID: String,priority:String) {
+        mAlarmService.setEventAlarm(convertMillis(date), rq, SID,priority)
     }
 
     private fun convertMillis(data: String): Long {

@@ -13,29 +13,31 @@ class AlarmService(private val context: Context) {
     private val alarmManager: AlarmManager? =
             context.getSystemService(Context.ALARM_SERVICE) as AlarmManager?
 
-    fun setOnceAlarm(TimeInMillis: Long, RequestCode: Int, SID: String) {
+    
+    fun setEventAlarm(timeInMillis: Long, requestCode: Int, sid: String, priority:String) {
 
-        val rq1 = '1' + RequestCode.toString()
+        val rq1 = '1' + requestCode.toString()
         val intent1 = Intent(context, AlarmReceiver::class.java)
 
         intent1.apply {
             putExtra("rq", rq1)
             putExtra("action", Constants.ACTION_SET_EXACT_ALARM)
-            putExtra("sid", SID)
-            putExtra(Constants.EXTRA_EXACT_ALARM_TIME, TimeInMillis)
+            putExtra("sid", sid)
+            putExtra(Constants.EXTRA_EXACT_ALARM_TIME, timeInMillis)
+            putExtra("priority", priority)
         }
 
         var pendingIntent1 = PendingIntent.getBroadcast(context, rq1.toInt(), intent1, PendingIntent.FLAG_UPDATE_CURRENT)
 
-        if (TimeInMillis > System.currentTimeMillis()) {
-            alarmManager?.setExact(AlarmManager.RTC_WAKEUP, TimeInMillis, pendingIntent1)
+        if (timeInMillis > System.currentTimeMillis()) {
+            alarmManager?.setExact(AlarmManager.RTC_WAKEUP, timeInMillis, pendingIntent1)
         } else {
-            println(TimeInMillis)
+            println(timeInMillis)
         }
 
     }
 
-    fun cancelOnceAlarm(RequestCode: Int) {
+    fun cancelEventAlarm(RequestCode: Int) {
 
         val rq1 = '1' + RequestCode.toString()
         val intent1 = Intent(context, AlarmReceiver::class.java)
@@ -44,8 +46,8 @@ class AlarmService(private val context: Context) {
 
         alarmManager?.cancel(pendingIntent1)
     }
-
-    fun setExactAlarm(TimeInMillis: Long, RequestCode: Int, SID: String) {
+    
+    fun setExamAlarm(TimeInMillis: Long, RequestCode: Int, SID: String) {
 
         val rq1 = '1' + RequestCode.toString()
         val rq2 = '2' + RequestCode.toString()
@@ -61,35 +63,35 @@ class AlarmService(private val context: Context) {
 
         intent1.apply {
             putExtra("rq", rq1)
-            putExtra("action", Constants.ACTION_SET_EXACT_ALARM)
+            putExtra("action", Constants.SET_EXAM_NOTIFICATION)
             putExtra("sid", SID)
             putExtra(Constants.EXTRA_EXACT_ALARM_TIME, TimeInMillis)
         }
 
         intent2.apply {
             putExtra("rq", rq2)
-            putExtra("action", Constants.ACTION_SET_EXACT_ALARM)
+            putExtra("action", Constants.SET_EXAM_NOTIFICATION)
             putExtra("sid", SID)
             putExtra(Constants.EXTRA_EXACT_ALARM_TIME, TimeInMillis)
         }
 
         intent3.apply {
             putExtra("rq", rq3)
-            putExtra("action", Constants.ACTION_SET_EXACT_ALARM)
+            putExtra("action", Constants.SET_EXAM_NOTIFICATION)
             putExtra("sid", SID)
             putExtra(Constants.EXTRA_EXACT_ALARM_TIME, TimeInMillis)
         }
 
         intent4.apply {
             putExtra("rq", rq4)
-            putExtra("action", Constants.ACTION_SET_EXACT_ALARM)
+            putExtra("action", Constants.SET_EXAM_NOTIFICATION)
             putExtra("sid", SID)
             putExtra(Constants.EXTRA_EXACT_ALARM_TIME, TimeInMillis)
         }
 
         intent5.apply {
             putExtra("rq", rq5)
-            putExtra("action", Constants.ACTION_SET_EXACT_ALARM)
+            putExtra("action", Constants.SET_EXAM_NOTIFICATION)
             putExtra("sid", SID)
             putExtra(Constants.EXTRA_EXACT_ALARM_TIME, TimeInMillis)
         }
@@ -102,30 +104,29 @@ class AlarmService(private val context: Context) {
         var pendingIntent5 = PendingIntent.getBroadcast(context, rq5.toInt(), intent5, PendingIntent.FLAG_UPDATE_CURRENT)
 
 
-        if ((TimeInMillis - TimeUnit.MINUTES.toMillis(25)) > System.currentTimeMillis()) {
-            alarmManager?.setExact(AlarmManager.RTC_WAKEUP, TimeInMillis - TimeUnit.MINUTES.toMillis(25), pendingIntent1)
+        if ((TimeInMillis - TimeUnit.DAYS.toMillis(30)) > System.currentTimeMillis()) {
+            alarmManager?.setExact(AlarmManager.RTC_WAKEUP, TimeInMillis - TimeUnit.DAYS.toMillis(30), pendingIntent1)
         }
 
-        if ((TimeInMillis - TimeUnit.MINUTES.toMillis(20)) > System.currentTimeMillis()) {
-            alarmManager?.setExact(AlarmManager.RTC_WAKEUP, TimeInMillis - TimeUnit.MINUTES.toMillis(20), pendingIntent2)
+        if ((TimeInMillis - TimeUnit.DAYS.toMillis(14)) > System.currentTimeMillis()) {
+            alarmManager?.setExact(AlarmManager.RTC_WAKEUP, TimeInMillis - TimeUnit.DAYS.toMillis(14), pendingIntent2)
         }
 
-        if ((TimeInMillis - TimeUnit.MINUTES.toMillis(15)) > System.currentTimeMillis()) {
-            alarmManager?.setExact(AlarmManager.RTC_WAKEUP, TimeInMillis - TimeUnit.MINUTES.toMillis(15), pendingIntent3)
+        if ((TimeInMillis - TimeUnit.DAYS.toMillis(7)) > System.currentTimeMillis()) {
+            alarmManager?.setExact(AlarmManager.RTC_WAKEUP, TimeInMillis - TimeUnit.DAYS.toMillis(7), pendingIntent3)
         }
 
-        if ((TimeInMillis - TimeUnit.MINUTES.toMillis(10)) > System.currentTimeMillis()) {
-            alarmManager?.setExact(AlarmManager.RTC_WAKEUP, TimeInMillis - TimeUnit.MINUTES.toMillis(10), pendingIntent4)
+        if ((TimeInMillis - TimeUnit.DAYS.toMillis(1)) > System.currentTimeMillis()) {
+            alarmManager?.setExact(AlarmManager.RTC_WAKEUP, TimeInMillis - TimeUnit.DAYS.toMillis(1), pendingIntent4)
         }
 
-        if ((TimeInMillis - TimeUnit.MINUTES.toMillis(5)) > System.currentTimeMillis()) {
-            alarmManager?.setExact(AlarmManager.RTC_WAKEUP, TimeInMillis - TimeUnit.MINUTES.toMillis(5), pendingIntent5)
+        if ((TimeInMillis - TimeUnit.MINUTES.toMillis(1)) > System.currentTimeMillis()) {
+            alarmManager?.setExact(AlarmManager.RTC_WAKEUP, TimeInMillis - TimeUnit.MINUTES.toMillis(1), pendingIntent5)
         }
 
     }
-
-
-    fun cancelAlarm(RequestCode: Int) {
+    
+    fun cancelExamAlarm(RequestCode: Int) {
         val rq1 = '1' + RequestCode.toString()
         val rq2 = '2' + RequestCode.toString()
         val rq3 = '3' + RequestCode.toString()

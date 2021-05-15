@@ -81,8 +81,8 @@ class SubjectsManage : Fragment() {
 
                     println("List Id : ${mSubject[i].id}")
 
-                    mAlarmService.cancelAlarm(idMid)
-                    mAlarmService.cancelAlarm(idFinal)
+                    mAlarmService.cancelExamAlarm(idMid)
+                    mAlarmService.cancelExamAlarm(idFinal)
                 }
 
             })
