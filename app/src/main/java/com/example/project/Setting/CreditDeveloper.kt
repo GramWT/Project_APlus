@@ -29,8 +29,8 @@ class CreditDeveloper : Fragment() {
 
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_credit_developer, container, false)
@@ -40,9 +40,11 @@ class CreditDeveloper : Fragment() {
             findNavController().navigate(action)
         }
 
-        view.aof_profile.animation = AnimationUtils.loadAnimation(view.aof_profile.context, R.anim.item_slide_left)
+        view.aof_profile.animation =
+            AnimationUtils.loadAnimation(view.aof_profile.context, R.anim.item_slide_left)
 
-        view.gram_profile.animation = AnimationUtils.loadAnimation(view.gram_profile.context, R.anim.item_slide_right)
+        view.gram_profile.animation =
+            AnimationUtils.loadAnimation(view.gram_profile.context, R.anim.item_slide_right)
 
         return view
     }

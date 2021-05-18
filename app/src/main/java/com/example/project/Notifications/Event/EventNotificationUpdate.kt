@@ -118,24 +118,40 @@ class EventNotificationUpdate : Fragment() {
 
         view.save_button_event_update.setOnClickListener {
             updateItem()
-            val event = Event(args.event.id, title_event_update.text.toString(),
-                    date_begin_event_update.text.toString(),
-                    date_end_event_update.text.toString(),
-                    time_begin_event_update.text.toString(),
-                    time_end_event_update.text.toString(),
-                    state_event_update.text.toString(),
-                    description_event_update.text.toString(),
-                    date_1.text.toString(),
-                    date_2.text.toString(),
-                    date_3.text.toString(),
-                    date_4.text.toString(),
-                    date_5.text.toString(),
-                    time_1.text.toString(),
-                    time_2.text.toString(),
-                    time_3.text.toString(),
-                    time_4.text.toString(),
-                    time_5.text.toString(),
-                    location_event_update.text.toString(), 1)
+            val title = title_event_update.text.toString()
+            val beginDate = date_begin_event_update.text.toString()
+            val endDate = date_end_event_update.text.toString()
+            val beginTime = time_begin_event_update.text.toString()
+            val endTime = time_end_event_update.text.toString()
+            val state = state_event_update.text.toString()
+            val description = description_event_update.text.toString()
+            val date1 = date_1.text.toString()
+            val date2 = date_2.text.toString()
+            val date3 = date_3.text.toString()
+            val date4 = date_4.text.toString()
+            val date5 = date_5.text.toString()
+            val time1 = time_1.text.toString()
+            val time2 = time_2.text.toString()
+            val time3 = time_3.text.toString()
+            val time4 = time_4.text.toString()
+            val time5 = time_5.text.toString()
+            val location = location_event_update.text.toString()
+            val event = Event(args.event.id, title, beginDate, endDate,
+                    beginTime,
+                    endTime,
+                    state,
+                    description,
+                    date1,
+                    date2,
+                    date3,
+                    date4,
+                    date5,
+                    time1,
+                    time2,
+                    time3,
+                    time4,
+                    time5,
+                    location, 1)
 
 
             val action = EventNotificationUpdateDirections.actionEventNotificationUpdateToEventNotificationView(event)
@@ -366,62 +382,88 @@ class EventNotificationUpdate : Fragment() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun updateItem() {
-        val event = Event(args.event.id, title_event_update.text.toString(),
-                date_begin_event_update.text.toString(),
-                date_end_event_update.text.toString(),
-                time_begin_event_update.text.toString(),
-                time_end_event_update.text.toString(),
-                state_event_update.text.toString(),
-                description_event_update.text.toString(),
-                date_1.text.toString(),
-                date_2.text.toString(),
-                date_3.text.toString(),
-                date_4.text.toString(),
-                date_5.text.toString(),
-                time_1.text.toString(),
-                time_2.text.toString(),
-                time_3.text.toString(),
-                time_4.text.toString(),
-                time_5.text.toString(),
-                location_event_update.text.toString(), 1)
 
-        val eventMid = EventCalendar(args.event.id, 2, date_begin_event_update.text.substring(0, 2).toInt(), date_begin_event_update.text.substring(3, 5).toInt() - 1,
-                date_begin_event_update.text.substring(6, 10).toInt(), title_event_update.text.toString())
+        val title = title_event_update.text.toString()
+        val beginDate = date_begin_event_update.text.toString()
+        val endDate = date_end_event_update.text.toString()
+        val beginTime = time_begin_event_update.text.toString()
+        val endTime = time_end_event_update.text.toString()
+        val state = state_event_update.text.toString()
+        val description = description_event_update.text.toString()
+        val date1 = date_1.text.toString()
+        val date2 = date_2.text.toString()
+        val date3 = date_3.text.toString()
+        val date4 = date_4.text.toString()
+        val date5 = date_5.text.toString()
+        val time1 = time_1.text.toString()
+        val time2 = time_2.text.toString()
+        val time3 = time_3.text.toString()
+        val time4 = time_4.text.toString()
+        val time5 = time_5.text.toString()
+        val location = location_event_update.text.toString()
+
+        val event = Event(args.event.id, title,
+                beginDate,
+                endDate,
+                beginTime,
+                endTime,
+                state,
+                description,
+                date1,
+                date2,
+                date3,
+                date4,
+                date5,
+                time1,
+                time2,
+                time3,
+                time4,
+                time5,
+                location, 1)
+
+        val eventMid = EventCalendar(args.event.id, 2, beginDate.substring(0, 2).toInt(), beginDate.substring(3, 5).toInt() - 1,
+                beginDate.substring(6, 10).toInt(), title)
 
         mEventViewModel.updateEvent(event)
         mEventCalendarViewModel.updateEventCalendar(eventMid)
 
+        val destinationDateTime = "${beginDate} ${beginTime}:00"
+
         if (date_1.text.toString() != "" && time_1.text.toString() != "") {
             val dt1 = "${date_1.text} ${time_1.text}:00"
             val rId1 = "1${args.event.id}".toInt()
-            setAlarm(dt1, rId1, args.event.id.toString(),state_event_update.text.toString())
+            setAlarm(rId1,title,state,destinationDateTime,dt1)
         }
         if (date_2.text.toString() != "" && time_2.text.toString() != "") {
             val dt2 = "${date_2.text} ${time_2.text}:00"
             val rId2 = "2${args.event.id}".toInt()
-            setAlarm(dt2, rId2, args.event.id.toString(),state_event_update.text.toString())
+            setAlarm(rId2,title,state,destinationDateTime,dt2)
         }
         if (date_3.text.toString() != "" && time_3.text.toString() != "") {
             val dt3 = "${date_3.text} ${time_3.text}:00"
             val rId3 = "3${args.event.id}".toInt()
-            setAlarm(dt3, rId3, args.event.id.toString(),state_event_update.text.toString())
+            setAlarm(rId3,title,state,destinationDateTime,dt3)
         }
         if (date_4.text.toString() != "" && time_4.text.toString() != "") {
             val dt4 = "${date_4.text} ${time_4.text}:00"
             val rId4 = "4${args.event.id}".toInt()
-            setAlarm(dt4, rId4, args.event.id.toString(),state_event_update.text.toString())
+            setAlarm(rId4,title,state,destinationDateTime,dt4)
         }
         if (date_5.text.toString() != "" && time_5.text.toString() != "") {
             val dt5 = "${date_5.text} ${time_5.text}:00"
             val rId5 = "5${args.event.id}".toInt()
-            setAlarm(dt5, rId5, args.event.id.toString(),state_event_update.text.toString())
+            setAlarm(rId5,title,state,destinationDateTime,dt5)
+
         }
+
 
     }
 
-    private fun setAlarm(date: String, rq: Int, SID: String,priority:String) {
-        mAlarmService.setEventAlarm(convertMillis(date), rq, SID,priority)
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun setAlarm(requestCode: Int, title: String, priority: String,destinationTime:String,nowTime:String) {
+        mAlarmService.setEventAlarm( requestCode,title, priority,destinationTime,nowTime)
     }
 
     private fun setState(state: String, im: ImageView) {

@@ -38,8 +38,10 @@ class SubjectsManage : Fragment() {
     }
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
         binding = FragmentSubjectsManageBinding.inflate(layoutInflater)
 
@@ -47,7 +49,8 @@ class SubjectsManage : Fragment() {
         binding.subjectsManageRecycleView.adapter = adapter
         mAlarmService = AlarmService(requireContext())
 
-        gridLayoutManager = GridLayoutManager(requireContext(), 1, LinearLayoutManager.VERTICAL, false)
+        gridLayoutManager =
+            GridLayoutManager(requireContext(), 1, LinearLayoutManager.VERTICAL, false)
 
         mEventCalendar = ViewModelProvider(this).get(EventCalendarViewModel::class.java)
 
@@ -55,12 +58,12 @@ class SubjectsManage : Fragment() {
 
 
         binding.backButtonSjm.setOnClickListener {
-            val a = activity as MainActivity
-            a.bottom_navigation.visibility = View.VISIBLE
+            val activityContext = activity as MainActivity
+            activityContext.bottom_navigation.visibility = View.VISIBLE
 
-            if (a.bottom_navigation.selectedItemId == R.id.menu_exam) {
-                a.bottom_navigation.selectedItemId = R.id.menu_setting
-            } else if (a.bottom_navigation.selectedItemId == R.id.menu_setting) {
+            if (activityContext.bottom_navigation.selectedItemId == R.id.menu_exam) {
+                activityContext.bottom_navigation.selectedItemId = R.id.menu_setting
+            } else if (activityContext.bottom_navigation.selectedItemId == R.id.menu_setting) {
                 val action = SubjectsManageDirections.actionSubjectsManageNavToNavSetting()
                 findNavController().navigate(action)
             }
@@ -78,8 +81,6 @@ class SubjectsManage : Fragment() {
 
                     val idMid: Int = "1${mSubject[i].id}".toInt()
                     val idFinal: Int = "2${mSubject[i].id}".toInt()
-
-                    println("List Id : ${mSubject[i].id}")
 
                     mAlarmService.cancelExamAlarm(idMid)
                     mAlarmService.cancelExamAlarm(idFinal)
@@ -100,7 +101,8 @@ class SubjectsManage : Fragment() {
 
 
         binding.pdfImportButtonSjm.setOnClickListener {
-            mSubjectModel.deleteById(111111)
+            val action = SubjectsManageDirections.actionSubjectsManageNavToSubjectsManageUploadPDF()
+            findNavController().navigate(action)
         }
 
         return binding.root
@@ -112,9 +114,9 @@ class SubjectsManage : Fragment() {
         builder.setPositiveButton("yes") { _, _ ->
             mSubjectModel.deleteAllSubject()
             Toast.makeText(
-                    requireContext(),
-                    "Successfully Removed All Subjects",
-                    Toast.LENGTH_SHORT
+                requireContext(),
+                "Successfully Removed All Subjects",
+                Toast.LENGTH_SHORT
             ).show()
         }
         builder.setNegativeButton("No") { _, _ -> }

@@ -14,15 +14,15 @@ class TabExamAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) : F
     }
 
     override fun createFragment(position: Int): Fragment {
-        when (position) {
+        return when (position) {
             0 -> {
-                return NavMid()
+                NavMid()
             }
             1 -> {
-                return FinalExamNotification()
+                FinalExamNotification()
             }
             else -> {
-                return MidExamNotification()
+                MidExamNotification()
             }
         }
     }

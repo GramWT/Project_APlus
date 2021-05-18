@@ -23,9 +23,9 @@ class MidExamNotification : Fragment() {
 
         binding = FragmentMidExamNotificationBinding.inflate(layoutInflater)
 
-        var at = activity as Context
+        val activityContext = activity as Context
 
-        var adapter = MidExamAdapter(at)
+        val adapter = MidExamAdapter(activityContext)
 
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())

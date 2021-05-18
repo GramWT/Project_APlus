@@ -1,6 +1,8 @@
 package com.example.project.Notifications.Event
 
 import android.app.AlertDialog
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.os.Build
 import android.os.Bundle
 import android.text.TextUtils
@@ -38,8 +40,8 @@ class ReminderNotificationAdd : Fragment() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_reminder_notification_add, container, false)
@@ -51,14 +53,25 @@ class ReminderNotificationAdd : Fragment() {
         mAlarmService = AlarmService(requireContext())
 
         view.cancel_remind_button.setOnClickListener {
-            val action = ReminderNotificationAddDirections.actionReminderNotificationAddToEventNotification()
+            val action =
+                ReminderNotificationAddDirections.actionReminderNotificationAddToEventNotification()
             findNavController().navigate(action)
         }
 
-        view.date_begin_remind_add.setText(DateTimeFormatter.ofPattern("dd/MM/yyyy").format(roundTime()))
+        view.date_begin_remind_add.setText(
+            DateTimeFormatter.ofPattern("dd/MM/yyyy").format(roundTime())
+        )
         view.time_begin_remind_add.setText(DateTimeFormatter.ofPattern("HH:mm").format(roundTime()))
         view.state_remind_add.setOnClickListener {
             setState(view.state_remind_add, view.state_image_remind)
+        }
+
+        view.date_begin_remind_add.setOnClickListener {
+            getDate(view.date_begin_remind_add)
+        }
+
+        view.time_begin_remind_add.setOnClickListener {
+            getTime(view.time_begin_remind_add)
         }
 
         view.save_remind_button.setOnClickListener {
@@ -70,6 +83,50 @@ class ReminderNotificationAdd : Fragment() {
         return view
     }
 
+    private fun getTime(tv: TextView) {
+        val cal = Calendar.getInstance()
+        val timeSet = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
+            cal.set(Calendar.HOUR_OF_DAY, hour)
+            cal.set(Calendar.MINUTE, minute)
+
+            tv.text = SimpleDateFormat("HH:mm").format(cal.time).toString()
+        }
+        TimePickerDialog(
+            requireContext(),
+            AlertDialog.THEME_HOLO_DARK,
+            timeSet,
+            cal.get(Calendar.HOUR_OF_DAY),
+            cal.get(
+                Calendar.MINUTE
+            ),
+            true
+        ).show()
+    }
+
+    private fun getDate(tv: TextView) {
+        val cal = Calendar.getInstance()
+        val dpd = DatePickerDialog.OnDateSetListener { datePicker, year, month, dayOfMonth ->
+            cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+            cal.set(Calendar.MONTH, month)
+            cal.set(Calendar.YEAR, year)
+
+
+
+            tv.text = SimpleDateFormat("dd/MM/yyyy").format(cal.time).toString()
+
+
+        }
+
+        DatePickerDialog(
+            requireContext(), AlertDialog.THEME_DEVICE_DEFAULT_DARK, dpd, cal.get(
+                Calendar.YEAR
+            ), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH)
+        ).show()
+
+    }
+
+
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun insertDataToDatabase() {
         val title = title_remind_add.text.toString()
         val dateBegin = date_begin_remind_add.text.toString()
@@ -83,48 +140,68 @@ class ReminderNotificationAdd : Fragment() {
 
         if (inputCheck(title, dateBegin, timeBegin, state, description)) {
 
-            val event = Event(rid, title, dateBegin, "-", timeBegin, "-", state, description, "-",
-                    "-", "-", "-", "-", "-",
-                    "-", "-", "-", "-", location, 2)
+            val event = Event(
+                rid, title, dateBegin, "-", timeBegin, "-", state, description, "-",
+                "-", "-", "-", "-", "-",
+                "-", "-", "-", "-", location, 2
+            )
 
-            val eventCalendar = EventCalendar(rid, 3, dateBegin.substring(0, 2).toInt(), dateBegin.substring(3, 5).toInt() - 1, dateBegin.substring(6, 10).toInt(), title)
+            val eventCalendar = EventCalendar(
+                rid,
+                3,
+                dateBegin.substring(0, 2).toInt(),
+                dateBegin.substring(3, 5).toInt() - 1,
+                dateBegin.substring(6, 10).toInt(),
+                title
+            )
 
             mEventViewModel.addEvent(event)
             mEventCalendar.addEventCalendar(eventCalendar)
 
+            val destinationDateTime = "$dateBegin $timeBegin:00"
             if (dateBegin != "" && timeBegin != "") {
                 val dt1 = "${dateBegin} ${timeBegin}:00"
                 val rId1 = "1${rid}".toInt()
-                setAlarm(dt1, rId1, rid.toString(),state)
+                setAlarm(rId1, title, state, destinationDateTime, dt1)
             }
 
             Toast.makeText(requireContext(), "Successfully add!", Toast.LENGTH_SHORT).show()
 
-            val action = ReminderNotificationAddDirections.actionReminderNotificationAddToEventNotification()
+            val action =
+                ReminderNotificationAddDirections.actionReminderNotificationAddToEventNotification()
             findNavController().navigate(action)
 
         } else {
-            Toast.makeText(requireContext(), "Please fill out all fields.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Please fill out all fields.", Toast.LENGTH_SHORT)
+                .show()
 
 
         }
     }
 
-    private fun setAlarm(date: String, rq: Int, SID: String,priority:String) {
-        mAlarmService.setEventAlarm(convertMillis(date), rq, SID,priority)
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun setAlarm(
+        requestCode: Int,
+        title: String,
+        priority: String,
+        duringReminder: String,
+        nowTime: String
+    ) {
+        mAlarmService.setReminderAlarm(requestCode, title, priority, duringReminder, nowTime)
     }
 
-    private fun convertMillis(data: String): Long {
-        var sp = SimpleDateFormat("dd/MM/yyyy HH:mm:ss")
-        var date: Date = sp.parse(data)
-        var millis: Long = date.time
 
-        return millis
-    }
+    private fun inputCheck(
+        title: String,
+        dateBegin: String,
+        timeBegin: String,
+        state: String,
+        description: String
+    ): Boolean {
 
-    private fun inputCheck(title: String, dateBegin: String, timeBegin: String, state: String, description: String): Boolean {
-
-        return !(TextUtils.isEmpty(title) || TextUtils.isEmpty(dateBegin) || timeBegin.equals("") || state.equals("")
+        return !(TextUtils.isEmpty(title) || TextUtils.isEmpty(dateBegin) || timeBegin.equals("") || state.equals(
+            ""
+        )
                 || description.equals(""))
 
     }
@@ -171,7 +248,8 @@ class ReminderNotificationAdd : Fragment() {
     }
 
     private fun randomId(): Int {
-        var randomId = "1${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}".toInt()
+        var randomId =
+            "1${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}".toInt()
         val list = arrayListOf<Int>()
         var checked = false
 
@@ -185,7 +263,8 @@ class ReminderNotificationAdd : Fragment() {
 
             while (checked == false) {
                 if (randomId in list) {
-                    randomId = "1${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}".toInt()
+                    randomId =
+                        "1${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}".toInt()
                     println(randomId)
                 } else {
                     checked = true

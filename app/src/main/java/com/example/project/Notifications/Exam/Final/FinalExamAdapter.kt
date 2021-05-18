@@ -69,7 +69,7 @@ class FinalExamAdapter(context: Context) : RecyclerView.Adapter<FinalExamAdapter
 
     private fun findLocation(Building: String) {
 
-        var ss: String
+        val ss: String
 
         when (Building) {
 
@@ -130,34 +130,34 @@ class FinalExamAdapter(context: Context) : RecyclerView.Adapter<FinalExamAdapter
 
     private fun buildingView(Building: String) {
 
-        val ViewBuilding = LayoutInflater.from(mcontext).inflate(R.layout.dialog_building_view, null)
+        val viewBuilding = LayoutInflater.from(mcontext).inflate(R.layout.dialog_building_view, null)
         val mBuilder = AlertDialog.Builder(mcontext)
-                .setView(ViewBuilding)
+                .setView(viewBuilding)
 
         val mAlert = mBuilder.show()
 
         if (Building == "81") {
-            ViewBuilding.building_image.setImageResource(R.drawable.b81)
+            viewBuilding.building_image.setImageResource(R.drawable.b81)
         } else if (Building == "83") {
-            ViewBuilding.building_image.setImageResource(R.drawable.b83)
+            viewBuilding.building_image.setImageResource(R.drawable.b83)
         } else if (Building == "84") {
-            ViewBuilding.building_image.setImageResource(R.drawable.b84)
+            viewBuilding.building_image.setImageResource(R.drawable.b84)
         } else if (Building == "86") {
-            ViewBuilding.building_image.setImageResource(R.drawable.b86)
+            viewBuilding.building_image.setImageResource(R.drawable.b86)
         } else if (Building == "88") {
-            ViewBuilding.building_image.setImageResource(R.drawable.b88)
+            viewBuilding.building_image.setImageResource(R.drawable.b88)
         } else if (Building == "89") {
-            ViewBuilding.building_image.setImageResource(R.drawable.b89)
+            viewBuilding.building_image.setImageResource(R.drawable.b89)
         } else {
-            ViewBuilding.building_image.setImageResource(R.drawable.nopicture)
+            viewBuilding.building_image.setImageResource(R.drawable.nopicture)
         }
 
-        ViewBuilding.navigate_button.setOnClickListener {
+        viewBuilding.navigate_button.setOnClickListener {
             findLocation(Building)
         }
 
 
-        ViewBuilding.exit_button.setOnClickListener {
+        viewBuilding.exit_button.setOnClickListener {
             mAlert.dismiss()
         }
 

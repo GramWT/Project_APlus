@@ -42,8 +42,6 @@ class EventCalendar : Fragment() {
     private val week: Array<String> = arrayOf("S", "M", "T", "W", "T", "F", "S")
 
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    private val titleSameYearFormatter = DateTimeFormatter.ofPattern("MMMM")
 
     @RequiresApi(Build.VERSION_CODES.O)
     private val titleFormatter = DateTimeFormatter.ofPattern("MMMM yyyy")
@@ -56,8 +54,10 @@ class EventCalendar : Fragment() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("ResourceAsColor")
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
         binding = FragmentEventCalendarBinding.inflate(layoutInflater)
 
@@ -66,7 +66,8 @@ class EventCalendar : Fragment() {
 
         binding.recycleEvent.adapter = adapter
 
-        gridLayoutManager = GridLayoutManager(requireContext(), 1, LinearLayoutManager.VERTICAL, false)
+        gridLayoutManager =
+            GridLayoutManager(requireContext(), 1, LinearLayoutManager.VERTICAL, false)
 
         binding.recycleEvent.layoutManager = gridLayoutManager
 
@@ -122,7 +123,11 @@ class EventCalendar : Fragment() {
                             textView.setTextColor(R.color.white)
                             textView.setBackgroundResource(R.drawable.today_bg_calendar)
                             dot.visibility = View.INVISIBLE
-                            mEventCalendarModel.readDataByDate(day.date.dayOfMonth, day.date.monthValue - 1, day.date.year).observe(viewLifecycleOwner, { event ->
+                            mEventCalendarModel.readDataByDate(
+                                day.date.dayOfMonth,
+                                day.date.monthValue - 1,
+                                day.date.year
+                            ).observe(viewLifecycleOwner, { event ->
                                 adapter.setData(event)
                             })
 
@@ -132,7 +137,11 @@ class EventCalendar : Fragment() {
                             textView.setTextColor(R.color.white)
                             textView.setBackgroundResource(R.drawable.select_bg_calendar)
                             dot.visibility = View.INVISIBLE
-                            mEventCalendarModel.readDataByDate(day.date.dayOfMonth, day.date.monthValue - 1, day.date.year).observe(viewLifecycleOwner, { event ->
+                            mEventCalendarModel.readDataByDate(
+                                day.date.dayOfMonth,
+                                day.date.monthValue - 1,
+                                day.date.year
+                            ).observe(viewLifecycleOwner, { event ->
                                 adapter.setData(event)
                             })
 
@@ -140,7 +149,11 @@ class EventCalendar : Fragment() {
                         else -> {
                             textView.setTextColor(R.color.white)
                             textView.background = null
-                            mEventCalendarModel.readDataByDate(day.date.dayOfMonth, day.date.monthValue - 1, day.date.year).observe(viewLifecycleOwner, { event ->
+                            mEventCalendarModel.readDataByDate(
+                                day.date.dayOfMonth,
+                                day.date.monthValue - 1,
+                                day.date.year
+                            ).observe(viewLifecycleOwner, { event ->
                                 eventList = event
                                 if (eventList.isEmpty()) {
                                     dot.visibility = View.INVISIBLE
@@ -153,7 +166,11 @@ class EventCalendar : Fragment() {
                     }
                 } else {
                     textView.setTextColor(R.color.color_grey)
-                    mEventCalendarModel.readDataByDate(day.date.dayOfMonth, day.date.monthValue - 1, day.date.year).observe(viewLifecycleOwner, { event ->
+                    mEventCalendarModel.readDataByDate(
+                        day.date.dayOfMonth,
+                        day.date.monthValue - 1,
+                        day.date.year
+                    ).observe(viewLifecycleOwner, { event ->
                         eventList = event
                         textView.background = null
                         if (eventList.isEmpty()) {
@@ -176,19 +193,21 @@ class EventCalendar : Fragment() {
         class MonthViewContainer(view: View) : ViewContainer(view) {
             val legendLayout = CalendarHeaderBinding.bind(view).legendLayout.root
         }
-        binding.calendarView.monthHeaderBinder = object : MonthHeaderFooterBinder<MonthViewContainer> {
-            override fun create(view: View) = MonthViewContainer(view)
-            override fun bind(container: MonthViewContainer, month: CalendarMonth) {
-                // Setup each header day text if we have not done that already.
-                if (container.legendLayout.tag == null) {
-                    container.legendLayout.tag = month.yearMonth
-                    container.legendLayout.children.map { it as TextView }.forEachIndexed { index, tv ->
-                        tv.text = week[index]
-                        tv.setTextColor(R.color.black)
+        binding.calendarView.monthHeaderBinder =
+            object : MonthHeaderFooterBinder<MonthViewContainer> {
+                override fun create(view: View) = MonthViewContainer(view)
+                override fun bind(container: MonthViewContainer, month: CalendarMonth) {
+                    // Setup each header day text if we have not done that already.
+                    if (container.legendLayout.tag == null) {
+                        container.legendLayout.tag = month.yearMonth
+                        container.legendLayout.children.map { it as TextView }
+                            .forEachIndexed { index, tv ->
+                                tv.text = week[index]
+                                tv.setTextColor(R.color.black)
+                            }
                     }
                 }
             }
-        }
 
 
         return binding.root
@@ -206,8 +225,6 @@ class EventCalendar : Fragment() {
         }
     }
 
-    override fun onStart() {
-        super.onStart()
-    }
+
 
 }

@@ -17,19 +17,24 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
 
-    private val MainBinding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+    private val mainBinding: ActivityMainBinding by lazy {
+        ActivityMainBinding.inflate(
+            layoutInflater
+        )
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.Theme_Project)
-        setContentView(MainBinding.root)
+        setContentView(mainBinding.root)
         val exam = CheckExamData()
         val lesson = CheckLessonData()
         val event = NavEventNotification()
         val calendar = EventCalendar()
         val setting = NavSetting()
 
-        val appSettingPrefs: SharedPreferences = getSharedPreferences("AppSettingPrefs", MODE_PRIVATE)
+        val appSettingPrefs: SharedPreferences =
+            getSharedPreferences("AppSettingPrefs", MODE_PRIVATE)
         val isNightModeOn: Boolean = appSettingPrefs.getBoolean("NightMode", true)
 
         if (isNightModeOn) {
@@ -40,7 +45,7 @@ class MainActivity : AppCompatActivity() {
 
         makeCurrentFragment(exam)
 
-        MainBinding.bottomNavigation.setOnNavigationItemSelectedListener {
+        mainBinding.bottomNavigation.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.menu_exam -> makeCurrentFragment(exam)
                 R.id.menu_lesson -> makeCurrentFragment(lesson)
@@ -55,11 +60,16 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun makeCurrentFragment(fragment: Fragment) =
-            supportFragmentManager.beginTransaction().apply {
-                setCustomAnimations(R.anim.fragment_fade_enter, R.anim.fragment_fade_exit, R.anim.fragment_fade_enter, R.anim.fragment_fade_exit)
-                replace(R.id.fl_wrapper, fragment)
-                commit()
-            }
+        supportFragmentManager.beginTransaction().apply {
+            setCustomAnimations(
+                R.anim.fragment_fade_enter,
+                R.anim.fragment_fade_exit,
+                R.anim.fragment_fade_enter,
+                R.anim.fragment_fade_exit
+            )
+            replace(R.id.fl_wrapper, fragment)
+            commit()
+        }
 
 
     fun hideBottomNav() {

@@ -9,8 +9,13 @@ import com.example.project.DataBase.model.Lesson
 import com.example.project.databinding.CustomLessonListRowBinding
 import kotlinx.android.synthetic.main.custom_lesson_list_row.view.*
 
-class SubLessonViewPagerAdapter(private val lessonList: List<String>, private val CheckLesson_1: List<Int>, private val CheckLesson_2: List<Int>,
-                                private val CheckLesson_3: List<Int>, private val CheckLesson_4: List<Int>, val currentLesson: Lesson
+class SubLessonViewPagerAdapter(
+    private val lessonList: List<String>,
+    private val CheckLesson_1: List<Int>,
+    private val CheckLesson_2: List<Int>,
+    private val CheckLesson_3: List<Int>,
+    private val CheckLesson_4: List<Int>,
+    val currentLesson: Lesson
 ) : RecyclerView.Adapter<SubLessonViewPagerAdapter.ViewPagerViewHolder>() {
 
     private lateinit var binding: CustomLessonListRowBinding
@@ -19,7 +24,8 @@ class SubLessonViewPagerAdapter(private val lessonList: List<String>, private va
     inner class ViewPagerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewPagerViewHolder {
-        binding = CustomLessonListRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        binding =
+            CustomLessonListRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
 
         return ViewPagerViewHolder(binding.root)

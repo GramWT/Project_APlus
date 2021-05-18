@@ -3,6 +3,7 @@ package com.example.project.Notifications.Event
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -33,12 +35,14 @@ class ReminderNotificationUpdate : Fragment() {
     private lateinit var mEventCalendarViewModel: EventCalendarViewModel
     private lateinit var mAlarmService: AlarmService
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_reminder_notification_update, container, false)
+        val view =
+            inflater.inflate(R.layout.fragment_reminder_notification_update, container, false)
 
         mEventViewModel = ViewModelProvider(this).get(EventViewModel::class.java)
         mEventCalendarViewModel = ViewModelProvider(this).get(EventCalendarViewModel::class.java)
@@ -68,33 +72,47 @@ class ReminderNotificationUpdate : Fragment() {
         }
 
         view.cancel_remind_button.setOnClickListener {
-            val action = ReminderNotificationUpdateDirections.actionReminderNotificationUpdateToReminderNotificationView(currentItem)
+            val action =
+                ReminderNotificationUpdateDirections.actionReminderNotificationUpdateToReminderNotificationView(
+                    currentItem
+                )
             findNavController().navigate(action)
         }
 
         view.save_remind_button.setOnClickListener {
             updateItem()
-            val reminder = Event(currentItem.id, title_remind_update.text.toString(),
-                    date_begin_remind_update.text.toString(),
-                    "-",
-                    time_begin_remind_update.text.toString(),
-                    "-",
-                    state_remind_update.text.toString(),
-                    description_remind_update.text.toString(),
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    location_remind_update.text.toString(), 2)
+            val title = title_remind_update.text.toString()
+            val beginDate = date_begin_remind_update.text.toString()
+            val beginTime = time_begin_remind_update.text.toString()
+            val state = state_remind_update.text.toString()
+            val description = description_remind_update.text.toString()
+            val location = location_remind_update.text.toString()
+            val reminder = Event(
+                currentItem.id, title,
+                beginDate,
+                "-",
+                beginTime,
+                "-",
+                state,
+                description,
+                "-",
+                "-",
+                "-",
+                "-",
+                "-",
+                "-",
+                "-",
+                "-",
+                "-",
+                "-",
+                location, 2
+            )
 
 
-            val action = ReminderNotificationUpdateDirections.actionReminderNotificationUpdateToReminderNotificationView(reminder)
+            val action =
+                ReminderNotificationUpdateDirections.actionReminderNotificationUpdateToReminderNotificationView(
+                    reminder
+                )
             Toast.makeText(requireContext(), "Update Successfully", Toast.LENGTH_SHORT).show()
             findNavController().navigate(action)
         }
@@ -103,51 +121,66 @@ class ReminderNotificationUpdate : Fragment() {
         return view
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun updateItem() {
-        val reminder = Event(args.Reminder.id, title_remind_update.text.toString(),
-                date_begin_remind_update.text.toString(),
-                "-",
-                time_begin_remind_update.text.toString(),
-                "-",
-                state_remind_update.text.toString(),
-                description_remind_update.text.toString(),
-                "-",
-                "-",
-                "-",
-                "-",
-                "-",
-                "-",
-                "-",
-                "-",
-                "-",
-                "-",
-                location_remind_update.text.toString(), 2)
+        val title = title_remind_update.text.toString()
+        val beginDate = date_begin_remind_update.text.toString()
+        val beginTime = time_begin_remind_update.text.toString()
+        val state = state_remind_update.text.toString()
+        val description = description_remind_update.text.toString()
+        val location = location_remind_update.text.toString()
+        val reminder = Event(
+            args.Reminder.id, title,
+            beginDate,
+            "-",
+            beginTime,
+            "-",
+            state,
+            description,
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            location, 2
+        )
 
-        val reminderEvent = EventCalendar(args.Reminder.id, 3, date_begin_remind_update.text.toString().substring(0, 2).toInt(), date_begin_remind_update.text.toString().substring(3, 5).toInt() - 1, date_begin_remind_update.text.toString().substring(6, 10).toInt(),
-                title_remind_update.text.toString())
+        val reminderEvent = EventCalendar(
+            args.Reminder.id,
+            3,
+            beginDate.substring(0, 2).toInt(),
+            beginDate.substring(3, 5).toInt() - 1,
+            beginDate.substring(6, 10).toInt(),
+            title
+        )
 
         mEventViewModel.updateEvent(reminder)
         mEventCalendarViewModel.updateEventCalendar(reminderEvent)
 
-
+        val duringReminder =
+            "${date_begin_remind_update.text.toString()} ${time_begin_remind_update.text.toString()}:00"
         if (date_begin_remind_update.text.toString() != "" && time_begin_remind_update.text.toString() != "") {
             val dt1 = "${date_begin_remind_update.text} ${time_begin_remind_update.text}:00"
             val rId1 = "1${args.Reminder.id}".toInt()
 
-            setAlarm(dt1, rId1, args.Reminder.id.toString(),state_remind_update.text.toString())
+            setAlarm(rId1, title, state, duringReminder, dt1)
         }
     }
 
-    private fun setAlarm(date: String, rq: Int, SID: String, priority: String) {
-        mAlarmService.setEventAlarm(convertMillis(date), rq, SID,priority)
-    }
-
-    private fun convertMillis(data: String): Long {
-        var sp = SimpleDateFormat("dd/MM/yyyy HH:mm:ss")
-        var date: Date = sp.parse(data)
-        var millis: Long = date.time
-
-        return millis
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun setAlarm(
+        requestCode: Int,
+        title: String,
+        priority: String,
+        duringReminder: String,
+        nowTime: String
+    ) {
+        mAlarmService.setReminderAlarm(requestCode, title, priority, duringReminder, nowTime)
     }
 
 
@@ -189,8 +222,16 @@ class ReminderNotificationUpdate : Fragment() {
 
             tv.text = SimpleDateFormat("HH:mm").format(cal.time).toString()
         }
-        TimePickerDialog(requireContext(), AlertDialog.THEME_HOLO_DARK, timeSet, cal.get(Calendar.HOUR_OF_DAY), cal.get(
-                Calendar.MINUTE), true).show()
+        TimePickerDialog(
+            requireContext(),
+            AlertDialog.THEME_HOLO_DARK,
+            timeSet,
+            cal.get(Calendar.HOUR_OF_DAY),
+            cal.get(
+                Calendar.MINUTE
+            ),
+            true
+        ).show()
     }
 
     private fun getDate(tv: TextView) {
@@ -207,8 +248,11 @@ class ReminderNotificationUpdate : Fragment() {
 
         }
 
-        DatePickerDialog(requireContext(), AlertDialog.THEME_DEVICE_DEFAULT_DARK, dpd, cal.get(
-                Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH)).show()
+        DatePickerDialog(
+            requireContext(), AlertDialog.THEME_DEVICE_DEFAULT_DARK, dpd, cal.get(
+                Calendar.YEAR
+            ), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH)
+        ).show()
 
     }
 

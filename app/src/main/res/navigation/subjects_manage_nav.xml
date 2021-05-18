@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_subjectsManage_nav_to_subjectsManageAdd"
             app:destination="@id/subjectsManageAdd" />
+        <action
+            android:id="@+id/action_subjectsManage_nav_to_subjectsManageUploadPDF"
+            app:destination="@id/subjectsManageUploadPDF" />
     </fragment>
     <fragment
         android:id="@+id/subjectsManageUpdate"
@@ -45,5 +48,29 @@
         <action
             android:id="@+id/action_subjectsManageAdd_to_subjectsManage_nav"
             app:destination="@id/subjectsManage_nav" />
+    </fragment>
+    <fragment
+        android:id="@+id/subjectsManageUploadPDF"
+        android:name="com.example.project.Setting.SubjectsManage.SubjectsManageUploadPDF"
+        android:label="fragment_subjects_manage_upload_p_d"
+        tools:layout="@layout/fragment_subjects_manage_upload_p_d" >
+        <action
+            android:id="@+id/action_subjectsManageUploadPDF_to_subjectUploadAdd"
+            app:destination="@id/subjectUploadAdd" />
+        <action
+            android:id="@+id/action_subjectsManageUploadPDF_to_subjectsManage_nav"
+            app:destination="@id/subjectsManage_nav" />
+    </fragment>
+    <fragment
+        android:id="@+id/subjectUploadAdd"
+        android:name="com.example.project.SubjectUploadAdd"
+        android:label="fragment_subject_upload_add"
+        tools:layout="@layout/fragment_subject_upload_add" >
+        <argument
+            android:name="subject"
+            app:argType="com.example.project.DataBase.model.SubjectUpload" />
+        <action
+            android:id="@+id/action_subjectUploadAdd_to_subjectsManageUploadPDF"
+            app:destination="@id/subjectsManageUploadPDF" />
     </fragment>
 </navigation>

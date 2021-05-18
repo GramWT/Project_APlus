@@ -33,20 +33,20 @@ class ProfileUser : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        val a = activity as MainActivity
-        a.bottom_navigation.visibility = View.GONE
+        val activityContext = activity as MainActivity
+        activityContext.bottom_navigation.visibility = View.GONE
     }
 
     override fun onStop() {
         super.onStop()
-        val a = activity as MainActivity
-        a.bottom_navigation.visibility = View.VISIBLE
+        val activityContext = activity as MainActivity
+        activityContext.bottom_navigation.visibility = View.VISIBLE
     }
 
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val layout = inflater.inflate(R.layout.fragment_profile_user, container, false)
@@ -94,7 +94,7 @@ class ProfileUser : Fragment() {
     private fun changeAvatar(layout: View) {
         val selectAvatar = LayoutInflater.from(context).inflate(R.layout.dialog_change_avatar, null)
         val mBuilder = AlertDialog.Builder(context)
-                .setView(selectAvatar)
+            .setView(selectAvatar)
 
         val mAlert = mBuilder.show()
 
@@ -156,9 +156,9 @@ class ProfileUser : Fragment() {
             a.bottom_navigation.selectedItemId = R.id.menu_exam
 
             Toast.makeText(
-                    requireContext(),
-                    "Successfully Delete User",
-                    Toast.LENGTH_SHORT
+                requireContext(),
+                "Successfully Delete User",
+                Toast.LENGTH_SHORT
             ).show()
         }
         builder.setNegativeButton("No") { _, _ -> }

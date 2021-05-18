@@ -31,8 +31,7 @@ import kotlinx.android.synthetic.main.dialog_select_previous_time.view.*
 import kotlinx.android.synthetic.main.fragment_event_notification_add.*
 import kotlinx.android.synthetic.main.fragment_event_notification_add.view.*
 import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.time.ZoneId
+import java.time.*
 import java.time.format.DateTimeFormatter
 import java.util.*
 import java.util.concurrent.TimeUnit
@@ -45,9 +44,7 @@ class EventNotificationAdd : Fragment() {
     private lateinit var mAlarmService: AlarmService
     private lateinit var mCalendar: List<EventCalendar>
 
-
     override fun onResume() {
-
         super.onResume()
         val a = activity as MainActivity
         a.bottom_navigation.visibility = View.GONE
@@ -66,13 +63,11 @@ class EventNotificationAdd : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_event_notification_add, container, false)
 
-
         mEventViewModel = ViewModelProvider(this).get(EventViewModel::class.java)
 
         mEventCalendar = ViewModelProvider(this).get(EventCalendarViewModel::class.java)
 
         mAlarmService = AlarmService(requireContext())
-
 
         view.date_begin_event_add.setText(DateTimeFormatter.ofPattern("dd/MM/yyyy").format(roundTime()))
 
@@ -85,8 +80,6 @@ class EventNotificationAdd : Fragment() {
         view.state_image.setImageResource(R.drawable.status_event_green)
 
         setVisibility(view)
-
-
 
         view.cancel_notification_device_5.setOnClickListener {
             sortNotification5(view)
@@ -157,6 +150,7 @@ class EventNotificationAdd : Fragment() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun insertDataToDatabase() {
         val title = title_event_add.text.toString()
         val dateBegin = date_begin_event_add.text.toString()
@@ -189,30 +183,32 @@ class EventNotificationAdd : Fragment() {
             mEventViewModel.addEvent(event)
             mEventCalendar.addEventCalendar(eventCalendar)
 
+            val destinationDateTime = "$dateBegin $timeBegin:00"
+
             if (d1 != "" && t1 != "") {
                 val dt1 = "${d1} ${t1}:00"
                 val rId1 = "1${rid}".toInt()
-                setAlarm(dt1, rId1, rid.toString(),state)
+                setAlarm(rId1,title,state,destinationDateTime,dt1)
             }
             if (d2 != "" && t2 != "") {
                 val dt2 = "${d2} ${t2}:00"
                 val rId2 = "2${rid}".toInt()
-                setAlarm(dt2, rId2, rid.toString(),state)
+                setAlarm(rId2,title,state,destinationDateTime,dt2)
             }
             if (d3 != "" && t3 != "") {
                 val dt3 = "${d3} ${t3}:00"
                 val rId3 = "3${rid}".toInt()
-                setAlarm(dt3, rId3, rid.toString(),state)
+                setAlarm(rId3,title,state,destinationDateTime,dt3)
             }
             if (d4 != "" && t4 != "") {
                 val dt4 = "${d4} ${t4}:00"
                 val rId4 = "4${rid}".toInt()
-                setAlarm(dt4, rId4, rid.toString(),state)
+                setAlarm(rId4,title,state,destinationDateTime,dt4)
             }
             if (d5 != "" && t5 != "") {
                 val dt5 = "${d5} ${t5}:00"
                 val rId5 = "5${rid}".toInt()
-                setAlarm(dt5, rId5, rid.toString(),state)
+                setAlarm(rId5,title,state,destinationDateTime,dt5)
             }
 
             Toast.makeText(requireContext(), "Successfully add!", Toast.LENGTH_SHORT).show()
@@ -251,8 +247,9 @@ class EventNotificationAdd : Fragment() {
         return randomId
     }
 
-    private fun setAlarm(date: String, rq: Int, SID: String,priority:String) {
-        mAlarmService.setEventAlarm(convertMillis(date), rq, SID,priority)
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun setAlarm(requestCode: Int, title: String, priority: String,destinationTime:String,nowTime:String) {
+        mAlarmService.setEventAlarm( requestCode,title, priority,destinationTime,nowTime)
     }
 
     private fun convertMillis(data: String): Long {

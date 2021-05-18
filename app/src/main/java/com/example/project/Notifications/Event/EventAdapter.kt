@@ -29,12 +29,14 @@ class EventAdapter : RecyclerView.Adapter<EventAdapter.MyViewHolder>() {
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = eventList[position]
 
-
         holder.setIsRecyclable(false)
-        holder.itemView.event_row.animation = AnimationUtils.loadAnimation(holder.itemView.event_row.context, R.anim.item_slide_right)
+        holder.itemView.event_row.animation =
+            AnimationUtils.loadAnimation(holder.itemView.event_row.context, R.anim.item_slide_right)
 
-        holder.itemView.circle_state.animation = AnimationUtils.loadAnimation(holder.itemView.circle_state.context, R.anim.item_slide_left)
-
+        holder.itemView.circle_state.animation = AnimationUtils.loadAnimation(
+            holder.itemView.circle_state.context,
+            R.anim.item_slide_left
+        )
 
         holder.itemView.title_event.text = currentItem.title
         holder.itemView.date_begin_event.text = currentItem.date_begin
@@ -51,28 +53,28 @@ class EventAdapter : RecyclerView.Adapter<EventAdapter.MyViewHolder>() {
             holder.itemView.time_end_event.text = ""
         }
 
-
-
         holder.itemView.event_row.setOnClickListener {
-
             if (currentItem.type == 1) {
-                val action = EventNotificationDirections.actionEventNotificationToEventNotificationView(currentItem)
+                val action =
+                    EventNotificationDirections.actionEventNotificationToEventNotificationView(
+                        currentItem
+                    )
                 holder.itemView.findNavController().navigate(action)
             } else if (currentItem.type == 2) {
-                val action = EventNotificationDirections.actionEventNotificationToReminderNotificationView(currentItem)
+                val action =
+                    EventNotificationDirections.actionEventNotificationToReminderNotificationView(
+                        currentItem
+                    )
                 holder.itemView.findNavController().navigate(action)
             }
         }
-
         setState(currentItem.state, holder.itemView.circle_state)
-
 
     }
 
     override fun getItemCount(): Int {
         return eventList.size
     }
-
 
     fun setData(event: List<Event>) {
         this.eventList = event

@@ -21,15 +21,17 @@ class Create_User : Fragment() {
 
     private lateinit var mUserModel: UserViewModel
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
         val view = inflater.inflate(R.layout.fragment_create__user, container, false)
 
         mUserModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
-        val a = activity as MainActivity
-        a.hideBottomNav()
+        val activityContext = activity as MainActivity
+        activityContext.hideBottomNav()
 
         view.save_user.setOnClickListener {
             println(view.user_name.text.toString())
@@ -37,11 +39,11 @@ class Create_User : Fragment() {
             if (view.user_name.text.isEmpty()) {
                 Toast.makeText(requireContext(), "Please fill up", Toast.LENGTH_SHORT).show()
             } else {
-                var user = User(9999, view.user_name.text.toString(), avatar)
+                val user = User(9999, view.user_name.text.toString(), avatar)
                 mUserModel.addUser(user)
                 val action = Create_UserDirections.actionCreateUserToExamNotification()
                 findNavController().navigate(action)
-                a.showBottomNav()
+                activityContext.showBottomNav()
             }
         }
 
@@ -56,7 +58,7 @@ class Create_User : Fragment() {
     private fun changeAvatar(view: View) {
         val selectAvatar = LayoutInflater.from(context).inflate(R.layout.dialog_change_avatar, null)
         val mBuilder = AlertDialog.Builder(context)
-                .setView(selectAvatar)
+            .setView(selectAvatar)
 
         val mAlert = mBuilder.show()
 

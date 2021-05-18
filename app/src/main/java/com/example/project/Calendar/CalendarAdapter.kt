@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.project.DataBase.model.EventCalendar
-import com.example.project.R
 import com.example.project.databinding.CustomListEventCalendarBinding
 import kotlinx.android.synthetic.main.custom_list_event_calendar.view.*
 
@@ -25,17 +24,20 @@ class CalendarAdapter : RecyclerView.Adapter<CalendarAdapter.MyViewHolder>() {
         return MyViewHolder(binding.root)
     }
 
-    @SuppressLint("ResourceAsColor")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = eventList[position]
 
         holder.itemView.subject_title.text = currentItem.subject
-        if (currentItem.type == 1) {
-            holder.itemView.state_title.text = "Exam"
-        } else if (currentItem.type == 2) {
-            holder.itemView.state_title.text = "Event"
-        } else if (currentItem.type == 3) {
-            holder.itemView.state_title.text = "Reminder"
+        when (currentItem.type) {
+            1 -> {
+                holder.itemView.state_title.text = "Exam"
+            }
+            2 -> {
+                holder.itemView.state_title.text = "Event"
+            }
+            3 -> {
+                holder.itemView.state_title.text = "Reminder"
+            }
         }
 
     }

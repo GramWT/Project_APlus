@@ -33,7 +33,8 @@ class LessonNotification : Fragment() {
 
 
             if (lessonList.isEmpty()) {
-                val action = LessonNotificationDirections.actionLessonNotification3ToDirectToLessonManagement()
+                val action =
+                    LessonNotificationDirections.actionLessonNotification3ToDirectToLessonManagement()
                 findNavController().navigate(action)
                 println(lessonList.size)
             } else {
@@ -44,8 +45,8 @@ class LessonNotification : Fragment() {
     }
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
 
         binding = FragmentLessonNotificationBinding.inflate(layoutInflater)
@@ -60,7 +61,8 @@ class LessonNotification : Fragment() {
         binding.lessonRecyclerView.adapter = adapter
 
 
-        gridLayoutManager = GridLayoutManager(requireContext(), 1, LinearLayoutManager.VERTICAL, false)
+        gridLayoutManager =
+            GridLayoutManager(requireContext(), 1, LinearLayoutManager.VERTICAL, false)
         binding.lessonRecyclerView.layoutManager = gridLayoutManager
 
         mLessonModel.readAllData.observe(viewLifecycleOwner, { lesson ->

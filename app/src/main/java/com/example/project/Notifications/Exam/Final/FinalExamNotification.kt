@@ -22,9 +22,9 @@ class FinalExamNotification : Fragment() {
 
         binding = FragmentFinalExamNotificationBinding.inflate(layoutInflater)
 
-        var at = activity as Context
+        val activityContext = activity as Context
 
-        var adapter = FinalExamAdapter(at)
+        val adapter = FinalExamAdapter(activityContext)
 
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())

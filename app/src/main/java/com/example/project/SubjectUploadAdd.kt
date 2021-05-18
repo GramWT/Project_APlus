@@ -1,4 +1,4 @@
-package com.example.project.Setting.SubjectsManage
+package com.example.project
 
 import android.app.AlertDialog
 import android.app.DatePickerDialog
@@ -6,22 +6,25 @@ import android.app.TimePickerDialog
 import android.os.Build
 import android.os.Bundle
 import android.text.TextUtils
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.project.AlarmManager.Service.AlarmService
 import com.example.project.DataBase.model.EventCalendar
 import com.example.project.DataBase.model.Subject
 import com.example.project.DataBase.viewmodel.EventCalendarViewModel
+import com.example.project.DataBase.viewmodel.SubjectUploadViewModel
 import com.example.project.DataBase.viewmodel.SubjectViewModel
-import com.example.project.R
+import com.example.project.Setting.SubjectsManage.SubjectsManageAddDirections
+import com.example.project.Setting.SubjectsManage.SubjectsManageUpdateArgs
+import com.example.project.databinding.FragmentSubjectUploadAddBinding
 import kotlinx.android.synthetic.main.dialog_building_select.view.*
 import kotlinx.android.synthetic.main.fragment_subjects_manage_add.*
 import kotlinx.android.synthetic.main.fragment_subjects_manage_add.view.*
@@ -32,19 +35,26 @@ import java.time.format.DateTimeFormatter
 import java.util.*
 
 
-class SubjectsManageAdd : Fragment() {
+class SubjectUploadAdd : Fragment() {
+
+
+    private val args by navArgs<SubjectUploadAddArgs>()
+    private val binding:FragmentSubjectUploadAddBinding by lazy {
+        FragmentSubjectUploadAddBinding.inflate(layoutInflater)
+    }
 
     private lateinit var mSubjectViewModel: SubjectViewModel
+    private lateinit var mSubjectUploadModel: SubjectUploadViewModel
     private lateinit var mEventCalendar: EventCalendarViewModel
     private lateinit var mAlarmService: AlarmService
     private lateinit var mSubject: List<Subject>
+
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_subjects_manage_add, container, false)
         mAlarmService = AlarmService(requireContext())
         val dateM = LocalDateTime.now()
         val dayM = dateM.dayOfMonth
@@ -59,95 +69,86 @@ class SubjectsManageAdd : Fragment() {
         var eventDateMid: MutableList<Int> = arrayListOf(dayM, monthM, yearM)
         var eventDateFinal: MutableList<Int> = arrayListOf(dayF, monthF, yearF)
 
-
         mSubjectViewModel = ViewModelProvider(this).get(SubjectViewModel::class.java)
-
+        mSubjectUploadModel = ViewModelProvider(this).get(SubjectUploadViewModel::class.java)
         mEventCalendar = ViewModelProvider(this).get(EventCalendarViewModel::class.java)
 
 
-        view.cancel_button_update.setOnClickListener {
-            val action = SubjectsManageAddDirections.actionSubjectsManageAddToSubjectsManageNav()
-            view.findNavController().navigate(action)
+        binding.cancelButtonUpdate.setOnClickListener {
+            val action = SubjectUploadAddDirections.actionSubjectUploadAddToSubjectsManageUploadPDF()
+            findNavController().navigate(action)
         }
+        binding.dateMidManagerUpdate.text = DateTimeFormatter.ofPattern("dd/MM/yyyy").format(roundTime())
+        binding.dateFinalManagerUpdate.text = DateTimeFormatter.ofPattern("dd/MM/yyyy").format(roundTime().plusMonths(2))
+        binding.timeMidBeginManagerUpdate.text = DateTimeFormatter.ofPattern("HH:mm").format(roundTime())
+        binding.timeMidEndManagerUpdate.text = DateTimeFormatter.ofPattern("HH:mm").format(roundTime().plusHours(1))
+        binding.timeFinalBeginManagerUpdate.text = DateTimeFormatter.ofPattern("HH:mm").format(roundTime())
+        binding.timeFinalEndManagerUpdate.text = DateTimeFormatter.ofPattern("HH:mm").format(roundTime().plusHours(1))
 
-        view.date_mid_manager_update.setText(
-            DateTimeFormatter.ofPattern("dd/MM/yyyy").format(roundTime())
-        )
-        view.date_final_manager_update.setText(
-            DateTimeFormatter.ofPattern("dd/MM/yyyy").format(roundTime().plusMonths(2))
-        )
-
-        view.time_mid_begin_manager_update.setText(
-            DateTimeFormatter.ofPattern("HH:mm").format(roundTime())
-        )
-        view.time_mid_end_manager_update.setText(
-            DateTimeFormatter.ofPattern("HH:mm").format(roundTime().plusHours(1))
-        )
-
-        view.time_final_begin_manager_update.setText(
-            DateTimeFormatter.ofPattern("HH:mm").format(roundTime())
-        )
-        view.time_final_end_manager_update.setText(
-            DateTimeFormatter.ofPattern("HH:mm").format(roundTime().plusHours(1))
-        )
-
-        view.admit_button_update.setOnClickListener {
-            insertDataToDatabase(eventDateMid, eventDateFinal)
-        }
-
-        view.date_mid_manager_update.setOnClickListener {
-            println(eventDateMid)
+        binding.dateMidManagerUpdate.setOnClickListener {
             eventDateMid = arrayListOf()
-            getDate(view.date_mid_manager_update, eventDateMid)
+            getDate(binding.dateMidManagerUpdate,eventDateMid)
         }
 
-        view.date_final_manager_update.setOnClickListener {
-            println(eventDateFinal)
+        binding.dateFinalManagerUpdate.setOnClickListener {
             eventDateFinal = arrayListOf()
-            getDate(view.date_final_manager_update, eventDateFinal)
+            getDate(binding.dateFinalManagerUpdate,eventDateFinal)
         }
 
-        view.time_mid_begin_manager_update.setOnClickListener {
-            getTime(view.time_mid_begin_manager_update)
+        binding.timeMidBeginManagerUpdate.setOnClickListener {
+            getTime(binding.timeMidBeginManagerUpdate)
         }
 
-        view.time_mid_end_manager_update.setOnClickListener {
-            getTime(view.time_mid_end_manager_update)
+        binding.timeMidEndManagerUpdate.setOnClickListener {
+            getTime(binding.timeMidEndManagerUpdate)
         }
 
-        view.time_final_begin_manager_update.setOnClickListener {
-            getTime(view.time_final_begin_manager_update)
+        binding.timeFinalBeginManagerUpdate.setOnClickListener {
+            getTime(binding.timeFinalBeginManagerUpdate)
         }
 
-        view.time_final_end_manager_update.setOnClickListener {
-            getTime(view.time_final_end_manager_update)
+        binding.timeFinalEndManagerUpdate.setOnClickListener {
+            getTime(binding.timeFinalEndManagerUpdate)
         }
 
-        view.building_mid_manager_update.setOnClickListener {
-            dialogBuilding(view.building_mid_manager_update)
+        binding.buildingMidManagerUpdate.setOnClickListener {
+            dialogBuilding(binding.buildingMidManagerUpdate)
         }
 
-        view.building_final_manager_update.setOnClickListener {
-            dialogBuilding(view.building_final_manager_update)
+        binding.buildingFinalManagerUpdate.setOnClickListener {
+            dialogBuilding(binding.buildingFinalManagerUpdate)
         }
 
+        binding.admitButtonUpdate.setOnClickListener {
+            insertDataToDatabase(eventDateMid,eventDateFinal)
+            mSubjectUploadModel.deleteSubject(args.subject)
+        }
 
-        return view
+        binding.codeManagerUpdate.setText(args.subject.sid)
+        binding.nameManagerUpdate.setText(args.subject.Name)
+
+
+        return binding.root
+
+
+
+
+
     }
 
     private fun insertDataToDatabase(eventMid: MutableList<Int>, eventFinal: MutableList<Int>) {
-        val sid = code_manager_update.text.toString()
-        val name = name_manager_update.text.toString()
-        val midDate = date_mid_manager_update.text.toString()
-        val finalDate = date_final_manager_update.text.toString()
-        val midTimeBegin = time_mid_begin_manager_update.text.toString()
-        val midTimeEnd = time_mid_end_manager_update.text.toString()
-        val finalTimeBegin = time_final_begin_manager_update.text.toString()
-        val finalTimeEnd = time_final_end_manager_update.text.toString()
-        val midBuilding = building_mid_manager_update.text.toString()
-        val finalBuilding = building_final_manager_update.text.toString()
-        val midRoom = room_mid_manager_update.text.toString()
-        val finalRoom = room_final_manager_update.text.toString()
+        val sid = binding.codeManagerUpdate.text.toString()
+        val name = binding.nameManagerUpdate.text.toString()
+        val midDate = binding.dateMidManagerUpdate.text.toString()
+        val finalDate = binding.dateFinalManagerUpdate.text.toString()
+        val midTimeBegin = binding.timeMidBeginManagerUpdate.text.toString()
+        val midTimeEnd = binding.timeMidEndManagerUpdate.text.toString()
+        val finalTimeBegin = binding.timeFinalBeginManagerUpdate.text.toString()
+        val finalTimeEnd = binding.timeFinalEndManagerUpdate.text.toString()
+        val midBuilding = binding.buildingMidManagerUpdate.text.toString()
+        val finalBuilding = binding.buildingFinalManagerUpdate.text.toString()
+        val midRoom = binding.roomMidManagerUpdate.text.toString()
+        val finalRoom = binding.roomFinalManagerUpdate.text.toString()
 
         val rid = randomId()
 
@@ -208,7 +209,7 @@ class SubjectsManageAdd : Fragment() {
 
             Toast.makeText(requireContext(), "Successfully add!", Toast.LENGTH_SHORT).show()
 
-            val action = SubjectsManageAddDirections.actionSubjectsManageAddToSubjectsManageNav()
+            val action = SubjectUploadAddDirections.actionSubjectUploadAddToSubjectsManageUploadPDF()
             findNavController().navigate(action)
         } else {
             Toast.makeText(requireContext(), "Please fill out all fields.", Toast.LENGTH_SHORT)
@@ -385,6 +386,7 @@ class SubjectsManageAdd : Fragment() {
         })
         return randomId
     }
+
 
 
 }

@@ -8,23 +8,23 @@ class SubjectRepository(private val subjectDao: SubjectDao) {
 
     val readAllData: LiveData<List<Subject>> = subjectDao.readAllData()
 
-    suspend fun addSubject(subject: Subject){
+    suspend fun addSubject(subject: Subject) {
         subjectDao.addSubject(subject)
     }
 
-    suspend fun updateSubject(subject: Subject){
+    suspend fun updateSubject(subject: Subject) {
         subjectDao.updateSubject(subject)
     }
 
-    suspend fun deleteSubject(subject: Subject){
+    suspend fun deleteSubject(subject: Subject) {
         subjectDao.deleteSubject(subject)
     }
 
-    suspend fun deleteAllSubjects(){
+    suspend fun deleteAllSubjects() {
         subjectDao.deleteAllSubjects()
     }
 
-    suspend fun deleteById(id:Int){
+    suspend fun deleteById(id: Int) {
         subjectDao.deleteById(id)
     }
 }

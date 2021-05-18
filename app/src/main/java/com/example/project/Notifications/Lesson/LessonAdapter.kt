@@ -6,7 +6,6 @@ import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.size
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -17,7 +16,8 @@ import com.example.project.databinding.CustomLessonRowBinding
 import kotlinx.android.synthetic.main.custom_lesson_row.view.*
 import kotlinx.android.synthetic.main.dialog_check_lesson.view.*
 
-class LessonAdapter(var mLessonViewModel: LessonViewModel, var mcontext: Context) : RecyclerView.Adapter<LessonAdapter.MyViewHolder>() {
+class LessonAdapter(var mLessonViewModel: LessonViewModel, var mcontext: Context) :
+    RecyclerView.Adapter<LessonAdapter.MyViewHolder>() {
 
     private lateinit var binding: CustomLessonRowBinding
     private var lessonList = emptyList<Lesson>()
@@ -41,28 +41,124 @@ class LessonAdapter(var mLessonViewModel: LessonViewModel, var mcontext: Context
 
         holder.itemView.lesson_subject_text.text = currentItem.name
 
-        val LessonList = ItemLessonCheck(currentItem.l01, currentItem.l02, currentItem.l03, currentItem.l04, currentItem.l05, currentItem.l06, currentItem.l07, currentItem.l08, currentItem.l09, currentItem.l10, currentItem.l11, currentItem.l12, currentItem.l13, currentItem.l14, currentItem.l15, currentItem.l16)
+        val lessonList = itemLessonCheck(
+            currentItem.l01,
+            currentItem.l02,
+            currentItem.l03,
+            currentItem.l04,
+            currentItem.l05,
+            currentItem.l06,
+            currentItem.l07,
+            currentItem.l08,
+            currentItem.l09,
+            currentItem.l10,
+            currentItem.l11,
+            currentItem.l12,
+            currentItem.l13,
+            currentItem.l14,
+            currentItem.l15,
+            currentItem.l16
+        )
 
-        val CheckLesson_1 = arrayListOf<Int>(currentItem.l01_C1, currentItem.l02_C1, currentItem.l03_C1, currentItem.l04_C1, currentItem.l05_C1, currentItem.l06_C1, currentItem.l07_C1, currentItem.l08_C1,
-                currentItem.l09_C1, currentItem.l10_C1, currentItem.l11_C1, currentItem.l12_C1, currentItem.l13_C1, currentItem.l14_C1, currentItem.l15_C1, currentItem.l16_C1)
+        val checkLesson1 = arrayListOf<Int>(
+            currentItem.l01_C1,
+            currentItem.l02_C1,
+            currentItem.l03_C1,
+            currentItem.l04_C1,
+            currentItem.l05_C1,
+            currentItem.l06_C1,
+            currentItem.l07_C1,
+            currentItem.l08_C1,
+            currentItem.l09_C1,
+            currentItem.l10_C1,
+            currentItem.l11_C1,
+            currentItem.l12_C1,
+            currentItem.l13_C1,
+            currentItem.l14_C1,
+            currentItem.l15_C1,
+            currentItem.l16_C1
+        )
 
-        val CheckLesson_2 = arrayListOf<Int>(currentItem.l01_C2, currentItem.l02_C2, currentItem.l03_C2, currentItem.l04_C2, currentItem.l05_C2, currentItem.l06_C2, currentItem.l07_C2, currentItem.l08_C2,
-                currentItem.l09_C2, currentItem.l10_C2, currentItem.l11_C2, currentItem.l12_C2, currentItem.l13_C2, currentItem.l14_C2, currentItem.l15_C2, currentItem.l16_C2)
+        val checkLesson2 = arrayListOf<Int>(
+            currentItem.l01_C2,
+            currentItem.l02_C2,
+            currentItem.l03_C2,
+            currentItem.l04_C2,
+            currentItem.l05_C2,
+            currentItem.l06_C2,
+            currentItem.l07_C2,
+            currentItem.l08_C2,
+            currentItem.l09_C2,
+            currentItem.l10_C2,
+            currentItem.l11_C2,
+            currentItem.l12_C2,
+            currentItem.l13_C2,
+            currentItem.l14_C2,
+            currentItem.l15_C2,
+            currentItem.l16_C2
+        )
 
-        val CheckLesson_3 = arrayListOf<Int>(currentItem.l01_C3, currentItem.l02_C3, currentItem.l03_C3, currentItem.l04_C3, currentItem.l05_C3, currentItem.l06_C3, currentItem.l07_C3, currentItem.l08_C3,
-                currentItem.l09_C3, currentItem.l10_C3, currentItem.l11_C3, currentItem.l12_C3, currentItem.l13_C3, currentItem.l14_C3, currentItem.l15_C3, currentItem.l16_C3)
+        val checkLesson3 = arrayListOf<Int>(
+            currentItem.l01_C3,
+            currentItem.l02_C3,
+            currentItem.l03_C3,
+            currentItem.l04_C3,
+            currentItem.l05_C3,
+            currentItem.l06_C3,
+            currentItem.l07_C3,
+            currentItem.l08_C3,
+            currentItem.l09_C3,
+            currentItem.l10_C3,
+            currentItem.l11_C3,
+            currentItem.l12_C3,
+            currentItem.l13_C3,
+            currentItem.l14_C3,
+            currentItem.l15_C3,
+            currentItem.l16_C3
+        )
 
-        val CheckLesson_4 = arrayListOf<Int>(currentItem.l01_C4, currentItem.l02_C4, currentItem.l03_C4, currentItem.l04_C4, currentItem.l05_C4, currentItem.l06_C4, currentItem.l07_C4, currentItem.l08_C4,
-                currentItem.l09_C4, currentItem.l10_C4, currentItem.l11_C4, currentItem.l12_C4, currentItem.l13_C4, currentItem.l14_C4, currentItem.l15_C4, currentItem.l16_C4)
+        val checkLesson4 = arrayListOf<Int>(
+            currentItem.l01_C4,
+            currentItem.l02_C4,
+            currentItem.l03_C4,
+            currentItem.l04_C4,
+            currentItem.l05_C4,
+            currentItem.l06_C4,
+            currentItem.l07_C4,
+            currentItem.l08_C4,
+            currentItem.l09_C4,
+            currentItem.l10_C4,
+            currentItem.l11_C4,
+            currentItem.l12_C4,
+            currentItem.l13_C4,
+            currentItem.l14_C4,
+            currentItem.l15_C4,
+            currentItem.l16_C4
+        )
 
 
         holder.itemView.set_check_lesson.setOnClickListener {
 
-            dialogCheckLesson(LessonList, mLessonViewModel, CheckLesson_1, CheckLesson_2, CheckLesson_3, CheckLesson_4, currentItem)
+            dialogCheckLesson(
+                lessonList,
+                mLessonViewModel,
+                checkLesson1,
+                checkLesson2,
+                checkLesson3,
+                checkLesson4,
+                currentItem
+            )
         }
 
 
-        val pageAdapter = SubLessonViewPagerAdapter(LessonList, CheckLesson_1, CheckLesson_2, CheckLesson_3, CheckLesson_4, currentItem)
+        val pageAdapter = SubLessonViewPagerAdapter(
+            lessonList,
+            checkLesson1,
+            checkLesson2,
+            checkLesson3,
+            checkLesson4,
+            currentItem
+        )
 
         holder.itemView.vpsub.adapter = pageAdapter
         holder.itemView.indicate.setViewPager(holder.itemView.vpsub)
@@ -80,8 +176,24 @@ class LessonAdapter(var mLessonViewModel: LessonViewModel, var mcontext: Context
     }
 
 
-    private fun ItemLessonCheck(string1: String, string2: String, string3: String, string4: String, string5: String, string6: String, string7: String, string8: String,
-                                string9: String, string10: String, string11: String, string12: String, string13: String, string14: String, string15: String, string16: String): List<String> {
+    private fun itemLessonCheck(
+        string1: String,
+        string2: String,
+        string3: String,
+        string4: String,
+        string5: String,
+        string6: String,
+        string7: String,
+        string8: String,
+        string9: String,
+        string10: String,
+        string11: String,
+        string12: String,
+        string13: String,
+        string14: String,
+        string15: String,
+        string16: String
+    ): List<String> {
         var listItem: MutableList<String> = mutableListOf()
         if (inputCheck(string1)) {
             listItem.add(string1)
@@ -141,20 +253,29 @@ class LessonAdapter(var mLessonViewModel: LessonViewModel, var mcontext: Context
 
     }
 
-    private fun dialogCheckLesson(ListLesson: List<String>, lessonViewModel: LessonViewModel, CL1: ArrayList<Int>, CL2: ArrayList<Int>, CL3: ArrayList<Int>, CL4: ArrayList<Int>, CurrentLesson: Lesson) {
+    private fun dialogCheckLesson(
+        ListLesson: List<String>,
+        lessonViewModel: LessonViewModel,
+        CL1: ArrayList<Int>,
+        CL2: ArrayList<Int>,
+        CL3: ArrayList<Int>,
+        CL4: ArrayList<Int>,
+        CurrentLesson: Lesson
+    ) {
         val checkLesson = LayoutInflater.from(mcontext).inflate(R.layout.dialog_check_lesson, null)
 
-        var Adapter = CheckLessonListAdapter(ListLesson, lessonViewModel, CL1, CL2, CL3, CL4, CurrentLesson)
+        val adapter =
+            CheckLessonListAdapter(ListLesson, lessonViewModel, CL1, CL2, CL3, CL4, CurrentLesson)
 
         val mBuilder = AlertDialog.Builder(mcontext)
-                .setView(checkLesson)
+            .setView(checkLesson)
 
 
 
 
 
 
-        checkLesson.check_list_lesson.adapter = Adapter
+        checkLesson.check_list_lesson.adapter = adapter
         checkLesson.check_list_lesson.setItemViewCacheSize(100)
 
         gridLayoutManager = GridLayoutManager(mcontext, 1, LinearLayoutManager.VERTICAL, false)
@@ -163,15 +284,9 @@ class LessonAdapter(var mLessonViewModel: LessonViewModel, var mcontext: Context
 
         checkLesson.lesson_title.text = CurrentLesson.name
 
-
-        println("size${checkLesson.check_list_lesson.size}")
-
-
         val mAlert = mBuilder.show()
 
         val alertDialog = mBuilder.create()
-
-
 
         checkLesson.save_lesson_state.setOnClickListener {
             mAlert.dismiss()

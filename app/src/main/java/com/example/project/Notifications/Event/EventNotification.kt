@@ -37,21 +37,14 @@ class EventNotification : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         binding = FragmentEventNotificationBinding.inflate(layoutInflater)
-
         binding.glassLayout.bringToFront()
         binding.glassLayout.visibility = View.INVISIBLE
 
-
-        var adapter = EventAdapter()
+        val adapter = EventAdapter()
 
         binding.eventRecyclerView.adapter = adapter
-
-
-
         gridLayoutManager = GridLayoutManager(requireContext(), 1, LinearLayoutManager.VERTICAL, false)
-
         binding.eventRecyclerView.layoutManager = gridLayoutManager
-
         mEventModel = ViewModelProvider(this).get(EventViewModel::class.java)
         mEventModel.readAllData.observe(viewLifecycleOwner, { event ->
             adapter.setData(event)
@@ -74,8 +67,6 @@ class EventNotification : Fragment() {
             val action = EventNotificationDirections.actionEventNotificationToReminderNotificationAdd()
             findNavController().navigate(action)
         }
-
-
         return binding.root
 
     }
@@ -84,7 +75,6 @@ class EventNotification : Fragment() {
         setVisibility(clicked)
         setAnimation(clicked)
         onBlur(clicked)
-
         clicked = !clicked
     }
 
@@ -132,6 +122,5 @@ class EventNotification : Fragment() {
             binding.glassLayout.visibility = View.INVISIBLE
         }
     }
-
 
 }

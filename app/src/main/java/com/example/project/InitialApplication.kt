@@ -11,34 +11,34 @@ class InitialApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        initNotificationChannel(applicationContext)
+        notificationChannelInit(applicationContext)
     }
 
-    fun initNotificationChannel(context: Context) {
+    private fun notificationChannelInit(context: Context) {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val groupId = "kmutnb"
             val groupName = "KMUTNB"
             val group = NotificationChannelGroup(groupId, groupName)
 
-            val channelId1 = "exam"
+            val examChannelId = "exam"
             val channelName1 = "Exam"
-            val channel1 = NotificationChannel(channelId1, channelName1, NotificationManager.IMPORTANCE_HIGH)
+            val channel1 = NotificationChannel(examChannelId, channelName1, NotificationManager.IMPORTANCE_HIGH)
             channel1.group = groupId
 
-            val channelId2 = "event_high"
+            val highChannelId = "event_high"
             val channelName2 = "Event High"
-            val channel2 = NotificationChannel(channelId2, channelName2, NotificationManager.IMPORTANCE_HIGH)
+            val channel2 = NotificationChannel(highChannelId, channelName2, NotificationManager.IMPORTANCE_HIGH)
             channel2.group = groupId
 
-            val channelId3 = "event_default"
+            val normalChannelId = "event_default"
             val channelName3 = "Event Default"
-            val channel3 = NotificationChannel(channelId3, channelName3, NotificationManager.IMPORTANCE_DEFAULT)
+            val channel3 = NotificationChannel(normalChannelId, channelName3, NotificationManager.IMPORTANCE_DEFAULT)
             channel3.group = groupId
 
-            val channelId4 = "event_low"
+            val lowChannelId = "event_low"
             val channelName4 = "Event Low"
-            val channel4 = NotificationChannel(channelId4, channelName4, NotificationManager.IMPORTANCE_LOW)
+            val channel4 = NotificationChannel(lowChannelId, channelName4, NotificationManager.IMPORTANCE_LOW)
             channel4.group = groupId
 
 
