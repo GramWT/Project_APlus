@@ -33,9 +33,12 @@ class SubjectsManageUploadPDF : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        data class Subject(val sid:String,val name:String)
+
+        val dataModel:List<Subject> = arrayListOf(Subject("080101231","ENGLISH II"),Subject("040130761","HUMAN AND BODY"),Subject("010303502","PHYSICS FOR LIFE"))
         binding = FragmentSubjectsManageUploadPDBinding.inflate(layoutInflater)
 
-        var adapter = SubjectUploadAdapter()
+        val adapter = SubjectUploadAdapter()
         binding.uploadRecycle.adapter = adapter
         mAlarmService = AlarmService(requireContext())
         mEventCalendar = ViewModelProvider(this).get(EventCalendarViewModel::class.java)
@@ -44,23 +47,26 @@ class SubjectsManageUploadPDF : Fragment() {
         binding.uploadRecycle.layoutManager = gridLayoutManager
 
         binding.uploadButton.setOnClickListener {
-            val subject = SubjectUpload(
-                111111,
-                "1111111",
-                "TEST",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
-            )
+            mSubjectModel.deleteAllSubject()
+            dataModel.forEachIndexed { index, subject ->
+                val subjects = SubjectUpload(
+                    randomId(),
+                    subject.sid,
+                    subject.name,
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                )
 
-            mSubjectModel.addSubject(subject)
+                mSubjectModel.addSubject(subjects)
+            }
         }
 
         binding.backButton.setOnClickListener {
@@ -74,6 +80,33 @@ class SubjectsManageUploadPDF : Fragment() {
         })
 
         return binding.root
+    }
+
+    private fun randomId(): Int {
+        var randomId =
+            "3${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}".toInt()
+        val list = arrayListOf<Int>()
+        var checked = false
+
+        mSubjectModel.readAllData.observe(viewLifecycleOwner, { subject ->
+            mSubjectUpload = subject
+
+            for (i in 0..mSubjectUpload.size - 1) {
+
+                list.add(mSubjectUpload[i].id)
+            }
+
+            while (checked == false) {
+                if (randomId in list) {
+                    randomId =
+                        "3${(0..9).random()}${(0..9).random()}${(0..9).random()}${(0..9).random()}".toInt()
+                    println(randomId)
+                } else {
+                    checked = true
+                }
+            }
+        })
+        return randomId
     }
 
 }
