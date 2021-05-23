@@ -1,4 +1,4 @@
-package com.example.project
+package com.example.project.Setting.SubjectsManage
 
 import android.app.AlertDialog
 import android.app.DatePickerDialog
@@ -22,12 +22,9 @@ import com.example.project.DataBase.model.Subject
 import com.example.project.DataBase.viewmodel.EventCalendarViewModel
 import com.example.project.DataBase.viewmodel.SubjectUploadViewModel
 import com.example.project.DataBase.viewmodel.SubjectViewModel
-import com.example.project.Setting.SubjectsManage.SubjectsManageAddDirections
-import com.example.project.Setting.SubjectsManage.SubjectsManageUpdateArgs
+import com.example.project.R
 import com.example.project.databinding.FragmentSubjectUploadAddBinding
 import kotlinx.android.synthetic.main.dialog_building_select.view.*
-import kotlinx.android.synthetic.main.fragment_subjects_manage_add.*
-import kotlinx.android.synthetic.main.fragment_subjects_manage_add.view.*
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.time.ZoneId

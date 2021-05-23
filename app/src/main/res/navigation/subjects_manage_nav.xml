@@ -63,7 +63,7 @@
     </fragment>
     <fragment
         android:id="@+id/subjectUploadAdd"
-        android:name="com.example.project.SubjectUploadAdd"
+        android:name="com.example.project.Setting.SubjectsManage.SubjectUploadAdd"
         android:label="fragment_subject_upload_add"
         tools:layout="@layout/fragment_subject_upload_add" >
         <argument
